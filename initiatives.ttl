@@ -1,0 +1,102 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix ocd: <http://dati.camera.it/ocd/> .
+@prefix : <> .
+
+:	
+	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
+	dct:title                   	"";
+	dct:description             	"";
+	dct:creator                 	"Tiago Ribeiro de Sá Cruz";
+	dct:contributor                 "", "";
+    dct:issued                 		""^^schema:Date;
+	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
+	vann:preferredNamespacePrefix   ":" ;
+	vann:preferredNamespaceUri      "" ;
+	owl:versionInfo					"1.0";
+.
+
+:author rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative> ;
+    rdfs:range <http://example.org/map4scrutiny/core#Parliamentarian> . # TODO: Publish M4S
+
+
+:content rdf:type owl:ObjectProperty ,
+             owl:FunctionalProperty ;
+    rdfs:domain :Initiative> ;
+    rdfs:range :Content> .
+
+
+:legislativeSession rdf:type owl:ObjectProperty ;
+     rdfs:domain :Initiative> ;
+     rdfs:range ocd:sessioneLegislatura> .
+
+
+:legislature rdf:type owl:ObjectProperty ,
+            owl:FunctionalProperty ;
+            rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( ocd:mandatoCamera
+                                        ocd:sessioneLegislatura
+                                        :Initiative
+                                        :ParliamentaryGroup
+                                        )
+                        ] ;
+            rdfs:range ocd:legislatura> .
+
+
+:originated rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative> ;
+    rdfs:range :Initiative> .
+
+
+:originatedFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative> ;
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( :EuropeanInitiative
+                                :Initiative
+                              )
+                ] .
+
+
+:parliamentaryGroup rdf:type owl:ObjectProperty ,
+              owl:FunctionalProperty ;
+     rdfs:domain :ParliamentaryGroupMembership ;
+     rdfs:range :ParliamentaryGroup .
+
+
+:parliamentaryGroupMembership rdf:type owl:ObjectProperty ;
+    rdfs:domain ocd:mandatoCamera ;
+    rdfs:range :ParliamentaryGroupMembership .
+
+
+:party rdf:type owl:ObjectProperty ,
+             owl:FunctionalProperty ;
+    rdfs:domain :ParliamentaryGroup ;
+    rdfs:range :Party .
+
+
+:proponent rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative> ;
+    rdfs:range [ rdf:type owl:Class ;
+      owl:unionOf ( ocd:governo
+                    <http://example.org/map4scrutiny/core#Parliamentarian>
+                    :CitizenGroup
+                    :Commission
+                    :PAR
+                    :ParliamentaryGroup
+                    :RegionalLegislativeAssembly
+                  )
+    ] .
+
+:topic rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative ;
+    rdfs:range :Topic .
+
+#################################################################
+#    Data properties
+#################################################################
