@@ -6,38 +6,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix ocd: <http://dati.camera.it/ocd/> .
-@prefix : <> .
+@prefix m4s: <https://purl.org/map4scrutiny-core#>
+@prefix : <https://purl.org/piso/initiatives#> .
+
+@base <https://purl.org/piso/initiatives#> .
 
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
-	dct:title                   	"";
+	dct:title                   	"Portuguese Institutional Structure Ontology";
 	dct:description             	"";
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz";
 	dct:contributor                 "Mariana Curado Malta", "João Bispo";
     dct:issued                 		""^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
-	vann:preferredNamespacePrefix   ":" ;
-	vann:preferredNamespaceUri      "" ;
+	vann:preferredNamespacePrefix   "piso:" ;
+	vann:preferredNamespaceUri      "https://purl.org/piso/initiatives#" ;
 	owl:versionInfo					"1.0";
 .
 
 :hasAuthor rdf:type owl:ObjectProperty ;
     rdfs:domain :Initiative ;
-    rdfs:range <http://example.org/map4scrutiny/core#Parliamentarian> . # TODO: Publish M4S
+    rdfs:range m4s:Parliamentarian ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 
 :hasContent rdf:type owl:ObjectProperty ,
              owl:FunctionalProperty ;
+            rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Initiative ;
     rdfs:range :Content .
 
 
 :hasLegislativeSession rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
      rdfs:domain :Initiative ;
      rdfs:range ocd:sessioneLegislatura .
 
 
 :hasLegislature rdf:type owl:ObjectProperty ,
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
             owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( ocd:mandatoCamera
@@ -50,11 +57,13 @@
 
 
 :originated rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Initiative ;
     rdfs:range :Initiative .
 
 
 :originatedFrom rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
                   owl:unionOf ( :EuropeanInitiative
@@ -65,6 +74,7 @@
 
 :hasParliamentaryGroup rdf:type owl:ObjectProperty ,
               owl:FunctionalProperty ;
+            rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
      rdfs:domain :ParliamentaryGroupMembership ;
      rdfs:range :ParliamentaryGroup .
 
@@ -76,15 +86,17 @@
 
 :hasParty rdf:type owl:ObjectProperty ,
              owl:FunctionalProperty ;
+            rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :ParliamentaryGroup ;
     rdfs:range :Party .
 
 
 :hasProponent rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
       owl:unionOf ( ocd:governo
-                    <http://example.org/map4scrutiny/core#Parliamentarian>
+                    m4s:Parliamentarian
                     :CitizenGroup
                     :Commission
                     :PAR
@@ -94,6 +106,7 @@
     ] .
 
 :hasTopic rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Initiative ;
     rdfs:range :Topic .
 
@@ -103,33 +116,40 @@
 
 :hasIdentifier rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdf:type owl:FunctionalProperty .
 
 
 :hasLink rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
 :hasLocation rdf:type owl:DatatypeProperty ;
     rdfs:domain :RegionalLegislativeAssembly ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:range xsd:string .
 
 
 :hasName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:range xsd:string .
 
 :hasParliamentaryName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range xsd:string .
 
 :hasText rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
 
 :hasTitle rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:domain [ rdf:type owl:Class ;
                   owl:unionOf ( :Initiative
                                 :Topic
@@ -143,84 +163,109 @@
 #################################################################
 
 :CitizenGroup rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:label "Citizen Group"@en ,
                "Grupo de Cidadãos"@pt .
 
 
 :Commission rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:label "Comissão"@pt ,
                "Commission"@en .
 
 
 :ConstitutionalRevisionProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
-:Content rdf:type owl:Class .
+:Content rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 
 :DeliberationProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
-:Duty rdf:type owl:Class .
+:Duty rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 
 :EuropeanInitiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
     rdfs:subClassOf ocd:atto .
 
 :Guest rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
 :Initiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf ocd:atto .
 
 
 :LawProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
 :LawProposal rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
 :PAR rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
 :ParliamentaryAppreciation rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
-:ParliamentaryGroup rdf:type owl:Class .
+:ParliamentaryGroup rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
-:ParliamentaryGroupMembership rdf:type owl:Class .
+:ParliamentaryGroupMembership rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 :ParliamentaryInquiry rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
 :Party rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
 
 :PopularReferendumInitiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 :Ratification rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
-:RegionalLegislativeAssembly rdf:type owl:Class .
+:RegionalLegislativeAssembly rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 :ResolutionProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
    rdfs:subClassOf :Initiative .
 
 :ResolutionProposal rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 :RulesOfProcedureProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
 
-:Situation rdf:type owl:Class .
+:Situation rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
-:Topic rdf:type owl:Class .
+:Topic rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
