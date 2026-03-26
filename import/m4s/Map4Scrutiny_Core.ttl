@@ -7,7 +7,7 @@
 @prefix pproc:              <http://purl.org/procurement/public-contracts#>.
 @prefix m4s:                <https://example.org/map4scrutiny/value#>.
 @prefix vann:               <http://purl.org/vocab/vann/>.
-@prefix :                   <https://purl.org/politrack/map4scrutiny-core#>.
+@prefix :                   <https://purl.org/map4scrutiny-core#>.
 
 
 
@@ -21,7 +21,7 @@
     dct:issued                 		"2021-12-13"^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	vann:preferredNamespacePrefix   "m4s:" ;
-	vann:preferredNamespaceUri      "https://purl.org/politrack/map4scrutiny-core#" ;
+	vann:preferredNamespaceUri      "https://purl.org/map4scrutiny-core#" ;
 	owl:versionInfo					"1.0";
 .
 
