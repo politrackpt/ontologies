@@ -5,7 +5,7 @@
 @prefix schema:				<https://schema.org/>.
 @prefix pc:				    <http://purl.org/procurement/public-contracts#>.
 @prefix pproc:              <http://purl.org/procurement/public-contracts#>.
-@prefix m4s:                <https://example.org/map4scrutiny/value#>.
+@prefix m4s:                <https://purl.org/map4scrutiny-values#>.
 @prefix vann:               <http://purl.org/vocab/vann/>.
 @prefix :                   <https://purl.org/map4scrutiny-core#>.
 
