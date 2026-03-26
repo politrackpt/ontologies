@@ -22,19 +22,19 @@
 .
 
 :author rdf:type owl:ObjectProperty ;
-    rdfs:domain :Initiative> ;
+    rdfs:domain :Initiative ;
     rdfs:range <http://example.org/map4scrutiny/core#Parliamentarian> . # TODO: Publish M4S
 
 
 :content rdf:type owl:ObjectProperty ,
              owl:FunctionalProperty ;
-    rdfs:domain :Initiative> ;
-    rdfs:range :Content> .
+    rdfs:domain :Initiative ;
+    rdfs:range :Content .
 
 
 :legislativeSession rdf:type owl:ObjectProperty ;
-     rdfs:domain :Initiative> ;
-     rdfs:range ocd:sessioneLegislatura> .
+     rdfs:domain :Initiative ;
+     rdfs:range ocd:sessioneLegislatura .
 
 
 :legislature rdf:type owl:ObjectProperty ,
@@ -46,16 +46,16 @@
                                         :ParliamentaryGroup
                                         )
                         ] ;
-            rdfs:range ocd:legislatura> .
+            rdfs:range ocd:legislatura .
 
 
 :originated rdf:type owl:ObjectProperty ;
-    rdfs:domain :Initiative> ;
-    rdfs:range :Initiative> .
+    rdfs:domain :Initiative ;
+    rdfs:range :Initiative .
 
 
 :originatedFrom rdf:type owl:ObjectProperty ;
-    rdfs:domain :Initiative> ;
+    rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
                   owl:unionOf ( :EuropeanInitiative
                                 :Initiative
@@ -81,7 +81,7 @@
 
 
 :proponent rdf:type owl:ObjectProperty ;
-    rdfs:domain :Initiative> ;
+    rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
       owl:unionOf ( ocd:governo
                     <http://example.org/map4scrutiny/core#Parliamentarian>
@@ -100,3 +100,127 @@
 #################################################################
 #    Data properties
 #################################################################
+
+:hasIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
+    rdf:type owl:FunctionalProperty .
+
+
+:link rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Content ;
+    rdfs:range xsd:string .
+
+:location rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RegionalLegislativeAssembly ;
+    rdfs:range xsd:string .
+
+
+:name rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:range xsd:string .
+
+:parliamentaryName rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:domain ocd:mandatoCamera ;
+    rdfs:range xsd:string .
+
+:text rdf:type owl:DatatypeProperty ;
+    rdfs:domain :Content ;
+    rdfs:range xsd:string .
+
+
+:title rdf:type owl:DatatypeProperty ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :Initiative
+                                :Topic
+                              )
+                ] ;
+    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+:CitizenGroup rdf:type owl:Class ;
+    rdfs:label "Citizen Group"@en ,
+               "Grupo de Cidadãos"@pt .
+
+
+:Commission rdf:type owl:Class ;
+    rdfs:label "Comissão"@pt ,
+               "Commission"@en .
+
+
+:ConstitutionalRevisionProject rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:Content rdf:type owl:Class .
+
+
+:DeliberationProject rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:Duty rdf:type owl:Class .
+
+
+:EuropeanInitiative rdf:type owl:Class ;
+    rdfs:subClassOf ocd:atto .
+
+:Guest rdf:type owl:Class ;
+    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+:Initiative rdf:type owl:Class ;
+    rdfs:subClassOf ocd:atto .
+
+
+:LawProject rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:LawProposal rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:PAR rdf:type owl:Class ;
+    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+:ParliamentaryAppreciation rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+:ParliamentaryGroup rdf:type owl:Class .
+
+:ParliamentaryGroupMembership rdf:type owl:Class .
+
+:ParliamentaryInquiry rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:Party rdf:type owl:Class ;
+    rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
+
+:PopularReferendumInitiative rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+:Ratification rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+:RegionalLegislativeAssembly rdf:type owl:Class .
+
+:ResolutionProject rdf:type owl:Class ;
+   rdfs:subClassOf :Initiative .
+
+:ResolutionProposal rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+:RulesOfProcedureProject rdf:type owl:Class ;
+    rdfs:subClassOf :Initiative .
+
+
+:Situation rdf:type owl:Class .
+
+:Topic rdf:type owl:Class .
