@@ -21,23 +21,23 @@
 	owl:versionInfo					"1.0";
 .
 
-:author rdf:type owl:ObjectProperty ;
+:hasAuthor rdf:type owl:ObjectProperty ;
     rdfs:domain :Initiative ;
     rdfs:range <http://example.org/map4scrutiny/core#Parliamentarian> . # TODO: Publish M4S
 
 
-:content rdf:type owl:ObjectProperty ,
+:hasContent rdf:type owl:ObjectProperty ,
              owl:FunctionalProperty ;
     rdfs:domain :Initiative ;
     rdfs:range :Content .
 
 
-:legislativeSession rdf:type owl:ObjectProperty ;
+:hasLegislativeSession rdf:type owl:ObjectProperty ;
      rdfs:domain :Initiative ;
      rdfs:range ocd:sessioneLegislatura .
 
 
-:legislature rdf:type owl:ObjectProperty ,
+:hasLegislature rdf:type owl:ObjectProperty ,
             owl:FunctionalProperty ;
             rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( ocd:mandatoCamera
@@ -63,24 +63,24 @@
                 ] .
 
 
-:parliamentaryGroup rdf:type owl:ObjectProperty ,
+:hasParliamentaryGroup rdf:type owl:ObjectProperty ,
               owl:FunctionalProperty ;
      rdfs:domain :ParliamentaryGroupMembership ;
      rdfs:range :ParliamentaryGroup .
 
 
-:parliamentaryGroupMembership rdf:type owl:ObjectProperty ;
+:hasParliamentaryGroupMembership rdf:type owl:ObjectProperty ;
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range :ParliamentaryGroupMembership .
 
 
-:party rdf:type owl:ObjectProperty ,
+:hasParty rdf:type owl:ObjectProperty ,
              owl:FunctionalProperty ;
     rdfs:domain :ParliamentaryGroup ;
     rdfs:range :Party .
 
 
-:proponent rdf:type owl:ObjectProperty ;
+:hasProponent rdf:type owl:ObjectProperty ;
     rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
       owl:unionOf ( ocd:governo
@@ -93,7 +93,7 @@
                   )
     ] .
 
-:topic rdf:type owl:ObjectProperty ;
+:hasTopic rdf:type owl:ObjectProperty ;
     rdfs:domain :Initiative ;
     rdfs:range :Topic .
 
@@ -106,30 +106,30 @@
     rdf:type owl:FunctionalProperty .
 
 
-:link rdf:type owl:DatatypeProperty ;
+:hasLink rdf:type owl:DatatypeProperty ;
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
-:location rdf:type owl:DatatypeProperty ;
+:hasLocation rdf:type owl:DatatypeProperty ;
     rdfs:domain :RegionalLegislativeAssembly ;
     rdfs:range xsd:string .
 
 
-:name rdf:type owl:DatatypeProperty ;
+:hasName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:range xsd:string .
 
-:parliamentaryName rdf:type owl:DatatypeProperty ;
+:hasParliamentaryName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range xsd:string .
 
-:text rdf:type owl:DatatypeProperty ;
+:hasText rdf:type owl:DatatypeProperty ;
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
 
-:title rdf:type owl:DatatypeProperty ;
+:hasTitle rdf:type owl:DatatypeProperty ;
     rdfs:domain [ rdf:type owl:Class ;
                   owl:unionOf ( :Initiative
                                 :Topic
