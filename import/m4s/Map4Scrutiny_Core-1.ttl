@@ -1,0 +1,390 @@
+@prefix rdf:                <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:               <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:                <http://purl.org/dc/terms/> .
+@prefix owl:                <http://www.w3.org/2002/07/owl#> .
+@prefix schema:				<https://schema.org/>.
+@prefix pc:				    <http://purl.org/procurement/public-contracts#>.
+@prefix pproc:              <http://purl.org/procurement/public-contracts#>.
+@prefix m4s:                <https://example.org/map4scrutiny/value#>.
+@prefix vann:               <http://purl.org/vocab/vann/>.
+@prefix :                   <https://example.org/map4scrutiny/core#>.
+
+
+
+
+:	
+	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
+	dct:title                   	"Map4Scrutiny an Ontology for Public Scrutiny";
+	dct:description             	"This is a collection of properties and classes created for the Map4Scrutiny project.";
+	dct:creator                 	"Inês Lopes";
+	dct:contributor                 "Ana Alice Batista", "Óscar João Atanázio Afonso";
+    dct:issued                 		"2021-12-13"^^schema:Date;
+	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
+	vann:preferredNamespacePrefix   "m4s:" ;
+	vann:preferredNamespaceUri      "https://example.org/map4scrutiny/core#" ;
+	owl:versionInfo					"1.0";
+.
+
+################
+#  Properties  #
+################
+
+:constituency
+    a                       rdf:Property;
+    rdfs:label              "Electoral district"@en, "Distrito Eleitoral"@pt;
+    rdfs:comment            "Constituency that elected the politician."@en, "Distrito eleitoral que elegeu o deputado."@pt;
+    schema:domainIncludes    schema:Person;
+    schema:rangeIncludes    <http://vocab.getty.edu/tgn/>;
+    rdfs:subPropertyOf      <https://schema.org/areaServed>;
+    owl:equivalentProperty  <https://data.ordnancesurvey.co.uk/ontology/admingeo/constituency>, 
+                            <https://www.wikidata.org/wiki/Property:P768>
+    .
+
+:parliamentarianCommissions
+    a                       rdf:Property;
+    rdfs:label              "Work Groups and Commissions within parliament"@en, "Grupos e Comissões Parlamentares"@pt;
+    schema:domainIncludes   schema:Person;
+    schema:rangeIncludes    m4s:ComissoesParlamentares,
+                            schema:Text;
+    owl:equivalentProperty  <http://dati.camera.it/ocd/reference_document/#rif_ufficioParlamentare>
+    .
+
+:propertyRegimen
+    a                       rdf:Property;
+    rdfs:label              "Matrimonial Property Regime"@en, "Regime de Propriedade"@pt;
+    schema:domainIncludes   schema:Person;
+    schema:rangeIncludes    m4s:RegimePropriedade,
+                            schema:Text;  
+    rdf:seeAlso             <https://schema.org/spouse>
+    .
+
+:companyShares
+    a                       rdf:Property;
+    rdfs:label              "Shares owned by shareholder"@en, "Ações detidas por um Acionista"@pt;
+    rdfs:comment            "Can be represented as the monetary value of the actions, percentage or another value."@en, 
+                            "Pode ser representado através do valor total das ações, a quantidade ações ou outro valor."@pt;
+    schema:domainIncludes   schema:Thing;
+    schema:rangeIncludes    schema:Text;
+    rdfs:subPropertyOf      schema:owns
+    .
+
+:isAccumulation
+    a                       rdf:Property;
+    rdfs:label              "Accumulation with public office"@en, "Acumulação com cargo público"@pt;
+    rdfs:comment            "Boolean Property applied to roles played by people with public offices that indicates if the position is an accumulation or not."@en, "Propriedade boleana aplicada a funções desempenhadas por pessoas com cargos públicos que indica se esta é ou não uma acumulação."@pt;
+    schema:rangeIncludes    schema:Boolean;
+    rdfs:subPropertyOf      schema:hasOccupation
+    .
+
+:parliamentaryTerm
+    a                       rdf:Property;
+    rdfs:label              "Parliamentary Term"@en, "Legislatura"@pt;
+    schema:domainIncludes   schema:Person;
+    schema:rangeIncludes    schema:Text;
+    owl:equivalentProperty  <http://dati.camera.it/ocd/rif_leg>,  <https://www.wikidata.org/wiki/Property:P2937>
+    .
+
+#############
+#   Class   #
+#############
+
+:Parliamentarian
+    a                       rdfs:Class;
+    rdfs:label              "Elected Politician with seat in Parliament"@en, "Deputado Eleito com assento na Assembleia da República"@pt;
+    owl:equivalentClass     <http://dati.camera.it/ocd/deputato>;
+    rdfs:subClassOf         schema:Person
+    .
+
+
+##################
+#    Datatype    #
+##################
+
+m4s:Euros 
+    a                       rdfs:Datatype, schema:DataType ;
+    rdfs:label              "Euros";
+    rdfs:comment            "A datatype for monetary values in euros."
+    .
+
+
+##################
+#   Annotation   #
+##################
+
+<https://dbpedia.org/ontology/parliamentaryGroup>
+    a					    rdf:Property;
+    rdfs:label              "Parliamentary Group"@en, "Grupo Parlamentar"@pt;
+    rdfs:isDefinedBy        <https://dbpedia.org/ontology/>
+    .
+    
+pc:actualEndDate
+    a					    rdf:Property;
+    rdfs:label              "Actual End Date"@en, "Data de Fecho do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+    
+pc:actualPrice
+    a					    rdf:Property;
+    rdfs:label              "Actual Price"@en, "Preço Total Efetivo"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>;
+    schema:rangeIncludes    <http://purl.org/goodrelations/v1#PriceSpecification>,
+                            schema:Text
+    .
+    
+pc:agreedPrice
+    a					    rdf:Property;
+    rdfs:label              "Agreed Price"@en, "Preço Contratual"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>;
+    schema:rangeIncludes    <http://purl.org/goodrelations/v1#PriceSpecification>,
+                            schema:Text
+    .
+
+pc:awardDate
+    a					    rdf:Property;
+    rdfs:label              "Award Date"@en, "Data de Celebração do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pc:contractingAuthority
+    a					    rdf:Property;
+    rdfs:label              "Contracting authority"@en, "Entidade Adjudicante"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pc:frameworkAgreement
+    a					    rdf:Property;
+    rdfs:label              "Framework Agreement"@en, "Acordo-Quadro"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>;
+    schema:rangeIncludes    <http://purl.org/procurement/public-contracts#FrameworkAgreement>,
+                            schema:Text
+    .
+
+pc:kind
+    a					    rdf:Property;
+    rdfs:label              "Kind"@en, "Tipo de Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>;
+    schema:rangeIncludes    <http://www.w3.org/2004/02/skos/core#Concept>,
+                            schema:Text
+    .
+
+pc:location
+    a					    rdf:Property;
+    rdfs:label              "Location"@en, "Local de Execução"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pc:mainObject
+    a					    rdf:Property;
+    rdfs:label              "Main Object"@en, "Objeto do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pc:procedureType
+    a					    rdf:Property;
+    rdfs:label              "Procedure type"@en, "Tipo de Procedimento"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pc:supplier
+    a					    rdf:Property;
+    rdfs:label              "Supplier"@en, "Entidade Adjudicatária"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:Contract
+    a					    rdf:Class;
+    rdfs:label              "Public contract"@en, "Contrato Público"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:ContractModification
+    a					    rdf:Class;
+    rdfs:label              "Contract Modification"@en, "Alterações ao Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:contractModification
+    a					    rdf:Property;
+    rdfs:label              "Contract Modification"@en, "Alterações ao Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:contractOrProcedureExtinction
+    a					    rdf:Property;
+    rdfs:label              "Contract Or Procedure Extinction"@en, "Causa de Extinção do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:ContractOrProcedureExtinction
+    a					    rdf:Class;
+    rdfs:label              "Contract Or Procedure Extinction"@en, "Causa de Extinção do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:duration
+    a					    rdf:Property;
+    rdfs:label              "Duration"@en, "Duração do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:durationChange
+    a					    rdf:Property;
+    rdfs:label              "Duration change"@en, "Causas das Alterações ao Prazo"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:extinctionCause
+    a					    rdf:Property;
+    rdfs:label              "Extinction cause"@en, "Causa de Extinção do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+pproc:legalDocumentReference
+    a					    rdf:Property;
+    rdfs:label              "Legal document reference"@en, "Fundamentação Legal"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>;
+    schema:rangeIncludes    <http://xmlns.com/foaf/0.1/Document>,
+							schema:Text
+    .
+
+pproc:modificationReason
+    a					    rdf:Property;
+    rdfs:label              "Modification reason"@en, "Causas das Alterações do Contrato"@pt;
+    rdfs:isDefinedBy        <http://purl.org/procurement/public-contracts#>
+    .
+
+schema:alternateName
+    a					    rdf:Property;
+    rdfs:label              "alternateName"@en, "Nome Alternativo"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:birthDate
+    a					    rdf:Property;
+    rdfs:label              "birthDate"@en, "Data de Nascimento"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:comment
+    a					    rdf:Property;
+    rdfs:label              "comment"@en, "Comentário"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:datePublished
+    a					    rdf:Property;
+    rdfs:label              "datePublished"@en, "Data de Publicação"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:description
+    a					    rdf:Property;
+    rdfs:label              "description"@en, "Descrição"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:endDate
+    a					    rdf:Property;
+    rdfs:label              "endDate"@en, "Data de Término"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:gender
+    a					    rdf:Property;
+    rdfs:label              "GenderType"@en, "Género"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:hasCredential
+    a					    rdf:Property;
+    rdfs:label              "hasCredential"@en, "Qualificações"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:hasOccupation
+    a					    rdf:Property;
+    rdfs:label              "hasOccupation"@en, "Profissão"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:hasOfferCatalog
+    a					    rdf:Property;
+    rdfs:label              "hasOfferCatalog"@en, "Serviços na área de"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:legalName
+    a					    rdf:Property;
+    rdfs:label              "legalName"@en, "Nome Legal"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:location
+    a					    rdf:Property;
+    rdfs:label              "location"@en, "Localização"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:memberOf
+    a					    rdf:Property;
+    rdfs:label              "memberOf"@en, "Membro"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:name
+    a					    rdf:Property;
+    rdfs:label              "name"@en, "Nome"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:Organization
+    a                       rdf:Class;
+    rdfs:label              "Organization"@en, "Organização"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>;
+    owl:equivalentProperty  <http://purl.org/goodrelations/v1#BusinessEntity>
+    .
+
+schema:Person
+    a					    rdf:Class;
+    rdfs:label              "Person"@en, "Pessoa"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:roleName
+    a					    rdf:Property;
+    rdfs:label              "roleName"@en, "Designação da Função"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:sameAs
+    a					    rdf:Property;
+    rdfs:label              "sameAs"@en, "Mesma Entidade"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:spouse
+    a					    rdf:Property;
+    rdfs:label              "spouse"@en, "Cônjuge"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:startDate
+    a					    rdf:Property;
+    rdfs:label              "startDate"@en, "Data de Início"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:taxID
+    a					    rdf:Property;
+    rdfs:label              "taxID"@en, "Número de Identificação Fiscal"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+schema:url
+    a					    rdf:Property;
+    rdfs:label              "URL"@en, "Página Web"@pt;
+    rdfs:isDefinedBy        <https://schema.org/>
+    .
+
+
+

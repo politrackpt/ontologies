@@ -1,0 +1,485 @@
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:	<https://schema.org/>.
+@prefix proctypes: <http://purl.org/procurement/public-contracts-procedure-types#> .
+@prefix :       <https://example.org/map4scrutiny/value#>.
+
+
+#   These terms are all described and designated in Portuguese. 
+#   This decision was made due to the high complexity in translating 
+#   legal documents and not finding an official version. 
+#   The Property Regimen is the only Scheme with an english label 
+#   because a document from a legal firm was found. 
+
+###############################
+##                           ##
+##  Comissões Parlamentares  ##
+##                           ##
+###############################
+
+:ComissoesParlamentares a skos:ConceptScheme;
+  skos:prefLabel "Comissões do Parlamento Português"@pt;
+  dct:creator    "Inês Lopes";
+	dct:contributor  "Ana Alice Batista", "Óscar João Atanázio Afonso";
+  dct:created "2021-07-05"^^schema:Date;
+  dct:source  <https://www.parlamento.pt/>;
+  skos:editoralNote "Usado como um valor para a propriedade: <https://example.org/map4scrutiny/core#parliamentaryComissions> no âmbito legal português.";
+  skos:hasTopConcept  :Comissao, :SubComissao, :Grupo;
+.
+
+:Comissao a skos:Concept;
+  skos:prefLabel "Comissão"@pt;
+  skos:narrower :CERC, :CTSS, :CTED, :CS , :CPIPRNBIFR , :COF , :CNECP , :CEVPDE, :CEPII2017 , 
+                :CEIOPH , :CECJD , :CEAMCOVID19 , :CDN , :CCC , :CAPMADPL, :CAM , :CAEOT , :CAE , :CACDLG 
+  .
+
+:SubComissao a skos:Concept;
+  skos:prefLabel "Subcomissão"@pt;
+  skos:narrower  :SRSAP, :SIND 
+  .
+
+:Grupo a skos:Concept;
+  skos:prefLabel "Grupo de Trabalho"@pt;
+  skos:narrower :GT-VCN, :GT-TAS, :GT-SM, :GT-RI, :GT-RCIP, :GT-PMA, :GT-PJL-ER, :GT-PJL-DG-BC, :GT-PJ, :GT-PIDDAT, :GT-LBC, :GT-JPDH2020, :GT-JPABMEP2020,
+                :GT-IVPCA, :GT-EIE, :GT-EI, :GT-DPD, :GT-DC, :GT-CTSDT, :GT-ASC, :GT-ARCPAS, :GT-APRAEP, :GT-ACTFS, :GT-A3CDN, :GT-A11CAEOT, :GT-A10CTSS
+  .
+
+:SRSAP a skos:Concept;
+  skos:altLabel "SRSAP"@pt, "7724"@pt;
+  skos:prefLabel "Subcomissão para a Reinserção Social e Assuntos Prisionais"@pt;
+  skos:broader :SubComissao
+  .
+
+:SIND a skos:Concept;
+  skos:altLabel "SIND"@pt, "7704"@pt;
+  skos:prefLabel "Subcomissão para a Igualdade e Não Discriminação"@pt;
+  skos:broader :SubComissao .
+
+:GT-VCN a skos:Concept;
+  skos:altLabel "GT-VCN"@pt, "7964"@pt;
+  skos:prefLabel "Grupo de Trabalho - Voos Civis Noturnos"@pt;
+  skos:broader :Grupo .
+
+:GT-TAS a skos:Concept;
+  skos:altLabel "GT-TAS"@pt, "8306"@pt;
+  skos:prefLabel "Grupo de Trabalho - Técnico Auxiliar de Saúde"@pt;
+  skos:broader :Grupo .
+
+:GT-SM a skos:Concept;
+  skos:altLabel "GT-SM"@pt, "8244"@pt;
+  skos:prefLabel "Grupo de Trabalho - Saúde Mental"@pt;
+  skos:broader :Grupo .
+
+:GT-RI a skos:Concept;
+  skos:altLabel "GT-RI"@pt, "7584"@pt;
+  skos:prefLabel "Grupo de Trabalho - Registo de Interesses"@pt;
+  skos:broader :Grupo .
+
+:GT-RCIP a skos:Concept;
+  skos:altLabel "GT-RCIP"@pt, "8164"@pt;
+  skos:prefLabel "Grupo de Trabalho - Regime de Cedência de Interesse Público"@pt;
+  skos:broader :Grupo .
+
+:GT-PMA a skos:Concept;
+  skos:altLabel "GT-PMA"@pt, "8184"@pt;
+  skos:prefLabel "Grupo de Trabalho - Procriação Medicamente Assistida"@pt;
+  skos:broader :Grupo .
+
+:GT-PJL-ER a skos:Concept;
+  skos:altLabel "GT-PJL-ER"@pt, "8284"@pt;
+  skos:prefLabel "Grupo de Trabalho - PJL - Entidades Reguladoras"@pt;
+  skos:broader :Grupo .
+
+:GT-PJL-DG-BC a skos:Concept;
+  skos:altLabel "GT-PJL-DG-BC"@pt, "7784"@pt;
+  skos:prefLabel "Grupo de Trabalho - PJL - Durabilidade e Garantia - Bens de Consumo"@pt;
+  skos:broader :Grupo .
+
+:GT-PJ a skos:Concept;
+  skos:altLabel "GT-PJ"@pt, "7564"@pt;
+  skos:prefLabel "Grupo de Trabalho - Parlamento dos Jovens"@pt;
+  skos:broader :Grupo .
+
+:GT-PIDDAT a skos:Concept;
+  skos:altLabel "GT-PIDDAT"@pt, "8024"@pt;
+  skos:prefLabel "Grupo de Trabalho - Prestações por incapacidade, decorrentes de doença ou acidentes de trabalho"@pt;
+  skos:broader :Grupo .
+
+:GT-LBC a skos:Concept;
+  skos:altLabel "GT-LBC"@pt, "8264"@pt;
+  skos:prefLabel "Grupo de Trabalho - Lei de Bases do Clima"@pt;
+  skos:broader :Grupo .
+
+:GT-JPDH2020 a skos:Concept;
+  skos:altLabel "GT-JPDH2020"@pt, "8144"@pt;
+  skos:prefLabel "Grupo de Trabalho - Júri do Prémio Direitos Humanos 2020"@pt;
+  skos:broader :Grupo .
+
+:GT-JPABMEP2020 a skos:Concept;
+  skos:altLabel "GT-JPABMEP2020"@pt, "7844"@pt;
+  skos:prefLabel "Grupo de Trabalho - Júri Prémio António Barbosa de Melo de Estudos Parlamentares 2020"@pt;
+  skos:broader :Grupo .
+
+:GT-IVPCA a skos:Concept;
+  skos:altLabel "GT-IVPCA"@pt, "7664"@pt;
+  skos:prefLabel "Grupo de Trabalho - Inovação e Valorização dos Produtos e das Cadeias Agroalimentares"@pt;
+  skos:broader :Grupo .
+
+:GT-EIE a skos:Concept;
+  skos:altLabel "GT-EIE"@pt, "7604"@pt;
+  skos:prefLabel "Grupo de Trabalho - Escrutínio das Iniciativas Europeias"@pt;
+  skos:broader :Grupo .
+
+:GT-EI a skos:Concept;
+  skos:altLabel "GT-EI"@pt, "7684"@pt;
+  skos:prefLabel "Grupo de Trabalho - Educação Inclusiva"@pt;
+  skos:broader :Grupo .
+
+:GT-DPD a skos:Concept;
+  skos:altLabel "GT-DPD"@pt, "7984"@pt;
+  skos:prefLabel "Grupo de Trabalho - Direitos das Pessoas com Deficiência"@pt;
+  skos:broader :Grupo .
+
+:GT-DC a skos:Concept;
+  skos:altLabel "GT-DC"@pt, "8305"@pt;
+  skos:prefLabel "Grupo de Trabalho - Desclassificação de documentos"@pt;
+  skos:broader :Grupo .
+
+:GT-CTSDT a skos:Concept;
+  skos:altLabel "GT-CTSDT"@pt, "8124"@pt;
+  skos:prefLabel "Grupo de Trabalho - Carreira Técnico Superior Diagnóstico e Terapêutica"@pt;
+  skos:broader :Grupo .
+
+:GT-ASC a skos:Concept;
+  skos:altLabel "GT-ASC"@pt, "8224"@pt;
+  skos:prefLabel "Grupo de Trabalho - Aplicação Stayaway Covid"@pt;
+  skos:broader :Grupo .
+
+:GT-ARCPAS a skos:Concept;
+  skos:altLabel "GT-ARCPAS"@pt, "8204"@pt;
+  skos:prefLabel "Grupo de Trabalho - Audições relativas à Caixa de Previdência dos Advogados e Solicitadores"@pt;
+  skos:broader :Grupo .
+
+:GT-APRAEP a skos:Concept;
+  skos:altLabel "GT-APRAEP"@pt, "8084"@pt;
+  skos:prefLabel "Grupo de Trabalho - Acompanhamento Processo de Remoção do Amianto em Edifícios Públicos"@pt;
+  skos:broader :Grupo .
+
+:GT-ACTFS a skos:Concept;
+  skos:altLabel "GT-ACTFS"@pt, "7804"@pt;
+  skos:prefLabel "Grupo de Trabalho - Avaliação das Condições de Trabalho das Forças de Segurança"@pt;
+  skos:broader :Grupo .
+
+:GT-A3CDN a skos:Concept;
+  skos:altLabel "GT-A3CDN"@pt, "7864"@pt;
+  skos:prefLabel "Grupo de Trabalho - Audiências"@pt;
+  skos:broader :Grupo .
+
+:GT-A11CAEOT a skos:Concept;
+  skos:altLabel "GT-A11CAEOT"@pt, "7764"@pt;
+  skos:prefLabel "Grupo de Trabalho - Audiências"@pt;
+  skos:broader :Grupo .
+
+:GT-ACC a skos:Concept;
+  skos:altLabel "GT-ACC"@pt, "7764"@pt;
+  skos:prefLabel "Grupo de Trabalho - Audiências"@pt;
+  skos:broader :Grupo .
+
+:GT-AAP a skos:Concept;
+  skos:altLabel "GT-AAP"@pt, "8308"@pt;
+  skos:prefLabel "Grupo de Trabalho - Aplicação do Código de Conduta"@pt;
+  skos:broader :Grupo .
+
+:GT-P a skos:Concept;
+  skos:altLabel "GT-P"@pt, "8311"@pt;
+  skos:prefLabel "Grupo de Trabalho - Parentalidade"@pt;
+  skos:broader :Grupo .
+
+:GT-PPL-CE a skos:Concept;
+  skos:altLabel "GT-PPL-CE"@pt, "8313"@pt;
+  skos:prefLabel "Grupo de Trabalho - Comunicações Eletrónicas"@pt;
+  skos:broader :Grupo .
+
+:GT-RGGR a skos:Concept;
+  skos:altLabel "GT-RGGR"@pt, "8307"@pt;
+  skos:prefLabel "Grupo de Trabalho - Regime Geral da Gestão de Resíduos"@pt;
+  skos:broader :Grupo .
+
+:GT-T a skos:Concept;
+  skos:altLabel "GT-T"@pt, "8312"@pt;
+  skos:prefLabel "Grupo de Trabalho - Teletrabalho"@pt;
+  skos:broader :Grupo .
+
+:CERC a skos:Concept;
+  skos:altLabel "CERC"@pt, "8310"@pt;
+  skos:prefLabel "Comissão Eventual para a Revisão Constitucional"@pt;
+  skos:broader :Comissao.
+
+:CTSS a skos:Concept;
+  skos:altLabel "CTSS"@pt, "7444"@pt;
+  skos:prefLabel "Comissão de Trabalho e Segurança Social"@pt;
+  skos:broader :Comissao.
+
+:CTED a skos:Concept;
+  skos:altLabel "CTED"@pt, "7524"@pt;
+  skos:prefLabel "Comissão de Transparência e Estatuto dos Deputados"@pt;
+  skos:broader :Comissao .
+
+:CS a skos:Concept;
+  skos:altLabel "CS"@pt, "7424"@pt;
+  skos:prefLabel "Comissão de Saúde"@pt;
+  skos:broader :Comissao .
+
+:CPIPRNBIFR a skos:Concept;
+  skos:altLabel "CPIPRNBIFR"@pt, "8245"@pt;
+  skos:prefLabel "Comissão Eventual de Inquérito Parlamentar às perdas registadas pelo Novo Banco e imputadas ao Fundo de Resolução"@pt;
+  skos:broader :Comissao .
+
+:COF a skos:Concept;
+  skos:altLabel "COF"@pt, "7344"@pt;
+  skos:prefLabel "Comissão de Orçamento e Finanças"@pt;
+  skos:broader :Comissao .
+
+:CNECP a skos:Concept;
+  skos:altLabel "CNECP"@pt, "7284"@pt;
+  skos:prefLabel "Comissão de Negócios Estrangeiros e Comunidades Portuguesas"@pt;
+  skos:broader :Comissao .
+
+:CEVPDE a skos:Concept;
+  skos:altLabel "CEVPDE"@pt, "7244"@pt;
+  skos:prefLabel "Comissão Eventual de Verificação de Poderes dos Deputados Eleitos"@pt;
+  skos:broader :Comissao .
+
+:CEPII2017 a skos:Concept;
+  skos:altLabel "CEPII2017"@pt, "7944"@pt;
+  skos:prefLabel "Comissão Eventual de Inquérito Parlamentar à atuação do Estado na atribuição de apoios na sequência dos incêndios de 2017 na zona do Pinhal Interior"@pt;
+  skos:broader :Comissao .
+
+:CEIOPH a skos:Concept;
+  skos:altLabel "CEIOPH"@pt, "7364"@pt;
+  skos:prefLabel "Comissão de Economia, Inovação, Obras Públicas e Habitação"@pt;
+  skos:broader :Comissao .
+
+:CECJD a skos:Concept;
+  skos:altLabel "CECJD"@pt, "7404"@pt;
+  skos:prefLabel "Comissão de Educação, Ciência, Juventude e Desporto"@pt;
+  skos:broader :Comissao .
+
+:CEAMCOVID19 a skos:Concept;
+  skos:altLabel "CEAMCOVID19"@pt, "8104"@pt;
+  skos:prefLabel "Comissão Eventual para o acompanhamento da aplicação das medidas de resposta à pandemia da doença COVID-19 e do processo de recuperação económica e social"@pt;
+  skos:broader :Comissao .
+
+:CDN a skos:Concept;
+  skos:altLabel "CDN"@pt, "7304"@pt;
+  skos:prefLabel "Comissão de Defesa Nacional"@pt;
+  skos:broader :Comissao .
+
+:CCC a skos:Concept;
+  skos:altLabel "CCC"@pt, "7484"@pt;
+  skos:prefLabel "Comissão de Cultura e Comunicação"@pt;
+  skos:broader :Comissao .
+
+:CAPMADPL a skos:Concept;
+  skos:altLabel "CAPMADPL"@pt, "7504"@pt;
+  skos:prefLabel "Comissão de Administração Pública, Modernização Administrativa, Descentralização e Poder Local"@pt;
+  skos:broader :Comissao .
+
+:CAM a skos:Concept;
+  skos:altLabel "CAM"@pt, "7384"@pt;
+  skos:prefLabel "Comissão de Agricultura e Mar"@pt;
+  skos:broader :Comissao .
+
+:CAEOT a skos:Concept;
+  skos:altLabel "CAEOT"@pt, "7464"@pt;
+  skos:prefLabel "Comissão de Ambiente, Energia e Ordenamento do Território"@pt;
+  skos:broader :Comissao .
+
+:CAE a skos:Concept;
+  skos:altLabel "CAE"@pt, "7384"@pt;
+  skos:prefLabel "Comissão de Assuntos Europeus"@pt;
+  skos:broader :Comissao .
+
+:CACDLG a skos:Concept;
+  skos:altLabel "CACDLG"@pt, "7264"@pt;
+  skos:prefLabel "Comissão de Assuntos Constitucionais, Direitos, Liberdades e Garantias"@pt;
+  skos:broader :Comissao .
+
+
+#############################
+##                         ##
+##     Contract types      ##
+##                         ##
+#############################
+
+:ContratosPublicos a    skos:ConceptScheme;
+  skos:prefLabel        "Termos para Descrição de Contratos Públicos"@pt;
+  dct:creator           "Inês Lopes";
+	dct:contributor       "Ana Alice Batista", "Óscar João Atanázio Afonso";
+  dct:created           "2021-07-05"^^schema:Date;
+  dct:source            <https://data.dre.pt/eli/dec-lei/18/2008/p/cons/20210521/pt/html>;
+  skos:editoralNote     "Usado na descrição de recursos classificados como: <http://contsem.unizar.es/def/sector-publico/pproc#Contract> no âmbito legal português."@pt;
+  rdf:seeAlso          <http://purl.org/cpv/2008/>;
+  skos:hasTopConcept    :TipoContrato, :TipoProcedimento .
+
+:TipoContrato a      skos:Concept;
+  skos:prefLabel      "Tipos de Contratos Públicos"@pt;
+  skos:definition     "Tipos de Contractos definidos nos artigos do Código da Contratação Pública e usados no portal <base.gov.pt>"@pt;
+  skos:editoralNote   "Narrowers são usados para descrever valores da propriedade:  <http://purl.org/procurement/public-contracts#kind> no âmbito legal português.>"@pt;
+  skos:inScheme       <https://example.org/map4scrutiny/value#ContratosPublicos>;
+  rdf:seeAlso         <https://raw.githubusercontent.com/opendatacz/public-contracts-ontology/master/schemes/contract-kinds.ttl>;
+  skos:narrower       :BensMoveis, :Servicos, :ConcessaoObrasPublicas, :ConcessaoServicosPublicos, 
+                      :Sociedade, :EmpreitadasObrasPublicas, :LocacaoBensMoveis .
+
+:TipoProcedimento a      skos:Concept;
+  skos:prefLabel      "Tipos de Contratos Públicos"@pt;
+  skos:editoralNote   "Narrowers são usados para descrever valores da propriedade: <http://purl.org/procurement/public-contracts#procedureType> no âmbito legal português.>"@pt;
+  skos:inScheme       <https://example.org/map4scrutiny/value#ContratosPublicos>; 
+  rdf:seeAlso         <https://raw.githubusercontent.com/opendatacz/public-contracts-ontology/master/schemes/procedure-types.ttl>; 
+  skos:narrower       :AjusteDiretoRG, :ConsultaPrevia, :ConcursoPublico, :ConcursoLimitado, :ProcedimentoNegociacao, :DialogoConcorrencial,
+                      :AcordoQuadro258, :AcordoQuadro259, :ParceriaInovacao, :DispBensMoveis, :Serviços, :ConcursoConcecao, :ConcursoIdeias .
+
+:BensMoveis a skos:Concept;
+  skos:prefLabel      "Aquisição de Bens Móveis"@pt;
+  skos:definition       "Entende-se por aquisição de bens móveis o contrato pelo qual um contraente público compra bens móveis a um fornecedor. (Artigo 437º CCP)"@pt; 
+  skos:broader        :TipoContrato .
+
+:Servicos a skos:Concept;
+  skos:prefLabel      "Aquisição de serviços"@pt;
+  skos:definition     "Entende-se por aquisição de serviços o contrato pelo qual um contratante público adquire a prestação de um ou vários tipos de serviços mediante o pagamento de um preço. (Artigo 450º CCP)"@pt; 
+  skos:broader        :TipoContrato;
+  skos:closeMatch     <http://purl.org/procurement/public-contracts-kinds#Services> .
+
+:ConcessaoObrasPublicas a skos:Concept;
+  skos:prefLabel      "Concessão de Obras Públicas"@pt;
+  skos:definition       "Contrato pelo qual o co-contratante se obriga à execução ou à conceção e execução de obras públicas, adquirindo em contrapartida o direito de proceder, durante um determinado período, à respetiva exploração, e, se assim estipulado, o direito ao pagamento de um preço. (Artigo 407º CCP)"@pt; 
+  skos:broader      :TipoContrato .
+
+:ConcessaoServicosPublicos a skos:Concept;
+  skos:prefLabel      "Concessão de Serviços Públicos"@pt;
+  skos:definition       "Entende-se por concessão de serviços públicos o contrato pelo qual o co-contratante se obriga a gerir, em nome próprio e sob sua responsabilidade, uma atividade de serviço público, durante um determinado período, sendo remunerado pelos resultados financeiros dessa gestão ou, diretamente, pelo contraente público.(Artigo 407º CCP)"@pt; 
+  skos:broader      :TipoContrato .
+
+:Sociedade a skos:Concept;
+  skos:prefLabel      "Empreitadas de obras públicas"@pt;
+  skos:definition       "Contrato oneroso que tenha por objeto quer a execução quer, conjuntamente, a conceção e a execução de uma obra pública que se enquadre nas subcategorias previstas no (Artigo 343º CCP)"@pt; 
+  skos:broader      :TipoContrato .
+
+:EmpreitadasObrasPublicas a skos:Concept;
+  skos:prefLabel      "Locação de bens móveis"@pt;
+  skos:definition       "Entende-se por locação de bens móveis o contrato pelo qual um locador se obriga a proporcionar a um contraente público o gozo temporário de bens móveis, mediante retribuição. (Artigo 431º CCP)"@pt; 
+  skos:broader      :TipoContrato .
+
+:LocacaoBensMoveis a skos:Concept;
+  skos:prefLabel      "Sociedade"@pt;
+  skos:definition       "O contrato de sociedade está sujeito à disciplina geral dos contratos, com as particularidades decorrentes da sua natureza de contrato de fim comum e institucional. Criação e funcionamento de uma organização – a sociedade-instituição –, a qual funciona segundo um conjunto de regras traçadas no contrato, como ente dinâmico e mutável e se norteia por um escopo a que é destinada (o objeto social: é, pois um contrato de organização).."@pt; 
+  skos:broader      :TipoContrato .
+
+:AjusteDiretoRG a skos:Concept;
+  skos:prefLabel      "Ajuste Direto Regime Geral"@pt;
+  skos:definition       "O ajuste direto é o procedimento em que a entidade adjudicante convida diretamente uma entidade à sua escolha a apresentar proposta. (Artigo 112º CCP)"@pt; 
+  skos:broader      :TipoProcedimento;
+  skos:closeMatch   proctypes:AwardWithoutPriorPublication . 
+
+:ConsultaPrevia a skos:Concept;
+  skos:prefLabel      "Consulta Prévia"@pt;
+  skos:definition     "A consulta prévia é o procedimento em que a entidade adjudicante convida diretamente pelo menos três entidades à sua escolha a apresentar proposta, podendo com elas negociar os aspetos da execução do contrato a celebrar. (Artigo 112º CCP)"@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ConcursoPublico a skos:Concept;
+  skos:prefLabel      "Concurso público"@pt;
+  skos:definition     "O concurso público é publicitado no Diário da República, através de anúncio conforme modelo aprovado por portaria dos membros do Governo responsáveis pela edição do Diário da República e pelas áreas das finanças e das obras públicas. (Artigo 130º CCP)"@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ConcursoLimitado a skos:Concept;
+  skos:prefLabel      "Concurso limitado por prévia qualificação"@pt;
+  skos:definition       "O concurso limitado por prévia qualificação rege-se, com as necessárias adaptações, pelas disposições que regulam o concurso público. É composto por duas fases: a) Apresentação das candidaturas e qualificação dos candidatos; b) Apresentação e análise das propostas e adjudicação. (Artigos 162º e 163º do CCP)"@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ProcedimentoNegociacao a skos:Concept;
+  skos:prefLabel      "Procedimento de Negociação"@pt;
+  skos:definition       "O procedimento de negociação rege-se, com as necessárias adaptações, pelas disposições que regulam o concurso limitado por prévia qualificação. É composto por quatro fases: a) Apresentação das candidaturas e qualificação dos candidatos; b) Apresentação e análise das versões iniciais das propostas; c) Negociação das propostas; d) Análise das versões finais das propostas e adjudicação."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:DialogoConcorrencial a skos:Concept;
+  skos:prefLabel     "Diálogo Concorrencial"@pt;
+  skos:definition    "O procedimento de diálogo concorrencial rege-se, com as necessárias adaptações, pelas disposições que regulam o concurso limitado por prévia qualificação. A entidade adjudicante não pode recorrer a um leilão eletrónico nem adotar uma fase de negociações e é composto pelas seguintes fases: a) Apresentação das candidaturas e qualificação dos candidatos; b) Apresentação das soluções e diálogo com os candidatos qualificados; c) Apresentação e análise das propostas e adjudicação."@pt; 
+  skos:broader      :TipoProcedimento;
+  skos:closeMatch   proctypes:CompetitiveDialogue . 
+                      
+:AcordoQuadro258 a skos:Concept;
+  skos:prefLabel      "Ao abrigo de acordo-quadro (art.º 258.º)"@pt;
+  skos:definition       "Celebração de contratos ao abrigo de acordos-quadro cujos termos abranjam todos os seus aspetos submetidos à concorrência"@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:AcordoQuadro259 a skos:Concept;
+  skos:prefLabel      "Ao abrigo de acordo-quadro (art.º 259.º)"@pt;
+  skos:definition       "Celebração de contratos ao abrigo de acordos-quadro cujos termos não abranjam todos os seus aspetos submetidos à concorrência"@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ParceriaInovacao a skos:Concept;
+  skos:prefLabel      "Parceria Para a Inovação"@pt;
+  skos:definition       "É usada quando se pretende um bem ou serviço ainda não existente no mercado. É composta por três fases: a) Fase de apresentação das candidaturas, podendo a respetiva seleção incluir a qualificação dos candidatos quando se trate do desenvolvimento de projetos dotados de especial complexidade; b) Fase de apresentação de propostas de projetos de investigação e desenvolvimento; c) Fase de análise das propostas de projetos de investigação e celebração da parceria."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:DispBensMoveis a skos:Concept;
+  skos:prefLabel      "Disponibilização de Bens Móveis"@pt;
+  skos:definition       "Os bens móveis de que os serviços não careçam para o exercício das suas competências são disponibilizados, com vista à sua reafetação a outros serviços ou à sua alienação."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:Serviços a skos:Concept;
+  skos:prefLabel      "Serviços Sociais e Outros Serviços Específicos"@pt;
+  skos:definition       "Os contratos públicos de valor igual ou inferior ao limiar de € 750 000, que tenham por objeto a aquisição de serviços sociais ou de outros serviços específicos."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ConcursoConcecao a skos:Concept;
+  skos:prefLabel      "Concurso de Conceção Simplificado"@pt;
+  skos:definition       "O órgão competente da entidade adjudicante seleciona um ou mais trabalhos de conceção, consoante o número fixado nos termos de referência do concurso, de acordo com o teor e as conclusões do relatório final, nomeadamente com as deliberações vinculativas tomadas pelo júri."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+:ConcursoIdeias a skos:Concept;
+  skos:prefLabel      "Concurso de Ideias Simplificado"@pt;
+  skos:definition       "Concursos de ideias destinados a adquirir uma ou várias propostas de ideias, remuneradas através da atribuição de um prémio apropriado."@pt; 
+  skos:broader      :TipoProcedimento . 
+
+
+#############################
+##                         ##
+##  Regime de Propriedade  ##
+##                         ##
+#############################
+
+:PropertyRegimen a    skos:ConceptScheme;
+  skos:prefLabel       "Regimes de Propriedade Matrimonial de acordo com a Lei Portuguesa"@pt;
+  dct:creator          "Inês Lopes";
+	dct:contributor      "Ana Alice Batista", "Óscar João Atanázio Afonso";
+  dct:created          "2021-07-05"^^schema:Date;
+  skos:editoralNote    "Usado como um valor para a propriedade: <https://example.org/map4scrutiny/core#propertyRegimen> no âmbito legal português. "@pt, "Used as a value for the property: <https://example.org/map4scrutiny/core#propertyRegimen> under the scope of the Portuguese law. "@en;
+  skos:source          <https://www.eurofinesco.com/>;
+  skos:hasTopConcept   :ComAdquiridos, :ComGeralBens, :SepBens, :Outros
+  .
+
+:ComAdquiridos a skos:Concept;
+  skos:prefLabel        "Community Property"@en, "Comunhão de Adquiridos"@pt;
+  skos:definition       "Assets acquired over the course of marriage are consideres to be community property of the spouses as one. Assets individually acquired prior to the marriage or after the marriage by succession or gift are individual."@en, 
+                        "Bens adquiridos após no matrimónio são considerados bens do casal enquanto entidade comum. Bens adquiridos individualmente antes do matrimónio ou após do mesmo por oferta ou sucessão são considerados individuais."@pt; 
+  .
+
+:ComGeralBens a skos:Concept;
+  skos:prefLabel      "Common property"@en, "Comunhão Geral de Bens"@pt;
+  skos:definition     "All present and future assets are considered property of the couple."@en,
+                      "Todos os bens existentes e que virão a ser adquiridos são propriedade do casal."@pt
+                      .
+
+:SepBens a skos:Concept;
+  skos:prefLabel      "Separate assets"@en, "Separação Geral de Bens"@pt;
+  skos:definition     "There are no common assets. All property is individual to each spouse."@en,
+                      "Não há bens comuns. Toda a propriedade pertence a cada elemento do casal individualmente."@pt
+                      .
+
+:Outros a skos:Concept;
+  skos:prefLabel      "Other"@en, "Outro"@pt;
+  skos:definition     "Other options taken by the couple within the limits of the Portuguese law."@en, "Outra opção definida pelo casal dentro dos limites da lei portuguesa."@pt
+  .
