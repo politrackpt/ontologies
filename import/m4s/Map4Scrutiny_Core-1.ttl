@@ -70,8 +70,8 @@
 
 :isAccumulation
     a                       rdf:Property;
-    rdfs:label              "Accumulation with public office"@en, "Acumulação com cargo público"@pt;
-    rdfs:comment            "Boolean Property applied to roles played by people with public offices that indicates if the position is an accumulation or not."@en, "Propriedade boleana aplicada a funções desempenhadas por pessoas com cargos públicos que indica se esta é ou não uma acumulação."@pt;
+    rdfs:label              "Holding public office alongside another position"@en, "Acumulação com cargo público"@pt;
+    rdfs:comment            "A Boolean property applied to roles held by public officials, indicating whether or not this constitutes a holding of multiple posts"@en, "Propriedade boleana aplicada a funções desempenhadas por pessoas com cargos públicos que indica se esta é ou não uma acumulação."@pt;
     schema:rangeIncludes    schema:Boolean;
     rdfs:subPropertyOf      schema:hasOccupation
     .
