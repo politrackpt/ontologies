@@ -45,8 +45,8 @@
 
 
 :hasLegislature rdf:type owl:ObjectProperty ,
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
             owl:FunctionalProperty ;
+            rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
             rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( ocd:mandatoCamera
                                         ocd:sessioneLegislatura
