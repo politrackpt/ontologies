@@ -194,7 +194,7 @@
 
 
 :EuropeanInitiative rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf ocd:atto .
 
 :Guest rdf:type owl:Class ;
