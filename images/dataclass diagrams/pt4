@@ -1,0 +1,30 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    Ev -- hasVote --> V("Vote")
+    V -- hasAbsent --> MP("Member of Parliament") & PG("Parliamentary Group")
+    V -- hasInFavor --> MP & PG
+    V -- hasAgainst --> MP & PG
+    V -- hasAbstained --> MP & PG
+    Ev -- hasIntervention --> I("Intervention")
+    I -- hasSpeaker --> Sps("Speakers")
+    Sps -- hasSpeaker --> MP & MG("Member of Government")
+    Sps -- hasGuest --> Guest("Guest")
+    EC("Event Commission") -- hasCommission --> C("Commission")
+    EC -- hasSubCommission --> C
+    Ev -- hasEventCommission --> EC
+    EC -- hasVote --> V
+    C -- hasPublication --> DAR("DAR Publication")
+    C -- hasLegislature --> Leg("Legislature")
+    EC -- hasLegislature --> Leg
+    EC -- hasLegislativeSession --> LS("Legislative Session")
+    EC -- hasPublication --> DAR
+    R("Rapporteur") -- hasMemberOfParliament --> MP
+    EC -- hasRapporteur --> R
+    EC -- hasRemittance --> Rem("Remittances")
+    EC -- hasDocument --> Doc("Document")
+    EC -- hasReportPublication --> RP("Report Publication")
+    EC -- hasHearing --> RA("Related Activity")
+    EC -- hasAudience --> RA

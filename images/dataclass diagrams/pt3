@@ -1,0 +1,12 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    Ev("Event") -- hasJointInitiatives --> Ini("Initiative")
+    Ev -- hasAnnex --> An("Annex")
+    Ev -- hasPublication --> DAR("DAR Publication")
+    Ev -- hasAppeal --> MP("Member of Parliament") & PG("Parliamentary Group")
+    Ev -- hasJointActivity --> Act("Activitiy")
+    Ev -- hasJointDiscussion --> P("Petition") & PAP("Public Account Proceedings")
+    Ev -- hasApprovedDiploma --> D("Diploma")
