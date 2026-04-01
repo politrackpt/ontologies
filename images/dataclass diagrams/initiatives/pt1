@@ -11,8 +11,8 @@ flowchart TB
     Guest("Guest") -.-> Person
     MP -- hasMandate --> Mandate("Mandate")
     Mandate -- belongsToLegislature --> Leg
-    Mandate -- hasMembership --> M(Membership)
-    M -- belongsToPG --> PG
+    Mandate -- hasPGMembership --> PGM(PGMembership)
+    PGM -- belongsToPG --> PG
     Duty(Duty)
     Situation(Situation)
     Mandate -- hasDuty --> Duty
