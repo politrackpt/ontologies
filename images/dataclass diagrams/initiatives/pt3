@@ -5,8 +5,8 @@ config:
 flowchart LR
     Ev("Event") -- hasJointInitiatives --> Ini("Initiative")
     Ev -- hasAnnex --> An("Annex")
-    Ev -- hasPublication --> DAR("DAR Publication")
-    Ev -- hasAppeal --> MP("Member of Parliament") & PG("Parliamentary Group")
+    Ev -- isPublishedIn --> DAR("DARPublication")
+    Ev -- hasAppeal --> MP("MP") & PG("PG")
     Ev -- hasJointActivity --> Act("Activitiy")
-    Ev -- hasJointDiscussion --> P("Petition") & PAP("Public Account Proceedings")
+    Ev -- hasJointDiscussion --> P("Petition") & PAP("PublicAccountProceedings")
     Ev -- hasApprovedDiploma --> D("Diploma")

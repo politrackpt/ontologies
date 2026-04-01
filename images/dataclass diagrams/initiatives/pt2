@@ -1,0 +1,26 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    Ini("Initiative") -- hasAuthor --> MP("MP")
+    Ini -- belongsToLegislature --> Leg("Legislature")
+    Ini -- belongsToLegislativeSession --> LS("LegislativeSession")
+    Ini -- hasAnnex --> An("Annex")
+    Ini -- hasChangeProposal --> CP("ChangeProposal")
+    CP -- hasAuthor --> MP
+    DAR("DARPublication") -.-> PUB("Publication")
+    RP("ReportPublication") -.-> PUB
+    DAR -- belongsToLegislature --> Leg
+    DAR -- belongsToLegislativeSession --> LS
+    CP -- isPublishedIn --> DAR
+    Ini -- hasProponent --> MP & CG("CitizenGroup") & Com("Commission") & Gov("Government") & RLA("RegionalLegislativeAssembly") & PG("PG")
+    Ini -- originatedFromEU --> EU("EuropeanInitiative")
+    Ini -- originatedFrom --> Ini
+    Ini -- originated --> Ini
+    Ini -- hasContent --> Content("Content")
+    Ini -- hasPetition --> P("Petition")
+    P -- belongsToLegislature --> Leg
+    P -- belongsToLegislativeSession --> LS
+    IT("InitiativeType") -.-> Ini
+    Ini -- hasEvent --> Ev("Event")

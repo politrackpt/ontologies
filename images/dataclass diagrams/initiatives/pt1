@@ -1,0 +1,19 @@
+---
+config:
+  layout: elk
+---
+flowchart TB
+    LS("LegislativeSession") -- belongsToLegislature --> Leg("Legislature")
+    PG("PG") -- isOfParty --> Party("Party")
+    PG -- belongsToLegislature --> Leg
+    MP("MP") -.-> Person("Person")
+    MG("MG") -.-> Person
+    Guest("Guest") -.-> Person
+    MP -- hasMandate --> Mandate("Mandate")
+    Mandate -- belongsToLegislature --> Leg
+    Mandate -- hasMembership --> M(Membership)
+    M -- belongsToPG --> PG
+    Duty(Duty)
+    Situation(Situation)
+    Mandate -- hasDuty --> Duty
+    Mandate -- hasSituation --> Situation

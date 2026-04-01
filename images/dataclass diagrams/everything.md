@@ -3,16 +3,16 @@ config:
   layout: elk
 ---
 flowchart TB
-    LS("Legislative Session") -- hasLegislature --> Leg("Legislature")
-    PG("Parliamentary Group") -- hasParty --> Party("Party")
-    PG -- hasLegislature --> Leg
-    MP("Member of Parliament") -.-> Person("Person")
-    MG("Member of Government") -.-> Person
+    LS("LegislativeSession") -- belongsToLegislature --> Leg("Legislature")
+    PG("PG") -- isOfParty --> Party("Party")
+    PG -- belongsToLegislature --> Leg
+    MP("MP") -.-> Person("Person")
+    MG("MG") -.-> Person
     Guest("Guest") -.-> Person
     MP -- hasMandate --> Mandate("Mandate")
-    Mandate -- hasLegislature --> Leg
-    Mandate -- hasParliamentaryGroupMembership --> PGM(Parliamentary Group Membership)
-    PGM -- hasParliamentaryGroup --> PG
+    Mandate -- belongsToLegislature --> Leg
+    Mandate -- hasParliamentaryGroupMembership --> PGM(ParliamentaryGroupMembership)
+    PGM -- belongsToParliamentaryGroup --> PG
     Duty(Duty)
     Situation(Situation)
     Mandate -- hasDuty --> Duty
