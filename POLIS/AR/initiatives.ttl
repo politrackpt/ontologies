@@ -166,3 +166,13 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:domain :Initiative
     rdfs:range xsd:string .
+
+
+#################################################################
+#    Object properties
+#################################################################
+
+:hasAuthor rdf:type owl:ObjectProperty ;
+    rdfs:domain :Initiative ;
+    rdfs:range m4s:Parliamentarian ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
