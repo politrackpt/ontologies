@@ -183,10 +183,10 @@
                "tem o/a autor(a)"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range m4s:Parliamentarian ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :hasProponent rdf:type owl:ObjectProperty ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o(s) proponente(s) de uma iniciativa"@pt , 
 		"Defines the proponent(s) of an initiative"@en ;
     rdfs:label "has proponent"@en ,
@@ -201,3 +201,26 @@
                     :RegionalLegislativeAssembly
                   )
     ] .
+
+:originated rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define as iniciativas que foram originidas através desta"@pt , 
+		"Defines the initiatives originated from this one"@en ;
+    rdfs:label "originated"@en ,
+               "originou"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range :Initiative .
+
+
+:originatedFrom rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define as iniciativas que originaram esta, incluínda iniciativas europeias"@pt , 
+		"Defines the initiatives that originated this one, including european initiatives"@en ;
+    rdfs:label "originated from"@en ,
+               "originou desde"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( :EuropeanInitiative
+                                :Initiative
+                              )
+                ] .
