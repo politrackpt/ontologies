@@ -1,4 +1,4 @@
-M4s - Metadata For Scrutiny
+M4S - Map For Scrutiny
 This folder presents the ontology developed in [1]
 
 # References
