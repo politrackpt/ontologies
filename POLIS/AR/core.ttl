@@ -53,10 +53,14 @@
 :hasIdentifier rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "has identifier"@en, "tem o identificador"@pt ;
+    rdfs:comment "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
     rdf:type owl:FunctionalProperty .
 
 :hasName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "has name"@en, "tem o nome"@pt ;
+    rdfs:comment "A name"@en, "Um nome"@pt ;
     rdfs:range xsd:string .
 
