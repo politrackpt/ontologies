@@ -8,9 +8,9 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
-@prefix : <https://purl.org/piso/initiatives#> .
+@prefix : <https://purl.org/polis/ar/initiatives#> .
 
-@base <https://purl.org/piso/initiatives#> .
+@base <https://purl.org/polis/ar/initiatives#> .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Metadata%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -233,20 +233,12 @@
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
-:ParliamentaryGroup rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
-
-:ParliamentaryGroupMembership rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
+#:ParliamentaryGroupMembership rdf:type owl:Class ;
+#    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 :ParliamentaryInquiry rdf:type owl:Class ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
-
-
-:Party rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
-    rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
 
 :PopularReferendumInitiative rdf:type owl:Class ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
@@ -270,10 +262,6 @@
 :RulesOfProcedureProject rdf:type owl:Class ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
-
-
-:Situation rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
 
 :Topic rdf:type owl:Class ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
