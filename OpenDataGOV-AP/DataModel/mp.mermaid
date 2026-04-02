@@ -8,5 +8,6 @@ flowchart LR
     Person -- hasTitle --> Title("Title")
     Person -- hasPublished --> Work("Published Work")
     Person -- servedMandate --> Mandate("Mandate")
-    Mandate -- performedRole --> Role("Role")
-    Mandate -- partOf --> Body("Body")
+    Person -- performedRole --> Role("Role")
+    Mandate -- hasMembership --> Mem["Membership"]
+    Mem -- in --> Body["Organizational Body"]

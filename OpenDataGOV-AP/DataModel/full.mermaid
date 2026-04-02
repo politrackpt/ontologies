@@ -31,7 +31,6 @@ flowchart LR
     MP("Member of Parliament") -.-> Person("Person")
     MG("Member of Government") -.-> Person
     Guest("Guest") -.-> Person
-    MP -- hasMandate --> Mandate
     Mandate -- hasLegislature --> Leg
     Mandate -- hasDuty --> Duty("Duty")
     Mandate -- hasSituation --> Situation("Situation")
@@ -86,10 +85,10 @@ flowchart LR
     EC -- hasReportPublication --> RP("Report Publication")
     EC -- hasHearing --> RA("Related Activity")
     EC -- hasAudience --> RA
-    MP -- hasEducation --> Edu["Habilitations"]
-    MP -- hasAward --> Award["Decoration"]
-    MP -- hasTitle --> Title["Title"]
-    MP -- hasPublished --> Work["Published Work"]
-    MP -- servedMandate --> Mandate["Mandate"]
-    Mandate -- performedRole --> Role["Role"]
-    Mandate -- partOf --> Body["Body"]
+    MP -- hasEducation --> Edu("Habilitations")
+    MP -- hasAward --> Award("Decoration")
+    MP -- hasTitle --> Title("Title")
+    MP -- hasPublished --> Work("Published Work")
+    MP -- servedMandate --> Mandate
+    Mandate -- hasMembership --> Mem("Membership")
+    Mem -- in --> Body("Organizational Body")
