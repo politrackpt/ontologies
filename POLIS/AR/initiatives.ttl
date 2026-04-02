@@ -163,6 +163,10 @@
 #################################################################
 
 :hasTitle rdf:type owl:DatatypeProperty ;
+	rdfs:comment "Define o título de uma iniciativa"@pt , 
+		"Defines the title of an initiative"@en ;
+    rdfs:label "has title"@en ,
+               "tem o título"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:domain :Initiative
     rdfs:range xsd:string .
@@ -173,6 +177,27 @@
 #################################################################
 
 :hasAuthor rdf:type owl:ObjectProperty ;
+	rdfs:comment "Define o(s) autor(es) (MP) de uma iniciativa"@pt , 
+		"Defines the author(s) (MP) of an initiative"@en ;
+    rdfs:label "has author"@en ,
+               "tem o/a autor(a)"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range m4s:Parliamentarian ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
+
+:hasProponent rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
+	rdfs:comment "Define o(s) proponente(s) de uma iniciativa"@pt , 
+		"Defines the proponent(s) of an initiative"@en ;
+    rdfs:label "has proponent"@en ,
+               "tem o proponente"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range [ rdf:type owl:Class ;
+      owl:unionOf ( ocd:governo
+                    m4s:Parliamentarian
+                    :CitizenGroup
+                    :Commission
+                    polis-core:ParliamentaryGroup
+                    :RegionalLegislativeAssembly
+                  )
+    ] .
