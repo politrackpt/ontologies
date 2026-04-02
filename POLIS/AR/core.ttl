@@ -86,3 +86,9 @@
             rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:domain :ParliamentaryGroup ;
     rdfs:range :Party .
+
+
+:belongsToLegislativeSession rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+     rdfs:domain polis-core:Initiative ;
+     rdfs:range ocd:sessioneLegislatura .
