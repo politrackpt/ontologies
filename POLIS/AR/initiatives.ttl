@@ -156,3 +156,13 @@
     rdfs:label "Content"@en ,
                "Conteúdo"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+:hasTitle rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:domain :Initiative
+    rdfs:range xsd:string .
