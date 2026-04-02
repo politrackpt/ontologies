@@ -9,10 +9,10 @@ flowchart TB
     MP("MP") -.-> Person("Person")
     MG("MG") -.-> Person
     Guest("Guest") -.-> Person
-    MP -- hasMandate --> Mandate("Mandate")
+    MP -- servedMandate --> Mandate("Mandate")
     Mandate -- belongsToLegislature --> Leg
-    Mandate -- hasPGMembership --> PGM(PGMembership)
-    PGM -- belongsToPG --> PG
+    Mandate -- hasMembership --> M(Membership)
+    M -- isMemberOf --> PG & OB("OrganisationalBody")
     Duty(Duty)
     Situation(Situation)
     Mandate -- hasDuty --> Duty
