@@ -29,3 +29,13 @@
     dcterms:modified ""^^xsd:date ;
     dcterms:language "en", "pt" ;
 .
+
+#################################################################
+#    Classes
+#################################################################
+
+:Commission rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
+    rdfs:label "Comissão"@pt ,
+               "Commission"@en ;
+	rdfs:comment ""@pt , ""@en .
