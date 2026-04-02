@@ -21,7 +21,7 @@
     dct:issued                 		""^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	vann:preferredNamespacePrefix   "polis-ini:" ;
-	vann:preferredNamespaceUri      "http://purl.org/polis/ar/initiatives" ;
+	vann:preferredNamespaceUri      "http://purl.org/polis/ar/initiatives#" ;
 	owl:versionInfo					"1.0";
     rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
     dcterms:bibliographicCitation ""@en ;
@@ -35,7 +35,7 @@
 #################################################################
 
 :Commission rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:label "Comissão"@pt ,
                "Commission"@en ;
 	rdfs:comment ""@pt , ""@en .
