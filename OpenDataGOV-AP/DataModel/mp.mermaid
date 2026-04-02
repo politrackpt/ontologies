@@ -1,0 +1,12 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    Person("MP") -- hasEducation --> Edu("Habilitations")
+    Person -- hasAward --> Award("Decoration")
+    Person -- hasTitle --> Title("Title")
+    Person -- hasPublished --> Work("Published Work")
+    Person -- servedMandate --> Mandate("Mandate")
+    Mandate -- performedRole --> Role("Role")
+    Mandate -- partOf --> Body("Body")
