@@ -24,6 +24,10 @@
 	vann:preferredNamespaceUri      "https://purl.org/polis/ar/core#" ;
 	owl:versionInfo					"1.0";
     rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
+    dcterms:bibliographicCitation ""@en ;
+    dcterms:created ""^^xsd:date ;
+    dcterms:modified ""^^xsd:date ;
+    dcterms:language "en", "pt" ;
 .
 
 #################################################################
