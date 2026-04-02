@@ -149,3 +149,10 @@
     rdfs:label "Rules Of Procedure Project"@en ,
                "Projeto de Regimento"@pt ;
     rdfs:subClassOf :Initiative .
+
+:Content rdf:type owl:Class ;
+	rdfs:comment "Define todo o conteúdo de uma iniciativa"@pt , 
+		"Defines the content of an initiative"@en ;
+    rdfs:label "Content"@en ,
+               "Conteúdo"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
