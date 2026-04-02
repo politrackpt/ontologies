@@ -50,3 +50,10 @@
 	rdfs:comment ""@pt , ""@en ;
     rdfs:label "Citizen Group"@en ,
                "Grupo de Cidadãos"@pt .
+
+:Initiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "Initiative"@en ,
+               "Iniciativa"@pt ;
+    rdfs:subClassOf ocd:atto .
