@@ -8,9 +8,9 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
-@prefix : <https://purl.org/polis/ar/core#> .
+@prefix : <http://purl.org/polis/ar/core#> .
 
-@base <https://purl.org/polis/ar/core#> .
+@base <http://purl.org/polis/ar/core#> .
 
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
@@ -21,7 +21,7 @@
     dct:issued                 		""^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	vann:preferredNamespacePrefix   "polis-core:" ;
-	vann:preferredNamespaceUri      "https://purl.org/polis/ar/core#" ;
+	vann:preferredNamespaceUri      "http://purl.org/polis/ar/core#" ;
 	owl:versionInfo					"1.0";
     rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
     dcterms:bibliographicCitation ""@en ;
@@ -35,13 +35,13 @@
 #################################################################
 
 :ParliamentaryGroup rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/polis/ar/core#> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Parliamentary Group"@en, "Grupo Parlamentar"@pt ;
     rdfs:comment "A parliamentary group that exists in a parliament during a legislature, containing elected MPs"@en,
         "Um grupo parlamentar que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt .
 
 :Party rdf:type owl:Class ;
-    rdfs:isDefinedBy <https://purl.org/polis/ar/core#> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Party"@en, "Partido"@pt ;
     rdfs:comment "A political party"@en, "Um partido político"@pt ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
