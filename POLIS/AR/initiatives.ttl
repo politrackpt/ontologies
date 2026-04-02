@@ -57,3 +57,10 @@
     rdfs:label "Initiative"@en ,
                "Iniciativa"@pt ;
     rdfs:subClassOf ocd:atto .
+
+:EuropeanInitiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "European Initiative"@en ,
+               "Iniciativa Europeia"@pt ;
+    rdfs:subClassOf ocd:atto .
