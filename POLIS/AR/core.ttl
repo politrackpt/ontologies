@@ -45,3 +45,18 @@
     rdfs:label "Party"@en, "Partido"@pt ;
     rdfs:comment "A political party"@en, "Um partido político"@pt ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
+
+#################################################################
+#    Data properties
+#################################################################
+
+:hasIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdf:type owl:FunctionalProperty .
+
+:hasName rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:range xsd:string .
+
