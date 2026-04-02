@@ -8,6 +8,7 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
+@prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix : <http://purl.org/polis/ar/core#> .
 
 @base <http://purl.org/polis/ar/core#> .
@@ -64,3 +65,18 @@
     rdfs:comment "A name"@en, "Um nome"@pt ;
     rdfs:range xsd:string .
 
+#################################################################
+#    Object properties
+#################################################################
+
+:belongsToLegislature rdf:type owl:ObjectProperty ,
+            owl:FunctionalProperty ;
+            rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+            rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( ocd:mandatoCamera
+                                        ocd:sessioneLegislatura
+                                        polis-ini:Initiative
+                                        :ParliamentaryGroup
+                                        )
+                        ] ;
+            rdfs:range ocd:legislatura .
