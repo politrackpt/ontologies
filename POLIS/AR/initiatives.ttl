@@ -64,3 +64,88 @@
     rdfs:label "European Initiative"@en ,
                "Iniciativa Europeia"@pt ;
     rdfs:subClassOf ocd:atto .
+
+:ConstitutionalRevisionProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Uma proposta para amendar ou rever a Constituição, que requer uma maioria de dois terços dos votos"@pt , "A proposal to amend or revise the Constitution, which requires a two thirds majority vote"@en ;
+    rdfs:label "Constitutional Revision Project"@en ,
+               "Projeto de Revisão Constitucional"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:DeliberationProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "Deliberation Project"@en ,
+               "Projeto de Deliberação"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:LawProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Uma proposta legislativa apresentada por um deputado, um grupo parlamentar ou por um grupo de cidadãos, destinada a tornar-se lei após debate, alteração e aprovação no Parlamento"@pt, 
+		"A legislative proposal submitted by MP, PG or citizen group, intended to become law after debate, amendment, and approval in Parliament"@en ;
+    rdfs:label "Law Project"@en ,
+               "Projeto de Lei"@pt ;
+    rdfs:subClassOf :Initiative .
+
+
+:LawProposal rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Uma proposta legislativa apresentada pelo Governo ou pelas Assembleias Legislativas Regionais. Funciona de forma semelhante a um projeto de lei, mas difere na sua origem"@pt,
+		"A legislative proposal submitted by the Government or Regional Legislative Assemblies. Functions similarly to a Law Project but differs by origin"@en ;
+    rdfs:label "Law Proposal"@en ,
+               "Proposta de Lei"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:ParliamentaryAppreciation rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "Parliamentary Appreciation"@en ,
+               "Apreciação Parlamentar"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:ParliamentaryInquiry rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Um inquérito iniciado pelo Parlamento para examinar as atividades do governo ou da função pública, recolher provas e elaborar um relatório com conclusões ou recomendações. "@pt , 
+		"An investigation initiated by Parliament to examine government or public administration activities, gather evidence, and produce a report with conclusions or recommendations. "@en ;
+    rdfs:label "Parliamentary Inquiry"@en ,
+               "Inquérito Parlamentar"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:PopularReferendumInitiative rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Uma iniciativa de referendo de iniciativa popular que requer, pelo menos, 60000 assinaturas de eleitores recenseados, residentes no território nacional."@pt , 
+		"A citizen-driven referendum initiative that requires at least 60000 signatures of registered voters, registered in national territory."@en ;
+    rdfs:label "Popular Referendum Initiative"@en ,
+               "Iniciativa Popular de Referendo"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:Ratification rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "Ratification"@en ,
+               "Ratificação"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:ResolutionProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Iniciativa apresentada por deputados ou por grupos parlamentares, que não assume a forma de lei após a sua aprovação e que é, na sua maioria, de natureza política."@pt , 
+		"Initiative by MPs or parliamentary groups, which does not take the form of law once approved and is mostly of political nature."@en ;
+    rdfs:label "Resolution Project"@en ,
+               "Projeto de Resolução"@pt ;
+   rdfs:subClassOf :Initiative .
+
+:ResolutionProposal rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Iniciativa governamental apresentada à Assembleia da República para apreciação e aprovação de acordos e tratados internacionais."@pt , 
+		"Government initiative presented to the Assembly of the Republic for appreciation and approval of international agreements and treaties."@en ;
+    rdfs:label "Resolution Proposal"@en ,
+               "Proposta de Resolução"@pt ;
+    rdfs:subClassOf :Initiative .
+
+:RulesOfProcedureProject rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Uma proposta para criar ou alterar as normas e procedimentos internos que regem a organização e a atividade parlamentares."@pt , 
+		"A proposal to create or amend the internal rules and procedures governing parliamentary organization and activity."@en ;
+    rdfs:label "Rules Of Procedure Project"@en ,
+               "Projeto de Regimento"@pt ;
+    rdfs:subClassOf :Initiative .
