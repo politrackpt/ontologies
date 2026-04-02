@@ -80,3 +80,9 @@
                                         )
                         ] ;
             rdfs:range ocd:legislatura .
+
+:isOfParty rdf:type owl:ObjectProperty ,
+             owl:FunctionalProperty ;
+            rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain :ParliamentaryGroup ;
+    rdfs:range :Party .
