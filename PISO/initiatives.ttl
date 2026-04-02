@@ -12,6 +12,8 @@
 
 @base <https://purl.org/piso/initiatives#> .
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Metadata%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
 	dct:title                   	"Portuguese Institutional Structure Ontology";
@@ -24,6 +26,11 @@
 	vann:preferredNamespaceUri      "https://purl.org/piso/initiatives#" ;
 	owl:versionInfo					"1.0";
 .
+
+
+#################################################################
+#    Object properties
+#################################################################
 
 :hasAuthor rdf:type owl:ObjectProperty ;
     rdfs:domain :Initiative ;
