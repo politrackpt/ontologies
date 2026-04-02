@@ -166,11 +166,28 @@
 	rdfs:comment "Define o título de uma iniciativa"@pt , 
 		"Defines the title of an initiative"@en ;
     rdfs:label "has title"@en ,
-               "tem o título"@pt ;
+               "tem título"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:domain :Initiative
     rdfs:range xsd:string .
 
+:hostedInLink rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o link onde está hosteado no website do parlamento Português o conteúdo"@pt , 
+		"Defines the link in the Portuguese parliament's website where the content is hosted"@en ;
+    rdfs:label "hosted in link"@en ,
+               "hosteado no link"@pt ;
+    rdfs:domain :Content ;
+    rdfs:range xsd:string .
+
+:hasText rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o conteúdo textual da iniciativa"@pt , 
+		"Defines the textual content of the initiative"@en ;
+    rdfs:label "has text"@en ,
+               "contém texto"@pt ;
+    rdfs:domain :Content ;
+    rdfs:range xsd:string .
 
 #################################################################
 #    Object properties
@@ -180,7 +197,7 @@
 	rdfs:comment "Define o(s) autor(es) (MP) de uma iniciativa"@pt , 
 		"Defines the author(s) (MP) of an initiative"@en ;
     rdfs:label "has author"@en ,
-               "tem o/a autor(a)"@pt ;
+               "tem autor(a)"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range m4s:Parliamentarian ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
@@ -190,7 +207,7 @@
 	rdfs:comment "Define o(s) proponente(s) de uma iniciativa"@pt , 
 		"Defines the proponent(s) of an initiative"@en ;
     rdfs:label "has proponent"@en ,
-               "tem o proponente"@pt ;
+               "tem proponente"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
       owl:unionOf ( ocd:governo
