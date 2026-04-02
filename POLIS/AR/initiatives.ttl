@@ -44,3 +44,9 @@
 	rdfs:label "Assembleia Legislativa Regional"@pt ,"Regional Legislative Assembly"@en ;
 	rdfs:comment ""@pt , ""@en .
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
+:CitizenGroup rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , ""@en ;
+    rdfs:label "Citizen Group"@en ,
+               "Grupo de Cidadãos"@pt .

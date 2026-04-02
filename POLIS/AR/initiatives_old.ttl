@@ -248,6 +248,9 @@
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
     rdfs:subClassOf :Initiative .
 
+:RegionalLegislativeAssembly rdf:type owl:Class ;
+    rdfs:isDefinedBy <https://purl.org/piso/initiatives#> .
+
 :ResolutionProject rdf:type owl:Class ;
     rdfs:isDefinedBy <https://purl.org/piso/initiatives#> ;
    rdfs:subClassOf :Initiative .
