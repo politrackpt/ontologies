@@ -43,7 +43,7 @@
 :Habilitation rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Habilitation"@en, "Habilitação"@pt ;
-    rdfs:comment "A habilitation that a person has"@en, "Uma habilitação que uma pessoa tem"@pt .
+    rdfs:comment "A habilitation that an MP has"@en, "Uma habilitação que um MP tem"@pt .
 
 :Role rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
@@ -53,4 +53,4 @@
 :Title rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Title"@en, "Título"@pt ;
-    rdfs:comment "A title that a person has"@en, "Um título que uma pessoa tem"@pt .
+    rdfs:comment "A title that an MP has"@en, "Um título que um MP tem"@pt .
