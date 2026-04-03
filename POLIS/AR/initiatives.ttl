@@ -357,7 +357,7 @@
 		""@en ;
     rdfs:label "received appeal"@en ,
                ""@pt ;
-    rdfs:domain :Event
+    rdfs:domain :Event ;
     rdfs:range [ rdf:type owl:Class ;
                   owl:unionOf ( polis-core:ParliamentaryGroup
                                 m4s:Parliamentarian
