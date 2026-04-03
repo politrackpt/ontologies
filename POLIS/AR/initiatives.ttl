@@ -179,6 +179,13 @@
             "Petição"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:Event a owl:Class ;
+    rdfs:comment "Um evento representa um acontecimento no ciclo de vida de uma iniciativa. Corresponde a uma fase ou ação específica no ciclo de vida da iniciativa, como a fase de apresentação, as revisões da comissão, os momentos de votação ou outras etapas formais."@pt , 
+        "An Event represents an occurrence within the lifecycle of an Initiative. It corresponds to a specific phase or action in the initiative lifecycle, such as the introduction phase, committee reviews, voting moments, or other formal steps."@en ;
+    rdfs:label "Event"@en ,
+            "Evento"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
 #################################################################
 #    Data properties
 #################################################################
