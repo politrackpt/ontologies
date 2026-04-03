@@ -328,3 +328,12 @@
                "acontece em conjunto com iniciativa"@pt ;
     rdfs:domain :Event ;
     rdfs:range :Initiative .
+
+:discussedJointlyWith rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Processos de contas públicas ou petições discutidas em conjunto com um evento"@pt , 
+		"Public accout proceedings or petitions discussed jointly with an event"@en ;
+    rdfs:label "discussed jointly with"@en ,
+               "discutido em conjunto com"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range :Petition .
