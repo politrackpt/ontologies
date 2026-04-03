@@ -337,3 +337,29 @@
                "discutido em conjunto com"@pt ;
     rdfs:domain :Event ;
     rdfs:range :Petition .
+
+:hasAnnex rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , 
+		""@en ;
+    rdfs:label "has annex"@en ,
+               "tem anexo"@pt ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :Event
+                                :Initiative
+                              )
+                ] ;
+    rdfs:range :Annex .
+
+:receivedAppeal rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , 
+		""@en ;
+    rdfs:label "received appeal"@en ,
+               ""@pt ;
+    rdfs:domain :Event
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( polis-core:ParliamentaryGroup
+                                m4s:Parliamentarian
+                              )
+                ] .
