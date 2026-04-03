@@ -172,6 +172,12 @@
             "Proposta de Alteração"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:Petition a owl:Class ;
+    rdfs:comment "Uma petição é um pedido formal apresentado no âmbito parlamentar por um grupo de cidadãos e registado numa legislatura e sessão legislativa específicas. Os proponentes podem ter a petição em consideração e apresentar iniciativas com base nos pedidos nela contidos."@pt , 
+        "A Petition is a formal request submitted within the parliamentary framework by a group of citizens and registered within a specific Legislature and Legislative Session. Proponents can take the petition into account and propose initiatives based on the requests of the petition."@en ;
+    rdfs:label "Petition"@en ,
+            "Petição"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 #################################################################
 #    Data properties
