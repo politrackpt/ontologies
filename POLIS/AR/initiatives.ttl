@@ -165,6 +165,12 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:subClassOf ocd:documenti .
 
+:ChangeProposal a owl:Class ;
+    rdfs:comment "Uma proposta de alteração é um documento formal de alteração associado a uma iniciativa, representando uma proposta estruturada para modificar o seu conteúdo durante o processo legislativo."@pt , 
+        "A Change Proposal is a formal amendment entity associated with an Initiative, representing a structured proposal to modify its content during the legislative process."@en ;
+    rdfs:label "Change Proposal"@en ,
+            "Proposta de Alteração"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 
 #################################################################
