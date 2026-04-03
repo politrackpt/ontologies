@@ -214,6 +214,24 @@
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range xsd:string .
 
+:isOfType rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o tipo de uma proposta de alteração"@pt , 
+		"Defines the type of a change proposal"@en ;
+    rdfs:label "is of type"@en ,
+               "é do tipo"@pt ;
+    rdfs:domain :ChangeProposal ;
+    rdfs:range xsd:string .
+
+:isProposedBy rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o proponente de uma proposta de alteração"@pt , 
+		"Defines the proponent of a change proposal"@en ;
+    rdfs:label "is proposed by"@en ,
+               "é proposta por"@pt ;
+    rdfs:domain :ChangeProposal ;
+    rdfs:range xsd:string .
+
 #################################################################
 #    Object properties
 #################################################################
