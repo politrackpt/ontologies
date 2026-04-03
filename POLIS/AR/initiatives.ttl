@@ -189,7 +189,11 @@
     rdfs:label "has title"@en ,
                "tem título"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:domain :Initiative
+    rdfs:domain [ rdf:type owl:Class ;
+      owl:unionOf ( :Initiative
+                    :Petition
+                  )
+    ] ;
     rdfs:range xsd:string .
 
 :hostedInLink rdf:type owl:DatatypeProperty ;
