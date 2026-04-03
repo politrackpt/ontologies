@@ -42,7 +42,7 @@
 
 :RegionalLegislativeAssembly rdf:type owl:Class ;
 	rdfs:label "Assembleia Legislativa Regional"@pt ,"Regional Legislative Assembly"@en ;
-	rdfs:comment ""@pt , ""@en .
+	rdfs:comment ""@pt , ""@en ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :CitizenGroup rdf:type owl:Class ;
