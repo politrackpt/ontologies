@@ -258,12 +258,12 @@
     rdfs:domain :Event ;
     rdfs:range xsd:int .
 
-:hasTypeId rdf:type owl:DatatypeProperty ;
+:hasObservation rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o id do tipo de evento"@pt , 
-		"Defines the id of the type of the event"@en ;
-    rdfs:label "has type id"@en ,
-               "tem o id de evento"@pt ;
+	rdfs:comment "Observações feitas à iniciativa durante um evento"@pt , 
+		"Observations done to the initiative during an event"@en ;
+    rdfs:label "has observation"@en ,
+               "tem observação"@pt ;
     rdfs:domain :Event ;
     rdfs:range xsd:int .
 
@@ -319,3 +319,12 @@
                                 :Initiative
                               )
                 ] .
+
+:happensJointlyWithInitiative rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Iniciativas em que o mesmo evento decorreu em conjunto com a iniciativa deste evento"@pt , 
+		"Initiatives that had the same event happening jointly with the initiative from this event"@en ;
+    rdfs:label "happens jointly with initiative"@en ,
+               "acontece em conjunto com iniciativa"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range :Initiative .
