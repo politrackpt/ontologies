@@ -249,6 +249,24 @@
     rdfs:domain :ChangeProposal ;
     rdfs:range xsd:string .
 
+:hasTypeId rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o id do tipo de evento"@pt , 
+		"Defines the id of the type of the event"@en ;
+    rdfs:label "has type id"@en ,
+               "tem o id de evento"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:int .
+
+:hasTypeId rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o id do tipo de evento"@pt , 
+		"Defines the id of the type of the event"@en ;
+    rdfs:label "has type id"@en ,
+               "tem o id de evento"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:int .
+
 #################################################################
 #    Object properties
 #################################################################
