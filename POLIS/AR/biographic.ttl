@@ -1,0 +1,56 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix ocd: <http://dati.camera.it/ocd/> .
+@prefix m4s: <https://purl.org/map4scrutiny-core#> .
+@prefix schema:	<https://schema.org/> .
+@prefix : <http://purl.org/polis/ar/biographic#> .
+
+@base <http://purl.org/polis/ar/biographic#> .
+
+:	
+	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
+	dct:title                   	"Portuguese Political Structures Ontology";
+	dct:description             	"";
+	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço";
+	dct:contributor                 "Mariana Curado Malta", "João Bispo";
+    dct:issued                 		""^^schema:Date;
+	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
+	vann:preferredNamespacePrefix   "polis-ini:" ;
+	vann:preferredNamespaceUri      "http://purl.org/polis/ar/initiatives#" ;
+	owl:versionInfo					"1.0";
+    rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
+    dcterms:bibliographicCitation ""@en ;
+    dcterms:created ""^^xsd:date ;
+    dcterms:modified ""^^xsd:date ;
+    dcterms:language "en", "pt" ;
+.
+
+#################################################################
+#    Classes
+#################################################################
+
+:Organisational_Body rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Organisational Body"@en, "Órgão Organizacional"@pt ;
+    rdfs:comment "An organisational body that exists in a parliament during a legislature, containing elected MPs"@en,
+        "Um órgão organizacional que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt .
+
+:Habilitation rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Habilitation"@en, "Habilitação"@pt ;
+    rdfs:comment "A habilitation that a person has"@en, "Uma habilitação que uma pessoa tem"@pt .
+
+:Role rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Role"@en, "Cargo"@pt ;
+    rdfs:comment "A role that an MP has in a given body"@en, "Uma função que um MP tem num dado órgão"@pt .
+
+:Title rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Title"@en, "Título"@pt ;
+    rdfs:comment "A title that a person has"@en, "Um título que uma pessoa tem"@pt .
