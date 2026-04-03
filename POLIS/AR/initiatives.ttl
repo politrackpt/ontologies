@@ -157,6 +157,14 @@
                "Conteúdo"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:Annex a owl:Class ;
+    rdfs:comment "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
+        "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
+    rdfs:label "Annex"@en ,
+            "Anexo"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
+
 
 #################################################################
 #    Data properties
