@@ -162,7 +162,8 @@
         "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
     rdfs:label "Annex"@en ,
             "Anexo"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf ocd:documenti .
 
 
 
