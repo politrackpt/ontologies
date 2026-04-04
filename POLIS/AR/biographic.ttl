@@ -66,3 +66,61 @@
     rdfs:comment "Indicates if an MP has performed a role before"@en, "Indica se um MP já realizou um cargo previamente"@pt ;
     rdfs:domain :Role ;
     rdfs:range xsd:boolean .
+
+#################################################################
+#    Individuals
+#################################################################
+
+:HabilitationLevelScheme rdf:type owl:NamedIndividual , 
+                                    skos:ConceptScheme ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    skos:prefLabel "Habilitation Level Scheme"@en, "Esquema de Níveis de Habilitação"@pt ;
+    rdfs:comment "A scheme to classify the levels of habilitation of MPs"@en, "Um esquema para classificar os níveis de habilitação dos MPs"@pt .
+
+:PrimarySchool a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Primary School"@en, "Ensino Primário"@pt .
+
+:MiddleSchool a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Middle School"@en, "2º Ciclo"@pt .
+
+:EarlyHighSchool a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Early High School"@en, "3º Ciclo"@pt .
+
+:HighSchool a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "High School"@en, "Ensino Secundário"@pt .
+
+:HigherEducation a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Higher Education"@en, "Ensino Superior"@pt .
+
+:Bachelor a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Bachelor"@en, "Licenciatura"@pt .
+
+:Master a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Master"@en, "Mestrado"@pt .
+
+:Postgrad a skos:Concept ;
+    skos:inScheme :HabilitationLevelScheme ;
+    skos:prefLabel "Postgraduate"@en, "Pós-Graduação"@pt .
+
+:HabilitationStatusScheme rdf:type owl:NamedIndividual , 
+                                    skos:ConceptScheme ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    skos:prefLabel "Habilitation Status Scheme"@en, "Esquema de Status de Habilitação"@pt ;
+    rdfs:comment "A scheme to classify the status of habilitation of MPs"@en, "Um esquema para classificar o estado de habilitação dos MPs"@pt .
+
+:Completed a skos:Concept ;
+    skos:inScheme :HabilitationStatusScheme ;
+    skos:prefLabel "Completed"@en, "Completo"@pt ;
+    skos:notation "C" .
+
+:Incomplete a skos:Concept ;
+    skos:inScheme :HabilitationStatusScheme ;
+    skos:prefLabel "Incomplete"@en, "Incompleto"@pt ;
+    skos:notation "F" .
