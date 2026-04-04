@@ -34,7 +34,7 @@
 #    Classes
 #################################################################
 
-:Organisational_Body rdf:type owl:Class ;
+:OrganisationalBody rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Organisational Body"@en, "Órgão Organizacional"@pt ;
     rdfs:comment "An organisational body that exists in a parliament during a legislature, containing elected MPs"@en,
