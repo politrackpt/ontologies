@@ -363,3 +363,12 @@
                                 m4s:Parliamentarian
                               )
                 ] .
+
+:receivedChangeProposal rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment ""@pt , 
+		""@en ;
+    rdfs:label "received change proposal"@en ,
+               "recebeu proposta de alteração"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range :ChangeProposal .
