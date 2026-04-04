@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix : <http://purl.org/polis/ar/biographic#> .
+@prefix polis-core: <http://purl.org/polis/ar/core#> .
 
 @base <http://purl.org/polis/ar/biographic#> .
 
@@ -54,3 +55,14 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Title"@en, "Título"@pt ;
     rdfs:comment "A title that an MP has"@en, "Um título que um MP tem"@pt .
+
+#################################################################
+#    Data properties
+#################################################################
+
+:hasDoneBefore rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has done before"@en, "fez antes"@pt ;
+    rdfs:comment "Indicates if an MP has performed a role before"@en, "Indica se um MP já realizou um cargo previamente"@pt ;
+    rdfs:Domain :Role ;
+    rdfs:range xsd:boolean .
