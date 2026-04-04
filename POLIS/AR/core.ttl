@@ -71,6 +71,13 @@
     rdfs:comment "A name"@en, "Um nome"@pt ;
     rdfs:range xsd:string .
 
+:hasDescription rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/description> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "has description"@en, "tem a descrição"@pt ;
+    rdfs:comment "A description"@en, "Uma descrição"@pt ;
+    rdfs:range xsd:string .
+
 #################################################################
 #    Object properties
 #################################################################
