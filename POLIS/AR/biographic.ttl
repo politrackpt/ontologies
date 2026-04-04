@@ -8,8 +8,9 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
-@prefix : <http://purl.org/polis/ar/biographic#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
+@prefix : <http://purl.org/polis/ar/biographic#> .
 
 @base <http://purl.org/polis/ar/biographic#> .
 
@@ -70,6 +71,13 @@
 #################################################################
 #    Object properties
 #################################################################
+
+:authorOf rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "author of"@en, "autor de"@pt ;
+    rdfs:comment "Indicates that an MP is the author of a published word"@en, "Indica que um MP é autor de uma dada obra publicada"@pt ;
+    rdfs:domain m4s:Parliamentarian ;
+    rdfs:range bibo:Document .
 
 :hasHabilitationLevel rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
