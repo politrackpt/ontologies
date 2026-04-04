@@ -375,8 +375,8 @@
 
 :hasRelatedPetition rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Petição que a iniciativa levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
-		"Petition that the initiative took into account during its formulation, and which is therefore related to it"@en ;
+	rdfs:comment "Relaciona uma iniciativa a petições levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
+		"Relates an initiative to petitions that it took into account during its formulation, and which is therefore related to it"@en ;
     rdfs:label "has related petition"@en ,
                "tem petição relacionada"@pt ;
     rdfs:domain :Initiative ;
@@ -384,9 +384,9 @@
 
 :hasEvent rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Petição que a iniciativa levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
-		"Petition that the initiative took into account during its formulation, and which is therefore related to it"@en ;
-    rdfs:label "has related petition"@en ,
-               "tem petição relacionada"@pt ;
+	rdfs:comment "Relaciona uma iniciativa a eventos que ocorreram ao longo do seu ciclo de vida"@pt , 
+		"Relates an initiative to events that occurred during its lifecycle"@en ;
+    rdfs:label "has event"@en ,
+               "tem o evento"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range :Event .
