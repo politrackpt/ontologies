@@ -64,5 +64,5 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has done before"@en, "fez antes"@pt ;
     rdfs:comment "Indicates if an MP has performed a role before"@en, "Indica se um MP já realizou um cargo previamente"@pt ;
-    rdfs:Domain :Role ;
+    rdfs:domain :Role ;
     rdfs:range xsd:boolean .
