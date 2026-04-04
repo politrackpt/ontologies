@@ -68,6 +68,24 @@
     rdfs:range xsd:boolean .
 
 #################################################################
+#    Object properties
+#################################################################
+
+:hasHabilitationLevel rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has habilitation level"@en, "tem nível de habilitação"@pt ;
+    rdfs:comment "Indicates the level of habilitation of an MP"@en, "Indica o nível de habilitação de um MP"@pt ;
+    rdfs:domain :Habilitation ;
+    rdfs:range skos:Concept .
+
+:hasHabilitationStatus rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has habilitation status"@en, "tem status de habilitação"@pt ;
+    rdfs:comment "Indicates the status of habilitation of an MP"@en, "Indica o estado da habilitação de um MP"@pt ;
+    rdfs:domain :Habilitation ;
+    rdfs:range skos:Concept .
+
+#################################################################
 #    Individuals
 #################################################################
 
