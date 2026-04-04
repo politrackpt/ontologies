@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
+@prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix : <http://purl.org/polis/ar/core#> .
 
 @base <http://purl.org/polis/ar/core#> .
@@ -102,3 +103,12 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
      rdfs:domain m4s:Parliamentarian ;
      rdfs:range :Membership .
+
+:isMemberOf rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+     rdfs:domain :Membership ;
+     rdfs:range [ rdf:type owl:Class ;
+                    owl:unionOf ( polis-bio:OrganisationalBody
+                                :ParliamentaryGroup
+                                )
+                ] .
