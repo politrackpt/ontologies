@@ -372,3 +372,12 @@
                "recebeu proposta de alteração"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range :ChangeProposal .
+
+:hasRelatedPetition rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Petição que a iniciativa levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
+		"Petition that the initiative took into account during its formulation, and which is therefore related to it"@en ;
+    rdfs:label "has related petition"@en ,
+               "tem petição relacionada"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range :Petition .
