@@ -73,6 +73,27 @@
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range bibo:Document .
 
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has role"@en, "tem cargo"@pt ;
+    rdfs:comment "Indicates that an MP performed a given role"@en, "Indica que um MP realizou um dado cargo"@pt ;
+    rdfs:domain m4s:Parliamentarian ;
+    rdfs:range :Role .
+
+:hasTitle rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has title"@en, "tem título"@pt ;
+    rdfs:comment "Indicates that an MP has a given title"@en, "Indica que um MP tem um dado título"@pt ;
+    rdfs:domain m4s:Parliamentarian ;
+    rdfs:range :Title .
+
+:hasHabilitation rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has habilitation"@en, "tem habilitação"@pt ;
+    rdfs:comment "Indicates that an MP has a given habilitation"@en, "Indica que um MP tem uma dada habilitação"@pt ;
+    rdfs:domain m4s:Parliamentarian ;
+    rdfs:range :Habilitation .
+
 :hasHabilitationLevel rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has habilitation level"@en, "tem nível de habilitação"@pt ;
