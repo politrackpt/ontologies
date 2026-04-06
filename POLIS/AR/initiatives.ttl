@@ -8,6 +8,7 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix : <http://purl.org/polis/ar/initiatives#> .
 
 @base <http://purl.org/polis/ar/initiatives#> .
@@ -157,13 +158,13 @@
                "Conteúdo"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
-:Annex a owl:Class ;
-    dct:description "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
-        "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
-    rdfs:label "Annex"@en ,
-            "Anexo"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:subClassOf ocd:documenti .
+# :Annex a owl:Class ;
+#     dct:description "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
+#         "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
+#     rdfs:label "Annex"@en ,
+#             "Anexo"@pt ;
+#     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+#     rdfs:subClassOf ocd:documenti .
 
 :ChangeProposal a owl:Class ;
     dct:description "Uma proposta de alteração é um documento formal de alteração associado a uma iniciativa, representando uma proposta estruturada para modificar o seu conteúdo durante o processo legislativo."@pt , 
@@ -394,7 +395,7 @@
                                 :Initiative
                               )
                 ] ;
-    rdfs:range :Annex .
+    rdfs:range bibo:Document .
 
 :receivedAppeal rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
