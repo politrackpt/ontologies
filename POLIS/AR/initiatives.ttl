@@ -285,6 +285,15 @@
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:boolean .
 
+:hasReunionNumber rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o número da reunião em que a votação ocorreu"@pt , 
+		"Defines the number of the reunion in which the vote occurred"@en ;
+    rdfs:label "has reunion number"@en ,
+               "tem número da reunião"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range xsd:int .
+
 #################################################################
 #    Object properties
 #################################################################
