@@ -253,10 +253,19 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o id do tipo de evento"@pt , 
 		"Defines the id of the type of the event"@en ;
-    rdfs:label "has type id"@en ,
-               "tem o id de evento"@pt ;
+    rdfs:label "has event type id"@en ,
+               "tem o id de tipo de evento"@pt ;
     rdfs:domain :Event ;
     rdfs:range xsd:int .
+
+:eventType rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define o tipo de evento"@pt , 
+		"Defines the type of event"@en ;
+    rdfs:label "has event type"@en ,
+               "tem o tipo de evento"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range xsd:string .
 
 :observation rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
