@@ -3,24 +3,48 @@ config:
   layout: elk
 ---
 flowchart LR
-    Mandate["Mandate"] -- hasRelatedInitiative --> Ini["Initiative"]
-    Mandate -- hasRelatedRequest --> Req["Request"]
-    Req -- isRequestType --> reqtype["Request Type"]
-    Mandate -- hasRelatedIntervention --> Interv["Intervention"]
-    Interv -- hasPublicationType  --> PubType["Publication Type"]
-    Mandate -- didParliamentaryActivity --> PAct["Parliamentary Activity"]
-    Mandate -- wasRapporteurIn --> Ini & Pet["Petition"] & PE["Public Expenses"] & EUINI["European Initiatives"]
-    PE -- isActivityType --> ActType["Activity Type"]
-    Mandate -- hasOpinion --> Opi["Parliamentary Opinion"]
-    Mandate -- hasRelatedEvent --> Event["Event"]
-    Mandate -- hasVisit --> Visit["Visit"]
-    Mandate -- hasMeetings --> Meet["Meeting"]
-    Mandate -- hasHearing --> Hear["Hearing"]
-    Mandate -- didYouthParliamentActivity --> YPA["Youth Parliament Activity"]
-    YPA -- tookPlaceIn --> TeaEs["Teaching Establishment"]
-    TeaEs -- isType --> EsType["Establishment Type"]
-    Mandate -- hasMembership --> Mem["Membership"]
-    Mem -- relatedEventualDelegation --> DelE["Eventual Delegation"]
-    Mem -- relatedPermanentDelegation --> DelP["Permanent Delegation"]
-    Mem -- relatedFriendshipParliamentaryGroup --> FPG["Friendship Parliamentary Group"]
-    DelP -- hasMeeting --> DelPM["Permanent Delegation Meeting"]
+    Mandate("Mandate")
+    Ini("Initiative")
+    Req("Request")
+    reqtype("Request Type")
+    Interv("Intervention")
+    PubType("Publication Type")
+    PAct("Parliamentary Activity")
+    Pet("Petition")
+    PE("Public Expenses")
+    EUINI("European Initiatives")
+    Opi("Parliamentary Opinion")
+    Event("Event")
+    Visit("Visit")
+    Meet("Meeting")
+    Hear("Hearing")
+    YPA("Youth Parliament Activity")
+    TeaEs("Teaching Establishment")
+    EsType("Establishment Type")
+    Mem("Membership")
+    DelE("Temporary Delegation")
+    DelP("Permanent Delegation")
+    FPG("Friendship Parliamentary Group")
+    DelPM("Permanent Delegation Meeting")
+
+    Mandate -- hasRelatedInitiative --> Ini
+    Mandate -- hasRelatedRequest --> Req
+    Req -- isRequestType --> reqtype
+    Mandate -- hasRelatedIntervention --> Interv
+    Interv -- hasPublicationType  --> PubType
+    Mandate -- didParliamentaryActivity --> PAct
+    Mandate -- wasRapporteurIn --> Ini & Pet & PE & EUINI
+    PE -- isActivityType --> ActType
+    Mandate -- hasOpinion --> Opi
+    Mandate -- hasRelatedEvent --> Event
+    Mandate -- hasVisit --> Visit
+    Mandate -- hasMeetings --> Meet
+    Mandate -- hasHearing --> Hear
+    Mandate -- didYouthParliamentActivity --> YPA
+    YPA -- tookPlaceIn --> TeaEs
+    TeaEs -- isType --> EsType
+    Mandate -- hasMembership --> Mem
+    Mem -- relatedTemporaryDelegation --> DelE
+    Mem -- relatedPermanentDelegation --> DelP
+    Mem -- relatedFriendshipParliamentaryGroup --> FPG
+    DelP -- hasMeeting --> DelPM
