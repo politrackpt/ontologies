@@ -267,6 +267,15 @@
     rdfs:domain :Event ;
     rdfs:range xsd:int .
 
+:hasResult rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define o resultado de uma votação"@pt , 
+		"Defines the result of a vote"@en ;
+    rdfs:label "has result"@en ,
+               "tem resultado"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range xsd:string .
+
 #################################################################
 #    Object properties
 #################################################################
