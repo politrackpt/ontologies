@@ -25,7 +25,7 @@
 	vann:preferredNamespacePrefix   "polis-bio:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/biographic#" ;
 	owl:versionInfo					"1.0";
-    rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
+    dct:description                    """The objective of the POLIS ontology is to (...)""" ;
     dcterms:bibliographicCitation ""@en ;
     dcterms:created ""^^xsd:date ;
     dcterms:modified ""^^xsd:date ;
@@ -39,17 +39,17 @@
 :Habilitation rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Habilitation"@en, "Habilitação"@pt ;
-    rdfs:comment "A habilitation that an MP has"@en, "Uma habilitação que um MP tem"@pt .
+    dct:description "A habilitation that an MP has"@en, "Uma habilitação que um MP tem"@pt .
 
 :Role rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Role"@en, "Cargo"@pt ;
-    rdfs:comment "A role that an MP has in a given body"@en, "Uma função que um MP tem num dado órgão"@pt .
+    dct:description "A role that an MP has in a given body"@en, "Uma função que um MP tem num dado órgão"@pt .
 
 :Title rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Title"@en, "Título"@pt ;
-    rdfs:comment "A title that an MP has"@en, "Um título que um MP tem"@pt .
+    dct:description "A title that an MP has"@en, "Um título que um MP tem"@pt .
 
 #################################################################
 #    Data properties
@@ -58,7 +58,7 @@
 :doneBefore rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has done before"@en, "fez antes"@pt ;
-    rdfs:comment "Indicates if an MP has performed a role before"@en, "Indica se um MP já realizou um cargo previamente"@pt ;
+    dct:description "Indicates if an MP has performed a role before"@en, "Indica se um MP já realizou um cargo previamente"@pt ;
     rdfs:domain :Role ;
     rdfs:range xsd:boolean .
 
@@ -69,42 +69,42 @@
 :authorOf rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "author of"@en, "autor de"@pt ;
-    rdfs:comment "Indicates that an MP is the author of a published word"@en, "Indica que um MP é autor de uma dada obra publicada"@pt ;
+    dct:description "Indicates that an MP is the author of a published word"@en, "Indica que um MP é autor de uma dada obra publicada"@pt ;
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range bibo:Document .
 
 :hasRole rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has role"@en, "tem cargo"@pt ;
-    rdfs:comment "Indicates that an MP performed a given role"@en, "Indica que um MP realizou um dado cargo"@pt ;
+    dct:description "Indicates that an MP performed a given role"@en, "Indica que um MP realizou um dado cargo"@pt ;
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range :Role .
 
 :hasTitle rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has title"@en, "tem título"@pt ;
-    rdfs:comment "Indicates that an MP has a given title"@en, "Indica que um MP tem um dado título"@pt ;
+    dct:description "Indicates that an MP has a given title"@en, "Indica que um MP tem um dado título"@pt ;
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range :Title .
 
 :hasHabilitation rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has habilitation"@en, "tem habilitação"@pt ;
-    rdfs:comment "Indicates that an MP has a given habilitation"@en, "Indica que um MP tem uma dada habilitação"@pt ;
+    dct:description "Indicates that an MP has a given habilitation"@en, "Indica que um MP tem uma dada habilitação"@pt ;
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range :Habilitation .
 
 :hasHabilitationLevel rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has habilitation level"@en, "tem nível de habilitação"@pt ;
-    rdfs:comment "Indicates the level of habilitation of an MP"@en, "Indica o nível de habilitação de um MP"@pt ;
+    dct:description "Indicates the level of habilitation of an MP"@en, "Indica o nível de habilitação de um MP"@pt ;
     rdfs:domain :Habilitation ;
     rdfs:range skos:Concept .
 
 :hasHabilitationStatus rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "has habilitation status"@en, "tem status de habilitação"@pt ;
-    rdfs:comment "Indicates the status of habilitation of an MP"@en, "Indica o estado da habilitação de um MP"@pt ;
+    dct:description "Indicates the status of habilitation of an MP"@en, "Indica o estado da habilitação de um MP"@pt ;
     rdfs:domain :Habilitation ;
     rdfs:range skos:Concept .
 
@@ -116,7 +116,7 @@
                                     skos:ConceptScheme ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     skos:prefLabel "Habilitation Level Scheme"@en, "Esquema de Níveis de Habilitação"@pt ;
-    rdfs:comment "A scheme to classify the levels of habilitation of MPs"@en, "Um esquema para classificar os níveis de habilitação dos MPs"@pt .
+    dct:description "A scheme to classify the levels of habilitation of MPs"@en, "Um esquema para classificar os níveis de habilitação dos MPs"@pt .
 
 :PrimarySchool a skos:Concept ;
     skos:inScheme :HabilitationLevelScheme ;
@@ -154,7 +154,7 @@
                                     skos:ConceptScheme ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     skos:prefLabel "Habilitation Status Scheme"@en, "Esquema de Status de Habilitação"@pt ;
-    rdfs:comment "A scheme to classify the status of habilitation of MPs"@en, "Um esquema para classificar o estado de habilitação dos MPs"@pt .
+    dct:description "A scheme to classify the status of habilitation of MPs"@en, "Um esquema para classificar o estado de habilitação dos MPs"@pt .
 
 :Completed a skos:Concept ;
     skos:inScheme :HabilitationStatusScheme ;

@@ -25,7 +25,7 @@
 	vann:preferredNamespacePrefix   "polis-core:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/core#" ;
 	owl:versionInfo					"1.0";
-    rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
+    dct:description                    """The objective of the POLIS ontology is to (...)""" ;
     dcterms:bibliographicCitation ""@en ;
     dcterms:created ""^^xsd:date ;
     dcterms:modified ""^^xsd:date ;
@@ -39,19 +39,19 @@
 :ParliamentaryGroup rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Parliamentary Group"@en, "Grupo Parlamentar"@pt ;
-    rdfs:comment "A parliamentary group that exists in a parliament during a legislature, containing elected MPs"@en,
+    dct:description "A parliamentary group that exists in a parliament during a legislature, containing elected MPs"@en,
         "Um grupo parlamentar que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt .
 
 :Party rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Party"@en, "Partido"@pt ;
-    rdfs:comment "A political party"@en, "Um partido político"@pt ;
+    dct:description "A political party"@en, "Um partido político"@pt ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> .
 
 :Membership rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Membership"@en, "Afiliação"@pt ;
-    rdfs:comment "Represents an n-ary relationship between an MP's mandate to a PG or Organisational Body"@en, "Representa uma relação n-ária entre o mandato de um MP e um grupo parlamentar ou órgão organizacional"@pt .
+    dct:description "Represents an n-ary relationship between an MP's mandate to a PG or Organisational Body"@en, "Representa uma relação n-ária entre o mandato de um MP e um grupo parlamentar ou órgão organizacional"@pt .
 
 #################################################################
 #    Data properties
@@ -61,20 +61,20 @@
     rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "has identifier"@en, "tem o identificador"@pt ;
-    rdfs:comment "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
+    dct:description "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
     rdf:type owl:FunctionalProperty .
 
 :name rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "has name"@en, "tem o nome"@pt ;
-    rdfs:comment "A name"@en, "Um nome"@pt ;
+    dct:description "A name"@en, "Um nome"@pt ;
     rdfs:range xsd:string .
 
 :description rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "has description"@en, "tem a descrição"@pt ;
-    rdfs:comment "A description"@en, "Uma descrição"@pt ;
+    dct:description "A description"@en, "Uma descrição"@pt ;
     rdfs:range xsd:string .
 
 #################################################################

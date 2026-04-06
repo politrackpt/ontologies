@@ -23,7 +23,7 @@
 	vann:preferredNamespacePrefix   "polis-ini:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/initiatives#" ;
 	owl:versionInfo					"1.0";
-    rdfs:comment                    """The objective of the POLIS ontology is to (...)""" ;
+    dct:description                    """The objective of the POLIS ontology is to (...)""" ;
     dcterms:bibliographicCitation ""@en ;
     dcterms:created ""^^xsd:date ;
     dcterms:modified ""^^xsd:date ;
@@ -38,50 +38,50 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:label "Comissão"@pt ,
                "Commission"@en ;
-	rdfs:comment ""@pt , ""@en .
+	dct:description ""@pt , ""@en .
 
 :RegionalLegislativeAssembly rdf:type owl:Class ;
 	rdfs:label "Assembleia Legislativa Regional"@pt ,"Regional Legislative Assembly"@en ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :CitizenGroup rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "Citizen Group"@en ,
                "Grupo de Cidadãos"@pt .
 
 :Initiative rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "Initiative"@en ,
                "Iniciativa"@pt ;
     rdfs:subClassOf ocd:atto .
 
 :EuropeanInitiative rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "European Initiative"@en ,
                "Iniciativa Europeia"@pt ;
     rdfs:subClassOf ocd:atto .
 
 :ConstitutionalRevisionProject rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Uma proposta para amendar ou rever a Constituição, que requer uma maioria de dois terços dos votos"@pt , "A proposal to amend or revise the Constitution, which requires a two thirds majority vote"@en ;
+	dct:description "Uma proposta para amendar ou rever a Constituição, que requer uma maioria de dois terços dos votos"@pt , "A proposal to amend or revise the Constitution, which requires a two thirds majority vote"@en ;
     rdfs:label "Constitutional Revision Project"@en ,
                "Projeto de Revisão Constitucional"@pt ;
     rdfs:subClassOf :Initiative .
 
 :DeliberationProject rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "Deliberation Project"@en ,
                "Projeto de Deliberação"@pt ;
     rdfs:subClassOf :Initiative .
 
 :LawProject rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Uma proposta legislativa apresentada por um deputado, um grupo parlamentar ou por um grupo de cidadãos, destinada a tornar-se lei após debate, alteração e aprovação no Parlamento"@pt, 
+	dct:description "Uma proposta legislativa apresentada por um deputado, um grupo parlamentar ou por um grupo de cidadãos, destinada a tornar-se lei após debate, alteração e aprovação no Parlamento"@pt, 
 		"A legislative proposal submitted by MP, PG or citizen group, intended to become law after debate, amendment, and approval in Parliament"@en ;
     rdfs:label "Law Project"@en ,
                "Projeto de Lei"@pt ;
@@ -90,7 +90,7 @@
 
 :LawProposal rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Uma proposta legislativa apresentada pelo Governo ou pelas Assembleias Legislativas Regionais. Funciona de forma semelhante a um projeto de lei, mas difere na sua origem"@pt,
+	dct:description "Uma proposta legislativa apresentada pelo Governo ou pelas Assembleias Legislativas Regionais. Funciona de forma semelhante a um projeto de lei, mas difere na sua origem"@pt,
 		"A legislative proposal submitted by the Government or Regional Legislative Assemblies. Functions similarly to a Law Project but differs by origin"@en ;
     rdfs:label "Law Proposal"@en ,
                "Proposta de Lei"@pt ;
@@ -98,14 +98,14 @@
 
 :ParliamentaryAppreciation rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "Parliamentary Appreciation"@en ,
                "Apreciação Parlamentar"@pt ;
     rdfs:subClassOf :Initiative .
 
 :ParliamentaryInquiry rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Um inquérito iniciado pelo Parlamento para examinar as atividades do governo ou da função pública, recolher provas e elaborar um relatório com conclusões ou recomendações. "@pt , 
+	dct:description "Um inquérito iniciado pelo Parlamento para examinar as atividades do governo ou da função pública, recolher provas e elaborar um relatório com conclusões ou recomendações. "@pt , 
 		"An investigation initiated by Parliament to examine government or public administration activities, gather evidence, and produce a report with conclusions or recommendations. "@en ;
     rdfs:label "Parliamentary Inquiry"@en ,
                "Inquérito Parlamentar"@pt ;
@@ -113,7 +113,7 @@
 
 :PopularReferendumInitiative rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Uma iniciativa de referendo de iniciativa popular que requer, pelo menos, 60000 assinaturas de eleitores recenseados, residentes no território nacional."@pt , 
+	dct:description "Uma iniciativa de referendo de iniciativa popular que requer, pelo menos, 60000 assinaturas de eleitores recenseados, residentes no território nacional."@pt , 
 		"A citizen-driven referendum initiative that requires at least 60000 signatures of registered voters, registered in national territory."@en ;
     rdfs:label "Popular Referendum Initiative"@en ,
                "Iniciativa Popular de Referendo"@pt ;
@@ -121,14 +121,14 @@
 
 :Ratification rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , ""@en ;
+	dct:description ""@pt , ""@en ;
     rdfs:label "Ratification"@en ,
                "Ratificação"@pt ;
     rdfs:subClassOf :Initiative .
 
 :ResolutionProject rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Iniciativa apresentada por deputados ou por grupos parlamentares, que não assume a forma de lei após a sua aprovação e que é, na sua maioria, de natureza política."@pt , 
+	dct:description "Iniciativa apresentada por deputados ou por grupos parlamentares, que não assume a forma de lei após a sua aprovação e que é, na sua maioria, de natureza política."@pt , 
 		"Initiative by MPs or parliamentary groups, which does not take the form of law once approved and is mostly of political nature."@en ;
     rdfs:label "Resolution Project"@en ,
                "Projeto de Resolução"@pt ;
@@ -136,7 +136,7 @@
 
 :ResolutionProposal rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Iniciativa governamental apresentada à Assembleia da República para apreciação e aprovação de acordos e tratados internacionais."@pt , 
+	dct:description "Iniciativa governamental apresentada à Assembleia da República para apreciação e aprovação de acordos e tratados internacionais."@pt , 
 		"Government initiative presented to the Assembly of the Republic for appreciation and approval of international agreements and treaties."@en ;
     rdfs:label "Resolution Proposal"@en ,
                "Proposta de Resolução"@pt ;
@@ -144,21 +144,21 @@
 
 :RulesOfProcedureProject rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Uma proposta para criar ou alterar as normas e procedimentos internos que regem a organização e a atividade parlamentares."@pt , 
+	dct:description "Uma proposta para criar ou alterar as normas e procedimentos internos que regem a organização e a atividade parlamentares."@pt , 
 		"A proposal to create or amend the internal rules and procedures governing parliamentary organization and activity."@en ;
     rdfs:label "Rules Of Procedure Project"@en ,
                "Projeto de Regimento"@pt ;
     rdfs:subClassOf :Initiative .
 
 :Content rdf:type owl:Class ;
-	rdfs:comment "Define todo o conteúdo de uma iniciativa"@pt , 
+	dct:description "Define todo o conteúdo de uma iniciativa"@pt , 
 		"Defines the content of an initiative"@en ;
     rdfs:label "Content"@en ,
                "Conteúdo"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :Annex a owl:Class ;
-    rdfs:comment "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
+    dct:description "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
         "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
     rdfs:label "Annex"@en ,
             "Anexo"@pt ;
@@ -166,21 +166,21 @@
     rdfs:subClassOf ocd:documenti .
 
 :ChangeProposal a owl:Class ;
-    rdfs:comment "Uma proposta de alteração é um documento formal de alteração associado a uma iniciativa, representando uma proposta estruturada para modificar o seu conteúdo durante o processo legislativo."@pt , 
+    dct:description "Uma proposta de alteração é um documento formal de alteração associado a uma iniciativa, representando uma proposta estruturada para modificar o seu conteúdo durante o processo legislativo."@pt , 
         "A Change Proposal is a formal amendment entity associated with an Initiative, representing a structured proposal to modify its content during the legislative process."@en ;
     rdfs:label "Change Proposal"@en ,
             "Proposta de Alteração"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :Petition a owl:Class ;
-    rdfs:comment "Uma petição é um pedido formal apresentado no âmbito parlamentar por um grupo de cidadãos e registado numa legislatura e sessão legislativa específicas. Os proponentes podem ter a petição em consideração e apresentar iniciativas com base nos pedidos nela contidos."@pt , 
+    dct:description "Uma petição é um pedido formal apresentado no âmbito parlamentar por um grupo de cidadãos e registado numa legislatura e sessão legislativa específicas. Os proponentes podem ter a petição em consideração e apresentar iniciativas com base nos pedidos nela contidos."@pt , 
         "A Petition is a formal request submitted within the parliamentary framework by a group of citizens and registered within a specific Legislature and Legislative Session. Proponents can take the petition into account and propose initiatives based on the requests of the petition."@en ;
     rdfs:label "Petition"@en ,
             "Petição"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 :Event a owl:Class ;
-    rdfs:comment "Um evento representa um acontecimento no ciclo de vida de uma iniciativa. Corresponde a uma fase ou ação específica no ciclo de vida da iniciativa, como a fase de apresentação, as revisões da comissão, os momentos de votação ou outras etapas formais."@pt , 
+    dct:description "Um evento representa um acontecimento no ciclo de vida de uma iniciativa. Corresponde a uma fase ou ação específica no ciclo de vida da iniciativa, como a fase de apresentação, as revisões da comissão, os momentos de votação ou outras etapas formais."@pt , 
         "An Event represents an occurrence within the lifecycle of an Initiative. It corresponds to a specific phase or action in the initiative lifecycle, such as the introduction phase, committee reviews, voting moments, or other formal steps."@en ;
     rdfs:label "Event"@en ,
             "Evento"@pt ;
@@ -191,7 +191,7 @@
 #################################################################
 
 :title rdf:type owl:DatatypeProperty ;
-	rdfs:comment "Define o título de uma iniciativa"@pt , 
+	dct:description "Define o título de uma iniciativa"@pt , 
 		"Defines the title of an initiative"@en ;
     rdfs:label "has title"@en ,
                "tem título"@pt ;
@@ -205,7 +205,7 @@
 
 :link rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o link onde está hosteado no website do parlamento Português o conteúdo"@pt , 
+	dct:description "Define o link onde está hosteado no website do parlamento Português o conteúdo"@pt , 
 		"Defines the link in the Portuguese parliament's website where the content is hosted"@en ;
     rdfs:label "hosted in link"@en ,
                "hosteado no link"@pt ;
@@ -214,7 +214,7 @@
 
 :text rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o conteúdo textual da iniciativa"@pt , 
+	dct:description "Define o conteúdo textual da iniciativa"@pt , 
 		"Defines the textual content of the initiative"@en ;
     rdfs:label "has text"@en ,
                "contém texto"@pt ;
@@ -224,7 +224,7 @@
 :parliamentaryName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o nome parlamentar de um MP durante uma legislatura"@pt , 
+	dct:description "Define o nome parlamentar de um MP durante uma legislatura"@pt , 
 		"Defines the parliamentarian name of a MP during a legislature"@en ;
     rdfs:label "has parliamentary name"@en ,
                "tem nome parlamentar"@pt ;
@@ -233,7 +233,7 @@
 
 :type rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o tipo de uma proposta de alteração"@pt , 
+	dct:description "Define o tipo de uma proposta de alteração"@pt , 
 		"Defines the type of a change proposal"@en ;
     rdfs:label "is of type"@en ,
                "é do tipo"@pt ;
@@ -242,7 +242,7 @@
 
 :proposedBy rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o proponente de uma proposta de alteração"@pt , 
+	dct:description "Define o proponente de uma proposta de alteração"@pt , 
 		"Defines the proponent of a change proposal"@en ;
     rdfs:label "is proposed by"@en ,
                "é proposta por"@pt ;
@@ -251,7 +251,7 @@
 
 :typeId rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o id do tipo de evento"@pt , 
+	dct:description "Define o id do tipo de evento"@pt , 
 		"Defines the id of the type of the event"@en ;
     rdfs:label "has type id"@en ,
                "tem o id de evento"@pt ;
@@ -260,7 +260,7 @@
 
 :observation rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Observações feitas à iniciativa durante um evento"@pt , 
+	dct:description "Observações feitas à iniciativa durante um evento"@pt , 
 		"Observations done to the initiative during an event"@en ;
     rdfs:label "has observation"@en ,
                "tem observação"@pt ;
@@ -269,7 +269,7 @@
 
 :result rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o resultado de uma votação"@pt , 
+	dct:description "Define o resultado de uma votação"@pt , 
 		"Defines the result of a vote"@en ;
     rdfs:label "has result"@en ,
                "tem resultado"@pt ;
@@ -278,7 +278,7 @@
 
 :unanimous rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define se o resultado de uma votação é unânime"@pt , 
+	dct:description "Define se o resultado de uma votação é unânime"@pt , 
 		"Defines if the result of a vote is unanimous"@en ;
     rdfs:label "is unanimous"@en ,
                "é unânime"@pt ;
@@ -287,7 +287,7 @@
 
 :reunionNumber rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o número da reunião em que a votação ocorreu"@pt , 
+	dct:description "Define o número da reunião em que a votação ocorreu"@pt , 
 		"Defines the number of the reunion in which the vote occurred"@en ;
     rdfs:label "has reunion number"@en ,
                "tem número da reunião"@pt ;
@@ -296,7 +296,7 @@
 
 :reunionType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o tipo da reunião em que a votação ocorreu"@pt , 
+	dct:description "Define o tipo da reunião em que a votação ocorreu"@pt , 
 		"Defines the type of the reunion in which the vote occurred"@en ;
     rdfs:label "has reunion type"@en ,
                "tem reunião do tipo"@pt ;
@@ -308,7 +308,7 @@
 #################################################################
 
 :hasAuthor rdf:type owl:ObjectProperty ;
-	rdfs:comment "Define o(s) autor(es) (MP) de uma iniciativa"@pt , 
+	dct:description "Define o(s) autor(es) (MP) de uma iniciativa"@pt , 
 		"Defines the author(s) (MP) of an initiative"@en ;
     rdfs:label "has author"@en ,
                "tem autor(a)"@pt ;
@@ -318,7 +318,7 @@
 
 :hasProponent rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define o(s) proponente(s) de uma iniciativa"@pt , 
+	dct:description "Define o(s) proponente(s) de uma iniciativa"@pt , 
 		"Defines the proponent(s) of an initiative"@en ;
     rdfs:label "has proponent"@en ,
                "tem proponente"@pt ;
@@ -335,7 +335,7 @@
 
 :ledTo rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma iniciativa a outras que a original levou a serem criadas"@pt , 
+	dct:description "Relaciona uma iniciativa a outras que a original levou a serem criadas"@pt , 
 		"Relates an initiative to other initiatives the original led to its creation"@en ;
     rdfs:label "led to"@en ,
                "levou a"@pt ;
@@ -345,7 +345,7 @@
 
 :grewOutOf rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma iniciativa a iniciativas que levaram à sua origem, incluindo iniciativas europeias"@pt , 
+	dct:description "Relaciona uma iniciativa a iniciativas que levaram à sua origem, incluindo iniciativas europeias"@pt , 
 		"Relates an initiative to to other initiatives that it grew out of, including european initiatives"@en ;
     rdfs:label "grew out of"@en ,
                "teve origem em"@pt ;
@@ -358,7 +358,7 @@
 
 :happensJointlyWithInitiative rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Iniciativas em que o mesmo evento decorreu em conjunto com a iniciativa deste evento"@pt , 
+	dct:description "Iniciativas em que o mesmo evento decorreu em conjunto com a iniciativa deste evento"@pt , 
 		"Initiatives that had the same event happening jointly with the initiative from this event"@en ;
     rdfs:label "happens jointly with initiative"@en ,
                "acontece em conjunto com iniciativa"@pt ;
@@ -367,7 +367,7 @@
 
 :discussedJointlyWith rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Processos de contas públicas ou petições discutidas em conjunto com um evento"@pt , 
+	dct:description "Processos de contas públicas ou petições discutidas em conjunto com um evento"@pt , 
 		"Public accout proceedings or petitions discussed jointly with an event"@en ;
     rdfs:label "discussed jointly with"@en ,
                "discutido em conjunto com"@pt ;
@@ -376,7 +376,7 @@
 
 :hasAnnex rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , 
+	dct:description ""@pt , 
 		""@en ;
     rdfs:label "has annex"@en ,
                "tem anexo"@pt ;
@@ -389,7 +389,7 @@
 
 :receivedAppeal rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , 
+	dct:description ""@pt , 
 		""@en ;
     rdfs:label "received appeal"@en ,
                ""@pt ;
@@ -402,7 +402,7 @@
 
 :receivedChangeProposal rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment ""@pt , 
+	dct:description ""@pt , 
 		""@en ;
     rdfs:label "received change proposal"@en ,
                "recebeu proposta de alteração"@pt ;
@@ -411,7 +411,7 @@
 
 :hasRelatedPetition rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma iniciativa a petições levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
+	dct:description "Relaciona uma iniciativa a petições levou em conta durante a sua formulação, estando então relacionada a esta"@pt , 
 		"Relates an initiative to petitions that it took into account during its formulation, and which is therefore related to it"@en ;
     rdfs:label "has related petition"@en ,
                "tem petição relacionada"@pt ;
@@ -420,7 +420,7 @@
 
 :hasEvent rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma iniciativa a eventos que ocorreram ao longo do seu ciclo de vida"@pt , 
+	dct:description "Relaciona uma iniciativa a eventos que ocorreram ao longo do seu ciclo de vida"@pt , 
 		"Relates an initiative to events that occurred during its lifecycle"@en ;
     rdfs:label "has event"@en ,
                "tem o evento"@pt ;
@@ -429,7 +429,7 @@
 
 :hasVoteInFavourFrom rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que votaram a favor"@pt , 
+	dct:description "Relaciona uma votação aos MPs e grupos parlamentares que votaram a favor"@pt , 
 		"Relates a vote to the MPs and parliamentary groups that voted in favor"@en ;
     rdfs:label "has vote in favour from"@en ,
                "tem voto a favor de"@pt ;
@@ -442,7 +442,7 @@
 
 :hasVoteAgainstFrom rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que votaram contra"@pt , 
+	dct:description "Relaciona uma votação aos MPs e grupos parlamentares que votaram contra"@pt , 
 		"Relates a vote to the MPs and parliamentary groups that voted against"@en ;
     rdfs:label "has vote against from"@en ,
                "tem voto contra de"@pt ;
@@ -455,7 +455,7 @@
 
 :hasAbstentionFrom rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que se absteram de votar"@pt , 
+	dct:description "Relaciona uma votação aos MPs e grupos parlamentares que se absteram de votar"@pt , 
 		"Relates a vote to the MPs and parliamentary groups that abstained from the vote"@en ;
     rdfs:label "has abstention from"@en ,
                "tem abstenção de"@pt ;
@@ -468,7 +468,7 @@
 
 :hasAbsent rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona uma votação aos MPs que estiveram ausentes"@pt , 
+	dct:description "Relaciona uma votação aos MPs que estiveram ausentes"@pt , 
 		"Relates a vote to MPs who were absent"@en ;
     rdfs:label "has absent"@en ,
                "tem ausente"@pt ;
@@ -477,7 +477,7 @@
 
 :hasVote rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Relaciona um evento de uma iniciativa a uma votação que ocorreu durante o mesmo"@pt , 
+	dct:description "Relaciona um evento de uma iniciativa a uma votação que ocorreu durante o mesmo"@pt , 
 		"Relates an event of an initiative to a vote that occurred during it"@en ;
     rdfs:label "has vote"@en ,
                "tem a votação"@pt ;
