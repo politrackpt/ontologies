@@ -333,22 +333,22 @@
                   )
     ] .
 
-:originated rdf:type owl:ObjectProperty ;
+:ledTo rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define as iniciativas que foram originidas através desta"@pt , 
-		"Defines the initiatives originated from this one"@en ;
-    rdfs:label "originated"@en ,
-               "originou"@pt ;
+	rdfs:comment "Relaciona uma iniciativa a outras que a original levou a serem criadas"@pt , 
+		"Relates an initiative to other initiatives the original led to its creation"@en ;
+    rdfs:label "led to"@en ,
+               "levou a"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range :Initiative .
 
 
-:originatedFrom rdf:type owl:ObjectProperty ;
+:grewOutOf rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	rdfs:comment "Define as iniciativas que originaram esta, incluínda iniciativas europeias"@pt , 
-		"Defines the initiatives that originated this one, including european initiatives"@en ;
-    rdfs:label "originated from"@en ,
-               "originou desde"@pt ;
+	rdfs:comment "Relaciona uma iniciativa a iniciativas que levaram à sua origem, incluindo iniciativas europeias"@pt , 
+		"Relates an initiative to to other initiatives that it grew out of, including european initiatives"@en ;
+    rdfs:label "grew out of"@en ,
+               "teve origem em"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range [ rdf:type owl:Class ;
                   owl:unionOf ( :EuropeanInitiative
@@ -474,3 +474,12 @@
                "tem ausente"@pt ;
     rdfs:domain ocd:votazione ;
     rdfs:range m4s:Parliamentarian .
+
+:hasVote rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Relaciona um evento de uma iniciativa a uma votação que ocorreu durante o mesmo"@pt , 
+		"Relates an event of an initiative to a vote that occurred during it"@en ;
+    rdfs:label "has vote"@en ,
+               "tem a votação"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range ocd:votazione .
