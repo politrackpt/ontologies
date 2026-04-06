@@ -118,3 +118,8 @@
                                 :ParliamentaryGroup
                                 )
                 ] .
+
+:hasRole rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+     rdfs:domain :Membership ;
+     rdfs:range polis-bio:Role .
