@@ -190,7 +190,7 @@
 #    Data properties
 #################################################################
 
-:hasTitle rdf:type owl:DatatypeProperty ;
+:title rdf:type owl:DatatypeProperty ;
 	rdfs:comment "Define o título de uma iniciativa"@pt , 
 		"Defines the title of an initiative"@en ;
     rdfs:label "has title"@en ,
@@ -203,7 +203,7 @@
     ] ;
     rdfs:range xsd:string .
 
-:hostedInLink rdf:type owl:DatatypeProperty ;
+:link rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o link onde está hosteado no website do parlamento Português o conteúdo"@pt , 
 		"Defines the link in the Portuguese parliament's website where the content is hosted"@en ;
@@ -212,7 +212,7 @@
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
-:hasText rdf:type owl:DatatypeProperty ;
+:text rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o conteúdo textual da iniciativa"@pt , 
 		"Defines the textual content of the initiative"@en ;
@@ -221,7 +221,7 @@
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
-:hasParliamentaryName rdf:type owl:DatatypeProperty ;
+:parliamentaryName rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o nome parlamentar de um MP durante uma legislatura"@pt , 
@@ -231,7 +231,7 @@
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range xsd:string .
 
-:isOfType rdf:type owl:DatatypeProperty ;
+:type rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o tipo de uma proposta de alteração"@pt , 
 		"Defines the type of a change proposal"@en ;
@@ -240,7 +240,7 @@
     rdfs:domain :ChangeProposal ;
     rdfs:range xsd:string .
 
-:isProposedBy rdf:type owl:DatatypeProperty ;
+:proposedBy rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o proponente de uma proposta de alteração"@pt , 
 		"Defines the proponent of a change proposal"@en ;
@@ -249,7 +249,7 @@
     rdfs:domain :ChangeProposal ;
     rdfs:range xsd:string .
 
-:hasTypeId rdf:type owl:DatatypeProperty ;
+:typeId rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o id do tipo de evento"@pt , 
 		"Defines the id of the type of the event"@en ;
@@ -258,7 +258,7 @@
     rdfs:domain :Event ;
     rdfs:range xsd:int .
 
-:hasObservation rdf:type owl:DatatypeProperty ;
+:observation rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Observações feitas à iniciativa durante um evento"@pt , 
 		"Observations done to the initiative during an event"@en ;
@@ -267,7 +267,7 @@
     rdfs:domain :Event ;
     rdfs:range xsd:int .
 
-:hasResult rdf:type owl:DatatypeProperty ;
+:result rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o resultado de uma votação"@pt , 
 		"Defines the result of a vote"@en ;
@@ -276,7 +276,7 @@
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:string .
 
-:isUnanimous rdf:type owl:DatatypeProperty ;
+:unanimous rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define se o resultado de uma votação é unânime"@pt , 
 		"Defines if the result of a vote is unanimous"@en ;
@@ -285,7 +285,7 @@
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:boolean .
 
-:hasReunionNumber rdf:type owl:DatatypeProperty ;
+:reunionNumber rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o número da reunião em que a votação ocorreu"@pt , 
 		"Defines the number of the reunion in which the vote occurred"@en ;
@@ -294,7 +294,7 @@
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:int .
 
-:hasReunionType rdf:type owl:DatatypeProperty ;
+:reunionType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	rdfs:comment "Define o tipo da reunião em que a votação ocorreu"@pt , 
 		"Defines the type of the reunion in which the vote occurred"@en ;
