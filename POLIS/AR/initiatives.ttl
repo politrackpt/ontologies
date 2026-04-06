@@ -426,3 +426,42 @@
                "tem o evento"@pt ;
     rdfs:domain :Initiative ;
     rdfs:range :Event .
+
+:hasVoteInFavourFrom rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que votaram a favor"@pt , 
+		"Relates a vote to the MPs and parliamentary groups that voted in favor"@en ;
+    rdfs:label "has vote in favour from"@en ,
+               "tem voto a favor de"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( polis-core:ParliamentaryGroup
+                                m4s:Parliamentarian
+                              )
+                ] .
+
+:hasVoteAgainstFrom rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que votaram contra"@pt , 
+		"Relates a vote to the MPs and parliamentary groups that voted against"@en ;
+    rdfs:label "has vote against from"@en ,
+               "tem voto contra de"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( polis-core:ParliamentaryGroup
+                                m4s:Parliamentarian
+                              )
+                ] .
+
+:hasAbstentionFrom rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Relaciona uma votação aos MPs e grupos parlamentares que se absteram de votar"@pt , 
+		"Relates a vote to the MPs and parliamentary groups that abstained from the vote"@en ;
+    rdfs:label "has abstention from"@en ,
+               "tem abstenção de"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range [ rdf:type owl:Class ;
+                  owl:unionOf ( polis-core:ParliamentaryGroup
+                                m4s:Parliamentarian
+                              )
+                ] .
