@@ -276,6 +276,15 @@
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:string .
 
+:isUnanimous rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	rdfs:comment "Define se o resultado de uma votação é unânime"@pt , 
+		"Defines if the result of a vote is unanimous"@en ;
+    rdfs:label "is unanimous"@en ,
+               "é unânime"@pt ;
+    rdfs:domain ocd:votazione ;
+    rdfs:range xsd:string .
+
 #################################################################
 #    Object properties
 #################################################################
