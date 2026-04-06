@@ -283,7 +283,7 @@
     rdfs:label "is unanimous"@en ,
                "é unânime"@pt ;
     rdfs:domain ocd:votazione ;
-    rdfs:range xsd:string .
+    rdfs:range xsd:boolean .
 
 #################################################################
 #    Object properties
