@@ -513,3 +513,12 @@
                "proposta pelo grupo parlamentar"@pt ;
     rdfs:domain :ChangeProposal ;
     rdfs:range polis-core:ParliamentaryGroup .
+
+:proposedByParliamentarian rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Relaciona uma proposta de alteração ao deputado que a submeteu"@pt , 
+		"Relates a change proposal to the parliamentarian who submitted it"@en ;
+    rdfs:label "proposed by parliamentarian"@en ,
+               "proposta pela/o deputada/o"@pt ;
+    rdfs:domain :ChangeProposal ;
+    rdfs:range m4s:Parliamentarian .
