@@ -504,3 +504,12 @@
                "tem a votação"@pt ;
     rdfs:domain :Event ;
     rdfs:range ocd:votazione .
+
+:proposedByParliamentaryGroup rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Relaciona uma proposta de alteração ao grupo parlamentar que a submeteu"@pt , 
+		"Relates a change proposal to the parliamentary group who submitted it"@en ;
+    rdfs:label "proposed by parliamentary group"@en ,
+               "proposta pelo grupo parlamentar"@pt ;
+    rdfs:domain :ChangeProposal ;
+    rdfs:range polis-core:ParliamentaryGroup .
