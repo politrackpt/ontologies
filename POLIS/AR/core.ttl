@@ -64,12 +64,6 @@
     dct:description "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
     rdf:type owl:FunctionalProperty .
 
-:description rdf:type owl:DatatypeProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "has description"@en, "tem a descrição"@pt ;
-    dct:description "A description"@en, "Uma descrição"@pt ;
-    rdfs:range xsd:string .
-
 #################################################################
 #    Object properties
 #################################################################
