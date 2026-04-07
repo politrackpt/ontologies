@@ -77,13 +77,6 @@
 :belongsToLegislature rdf:type owl:ObjectProperty ,
             owl:FunctionalProperty ;
             rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-            rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( ocd:mandatoCamera
-                                        ocd:sessioneLegislatura
-                                        polis-ini:Initiative
-                                        :ParliamentaryGroup
-                                        )
-                        ] ;
             rdfs:range ocd:legislatura .
 
 :isOfParty rdf:type owl:ObjectProperty ,
@@ -95,7 +88,6 @@
 
 :belongsToLegislativeSession rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-     rdfs:domain polis-core:Initiative ;
      rdfs:range ocd:sessioneLegislatura .
 
 :hasMembership rdf:type owl:ObjectProperty ;
