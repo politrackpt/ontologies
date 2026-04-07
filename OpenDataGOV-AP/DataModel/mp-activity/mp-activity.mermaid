@@ -4,18 +4,16 @@ config:
 ---
 flowchart LR
     Mandate("Mandate")
-    Ini("Initiative")
     Req("Request")
     reqtype("Request Type")
     Interv("Intervention")
     PubType("Publication Type")
     PAct("Parliamentary Activity")
-    Pet("Petition")
     PE("Public Accounts")
-    EUINI("European Initiatives")
     Event("Event")
     Visit("Visit")
-    Meet("Meeting")
+    Meet("Audition")
+    Group("Group")
     Hear("Hearing")
     YPA("Youth Parliament Activity")
     TeaEs("Teaching Establishment")
@@ -26,13 +24,12 @@ flowchart LR
     FPG("Friendship Parliamentary Group")
     DelPM("Permanent Delegation Meeting")
 
-    Mandate -- hasRelatedInitiative --> Ini
     Mandate -- hasRelatedRequest --> Req
     Req -- isRequestType --> reqtype
     Mandate -- hasRelatedIntervention --> Interv
     Interv -- hasPublicationType  --> PubType
     Mandate -- didParliamentaryActivity --> PAct
-    Mandate -- wasRapporteurIn --> Ini & Pet & PE & EUINI
+    Mandate -- wasRapporteurIn --> PE
     PE -- isActivityType --> ActType
     Mandate -- hasRelatedEvent --> Event
     Mandate -- hasVisit --> Visit
@@ -42,7 +39,8 @@ flowchart LR
     YPA -- tookPlaceIn --> TeaEs
     TeaEs -- isType --> EsType
     Mandate -- hasMembership --> Mem
-    Mem -- relatedTemporaryDelegation --> DelE
-    Mem -- relatedPermanentDelegation --> DelP
-    Mem -- relatedFriendshipParliamentaryGroup --> FPG
     DelP -- hasMeeting --> DelPM
+    Mem -- hasGroup --> Group 
+    Group -.-> FPG
+    Group -.-> DelE
+    Group -.-> DelP
