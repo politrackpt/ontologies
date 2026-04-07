@@ -187,6 +187,14 @@
             "Evento"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:DARPublication a owl:Class ;
+    dct:description "Uma publicação oficial no Diário da Assembleia da República"@pt , 
+        "An official publication in the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Diary of the Assembly of the Republic Publication"@en ,
+            "Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf ocd:pubblicistica .
+
 #################################################################
 #    Data properties
 #################################################################
