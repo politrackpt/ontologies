@@ -206,11 +206,11 @@
 
 :link rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o link onde está hosteado no website do parlamento Português o conteúdo"@pt , 
-		"Defines the link in the Portuguese parliament's website where the content is hosted"@en ;
+	dct:description "Define o link onde está hosteado no website do parlamento Português o documento"@pt , 
+		"Defines the link in the Portuguese parliament's website where the document is hosted"@en ;
     rdfs:label "hosted in link"@en ,
                "hosteado no link"@pt ;
-    rdfs:domain :Content ;
+    rdfs:domain bibo:Document ;
     rdfs:range xsd:string .
 
 :text rdf:type owl:DatatypeProperty ;
@@ -386,8 +386,8 @@
 
 :hasAnnex rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description ""@pt , 
-		""@en ;
+	dct:description "Relaciona uma iniciativa ou um evento a um documento em anexo"@pt , 
+		"Relates an initiative or event to a document in annex"@en ;
     rdfs:label "has annex"@en ,
                "tem anexo"@pt ;
     rdfs:domain [ rdf:type owl:Class ;
@@ -395,6 +395,15 @@
                                 :Initiative
                               )
                 ] ;
+    rdfs:range bibo:Document .
+
+:hasContent rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Relaciona uma iniciativa ao seu conteúdo textual"@pt , 
+		"Relates an initiative to its textual content"@en ;
+    rdfs:label "has content"@en ,
+               "tem conteúdo"@pt ;
+    rdfs:domain :Initiative ;
     rdfs:range bibo:Document .
 
 :receivedAppeal rdf:type owl:ObjectProperty ;
