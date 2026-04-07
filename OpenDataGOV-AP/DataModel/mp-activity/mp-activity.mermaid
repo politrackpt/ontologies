@@ -13,7 +13,6 @@ flowchart LR
     Pet("Petition")
     PE("Public Accounts")
     EUINI("European Initiatives")
-    Opi("Parliamentary Opinion")
     Event("Event")
     Visit("Visit")
     Meet("Meeting")
@@ -35,7 +34,6 @@ flowchart LR
     Mandate -- didParliamentaryActivity --> PAct
     Mandate -- wasRapporteurIn --> Ini & Pet & PE & EUINI
     PE -- isActivityType --> ActType
-    Mandate -- hasOpinion --> Opi
     Mandate -- hasRelatedEvent --> Event
     Mandate -- hasVisit --> Visit
     Mandate -- hasMeetings --> Meet
