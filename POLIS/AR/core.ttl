@@ -93,7 +93,7 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
      rdfs:domain :Membership ;
      rdfs:range [ rdf:type owl:Class ;
-                    owl:unionOf ( polis-bio:OrganisationalBody
+                    owl:unionOf ( ocd:organo
                                 :ParliamentaryGroup
                                 )
                 ] .
