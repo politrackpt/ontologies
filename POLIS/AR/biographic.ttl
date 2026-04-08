@@ -104,6 +104,12 @@
     rdfs:label "Title"@en, "Título"@pt ;
     dct:description "A title that an MP has"@en, "Um título que um MP tem"@pt .
 
+:HabilitationStatus rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Habilitation Status"@en, "Status de Habilitação"@pt ;
+    dct:description "The status of habilitation of an MP"@en, "O estado da habilitação de um MP"@pt ;
+    owl:oneOf ( :Complete :Incomplete ) .
+
 #################################################################
 #    Data properties
 #################################################################
@@ -159,24 +165,18 @@
     rdfs:label "has habilitation status"@en, "tem status de habilitação"@pt ;
     dct:description "Indicates the status of habilitation of an MP"@en, "Indica o estado da habilitação de um MP"@pt ;
     rdfs:domain :Habilitation ;
-    rdfs:range skos:Concept .
+    rdfs:range :HabilitationStatus .
 
 #################################################################
 #    Individuals
 #################################################################
 
-:HabilitationStatusScheme rdf:type owl:NamedIndividual , 
-                                    skos:ConceptScheme ;
+:Complete rdf:type :HabilitationStatus, owl:NamedIndividual ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
-    skos:prefLabel "Habilitation Status Scheme"@en, "Esquema de Status de Habilitação"@pt ;
-    dct:description "A scheme to classify the status of habilitation of MPs"@en, "Um esquema para classificar o estado de habilitação dos MPs"@pt .
+    rdfs:label "Complete"@en, "Completo"@pt ;
+    dct:description "Indicates that an MP has completed a given habilitation"@en, "Indica que um MP completou uma dada habilitação"@pt .
 
-:Completed a skos:Concept ;
-    skos:inScheme :HabilitationStatusScheme ;
-    skos:prefLabel "Completed"@en, "Completo"@pt ;
-    skos:notation "C" .
-
-:Incomplete a skos:Concept ;
-    skos:inScheme :HabilitationStatusScheme ;
-    skos:prefLabel "Incomplete"@en, "Incompleto"@pt ;
-    skos:notation "F" .
+:Incomplete rdf:type :HabilitationStatus, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Incomplete"@en, "Incompleto"@pt ;
+    dct:description "Indicates that an MP has not completed a given habilitation"@en, "Indica que um MP não completou uma dada habilitação"@pt .
