@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix org: <https://www.w3.org/ns/org#> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
@@ -54,6 +55,12 @@
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Public Entity Type"@en, "Tipo de Entidade Pública"@pt ;
 	rdfs:comment "A type of public entity."@en, "Um tipo de entidade pública."@pt .
+
+:FriendshipParliamentaryGroup a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Friendship Parliamentary Group"@en, "Grupo Parlamentar de Amizade"@pt ;
+	rdfs:comment "A Friendship Parliamentary Group."@en, "Um Grupo Parlamentar de Amizade."@pt ;
+	rdfs:subClassOf org:OrganizationalUnit .
 
 ##################################################################
 #    Object Properties
