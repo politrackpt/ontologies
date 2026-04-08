@@ -41,6 +41,59 @@
     rdfs:label "Habilitation"@en, "Habilitação"@pt ;
     dct:description "A habilitation that an MP has"@en, "Uma habilitação que um MP tem"@pt .
 
+:HabilitationLevel rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Habilitation Level"@en, "Nível de Habilitação"@pt ;
+    dct:description "The level of habilitation of an MP"@en, "O nível de habilitação de um MP"@pt .
+
+:PrimarySchool rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Primary School"@en, "Ensino Primário"@pt ;
+    dct:description "The primary school level of habilitation"@en, "O nível de habilitação do ensino primário"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:MiddleSchool rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Middle School"@en, "2º Ciclo"@pt ;
+    dct:description "The middle school level of habilitation"@en, "O nível de habilitação do 2º ciclo"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:EarlyHighSchool rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Early High School"@en, "3º Ciclo"@pt ;
+    dct:description "The early high school level of habilitation"@en, "O nível de habilitação do 3º ciclo"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:HighSchool rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "High School"@en, "Ensino Secundário"@pt ;
+    dct:description "The high school level of habilitation"@en  , "O nível de habilitação do ensino secundário"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:HigherEducation rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Higher Education"@en, "Ensino Superior"@pt ;
+    dct:description "The higher education level of habilitation"@en, "O nível de habilitação do ensino superior"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:Bachelor rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Bachelor"@en, "Licenciatura"@pt ;
+    dct:description "The bachelor level of habilitation"@en, "O nível de habilitação da licenciatura"@pt ;
+    rdfs:subClassOf :HabilitationLevel .    
+
+:Master rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Master"@en, "Mestrado"@pt ;
+    dct:description "The master level of habilitation"@en, "O nível de habilitação do mestrado"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
+:Postgrad rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Postgraduate"@en, "Pós-Graduação"@pt ;
+    dct:description "The postgraduate level of habilitation"@en, "O nível de habilitação da pós-graduação"@pt ;
+    rdfs:subClassOf :HabilitationLevel .
+
 :Role rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
     rdfs:label "Role"@en, "Cargo"@pt ;
@@ -111,44 +164,6 @@
 #################################################################
 #    Individuals
 #################################################################
-
-:HabilitationLevelScheme rdf:type owl:NamedIndividual , 
-                                    skos:ConceptScheme ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
-    skos:prefLabel "Habilitation Level Scheme"@en, "Esquema de Níveis de Habilitação"@pt ;
-    dct:description "A scheme to classify the levels of habilitation of MPs"@en, "Um esquema para classificar os níveis de habilitação dos MPs"@pt .
-
-:PrimarySchool a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Primary School"@en, "Ensino Primário"@pt .
-
-:MiddleSchool a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Middle School"@en, "2º Ciclo"@pt .
-
-:EarlyHighSchool a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Early High School"@en, "3º Ciclo"@pt .
-
-:HighSchool a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "High School"@en, "Ensino Secundário"@pt .
-
-:HigherEducation a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Higher Education"@en, "Ensino Superior"@pt .
-
-:Bachelor a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Bachelor"@en, "Licenciatura"@pt .
-
-:Master a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Master"@en, "Mestrado"@pt .
-
-:Postgrad a skos:Concept ;
-    skos:inScheme :HabilitationLevelScheme ;
-    skos:prefLabel "Postgraduate"@en, "Pós-Graduação"@pt .
 
 :HabilitationStatusScheme rdf:type owl:NamedIndividual , 
                                     skos:ConceptScheme ;
