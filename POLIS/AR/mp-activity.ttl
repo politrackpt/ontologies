@@ -107,6 +107,18 @@
 	rdfs:comment "A type of activity."@en, "Um tipo de atividade."@pt .
 
 ##################################################################
+#    Data Properties
+##################################################################
+
+:debateDate a owl:DatatypeProperty, 
+				owl:FunctionalProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "debate date"@en, "data de debate"@pt ;
+	rdfs:comment "The date of debate of an activity."@en, "A data de debate de uma atividade."@pt ;
+	rdfs:domain prov:Activity ;
+	rdfs:range xsd:date .
+
+##################################################################
 #    Object Properties
 ##################################################################
 
