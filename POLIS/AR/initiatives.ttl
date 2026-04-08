@@ -35,12 +35,6 @@
 #    Classes
 #################################################################
 
-:Commission rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:label "Comissão"@pt ,
-               "Commission"@en ;
-	dct:description ""@pt , ""@en .
-
 :RegionalLegislativeAssembly rdf:type owl:Class ;
 	rdfs:label "Assembleia Legislativa Regional"@pt ,"Regional Legislative Assembly"@en ;
 	dct:description ""@pt , ""@en ;
@@ -347,7 +341,7 @@
       owl:unionOf ( ocd:governo
                     m4s:Parliamentarian
                     :CitizenGroup
-                    :Commission
+                    polis-core:Commission
                     polis-core:ParliamentaryGroup
                     :RegionalLegislativeAssembly
                   )

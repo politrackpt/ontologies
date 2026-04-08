@@ -60,6 +60,12 @@
         "Representa uma pessoa que foi convidada à Assembleia da República"@pt ;
     rdfs:subClassOf foaf:Person .
 
+:Commission rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:label "Comissão"@pt ,
+               "Commission"@en ;
+	dct:description ""@pt , ""@en . # TODO: SUBCLASS DE ORGANISATIONALBODY
+
 #################################################################
 #    Data properties
 #################################################################
