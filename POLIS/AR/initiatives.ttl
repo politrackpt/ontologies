@@ -407,6 +407,15 @@
                 ] ;
     rdfs:range bibo:Document .
 
+:approvesDiploma rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Relaciona um evento com o diploma que nele foi aprovado"@pt , 
+		"Relates an event to the diploma approved within its context"@en ;
+    rdfs:label "approves diploma"@en ,
+               "aprova o diploma"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range bibo:Document .
+
 :hasContent rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Relaciona uma iniciativa ao seu conteúdo textual"@pt , 
