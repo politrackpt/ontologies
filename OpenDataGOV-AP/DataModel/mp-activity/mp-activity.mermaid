@@ -4,8 +4,7 @@ config:
 ---
 flowchart LR
     MP("MP")
-    Req("Request")
-    reqtype("Request Type")
+    Req("Requisition")
     Interv("Intervention")
     PubType("Publication Type")
     PAct("Parliamentary Activity")
@@ -31,7 +30,6 @@ flowchart LR
     ComA -.-> Event
     ComA -.-> Visit
     MP -- didRequest --> Req
-    Req -- isRequestType --> reqtype
     MP -- didIntervention --> Interv
     Interv -- hasPublicationType  --> PubType
     MP -- didParliamentaryActivity --> PAct
