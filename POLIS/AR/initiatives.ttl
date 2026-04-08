@@ -530,3 +530,11 @@
                "proposta pela/o deputada/o"@pt ;
     rdfs:domain :ChangeProposal ;
     rdfs:range m4s:Parliamentarian .
+
+:isPublishedInDAR rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Relaciona uma entidade a uma publicação correspondente no Diário da República"@pt , 
+		"Relates an entity to its corresponding publication in the Diário da República"@en ;
+    rdfs:label "is published in DAR"@en ,
+               "é publicado no DAR"@pt ;
+    rdfs:range :DARPublication .
