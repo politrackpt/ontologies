@@ -101,6 +101,12 @@
 	rdfs:comment "The scope of a delegation."@en, "O âmbito de uma delegação."@pt ;
 	owl:oneOf (:NationalDelegation :InternationalDelegation) .
 
+:PublicAccount a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Public Account"@en, "Conta Pública"@pt ;
+	rdfs:comment "A public account."@en, "Uma conta pública."@pt ;
+	rdfs:subClassOf prov:Activity .
+
 :ActivityType a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Activity Type"@en, "Tipo de Atividade"@pt ;
