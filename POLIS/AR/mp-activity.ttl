@@ -10,6 +10,7 @@
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix org: <https://www.w3.org/ns/org#> .
+@prefix prov: <https://www.w3.org/ns/prov-o> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
@@ -77,6 +78,13 @@
 	rdfs:comment "Indicates the public entity type which an MP made a requisition (request or inquiry) to."@en, "Indica o tipo de entidade pública à qual um MP fez um requerimento (requerimento ou pergunta)."@pt ;
 	rdfs:domain ocd:richiestaParere ;
 	rdfs:range :PublicEntityType .
+
+:hasActivityType a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "has Activity Type"@en, "tem Tipo de Atividade"@pt ;
+	rdfs:comment "Indicates the type of an activity."@en, "Indica o tipo de uma atividade."@pt ;
+	rdfs:domain prov:Activity ;
+	rdfs:range :ActivityType .
 
 ##################################################################
 #    Individuals
