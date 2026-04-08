@@ -38,3 +38,64 @@
 #    Classes
 #################################################################
 
+:Request a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Request"@en, "Requerimento"@pt ;
+	rdfs:comment "A request made by an MP."@en, "Uma requerimento feito por um MP."@pt ;
+	rdfs:subClassOf ocd:richiestaParere .
+
+:Inquiry a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Inquiry"@en, "Inquérito"@pt ;
+	rdfs:comment "An inquiry made by an MP."@en, "Uma pergunta feita por um MP."@pt ;
+	rdfs:subClassOf ocd:richiestaParere .
+
+:PublicEntityType a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Public Entity Type"@en, "Tipo de Entidade Pública"@pt ;
+	rdfs:comment "A type of public entity."@en, "Um tipo de entidade pública."@pt .
+
+##################################################################
+#    Object Properties
+##################################################################
+
+:toPublicEntityType a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "to Public Entity Type"@en, "para Tipo de Entidade Pública"@pt ;
+	rdfs:comment "Indicates the public entity type where an MP made a requisition (request or inquiry)."@en, "Indica o tipo de entidade pública onde um MP fez um requerimento (requerimento ou pergunta)."@pt ;
+	rdfs:domain ocd:richiestaParere ;
+	rdfs:range :PublicEntityType .
+
+##################################################################
+#    Individuals
+##################################################################
+
+:AC a owl:NamedIndividual, :PublicEntityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	foaf:name "Central Administration"@en, "Administração Central"@pt ;
+	rdfs:label "Central Administration"@en, "Administração Central"@pt ;
+	rdfs:comment "A Central Administration."@en, "Uma Administração Central."@pt .
+
+:AL a owl:NamedIndividual, :PublicEntityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	foaf:name "Local Administration"@en, "Administração Local"@pt ;
+	rdfs:label "Local Administration"@en, "Administração Local"@pt ;
+	rdfs:comment "A Local Administration."@en, "Uma Administração Local."@pt .
+
+:AR a owl:NamedIndividual, :PublicEntityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	foaf:name "Assembly of the Republic"@en, "Assembleia da República"@pt ;
+	rdfs:label "Assembly of the Republic"@en, "Assembleia da República"@pt ;
+	rdfs:comment "The Assembly of the Republic is the national parliament of Portugal."@en, "A Assembleia da República é o parlamento nacional de Portugal."@pt .
+
+:EI a owl:NamedIndividual, :PublicEntityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	foaf:name "Independent Entities"@en, "Entidades Independentes"@pt ;
+	rdfs:label "Independent Entities"@en, "Entidades Independentes"@pt ;
+	rdfs:comment "Independent Entities."@en, "Entidades Independentes."@pt .
+
+:RA a owl:NamedIndividual, :PublicEntityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	foaf:name "Autonomous Regions"@en, "Regiões Autónomas"@pt ;
+	rdfs:label "Autonomous Regions"@en, "Regiões Autónomas"@pt ;
+	rdfs:comment "Autonomous Regions"@en, "Regiões Autónomas"@pt .
