@@ -22,6 +22,8 @@ flowchart LR
     DelPM("mpact:PermanentDelegationMeeting")
     ComA("mpact:ComissionActivity")
     Group("schema:Group")
+    PublicEntityType("mpact:PublicEntityType")
+    ActType(mpact:ActivityType)
 
     MP -- core:didCommissionActivity --> ComA
     ComA -.-> Hearing
@@ -33,7 +35,7 @@ flowchart LR
     MP -- core:wasRapporteurIn --> PE
     PE -- mpact:isActivityType --> ActType
     MP -- core:didYouthParliamentActivity --> YPA
-    YPA -- mpact:tookPlaceIn --> TeaEs
+    YPA -- mpact:heldAt --> TeaEs
     TeaEs -- mpact:isType --> EsType
     MP -- core:hasMembership --> Mem
     DelP -- mpact:didDelegationMeeting --> DelPM
@@ -44,12 +46,12 @@ flowchart LR
     Delegation -.-> DelP
     Req -.-> mpact:Request
     Req -.-> mpact:Inquiry
-    Req -.-> mpact:PublicEntityType
-    Req -.-> mpact:AC
-    Req -.-> mpact:AL
-    Req -.-> mpact:AR
-    Req -.-> mpact:EI
-    Req -.-> mpact:RA
+    Req -- toPublicEntityType --> PublicEntityType
+    PublicEntityType -.-> mpact:AC
+    PublicEntityType -.-> mpact:AL
+    PublicEntityType -.-> mpact:AR
+    PublicEntityType -.-> mpact:EI
+    PublicEntityType -.-> mpact:RA
     
   style MP fill:#FF9999,stroke:#333,color:#000
   style Req fill:#FF9999,stroke:#333,color:#000
