@@ -60,7 +60,7 @@
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Friendship Parliamentary Group"@en, "Grupo Parlamentar de Amizade"@pt ;
 	rdfs:comment "A Friendship Parliamentary Group."@en, "Um Grupo Parlamentar de Amizade."@pt ;
-	rdfs:subClassOf org:OrganizationalUnit .
+	rdfs:subClassOf foaf:Group .
 
 ##################################################################
 #    Object Properties
