@@ -156,7 +156,7 @@
 	rdfs:domain prov:Activity ;
 	rdfs:range foaf:Organization .
 
-:hasActivityType a owl:ObjectProperty ;
+:isActivityType a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "has Activity Type"@en, "tem Tipo de Atividade"@pt ;
 	rdfs:comment "Indicates the type of an activity."@en, "Indica o tipo de uma atividade."@pt ;
