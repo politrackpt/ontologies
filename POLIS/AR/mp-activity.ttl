@@ -11,6 +11,8 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix org: <https://www.w3.org/ns/org#> .
 @prefix prov: <https://www.w3.org/ns/prov-o> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
@@ -69,6 +71,36 @@
 	rdfs:comment "A parliamentary activity."@en, "Uma atividade parlamentar."@pt ;
 	rdfs:subClassOf prov:Activity .
 
+:Delegation a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Delegation"@en, "Delegação"@pt ;
+	rdfs:comment "A delegation."@en, "Uma delegação."@pt ;
+	rdfs:subClassOf foaf:Group .
+
+:PermanentDelegation a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Permanent Delegation"@en, "Delegação Permanente"@pt ;
+	rdfs:comment "A permanent delegation."@en, "Uma delegação permanente."@pt ;
+	rdfs:subClassOf :Delegation .
+
+:TemporaryDelegation a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Temporary Delegation"@en, "Delegação Eventual"@pt ;
+	rdfs:comment "A temporary delegation."@en, "Uma delegação eventual."@pt ;
+	rdfs:subClassOf :Delegation .
+
+:PermanentDelegationMeeting a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Permanent Delegation Meeting"@en, "Reunião de Delegação Permanente"@pt ;
+	rdfs:comment "A permanent delegation meeting."@en, "Uma reunião de delegação permanente."@pt ;
+	rdfs:subClassOf dbo:Meeting .
+
+:DelegationScope a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Delegation Scope"@en, "Âmbito da Delegação"@pt ;
+	rdfs:comment "The scope of a delegation."@en, "O âmbito de uma delegação."@pt ;
+	owl:oneOf (:NationalDelegation :InternationalDelegation) .
+
 :ActivityType a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Activity Type"@en, "Tipo de Atividade"@pt ;
@@ -95,6 +127,16 @@
 ##################################################################
 #    Individuals
 ##################################################################
+
+:NationalDelegation a owl:NamedIndividual, :DelegationScope ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "National Delegation"@en, "Delegação Nacional"@pt ;
+	rdfs:comment "A national delegation."@en, "Uma delegação nacional."@pt .
+
+:InternationalDelegation a owl:NamedIndividual, :DelegationScope ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "International Delegation"@en, "Delegação Internacional"@pt ;
+	rdfs:comment "An international delegation."@en, "Uma delegação internacional."@pt .
 
 :AC a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
