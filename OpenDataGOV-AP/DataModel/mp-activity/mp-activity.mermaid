@@ -3,7 +3,7 @@ config:
   layout: elk
 ---
 flowchart LR
-    Mandate("Mandate")
+    MP("MP")
     Req("Request")
     reqtype("Request Type")
     Interv("Intervention")
@@ -12,9 +12,9 @@ flowchart LR
     PE("Public Accounts")
     Event("Event")
     Visit("Visit")
-    Meet("Audition")
+    Audition("Audition")
     Group("Group")
-    Hear("Hearing")
+    Hearing("Hearing")
     YPA("Youth Parliament Activity")
     TeaEs("Teaching Establishment")
     EsType("Establishment Type")
@@ -23,24 +23,26 @@ flowchart LR
     DelP("Permanent Delegation")
     FPG("Friendship Parliamentary Group")
     DelPM("Permanent Delegation Meeting")
+    ComA("Comission Activity")
 
-    Mandate -- hasRelatedRequest --> Req
+    MP -- didCommissionActivity --> ComA
+    ComA -.-> Hearing
+    ComA -.-> Audition
+    ComA -.-> Event
+    ComA -.-> Visit
+    MP -- didRequest --> Req
     Req -- isRequestType --> reqtype
-    Mandate -- hasRelatedIntervention --> Interv
+    MP -- didIntervention --> Interv
     Interv -- hasPublicationType  --> PubType
-    Mandate -- didParliamentaryActivity --> PAct
-    Mandate -- wasRapporteurIn --> PE
+    MP -- didParliamentaryActivity --> PAct
+    MP -- wasRapporteurIn --> PE
     PE -- isActivityType --> ActType
-    Mandate -- hasRelatedEvent --> Event
-    Mandate -- hasVisit --> Visit
-    Mandate -- hasMeetings --> Meet
-    Mandate -- hasHearing --> Hear
-    Mandate -- didYouthParliamentActivity --> YPA
+    MP -- didYouthParliamentActivity --> YPA
     YPA -- tookPlaceIn --> TeaEs
     TeaEs -- isType --> EsType
-    Mandate -- hasMembership --> Mem
-    DelP -- hasMeeting --> DelPM
-    Mem -- hasGroup --> Group 
+    MP -- hasMembership --> Mem
+    DelP -- didDelegationMeeting --> DelPM
+    Mem -- inGroup --> Group 
     Group -.-> FPG
     Group -.-> DelE
     Group -.-> DelP
