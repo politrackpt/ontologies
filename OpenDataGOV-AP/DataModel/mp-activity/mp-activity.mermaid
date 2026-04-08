@@ -4,7 +4,9 @@ config:
 ---
 flowchart LR
     MP("MP")
-    Req("Requisition")
+    Req("ocd:richiestaParere")
+    ReqReq("Request")
+    Inq("Inquiry")
     Interv("Intervention")
     PubType("Publication Type")
     PAct("Parliamentary Activity")
@@ -18,6 +20,7 @@ flowchart LR
     TeaEs("Teaching Establishment")
     EsType("Establishment Type")
     Mem("Membership")
+    Del("Delegation")
     DelE("Temporary Delegation")
     DelP("Permanent Delegation")
     FPG("Friendship Parliamentary Group")
@@ -30,6 +33,8 @@ flowchart LR
     ComA -.-> Event
     ComA -.-> Visit
     MP -- didRequest --> Req
+    Req -.-> ReqReq
+    Req -.-> Inq
     MP -- didIntervention --> Interv
     MP -- didParliamentaryActivity --> PAct
     MP -- wasRapporteurIn --> PE
@@ -41,5 +46,6 @@ flowchart LR
     DelP -- didDelegationMeeting --> DelPM
     Mem -- inGroup --> Group 
     Group -.-> FPG
-    Group -.-> DelE
-    Group -.-> DelP
+    Group -.-> Del
+    Del -.-> DelE
+    Del -.-> DelP
