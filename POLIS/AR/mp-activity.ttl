@@ -63,6 +63,12 @@
 	rdfs:comment "A Friendship Parliamentary Group."@en, "Um Grupo Parlamentar de Amizade."@pt ;
 	rdfs:subClassOf foaf:Group .
 
+:ParliamentaryActivity a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Parliamentary Activity"@en, "Atividade Parlamentar"@pt ;
+	rdfs:comment "A parliamentary activity."@en, "Uma atividade parlamentar."@pt ;
+	rdfs:subClassOf prov:Activity .
+
 :ActivityType a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Activity Type"@en, "Tipo de Atividade"@pt ;
