@@ -71,6 +71,13 @@
     dct:description "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
     rdf:type owl:FunctionalProperty .
 
+:honour rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "honour"@en, "de honra"@pt ;
+    dct:description "Indicates if a guest is a guest of honour"@en, "Indica se um convidado é um convidado de honra"@pt ;
+    rdfs:domain :Guest ;
+    rdfs:range xsd:boolean .
+
 #################################################################
 #    Object properties
 #################################################################
