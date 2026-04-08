@@ -117,6 +117,20 @@
 	rdfs:domain ocd:richiestaParere ;
 	rdfs:range :PublicEntityType .
 
+:hasDelegationScope a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "has Delegation Scope"@en, "tem Âmbito da Delegação"@pt ;
+	rdfs:comment "Indicates the scope of a delegation."@en, "Indica o âmbito de uma delegação."@pt ;
+	rdfs:domain :TemporaryDelegation ;
+	rdfs:range :DelegationScope .
+
+:hasPermanentDelegationMeeting a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "has Meeting"@en, "tem Reunião"@pt ;
+	rdfs:comment "Indicates the meeting of a permanent delegation."@en, "Indica a reunião de uma delegação permanente."@pt ;
+	rdfs:domain :PermanentDelegation ;
+	rdfs:range :PermanentDelegationMeeting .
+
 :hasActivityType a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "has Activity Type"@en, "tem Tipo de Atividade"@pt ;
