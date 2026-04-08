@@ -1,0 +1,61 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    MP("m4s:Parliamentarian")
+    Req("ocd:richiestaParere")   
+    PAct("mpact:ParliamentaryActivity")
+    PE("mpact:PublicAccounts")
+    Event("mpact:Event")
+    Visit("mpact:Visit")
+    Audition("mpact:Audition")
+    Delegation("mpact:Delegation")
+    Hearing("mpact:Hearing")
+    YPA("mpact:YouthParliamentActivity")
+    TeaEs("mpact:TeachingEstablishment")
+    EsType("mpact:EstablishmentType")
+    Mem("core:Membership")
+    DelE("mpact:TemporaryDelegation")
+    DelP("mpact:PermanentDelegation")
+    FPG("mpact:FriendshipParliamentary Group")
+    DelPM("mpact:PermanentDelegationMeeting")
+    ComA("mpact:ComissionActivity")
+    Group("schema:Group")
+
+    MP -- core:didCommissionActivity --> ComA
+    ComA -.-> Hearing
+    ComA -.-> Audition
+    ComA -.-> Event
+    ComA -.-> Visit
+    MP -- core:didRequest --> Req
+    MP -- core:didParliamentaryActivity --> PAct
+    MP -- core:wasRapporteurIn --> PE
+    PE -- mpact:isActivityType --> ActType
+    MP -- core:didYouthParliamentActivity --> YPA
+    YPA -- mpact:tookPlaceIn --> TeaEs
+    TeaEs -- mpact:isType --> EsType
+    MP -- core:hasMembership --> Mem
+    DelP -- mpact:didDelegationMeeting --> DelPM
+    Mem -- core:inGroup --> Group 
+    Group -.-> FPG
+    Group -.->Delegation
+    Delegation -.-> DelE
+    Delegation -.-> DelP
+    Req -.-> mpact:Request
+    Req -.-> mpact:Inquiry
+    Req -.-> mpact:PublicEntityType
+    Req -.-> mpact:AC
+    Req -.-> mpact:AL
+    Req -.-> mpact:AR
+    Req -.-> mpact:EI
+    Req -.-> mpact:RA
+    
+  style MP fill:#FF9999,stroke:#333,color:#000
+  style Req fill:#FF9999,stroke:#333,color:#000
+  %%style Event fill:#90EE90,stroke:#333,color:#000
+    style Mem fill:#89CFF0,stroke:#333,color:#000
+ style Group fill:#FF9999,stroke:#333,color:#000
+    linkStyle 0,5,6,7,9,12,14 stroke:#89CFF0,stroke-width:2px
+    
+
