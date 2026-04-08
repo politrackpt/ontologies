@@ -147,12 +147,12 @@
     rdfs:domain m4s:Parliamentarian ;
     rdfs:range :Habilitation .
 
-:hasHabilitationLevel rdf:type owl:ObjectProperty ;
+:isHabilitationLevel rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
-    rdfs:label "has habilitation level"@en, "tem nível de habilitação"@pt ;
+    rdfs:label "is habilitation level"@en, "é nível de habilitação"@pt ;
     dct:description "Indicates the level of habilitation of an MP"@en, "Indica o nível de habilitação de um MP"@pt ;
     rdfs:domain :Habilitation ;
-    rdfs:range skos:Concept .
+    rdfs:range :HabilitationLevel .
 
 :hasHabilitationStatus rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
