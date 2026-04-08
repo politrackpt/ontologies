@@ -62,6 +62,11 @@
 	rdfs:comment "A Friendship Parliamentary Group."@en, "Um Grupo Parlamentar de Amizade."@pt ;
 	rdfs:subClassOf foaf:Group .
 
+:ActivityType a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Activity Type"@en, "Tipo de Atividade"@pt ;
+	rdfs:comment "A type of activity."@en, "Um tipo de atividade."@pt .
+
 ##################################################################
 #    Object Properties
 ##################################################################
@@ -69,7 +74,7 @@
 :toPublicEntityType a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "to Public Entity Type"@en, "para Tipo de Entidade Pública"@pt ;
-	rdfs:comment "Indicates the public entity type where an MP made a requisition (request or inquiry)."@en, "Indica o tipo de entidade pública onde um MP fez um requerimento (requerimento ou pergunta)."@pt ;
+	rdfs:comment "Indicates the public entity type which an MP made a requisition (request or inquiry) to."@en, "Indica o tipo de entidade pública à qual um MP fez um requerimento (requerimento ou pergunta)."@pt ;
 	rdfs:domain ocd:richiestaParere ;
 	rdfs:range :PublicEntityType .
 
@@ -79,30 +84,170 @@
 
 :AC a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	foaf:name "Central Administration"@en, "Administração Central"@pt ;
 	rdfs:label "Central Administration"@en, "Administração Central"@pt ;
 	rdfs:comment "A Central Administration."@en, "Uma Administração Central."@pt .
 
 :AL a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	foaf:name "Local Administration"@en, "Administração Local"@pt ;
 	rdfs:label "Local Administration"@en, "Administração Local"@pt ;
 	rdfs:comment "A Local Administration."@en, "Uma Administração Local."@pt .
 
 :AR a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	foaf:name "Assembly of the Republic"@en, "Assembleia da República"@pt ;
 	rdfs:label "Assembly of the Republic"@en, "Assembleia da República"@pt ;
 	rdfs:comment "The Assembly of the Republic is the national parliament of Portugal."@en, "A Assembleia da República é o parlamento nacional de Portugal."@pt .
 
 :EI a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	foaf:name "Independent Entities"@en, "Entidades Independentes"@pt ;
 	rdfs:label "Independent Entities"@en, "Entidades Independentes"@pt ;
 	rdfs:comment "Independent Entities."@en, "Entidades Independentes."@pt .
 
 :RA a owl:NamedIndividual, :PublicEntityType ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	foaf:name "Autonomous Regions"@en, "Regiões Autónomas"@pt ;
 	rdfs:label "Autonomous Regions"@en, "Regiões Autónomas"@pt ;
 	rdfs:comment "Autonomous Regions"@en, "Regiões Autónomas"@pt .
+
+:AGP a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Friendship Parliamentary Group Activity"@en, "Atividade do Grupo Parlamentar de Amizade"@pt ;
+	rdfs:comment "An activity in a friendship parliamentary group."@en, "Uma atividade num grupo parlamentar de amizade."@pt .
+
+:AUD a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Audiences"@en, "Audiências"@pt ;
+	rdfs:comment "An audience."@en, "Uma audiência."@pt .
+
+:AUP a owl:NamedIndividual, :ActivityType;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Hearing"@en, "Audição"@pt ;
+	rdfs:comment "A hearing."@en, "Uma audição."@pt .
+
+:CER a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Ceremonies"@en, "Cerimónias"@pt ;
+	rdfs:comment "A ceremonial activity."@en, "Uma atividade cerimonial."@pt .
+
+:CGE a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "General State Account"@en, "Conta Geral do Estado"@pt ;
+	rdfs:comment "A general state account activity."@en, "Uma atividade de conta geral do estado."@pt .
+
+:DEB a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Diverse Debates"@en, "Debates Diversos"@pt ;
+	rdfs:comment "Diverse debates."@en, "Debates diversos."@pt .
+
+:DES a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Visit"@en, "Deslocação"@pt ;
+	rdfs:comment "A visit."@en, "Uma deslocação."@pt .
+
+:DPO a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Political Declarations"@en, "Declarações Políticas"@pt ;
+	rdfs:comment "A political declaration."@en, "Uma declaração política."@pt .
+
+:DPR a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "President of the Republic Visit"@en, "Deslocação do Presidente da República"@pt ;
+	rdfs:comment "A visit by the President of the Republic."@en, "Uma deslocação do Presidente da República."@pt .
+
+:EGP a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Friendship Parliamentary Group Elections"@en, "Eleições do Grupo Parlamentar de Amizade"@pt ;
+	rdfs:comment "Elections of a friendship parliamentary group."@en, "Eleições de um grupo parlamentar de amizade."@pt .
+
+:EVN a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Event"@en, "Evento"@pt ;
+	rdfs:comment "An event."@en, "Um evento."@pt .
+
+:GOD a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Major Options of the Strategic Concept of National Defense"@en, "Grandes Opções do Conceito Estratégico de Defesa Nacional"@pt ;
+	rdfs:comment "A major options of the strategic concept of national defense activity."@en, "Uma atividade de grandes opções do conceito estratégico de defesa nacional."@pt .
+
+:IMU a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Parliamentary Imunity"@en, "Imunidade Parlamentar"@pt ;
+	rdfs:comment "A parliamentary immunity activity."@en, "Uma atividade de imunidade parlamentar."@pt .
+
+:INI a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Initiatives discussion"@en, "Discussão de iniciativas"@pt ;
+	rdfs:comment "A discussion of initiatives."@en, "Uma discussão de iniciativas."@pt .
+
+:ITG a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Interpellation to the Government"@en, "Interpelação ao Governo"@pt ;
+	rdfs:comment "An interpellation to the government."@en, "Uma interpelação ao governo."@pt .
+
+:MOC a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Motion"@en, "Moção"@pt ;
+	rdfs:comment "A motion."@en, "Uma moção."@pt .
+
+:OEX a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Elections and Composition of Bodies"@en, "Eleições e Composição de Orgãos"@pt ;
+	rdfs:comment "Elections and composition of bodies."@en, "Eleições e composição de orgãos."@pt .
+
+:PEC a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Stability and Growth Programme/Fiscal Strategy Document"@en, "Programa de Estabilidade e Crescimento/Documento de Estratégia Orçamental"@pt ;
+	rdfs:comment "A stability and growth programme/fiscal strategy document."@en, "Um documento de programa de estabilidade e crescimento/estratégia orçamental."@pt .
+
+:PEG a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Questions to the Government"@en, "Perguntas ao Governo"@pt ;
+	rdfs:comment "Questions to the government."@en, "Perguntas ao governo."@pt .
+
+:PET a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Petitions discussion"@en, "Discussão de Petições"@pt ;
+	rdfs:comment "A discussion of petitions."@en, "Uma discussão de petições."@pt .
+
+:PII a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Opinion on Incompatibility / Waiver of Immunity"@en, "Parecer de Incompatibilidade / Levantamento de Imunidade"@pt ;
+	rdfs:comment "An opinion on incompatibility or waiver of immunity."@en, "Um parecer sobre incompatibilidade ou levantamento de imunidade."@pt .
+
+:POR a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Orientation of the Budgetary Policy"@en, "Orientação da Política Orçamental"@pt ;
+	rdfs:comment "A orientation of the budgetary policy activity."@en, "Uma atividade de orientação da política orçamental."@pt .
+
+:PRC a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "External Reports"@en, "Relatórios Externos"@pt ;
+	rdfs:comment "An external report activity."@en, "Uma atividade de relatórios externos."@pt .
+
+:PRG a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Government Programme"@en, "Programa do Governo"@pt ;
+	rdfs:comment "A government programme activity."@en, "Uma atividade de programa do governo."@pt .
+
+:PUE a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Participation of Portugal in the European Union"@en, "Participação de Portugal na União Europeia"@pt ;
+	rdfs:comment "A participation of Portugal in the European Union activity."@en, "Uma atividade de participação de Portugal na União Europeia."@pt .
+
+:REP a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Representations and Delegations"@en, "Representações e Delegações"@pt ;
+	rdfs:comment "A representations and delegations activity."@en, "Uma atividade de representações e delegações."@pt .
+
+:RSI a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Internal Security Report"@en, "Relatório de Segurança Interna"@pt ;
+	rdfs:comment "An internal security report activity."@en, "Uma atividade de relatório de segurança interna."@pt .
+
+:SES a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Cerimony"@en, "Cerimónia"@pt ;
+	rdfs:comment "A cerimony activity."@en, "Uma atividade de cerimónia."@pt .
+
+:VOT a owl:NamedIndividual, :ActivityType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Vote"@en, "Voto"@pt ;
+	rdfs:comment "A vote activity."@en, "Uma atividade de voto."@pt .
