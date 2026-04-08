@@ -547,3 +547,12 @@
     rdfs:label "is published in DAR"@en ,
                "é publicado no DAR"@pt ;
     rdfs:range :DARPublication .
+
+:hasSpeaker rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona uma intervenção parlamentar à pessoa que a proferiu."@pt , 
+                    "Relates a parliamentary intervention to the person who delivered it."@en ;
+    rdfs:label "has speaker"@en ,
+               "tem orador"@pt ;
+    rdfs:domain ocd:intervento ;
+    rdfs:range foaf:Person .
