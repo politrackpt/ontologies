@@ -149,6 +149,13 @@
 	rdfs:domain :PermanentDelegation ;
 	rdfs:range :PermanentDelegationMeeting .
 
+:heldAt a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "held at"@en, "realizada em"@pt ;
+	rdfs:comment "Indicates the organization where an activity was held."@en, "Indica a organização onde uma atividade foi realizada."@pt ;
+	rdfs:domain prov:Activity ;
+	rdfs:range foaf:Organization .
+
 :hasActivityType a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "has Activity Type"@en, "tem Tipo de Atividade"@pt ;
