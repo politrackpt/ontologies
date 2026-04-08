@@ -189,6 +189,13 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:subClassOf ocd:pubblicistica .
 
+:CommissionEvent a owl:Class ;
+    dct:description "Uma Comissão de Evento representa a participação de uma comissão no contexto de um evento específico. Ao contrário de uma comissão enquanto órgão organizacional, um Evento de Comissão estrutura as atividades relacionadas com a comissão que são específicas de uma determinada iniciativa e fase processual"@pt , 
+        "An Event Commission represents the participation of a Commission within the context of a specific Event. Unlike a Commission as a organisational body, an Event Commission models commission-related activity that is specific to a given Initiative and procedural phase"@en ;
+    rdfs:label "Commission Event"@en ,
+            "Evento de Comissão"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
 #################################################################
 #    Data properties
 #################################################################
@@ -316,6 +323,15 @@
                "tem reunião do tipo"@pt ;
     rdfs:domain ocd:votazione ;
     rdfs:range xsd:string .
+
+:competent rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define se a comissão do evento de comissão é competente na matéria"@pt , 
+		"Defines if the commission of the commission event is competent in the matter"@en ;
+    rdfs:label "competent"@en ,
+               "competente"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:boolean .
 
 #################################################################
 #    Object properties
