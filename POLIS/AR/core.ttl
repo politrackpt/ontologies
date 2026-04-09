@@ -61,10 +61,22 @@
     rdfs:subClassOf foaf:Person .
 
 :Commission rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Comissão"@pt ,
                "Commission"@en ;
 	dct:description ""@pt , ""@en . # TODO: SUBCLASS DE ORGANISATIONALBODY
+
+:SituationHolding rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Exercício de Situação"@pt ,
+               "Situation Holding"@en ;
+	dct:description "Define o exercício de uma situação"@pt , "Defines the holding of a situation"@en .
+
+:DutyHolding rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Exercício de Cargo"@pt ,
+               "Duty Holding"@en ;
+	dct:description "Define o exercício de um cargo"@pt , "Defines the holding of a duty"@en .
 
 #################################################################
 #    Data properties
@@ -122,3 +134,4 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
      rdfs:domain :Membership ;
      rdfs:range polis-bio:Role .
+
