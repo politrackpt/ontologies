@@ -229,15 +229,6 @@
     ] ;
     rdfs:range xsd:string .
 
-:text rdf:type owl:DatatypeProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o conteúdo textual de um documento"@pt , 
-		"Defines the textual content of a document"@en ;
-    rdfs:label "has text"@en ,
-               "contém texto"@pt ;
-    rdfs:domain bibo:Document ;
-    rdfs:range xsd:string .
-
 :changeProposalType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o tipo de uma proposta de alteração"@pt , 
