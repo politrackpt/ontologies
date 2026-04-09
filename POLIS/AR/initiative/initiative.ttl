@@ -692,6 +692,16 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range :Transmission .
 
+:createsDocument rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a um documento criado durante este"@pt , 
+                    "Relates a commission event to a document that was created in its duration"@en ;
+    rdfs:label "creates document"@en ,
+               "cria documento"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range bibo:Document .
+
+
 #################################################################
 #    Annotation properties
 #################################################################
