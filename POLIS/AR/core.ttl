@@ -85,7 +85,7 @@
 :identifier rdf:type owl:DatatypeProperty ;
     rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "has identifier"@en, "tem o identificador"@pt ;
+    rdfs:label "identifier"@en, "identificador"@pt ;
     dct:description "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
     rdf:type owl:FunctionalProperty .
 
