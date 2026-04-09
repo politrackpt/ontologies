@@ -166,9 +166,9 @@
 
 :duty rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-	dct:description "Define o cargo de uma pessoa"@pt , 
-		"Defines the duty of a person"@en ;
+	dct:description "Define o cargo de um exercedor de um cargo"@pt , 
+		"Defines the duty of a duty holder"@en ;
     rdfs:label "duty"@en ,
                "cargo"@pt ;
-    rdfs:domain foaf:Person ;
+    rdfs:domain :DutyHolding ;
     rdfs:range xsd:string .
