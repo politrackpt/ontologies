@@ -248,6 +248,15 @@
     rdfs:domain :ChangeProposal ;
     rdfs:range xsd:string .
 
+:documentType rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define o tipo de um documento"@pt , 
+		"Defines the type of a document"@en ;
+    rdfs:label "document type"@en ,
+               "tipo de documento"@pt ;
+    rdfs:domain bibo:Document ;
+    rdfs:range xsd:string .
+
 :proposedBy rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o proponente de uma proposta de alteração"@pt , 
