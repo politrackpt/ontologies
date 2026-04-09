@@ -135,3 +135,16 @@
      rdfs:domain :Membership ;
      rdfs:range polis-bio:Role .
 
+:holdsSituation rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain ocd:mandatoCamera ;
+    rdfs:range :SituationHolding ;
+    rdfs:label "holds situation"@en, "exercita situação"@pt ;
+    dct:description "Relates the mandate of a MP to a situation they hold"@en, "Relaciona um deputado a uma situação que exerçam"@pt .
+
+:holdsDuty rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain foaf:Person ;
+    rdfs:range :DutyHolding ;
+    rdfs:label "holds situation"@en, "exercita situação"@pt ;
+    dct:description "Relates the mandate of a MP to a situation they hold"@en, "Relaciona um deputado a uma situação que exerçam"@pt .
