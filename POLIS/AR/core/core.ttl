@@ -81,31 +81,107 @@
 
 :PAR rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Cargo de Presidente da Assembleia da República"@pt ,
-               "Duty of President of the Assembly of the Republic"@en ;
-	dct:description "Presidente da Assembleia da República"@pt , "President of the Assembly of the Republic"@en ;
+    rdfs:label "Presidente da Assembleia da República"@pt ,
+               "President of the Assembly of the Republic"@en ;
+	dct:description "Cargo de Presidente da Assembleia da República"@pt , "Duty of President of the Assembly of the Republic"@en ;
     rdfs:subClassOf org:Post .
 
 :VicePAR rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Cargo de Vice-Presidente da Assembleia da República"@pt ,
-               "Duty of Vice-President of the Assembly of the Republic"@en ;
-	dct:description "Vice-Presidente da Assembleia da República"@pt , "Vice-President of the Assembly of the Republic"@en ;
+    rdfs:label "Vice-Presidente da Assembleia da República"@pt ,
+               "Vice-President of the Assembly of the Republic"@en ;
+	dct:description "Cargo de Vice-Presidente da Assembleia da República"@pt , "Duty of Vice-President of the Assembly of the Republic"@en ;
     rdfs:subClassOf org:Post .
 
 :Secretary rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Cargo de Secretário da Assembleia da República"@pt ,
-               "Duty of Secretary of the Assembly of the Republic"@en ;
-	dct:description "Secretário da Assembleia da República"@pt , "Secretary of the Assembly of the Republic"@en ;
+    rdfs:label "Secretário da Assembleia da República"@pt ,
+               "Secretary of the Assembly of the Republic"@en ;
+	dct:description "Cargo de Secretário da Assembleia da República"@pt , "Duty of Secretary of the Assembly of the Republic"@en ;
     rdfs:subClassOf org:Post .
 
 :ViceSecretary rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Cargo de Vice-Secretário da Assembleia da República"@pt ,
-               "Duty of Vice-Secretary of the Assembly of the Republic"@en ;
-	dct:description "Vice-Secretário da Assembleia da República"@pt , "Vice-Secretary of the Assembly of the Republic"@en ;
+    rdfs:label "Vice-Secretário da Assembleia da República"@pt ,
+               "Vice-Secretary of the Assembly of the Republic"@en ;
+	dct:description "Cargo de Vice-Secretário da Assembleia da República"@pt , "Duty of Vice-Secretary of the Assembly of the Republic"@en ;
     rdfs:subClassOf org:Post .
+
+:Withdrawal rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Desistência"@pt ,
+               "Withdrawl"@en ;
+	dct:description "Situação de desistência de um deputado na Assembleia da Républica"@pt , "Withdrawal situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Incumbent rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Efetivo"@pt ,
+               "Incumbent"@en ;
+	dct:description "Situação de deputado efetivo na Assembleia da Républica"@pt , "Incumbent situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:PermantentIncumbent rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Efetivo Definitivo"@pt ,
+               "Permanent Incumbent"@en ;
+	dct:description "Situação de deputado efetivo definitivo na Assembleia da Républica"@pt , "Permanent Incumbent situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:TemporaryIncumbent rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Efetivo Temporário"@pt ,
+               "Temporary Incumbent"@en ;
+	dct:description "Situação de deputado efetivo temporário na Assembleia da Républica"@pt , "Temporary Incumbent situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Deceased rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Falecido/a"@pt ,
+               "Deceased"@en ;
+    dct:description "Situação de deputado falecido na Assembleia da República"@pt ,
+                    "Deceased situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Disqualified rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Impedido"@pt ,
+               "Disqualified"@en ;
+    dct:description "Situação de deputado impedido de exercer funções na Assembleia da República"@pt ,
+                    "Situation of an MP legally barred from exercising duties in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:LossOfMandate rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Perda de Mandato"@pt ,
+               "Loss of Mandate"@en ;
+    dct:description "Situação de perda de mandato de um deputado na Assembleia da República"@pt ,
+                    "Loss of mandate situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Resigned rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Renunciou"@pt ,
+               "Resigned"@en ;
+    dct:description "Situação de renúncia de um deputado na Assembleia da República"@pt ,
+                    "Resignation situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Alternate rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Suplente"@pt ,
+               "Alternate"@en ;
+    dct:description "Situação de deputado suplente na Assembleia da República"@pt ,
+                    "Alternate member situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
+
+:Suspended rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Suspenso"@pt ,
+               "Suspended"@en ;
+    dct:description "Situação de suspensão de um deputado na Assembleia da República"@pt ,
+                    "Suspended situation of an MP in the Assembly of the Republic"@en ;
+    rdfs:subClassOf ocd:proclamazione .
 
 #################################################################
 #    Data properties
