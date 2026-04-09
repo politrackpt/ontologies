@@ -26,15 +26,15 @@
 	dct:description             	"";
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço";
 	dct:contributor                 "Mariana Curado Malta", "João Bispo";
-    dct:issued                 		""^^schema:Date;
+   # dct:issued                 		""^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	vann:preferredNamespacePrefix   "polis-mpact:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/mp-activity#" ;
 	owl:versionInfo					"1.0";
-    dct:description                    """The objective of the POLIS ontology is to (...)""" ;
-    dcterms:bibliographicCitation ""@en ;
-    dcterms:created ""^^xsd:date ;
-    dcterms:modified ""^^xsd:date ;
+    dct:description                  "This ontology enables the modelling of data relating to the activities of members of the Portuguese Parliament within the context of the Portuguese Parliament."@en;
+   # dcterms:bibliographicCitation ""@en ;
+    dcterms:created "15/04/2026"^^xsd:date ;
+   # dcterms:modified ""^^xsd:date ;
     dcterms:language "en", "pt" ;
 .
 
@@ -45,7 +45,7 @@
 :Request a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Request"@en, "Requerimento"@pt ;
-	rdfs:comment "A request made by an MP."@en, "Uma requerimento feito por um MP."@pt ;
+	rdfs:comment "A request made by an MP."@en, "Um requerimento feito por um MP."@pt ;
 	rdfs:subClassOf ocd:richiestaParere .
 
 :Inquiry a owl:Class ;
