@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix prov: <https://www.w3.org/ns/prov-o> .
 @prefix : <http://purl.org/polis/ar/initiatives#> .
 
 @base <http://purl.org/polis/ar/initiatives#> .
@@ -701,6 +702,14 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range bibo:Document .
 
+:hasActivity rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento a uma atividade"@pt , 
+                    "Relates an event to an activity"@en ;
+    rdfs:label "has activity"@en ,
+               "tem atividade"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range prov:Activity .
 
 #################################################################
 #    Annotation properties
