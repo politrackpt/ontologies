@@ -189,6 +189,14 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:subClassOf ocd:pubblicistica .
 
+:ReportPublication a owl:Class ;
+    dct:description "Uma publicação oficial de um relatório no Diário da Assembleia da República"@pt , 
+        "An official publication of a report in the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Diary of the Assembly of the Republic Publication"@en ,
+            "Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf ocd:pubblicistica .
+
 :CommissionEvent a owl:Class ;
     dct:description "Uma Comissão de Evento representa a participação de uma comissão no contexto de um evento específico. Ao contrário de uma comissão enquanto órgão organizacional, um Evento de Comissão estrutura as atividades relacionadas com a comissão que são específicas de uma determinada iniciativa e fase processual"@pt , 
         "An Event Commission represents the participation of a Commission within the context of a specific Event. Unlike a Commission as a organisational body, an Event Commission models commission-related activity that is specific to a given Initiative and procedural phase"@en ;
@@ -332,6 +340,51 @@
                "competente"@pt ;
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:boolean .
+
+:extended rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define se o prazo foi prorrogado"@pt , 
+		"Defines whether the deadline has been extended"@en ;
+    rdfs:label "extended"@en ,
+               "prorrogado"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:boolean .
+
+:awaitsPlenarySchedule rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define se aguarda agendamento plenário"@pt , 
+		"Defines wheter a plenary schedule is pending"@en ;
+    rdfs:label "awaits plenary schedule"@en ,
+               "aguarda agendamento plenário"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:boolean .
+
+:opinionRequested rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define se existem pedidos de parecer"@pt , 
+		"Defines if there are opinion requests"@en ;
+    rdfs:label "opinion request"@en ,
+               "pedido de parecer"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:boolean .
+
+:opinionReceived rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define se existem pareceres recebidos"@pt , 
+		"Defines if there are opinions received"@en ;
+    rdfs:label "opinion received"@en ,
+               "parecer recebido"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:boolean .
+
+:negativeOpinionReason rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define o motivo de parecer negativo"@pt , 
+		"Defines the reason for a negative opinion"@en ;
+    rdfs:label "negative opinion reason"@en ,
+               "motivo parecer negativo"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:string .
 
 #################################################################
 #    Object properties
@@ -566,3 +619,124 @@
                "tem orador"@pt ;
     rdfs:domain ocd:intervento ;
     rdfs:range foaf:Person .
+
+:attributedToCommission rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão à comissão a qual este foi atribuído"@pt , 
+                    "Relates a commission event to the commission it was attributed to"@en ;
+    rdfs:label "attributed to commission"@en ,
+               "atribuído à comissão"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range polis-core:Commission .
+
+:hasRapporteur rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a um relator de um documento apresentado"@pt , 
+                    "Relates a commission event to a rapporteur of a presented document"@en ;
+    rdfs:label "has rapporteur"@en ,
+               "tem o/a relator(a)"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range m4s:Parliamentarian .
+
+:hasPublishedReport rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão à publicação de um relatório"@pt , 
+                    "Relates a commission event to the publication of a report"@en ;
+    rdfs:label "has published report"@en ,
+               "tem a publicação do relatório"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range :ReportPublication .
+
+:hasDiscussion rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento a um debate"@pt , 
+                    "Relates an event to a debate"@en ;
+    rdfs:label "has discussion"@en ,
+               "tem o debate"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range ocd:discussione .
+
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+:entryDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de entrada de um evento de comissão"@pt , 
+                    "Defines the entry date of a commission event"@en ;
+    rdfs:label "entry date"@en ,
+               "data de entrada"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:distributionDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de distribuição de um evento de comissão pelas comissões"@pt , 
+                    "Defines the distribution date of a commission event between commissions"@en ;
+    rdfs:label "distribution date"@en ,
+               "data de distribuição"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:scheduledDiscussionDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de agendamento da discussão de um evento de comissão"@pt , 
+                    "Defines the date of the scheduled discussion of a commission event"@en ;
+    rdfs:label "scheduled discussion date"@en ,
+               "data de agendamento da discussão"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:requestSchedulePlenaryDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data do pedido de agendamento de plenário de um evento da comissão"@pt , 
+                    "Defines the date of the request made to schedule a plenary of a commission event"@en ;
+    rdfs:label "request schedule plenary date"@en ,
+               "data do pedido de agendamento de plenário"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:scheduledPlenaryDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de agendamento de plenário de um evento da comissão"@pt , 
+                    "Defines the scheduled plenary date of a commission event"@en ;
+    rdfs:label "scheduled plenary date"@en ,
+               "data de agendamento de plenário"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:publicAppreciationDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de inicio e fim da apreciação pública de um evento da comissão"@pt , 
+                    "Defines the start and end dates for the public review of a commission event"@en ;
+    rdfs:label "public appreciation date"@en ,
+               "data de apreciação pública"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:subCommissionDistributionDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de distribuição de um evento de comissão por subcomissões"@pt , 
+                    "Defines the distribution date of a commission event between subcommissions"@en ;
+    rdfs:label "subcommissions distribution date"@en ,
+               "data de distribuição por subcomissões"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
+
+:negativeOpinionReasonDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data do motivo do parecer negativo"@pt , 
+                    "Defines the date of the negative opinion reason"@en ;
+    rdfs:label "negative opinion reason date"@en ,
+               "data do motivo de parecer negativo"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range xsd:date .
