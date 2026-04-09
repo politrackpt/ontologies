@@ -736,16 +736,6 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:date .
 
-:scheduledPlenaryDate rdf:type owl:AnnotationProperty ;
-    rdfs:subPropertyOf dct:date ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    dct:description "Define a data de agendamento de plenário de um evento da comissão"@pt , 
-                    "Defines the scheduled plenary date of a commission event"@en ;
-    rdfs:label "scheduled plenary date"@en ,
-               "data de agendamento de plenário"@pt ;
-    rdfs:domain :CommissionEvent ;
-    rdfs:range xsd:date .
-
 :publicAppreciationDate rdf:type owl:AnnotationProperty ;
     rdfs:subPropertyOf dct:date ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
