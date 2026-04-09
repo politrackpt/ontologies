@@ -145,12 +145,12 @@
                "Projeto de Regimento"@pt ;
     rdfs:subClassOf :Initiative .
 
-:Content rdf:type owl:Class ;
-	dct:description "Define todo o conteúdo de uma iniciativa"@pt , 
-		"Defines the content of an initiative"@en ;
-    rdfs:label "Content"@en ,
-               "Conteúdo"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+#:Content rdf:type owl:Class ;
+#	dct:description "Define todo o conteúdo de uma iniciativa"@pt , 
+#		"Defines the content of an initiative"@en ;
+#    rdfs:label "Content"@en ,
+#               "Conteúdo"@pt ;
+#    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
 # :Annex a owl:Class ;
 #     dct:description "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
@@ -239,11 +239,11 @@
 
 :text rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o conteúdo textual da iniciativa"@pt , 
-		"Defines the textual content of the initiative"@en ;
+	dct:description "Define o conteúdo textual de um documento"@pt , 
+		"Defines the textual content of a document"@en ;
     rdfs:label "has text"@en ,
                "contém texto"@pt ;
-    rdfs:domain :Content ;
+    rdfs:domain bibo:Document ;
     rdfs:range xsd:string .
 
 :changeProposalType rdf:type owl:DatatypeProperty ;
