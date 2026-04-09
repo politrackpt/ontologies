@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix prov: <https://www.w3.org/ns/prov-o> .
 @prefix : <http://purl.org/polis/ar/initiatives#> .
 
 @base <http://purl.org/polis/ar/initiatives#> .
@@ -214,37 +215,6 @@
 #################################################################
 #    Data properties
 #################################################################
-
-:title rdf:type owl:DatatypeProperty ;
-	dct:description "Define o título de uma iniciativa"@pt , 
-		"Defines the title of an initiative"@en ;
-    rdfs:label "has title"@en ,
-               "tem título"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:domain [ rdf:type owl:Class ;
-      owl:unionOf ( :Initiative
-                    :Petition
-                  )
-    ] ;
-    rdfs:range xsd:string .
-
-:url rdf:type owl:DatatypeProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o url onde está hosteado no website do parlamento Português o documento"@pt , 
-		"Defines the url in the Portuguese parliament's website where the document is hosted"@en ;
-    rdfs:label "url"@en ,
-               "url"@pt ;
-    rdfs:domain bibo:Document ;
-    rdfs:range xsd:string .
-
-:text rdf:type owl:DatatypeProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o conteúdo textual de um documento"@pt , 
-		"Defines the textual content of a document"@en ;
-    rdfs:label "has text"@en ,
-               "contém texto"@pt ;
-    rdfs:domain bibo:Document ;
-    rdfs:range xsd:string .
 
 :changeProposalType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
@@ -701,6 +671,14 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range bibo:Document .
 
+:hasActivity rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento a uma atividade"@pt , 
+                    "Relates an event to an activity"@en ;
+    rdfs:label "has activity"@en ,
+               "tem atividade"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range prov:Activity .
 
 #################################################################
 #    Annotation properties
