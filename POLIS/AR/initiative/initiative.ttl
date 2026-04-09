@@ -204,6 +204,13 @@
             "Evento de Comissão"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:Transmission a owl:Class ;
+    dct:description "Indica a remessa de documentos legais pela comissão durante uma um evento de comissão"@pt , 
+        "Indicates the transmission of legal documents by the commission during a commission event"@en ;
+    rdfs:label "Transmission"@en ,
+            "Remessa"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
+
 #################################################################
 #    Data properties
 #################################################################
