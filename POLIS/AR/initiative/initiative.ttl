@@ -216,6 +216,15 @@
 #    Data properties
 #################################################################
 
+:textSubstitutionDetails rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define detalhes sobre a substituição do texto da iniciativa"@pt , 
+		"Defines details about the substitution of the initiative's text"@en ;
+    rdfs:label "text substitution details"@en ,
+               "detalhes sobre substituição do texto"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range xsd:string .
+
 :changeProposalType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o tipo de uma proposta de alteração"@pt , 
