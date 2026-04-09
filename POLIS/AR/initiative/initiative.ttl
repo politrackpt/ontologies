@@ -264,6 +264,15 @@
     rdfs:domain bibo:Document ;
     rdfs:range xsd:string .
 
+:transmissionType rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define o tipo de uma remessa"@pt , 
+		"Defines the type of a transmission"@en ;
+    rdfs:label "transmission type"@en ,
+               "tipo de remessa"@pt ;
+    rdfs:domain :Transmission ;
+    rdfs:range xsd:string .
+
 :proposedBy rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o proponente de uma proposta de alteração"@pt , 
