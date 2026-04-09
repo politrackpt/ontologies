@@ -683,6 +683,14 @@
     rdfs:domain :Event ;
     rdfs:range ocd:discussione .
 
+:hasTransmission rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a uma remessa"@pt , 
+                    "Relates a commission event to a transmission"@en ;
+    rdfs:label "has transmission"@en ,
+               "tem remessa"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range :Transmission .
 
 #################################################################
 #    Annotation properties
@@ -768,12 +776,12 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:date .
 
-:documentDate rdf:type owl:AnnotationProperty ;
-    rdfs:subPropertyOf dct:date ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    dct:description "Define a data de um documento associado a uma remessa"@pt , 
-                    "Defines the date of a document associated to a transmission"@en ;
-    rdfs:label "document date"@en ,
-               "data do documento"@pt ;
-    rdfs:domain :Transmission ;
-    rdfs:range xsd:date .
+#:documentDate rdf:type owl:AnnotationProperty ;
+#    rdfs:subPropertyOf dct:date ;
+#    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+#    dct:description "Define a data de um documento associado a uma remessa"@pt , 
+#                    "Defines the date of a document associated to a transmission"@en ;
+#    rdfs:label "document date"@en ,
+#               "data do documento"@pt ;
+#    rdfs:domain :Transmission ;
+#    rdfs:range xsd:date .
