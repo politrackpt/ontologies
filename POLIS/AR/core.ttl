@@ -96,6 +96,17 @@
     rdfs:domain :Guest ;
     rdfs:range xsd:boolean .
 
+:parliamentaryName rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+	dct:description "Define o nome parlamentar de um MP durante uma legislatura"@pt , 
+		"Defines the parliamentarian name of a MP during a legislature"@en ;
+    rdfs:label "has parliamentary name"@en ,
+               "tem nome parlamentar"@pt ;
+    rdfs:domain ocd:mandatoCamera ;
+    rdfs:range xsd:string .
+
+
 #################################################################
 #    Object properties
 #################################################################
@@ -146,5 +157,5 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:domain foaf:Person ;
     rdfs:range :DutyHolding ;
-    rdfs:label "holds situation"@en, "exercita situação"@pt ;
-    dct:description "Relates the mandate of a MP to a situation they hold"@en, "Relaciona um deputado a uma situação que exerçam"@pt .
+    rdfs:label "holds duty"@en, "exercita cargo"@pt ;
+    dct:description "Relates a person the a duty they hold"@en, "Relaciona uma pessoa a um cargo que exerçam"@pt .

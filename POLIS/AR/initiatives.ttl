@@ -239,16 +239,6 @@
     rdfs:domain :Content ;
     rdfs:range xsd:string .
 
-:parliamentaryName rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/name> ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o nome parlamentar de um MP durante uma legislatura"@pt , 
-		"Defines the parliamentarian name of a MP during a legislature"@en ;
-    rdfs:label "has parliamentary name"@en ,
-               "tem nome parlamentar"@pt ;
-    rdfs:domain ocd:mandatoCamera ;
-    rdfs:range xsd:string .
-
 :changeProposalType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o tipo de uma proposta de alteração"@pt , 
