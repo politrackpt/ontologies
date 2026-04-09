@@ -288,12 +288,17 @@
 
 :observation rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Observações feitas à iniciativa durante um evento"@pt , 
-		"Observations done to the initiative during an event"@en ;
+	dct:description "Observação realizada"@pt , 
+		"Observation done"@en ;
     rdfs:label "has observation"@en ,
                "tem observação"@pt ;
-    rdfs:domain :Event ;
-    rdfs:range xsd:int .
+    rdfs:domain [ rdf:type owl:Class ;
+      owl:unionOf ( :Event
+                    :CommissionEvent
+                    ocd:pubblicistica
+                  )
+    ] ;
+    rdfs:range xsd:string .
 
 :result rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
