@@ -216,19 +216,6 @@
 #    Data properties
 #################################################################
 
-:title rdf:type owl:DatatypeProperty ;
-	dct:description "Define o título de uma iniciativa"@pt , 
-		"Defines the title of an initiative"@en ;
-    rdfs:label "has title"@en ,
-               "tem título"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:domain [ rdf:type owl:Class ;
-      owl:unionOf ( :Initiative
-                    :Petition
-                  )
-    ] ;
-    rdfs:range xsd:string .
-
 :changeProposalType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o tipo de uma proposta de alteração"@pt , 
