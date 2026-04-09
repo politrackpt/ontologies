@@ -594,11 +594,11 @@
                               )
                 ] .
 
-:hasAbsent rdf:type owl:ObjectProperty ;
+:hasAbsentee rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Relaciona uma votação aos MPs que estiveram ausentes"@pt , 
 		"Relates a vote to MPs who were absent"@en ;
-    rdfs:label "has absent"@en ,
+    rdfs:label "has absentee"@en ,
                "tem ausente"@pt ;
     rdfs:domain ocd:votazione ;
     rdfs:range m4s:Parliamentarian .
