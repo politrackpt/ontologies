@@ -8,6 +8,7 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix : <http://purl.org/polis/ar/core#> .
@@ -77,6 +78,34 @@
     rdfs:label "Exercício de Cargo"@pt ,
                "Duty Holding"@en ;
 	dct:description "Define o exercício de um cargo"@pt , "Defines the holding of a duty"@en .
+
+:PAR rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Cargo de Presidente da Assembleia da República"@pt ,
+               "Duty of President of the Assembly of the Republic"@en ;
+	dct:description "Presidente da Assembleia da República"@pt , "President of the Assembly of the Republic"@en ;
+    rdfs:subClassOf org:Post .
+
+:VicePAR rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Cargo de Vice-Presidente da Assembleia da República"@pt ,
+               "Duty of Vice-President of the Assembly of the Republic"@en ;
+	dct:description "Vice-Presidente da Assembleia da República"@pt , "Vice-President of the Assembly of the Republic"@en ;
+    rdfs:subClassOf org:Post .
+
+:Secretary rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Cargo de Secretário da Assembleia da República"@pt ,
+               "Duty of Secretary of the Assembly of the Republic"@en ;
+	dct:description "Secretário da Assembleia da República"@pt , "Secretary of the Assembly of the Republic"@en ;
+    rdfs:subClassOf org:Post .
+
+:ViceSecretary rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:label "Cargo de Vice-Secretário da Assembleia da República"@pt ,
+               "Duty of Vice-Secretary of the Assembly of the Republic"@en ;
+	dct:description "Vice-Secretário da Assembleia da República"@pt , "Vice-Secretary of the Assembly of the Republic"@en ;
+    rdfs:subClassOf org:Post .
 
 #################################################################
 #    Data properties
