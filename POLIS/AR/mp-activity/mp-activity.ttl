@@ -119,18 +119,6 @@
 	rdfs:comment "An activity in a friendship parliamentary group."@en, "Uma atividade num grupo parlamentar de amizade."@pt ;
 	rdfs:subClassOf :ParliamentaryActivity .
 
-:AUD a owl:Class ;
-	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	rdfs:label "Audiences"@en, "Audiências"@pt ;
-	rdfs:comment "An audience."@en, "Uma audiência."@pt ;
-	rdfs:subClassOf :ParliamentaryActivity .
-
-:AUP a owl:Class;
-	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
-	rdfs:label "Hearing"@en, "Audição"@pt ;
-	rdfs:comment "A hearing."@en, "Uma audição."@pt ;
-	rdfs:subClassOf :ParliamentaryActivity .
-
 :CER a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Ceremonies"@en, "Cerimónias"@pt ;
@@ -292,6 +280,60 @@
 	rdfs:label "School Type"@en, "Tipo de Escola"@pt ;
 	rdfs:comment "A type of school."@en, "Um tipo de escola."@pt .
 
+:CommissionActivity a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Commission Activity"@en, "Atividade de Comissão"@pt ;
+	rdfs:comment "A Parliamentary Activity involving a commission."@en, "Uma Atividade Parlamentar que envolve uma comissão"@pt ;
+	rdfs:subClassOf :ParliamentaryActivity .
+
+:Audition a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Audition"@en, "Audição"@pt ;
+	rdfs:comment "An audition."@en, "Uma audição."@pt ;
+	rdfs:subClassOf :CommissionActivity .
+
+:Hearing a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Hearing"@en, "Audiência"@pt ;
+	rdfs:comment "A hearing."@en, "Uma audiência."@pt ;
+	rdfs:subClassOf :CommissionActivity .
+
+:Event a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Event"@en, "Evento"@pt ;
+	rdfs:comment "An event."@en, "Um evento."@pt ;
+	rdfs:subClassOf :CommissionActivity .
+
+:Debate a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Debate"@en, "Debate"@pt ;
+	rdfs:comment "A debate."@en, "Um debate."@pt ;
+	rdfs:subClassOf :Event .
+
+:Cerimony a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Ceremony"@en, "Cerimónia"@pt ;
+	rdfs:comment "A ceremony."@en, "Uma cerimónia."@pt ;
+	rdfs:subClassOf :Event .
+
+:Conference a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Conference"@en, "Conferência"@pt ;
+	rdfs:comment "A conference."@en, "Uma conferência."@pt ;
+	rdfs:subClassOf :Event .
+
+:Others a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Others"@en, "Outros"@pt ;
+	rdfs:comment "Other types of event."@en, "Outros tipos de evento."@pt ;
+	rdfs:subClassOf :Event .
+
+:Visit a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Visit"@en, "Deslocação"@pt ;
+	rdfs:comment "A visit."@en, "Uma deslocação."@pt ;
+	rdfs:subClassOf :CommissionActivity .
+
 ##################################################################
 #    Data Properties
 ##################################################################
@@ -310,6 +352,16 @@
 	rdfs:label "meeting type"@en, "tipo de reunião"@pt ;
 	rdfs:comment "The type of a meeting."@en, "O tipo de uma reunião."@pt ;
 	rdfs:domain :YouthParliamentActivity ;
+	rdfs:range xsd:string .
+
+:commissionIdentifier a owl:DatatypeProperty, 
+				owl:FunctionalProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "commission identifier"@en, "identificador de comissão"@pt ;
+	rdfs:comment "The identifier of a commission activity in hearings and auditions. The format is 'N-X-L', where N is an identifying number, X is the acronym for the committee, and L is the acronym for the legislature."@en, "O identificador de uma atividade de comissão em audiências e audições. O formato é 'N-X-L', onde N é um número identificativo, X é a sigla da comissão, e L é a sigla da legislatura."@pt ;
+	rdfs:domain [ rdf:type owl:Class ; 
+					owl:unionOf (:Hearing :Audition)
+                ] ;
 	rdfs:range xsd:string .
 
 ##################################################################
