@@ -159,3 +159,16 @@
     rdfs:range :DutyHolding ;
     rdfs:label "holds duty"@en, "exercita cargo"@pt ;
     dct:description "Relates a person the a duty they hold"@en, "Relaciona uma pessoa a um cargo que exerçam"@pt .
+
+#################################################################
+#    Data properties
+#################################################################
+
+:duty rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+	dct:description "Define o cargo de uma pessoa"@pt , 
+		"Defines the duty of a person"@en ;
+    rdfs:label "duty"@en ,
+               "cargo"@pt ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
