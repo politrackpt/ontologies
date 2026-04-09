@@ -594,11 +594,11 @@
                               )
                 ] .
 
-:hasAbsent rdf:type owl:ObjectProperty ;
+:hasAbsentee rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Relaciona uma votação aos MPs que estiveram ausentes"@pt , 
 		"Relates a vote to MPs who were absent"@en ;
-    rdfs:label "has absent"@en ,
+    rdfs:label "has absentee"@en ,
                "tem ausente"@pt ;
     rdfs:domain ocd:votazione ;
     rdfs:range m4s:Parliamentarian .
@@ -692,6 +692,16 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range :Transmission .
 
+:createsDocument rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a um documento criado durante este"@pt , 
+                    "Relates a commission event to a document that was created in its duration"@en ;
+    rdfs:label "creates document"@en ,
+               "cria documento"@pt ;
+    rdfs:domain :CommissionEvent ;
+    rdfs:range bibo:Document .
+
+
 #################################################################
 #    Annotation properties
 #################################################################
@@ -733,16 +743,6 @@
                     "Defines the date of the request made to schedule a plenary of a commission event"@en ;
     rdfs:label "request schedule plenary date"@en ,
                "data do pedido de agendamento de plenário"@pt ;
-    rdfs:domain :CommissionEvent ;
-    rdfs:range xsd:date .
-
-:scheduledPlenaryDate rdf:type owl:AnnotationProperty ;
-    rdfs:subPropertyOf dct:date ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    dct:description "Define a data de agendamento de plenário de um evento da comissão"@pt , 
-                    "Defines the scheduled plenary date of a commission event"@en ;
-    rdfs:label "scheduled plenary date"@en ,
-               "data de agendamento de plenário"@pt ;
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:date .
 
