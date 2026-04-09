@@ -101,6 +101,13 @@
 	rdfs:comment "The scope of a delegation."@en, "O âmbito de uma delegação."@pt ;
 	owl:oneOf (:NationalDelegation :InternationalDelegation) .
 
+:YouthParliamentActivity a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Youth Parliament Activity"@en, "Atividade do Parlamento dos Jovens"@pt ;
+	rdfs:comment "An activity of the Youth Parliament."@en, "Uma atividade do Parlamento dos Jovens."@pt ;
+	rdfs:subClassOf prov:Activity .
+
+# TODO: talvez apagar esta classe, nos dados são so duas strings, não existe nada de valor, é literalmente so "Conta Geral do Estado"
 :PublicAccount a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Public Account"@en, "Conta Pública"@pt ;
@@ -280,6 +287,11 @@
 	rdfs:comment "A vote activity."@en, "Uma atividade de voto."@pt ;
 	rdfs:subClassOf :ParliamentaryActivity .
 
+:SchoolType a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "School Type"@en, "Tipo de Escola"@pt ;
+	rdfs:comment "A type of school."@en, "Um tipo de escola."@pt .
+
 ##################################################################
 #    Data Properties
 ##################################################################
@@ -291,6 +303,14 @@
 	rdfs:comment "The date of debate of an activity."@en, "A data de debate de uma atividade."@pt ;
 	rdfs:domain prov:Activity ;
 	rdfs:range xsd:date .
+
+:meetingType a owl:DatatypeProperty, 
+				owl:FunctionalProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "meeting type"@en, "tipo de reunião"@pt ;
+	rdfs:comment "The type of a meeting."@en, "O tipo de uma reunião."@pt ;
+	rdfs:domain :YouthParliamentActivity ;
+	rdfs:range xsd:string .
 
 ##################################################################
 #    Object Properties
@@ -323,6 +343,14 @@
 	rdfs:comment "Indicates the organization where an activity was held."@en, "Indica a organização onde uma atividade foi realizada."@pt ;
 	rdfs:domain prov:Activity ;
 	rdfs:range foaf:Organization .
+
+:isSchoolType a owl:ObjectProperty , 
+				owl:FunctionalProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "is school type"@en, "é tipo de escola"@pt ;
+	rdfs:comment "Indicates the school type (basic or secondary)."@en, "Indica o tipo de escola (básico ou secundário)."@pt ;
+	rdfs:domain dbo:School ;
+	rdfs:range :SchoolType .
 
 ##################################################################
 #    Individuals
@@ -362,3 +390,13 @@
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Autonomous Regions"@en, "Regiões Autónomas"@pt ;
 	rdfs:comment "Autonomous Regions"@en, "Regiões Autónomas"@pt .
+
+:Basic a owl:NamedIndividual, :SchoolType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Basic"@en, "Básico"@pt ;
+	rdfs:comment "Basic school."@en, "Escola básica."@pt .
+
+:Secondary a owl:NamedIndividual, :SchoolType ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Secondary"@en, "Secundário"@pt ;
+	rdfs:comment "Secondary school."@en, "Escola secundária."@pt .
