@@ -767,3 +767,13 @@
                "data do motivo de parecer negativo"@pt ;
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:date .
+
+:documentDate rdf:type owl:AnnotationProperty ;
+    rdfs:subPropertyOf dct:date ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define a data de um documento associado a uma remessa"@pt , 
+                    "Defines the date of a document associated to a transmission"@en ;
+    rdfs:label "document date"@en ,
+               "data do documento"@pt ;
+    rdfs:domain :Transmission ;
+    rdfs:range xsd:date .
