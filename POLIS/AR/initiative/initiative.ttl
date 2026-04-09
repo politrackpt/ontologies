@@ -229,14 +229,6 @@
     ] ;
     rdfs:range xsd:string .
 
-:url rdf:type owl:DatatypeProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Define o url onde algo está hosteado "@pt , 
-		"Defines the url where something is hosted"@en ;
-    rdfs:label "url"@en ,
-               "url"@pt ;
-    rdfs:range xsd:string .
-
 :text rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o conteúdo textual de um documento"@pt , 
