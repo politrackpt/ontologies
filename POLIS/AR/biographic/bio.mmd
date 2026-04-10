@@ -3,24 +3,24 @@ config:
   layout: elk
 ---
 flowchart TB
-    MP("m4s:Parliamentarian") -- bio:hasHabilitation --> Edu("bio:Habilitation")
-    MP -- bio:hasTitle --> Title("bio:Title")
-    MP -- bio:authorOf --> Document("bibo:Document")
-    MP -- bio:hasRole --> Role("bio:Role")
-    Edu -- bio:hasHabilitationLevel --> Level("bio:HabilitationLevel")
-    Edu -- bio:hasHabilitationStatus --> Status("bio:HabilitationStatus")
-    Status -.-> bio:C
-    Status -.-> bio:F
+    MP(m4s:Parliamentarian) -- bio:hasHabilitation --> Edu(bio:Habilitation)
+    MP -- bio:hasTitle --> Title(bio:Title)
+    MP -- bio:authorOf --> Document(bibo:Document)
+    MP -- bio:hasRole --> Role(bio:Role)
+    Edu -- bio:hasHabilitationLevel --> Level(bio:HabilitationLevel)
+    Edu -- bio:hasHabilitationStatus --> Status(bio:HabilitationStatus)
+    Status -.-> bio:C("bio:C")
+    Status -.-> bio:F("bio:F")
 
-    Level -.-> bio:PrimarySchool
-Level -.-> bio:MiddleSchool
-Level -.-> bio:EarlyHighSchool
-Level -.-> bio:HighSchool
-Level -.-> bio:HigherEducation
-Level -.-> bio:Bachelor
-Level -.-> bio:Master
-Level -.-> bio:Postgrad
-Level -.-> bio:PhD
+    Level -.-> bio:PrimarySchool("bio:PrimarySchool")
+    Level -.-> bio:MiddleSchool("bio:MiddleSchool")
+    Level -.-> bio:EarlyHighSchool("bio:EarlyHighSchool")
+    Level -.-> bio:HighSchool("bio:HighSchool")
+    Level -.-> bio:HigherEducation("bio:HigherEducation")
+    Level -.-> bio:Bachelor("bio:Bachelor")
+    Level -.-> bio:Master("bio:Master")
+    Level -.-> bio:Postgrad("bio:Postgrad")
+    Level -.-> bio:PhD("bio:PhD")
 
 
     style MP fill:#FF9999,stroke:#333,color:#000
