@@ -396,7 +396,7 @@
     rdfs:domain [ rdf:type owl:Class ;
       owl:unionOf ( :Event
                     :CommissionEvent
-                    ocd:pubblicistica
+                    :DARPublication
                   )
     ] ;
     rdfs:range xsd:string .
@@ -502,14 +502,14 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:label "publication supplement"@en, "suplemento da publicação"@pt ;
     dct:description "Supplement to the publication"@en, "Suplemento da publicação"@pt ;
-    rdfs:domain ocd:pubblicistica ;
+    rdfs:domain :DARPublication ;
     rdfs:range xsd:string .
 
 :publicationSupplementFinalPage rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:label "publication supplement final page"@en, "página final do suplemento da publicação"@pt ;
     dct:description "Final page of the supplement to the publication"@en, "Página final do suplemento da publicação"@pt ;
-    rdfs:domain ocd:pubblicistica ;
+    rdfs:domain :DARPublication ;
     rdfs:range xsd:string .
 
 #################################################################
