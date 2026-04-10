@@ -126,3 +126,26 @@ polis-core:ParliamentarianShape a sh:NodeShape;
         sh:class polis-core:Membership ;
         sh:message "A parliamentarian membership must be of the class polis-core:Membership"@en
     ] .
+
+#################################################################
+# MG
+#################################################################
+
+polis-core:ParliamentarianShape a sh:NodeShape;
+    sh:targetClass ocd:membroGoverno ;
+
+    sh:property [
+        sh:path polis-core:holdsDuty ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class polis-core:DutyHolding ;
+        sh:message "A member of government must have one and only one duty holding"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToGovernment ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:governo ;
+        sh:message "A member of government must belong to one and only one government"@en
+    ] .
