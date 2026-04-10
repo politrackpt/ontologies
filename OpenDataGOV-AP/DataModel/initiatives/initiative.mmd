@@ -1,0 +1,86 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+   
+    Ini("Initiative") -- belongsToLegislature --> Leg("Legislature")
+    Ini -- belongsToLegislativeSession --> LS("LegislativeSession")
+    Ini -- hasAuthor --> MP
+    Ini -- hasProponent --> MP & CG("CitizenGroup") & Com("Commission") & Gov("Government") & RLA("RegionalLegislativeAssembly") & PG("PG")
+    Ini -- hasAnnex --> Document
+    Ini -- hasEvent -->Event
+    Ini -- grewOutOf --> EU("EuropeanInitiative") & Ini
+    Ini -- ledTo --> Ini
+    Ini -- receivedChangeProposal --> CP("ChangeProposal")
+    Ini -- hasRelatedPetition --> P("Petition")
+    Ini -- hasContent --> Content
+
+    ConstitutionalRevisionProject -.->Ini
+    DeliberationProject -.->Ini
+    LawProject -.->Ini
+    LawProposal -.->Ini
+    ParliamentaryAppreciation -.->Ini
+    ParliamentaryInquiry -.->Ini
+    PopularReferendumInitiative -.->Ini
+    Ratification -.->Ini
+    ResolutionProposal -.->Ini
+    ResolutionProject -.->Ini
+    RulesOfProcedureProject -.->Ini
+
+    CP -- hasAuthor --> MP
+    CP -- isPublishedIn --> DAR
+
+    %DAR -.-> PUB("Publication")
+    %RP("ReportPublication") -.-> PUB
+    DAR("DARPublication") -- belongsToLegislature --> Leg
+    DAR -- belongsToLegislativeSession --> LS
+    
+    DARSeries1 -.- DAR
+    DARSeries2 -.- DAR
+    DARSeparata -.- DAR
+    DARSeries2A -.- DAR
+    DARSeries2B -.- DAR
+    DARSeries2C -.- DAR
+    DARSeries2D -.- DAR
+    DARSeries2E -.- DAR
+    DARSeries1A -.- DAR
+    DARSeries2CRC -.- DAR
+    DARSeries2CGOPOE -.- DAR
+    DARSeries2SCOE -.- DAR
+    DARSeries2CCEI -.- DAR
+    DARSeries2SOE -.- DAR
+    
+    P -- belongsToLegislature --> Leg
+    P -- belongsToLegislativeSession --> LS
+
+    E(Event) -- approvesDiploma --> LegalDocument
+    E -- hasDiscussion --> Discussion
+    E -- happensJointlyWithInitiative --> Ini
+    E -- discussedJointlyWith --> P
+    E -- hasAnnex --> Document
+    E -- hasVote --> Vote
+    E -- receivedAppeal --> MP & PG
+    E -- hasActivity --> Acttivity
+
+    Vote -- hasVoteAgainstFrom --> MP & PG
+    Vote -- hasVoteInFavourFrom --> MP & PG
+    Vote -- hasAbstensionFrom --> MP & PG
+    Vote -- isAbsentee --> MP
+    Vote -- isPublishedinDAR --> DAR
+
+    Discussion -- hasIntervention --> Intervention
+
+    Intervention -- isPublishedInDAR --> DAR
+    Intervention -- hasSpeaher --> Person
+
+    CE(ComissionEvent) -- attributedToComission --> Com
+    CE -- hasAudition --> Audition
+    CE -- hasHearing --> Hearing
+    CE -- isPubilshedInDAR --> DAR
+    CE -- hasVote --> Vote
+    CE -- hasTrasmission --> Transmission
+    CE -- hasRapporteur --> MP
+    CE -- hasPublishedReport --> DAR
+    CE -- createsDocument --> Document
+    CE -- hasSubComission --> Comission
