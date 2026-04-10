@@ -33,33 +33,29 @@ polis-core:PersonShape a sh:NodeShape ;
     sh:property [
         sh:path foaf:name ;
         sh:datatype xsd:string ;
-        sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 names and the name must be a xsd:string"@en
+        sh:message "A Person must have at most 1 name and the name must be a xsd:string"@en
     ] ;
 
     sh:property [
         sh:path foaf:birthday ;
         sh:datatype xsd:date ;
-        sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 birthdays and the birthday must be a xsd:date"@en
+        sh:message "A Person must at most 1 birthday and the birthday must be a xsd:date"@en
     ] ;
 
     sh:property [
         sh:path schema:gender ;
         sh:datatype xsd:string ;
-        sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 genders and the gender must be a xsd:string"@en
+        sh:message "A Person must at most 1 gender and the gender must be a xsd:string"@en
     ] ;
 
     sh:property [
         sh:path schema:jobTitle ;
         sh:datatype xsd:string ;
-        sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 job titles and the job title must be a xsd:string"@en
+        sh:message "A Person must at most 1 job title and the job title must be a xsd:string"@en
     ] .
 
 #################################################################
@@ -154,3 +150,26 @@ polis-core:MGShape a sh:NodeShape;
 # Guest
 #################################################################
 
+polis-core:GuestShape a sh:NodeShape;
+    sh:targetClass polis-core:Guest ;
+
+    sh:property [
+        sh:path polis-core:honour ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "A guest must at most 1 boolean declaration on whether it is a guest of honour"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:country ;
+        sh:maxCount 1 ;
+        sh:class dbo:Country ;
+        sh:message "A guest must at most 1 country of origin"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:holdsDuty ;
+        sh:maxCount 1 ;
+        sh:class polis-core:DutyHolding ;
+        sh:message "A guest must have at most 1 duty holding"@en
+    ] .
