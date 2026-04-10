@@ -298,5 +298,7 @@
 		"Defines the duty of a duty holder"@en ;
     rdfs:label "duty"@en ,
                "cargo"@pt ;
+    rdfs:comment "It is preferred to use polis-core:refersToDuty and org:Post when a controlled vocabulary exists"@en,
+        "É preferível utilizar polis-core:refersToDuty e org:Post quando um vocabulário controlado existe"@pt ;
     rdfs:domain :DutyHolding ;
     rdfs:range xsd:string .
