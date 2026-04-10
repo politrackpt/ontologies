@@ -432,4 +432,4 @@ polis-core:LegislatureShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:message "A legislature must one number and the number must be xsd:nonNegativeInteger"@en
-    ] ;
+    ] .
