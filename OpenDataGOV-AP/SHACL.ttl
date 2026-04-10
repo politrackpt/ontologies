@@ -322,5 +322,23 @@ polis-core:SituationHoldingShape a sh:NodeShape ;
         sh:path dct:date ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Situation Holding must have at most one date"
+        sh:message "A Situation Holding must have at most one date and it must be of the type xsd:date"
+    ] .
+
+#################################################################
+# Duty / Post
+#################################################################~
+
+polis-core:DutyShape a sh:NodeShape ;
+    sh:targetClass org:Post ; 
+    sh:targetClass polis-core:PAR ;
+    sh:targetClass polis-core:VicePAR ;
+    sh:targetClass polis-core:Secretary ;
+    sh:targetClass polis-core:ViceSecretary ;
+    
+    sh:property [
+        sh:path polis-core:identifier ; 
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A Post must have at most one identifier and it must be of the type xsd:string"
     ] .
