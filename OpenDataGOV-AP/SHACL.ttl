@@ -131,7 +131,7 @@ polis-core:ParliamentarianShape a sh:NodeShape;
 # MG
 #################################################################
 
-polis-core:ParliamentarianShape a sh:NodeShape;
+polis-core:MGShape a sh:NodeShape;
     sh:targetClass ocd:membroGoverno ;
 
     sh:property [
@@ -149,3 +149,8 @@ polis-core:ParliamentarianShape a sh:NodeShape;
         sh:class ocd:governo ;
         sh:message "A member of government must belong to one and only one government"@en
     ] .
+
+#################################################################
+# Guest
+#################################################################
+
