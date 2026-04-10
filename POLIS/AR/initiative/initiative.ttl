@@ -392,6 +392,20 @@
     dct:description "An unique identifier to identify pages in the DAR"@en, "Um identificar único para identificar páginas no DAR"@pt ;
     rdf:type owl:FunctionalProperty .
 
+:publicationSupplement rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:label "publication supplement"@en, "suplemento da publicação"@pt ;
+    dct:description "Supplement to the publication"@en, "Suplemento da publicação"@pt ;
+    rdfs:domain ocd:pubblicistica ;
+    rdfs:range xsd:string .
+
+:publicationSupplement rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:label "publication supplement"@en, "suplemento da publicação"@pt ;
+    dct:description "Supplement to the publication"@en, "Suplemento da publicação"@pt ;
+    rdfs:domain ocd:pubblicistica ;
+    rdfs:range xsd:string .
+
 #################################################################
 #    Object properties
 #################################################################
