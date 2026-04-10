@@ -107,7 +107,6 @@
 	rdfs:comment "An activity of the Youth Parliament."@en, "Uma atividade do Parlamento dos Jovens."@pt ;
 	rdfs:subClassOf prov:Activity .
 
-# TODO: talvez apagar esta classe, nos dados são so duas strings, não existe nada de valor, é literalmente so "Conta Geral do Estado"
 :PublicAccount a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Public Account"@en, "Conta Pública"@pt ;
@@ -334,6 +333,12 @@
 	rdfs:comment "A visit."@en, "Uma deslocação."@pt ;
 	rdfs:subClassOf :CommissionActivity .
 
+:ThirdPartyEntity a owl:Class ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "Third Party Entity"@en, "Entidade externa"@pt ;
+	rdfs:comment "A third party entity."@en, "Uma entidade externa."@pt ;
+	rdfs:subClassOf prov:Agent .
+
 ##################################################################
 #    Data Properties
 ##################################################################
@@ -403,6 +408,13 @@
 	rdfs:comment "Indicates the school type (basic or secondary)."@en, "Indica o tipo de escola (básico ou secundário)."@pt ;
 	rdfs:domain dbo:School ;
 	rdfs:range :SchoolType .
+
+:relatedCommission a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "related commission"@en, "comissão relacionada"@pt ;
+	rdfs:comment "Indicates the commission related to a commission activity."@en, "Indica a comissão relacionada a uma atividade de comissão."@pt ;
+	rdfs:domain :CommissionActivity ;
+	rdfs:range core:Commission .
 
 ##################################################################
 #    Individuals
