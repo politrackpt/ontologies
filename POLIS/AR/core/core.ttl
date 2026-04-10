@@ -260,10 +260,9 @@
 
 :holdsDuty rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:domain foaf:Person ;
     rdfs:range :DutyHolding ;
     rdfs:label "holds duty"@en, "exercita cargo"@pt ;
-    dct:description "Relates a person the a duty they hold"@en, "Relaciona uma pessoa a um cargo que exerçam"@pt .
+    dct:description "Relates something to a duty it holds"@en, "Relaciona algo a um cargo que exerça"@pt .
 
 #################################################################
 #    Data properties
