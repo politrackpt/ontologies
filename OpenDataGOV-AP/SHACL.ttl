@@ -173,3 +173,53 @@ polis-core:GuestShape a sh:NodeShape;
         sh:class polis-core:DutyHolding ;
         sh:message "A guest must have at most 1 duty holding"@en
     ] .
+
+#################################################################
+# Mandate
+#################################################################
+
+polis-core:MandateShape a sh:NodeShape ;
+    sh:targetClass ocd:mandatoCamera ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A mandate must have at most 1 identifier and the identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:parliamentaryName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A mandate must have at least 1 parliamentary name and the parliamentary name must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:legislatura ;
+        sh:message "A mandate must belong to 1 legislature"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:hasMembership ;
+        sh:minCount 1 ;
+        sh:class polis-core:Membership ;
+        sh:message "A mandate must have at least 1 membership"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:holdsSituation ;
+        sh:minCount 1 ;
+        sh:class polis-core:SituationHold ;
+        sh:message "A mandate must be in at least 1 situation"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:holdsDuty ;
+        sh:maxCount 1 ;
+        sh:class polis-core:DutyHolding ;
+        sh:message "A mandate with a duty holding must be of the type DutyHolding"@en
+    ] .
