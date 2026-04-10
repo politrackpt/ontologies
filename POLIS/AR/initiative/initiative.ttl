@@ -10,6 +10,8 @@
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix prov: <https://www.w3.org/ns/prov-o> .
+@prefix polis-mpact: <http://purl.org/polis/ar/mp-activity#> .
+@prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix : <http://purl.org/polis/ar/initiatives#> .
 
 @base <http://purl.org/polis/ar/initiatives#> .
@@ -814,6 +816,33 @@
                "tem atividade"@pt ;
     rdfs:domain :Event ;
     rdfs:range prov:Activity .
+
+:hasHearing rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a um audiência que ocorreu durante o mesmo"@pt , 
+                    "Relates a commission event to a hearing that occurred in its duration"@en ;
+    rdfs:label "has hearing"@en ,
+               "tem audiência"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range polis-mpact:Hearing .
+
+:hasAudition rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a um audição que ocorreu durante o mesmo"@pt , 
+                    "Relates a commission event to a audition that occurred in its duration"@en ;
+    rdfs:label "has audition"@en ,
+               "tem audição"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range polis-mpact:Audition .
+
+:hasSubCommission rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona um evento de comissão a uma subcomissão"@pt , 
+                    "Relates a commission event to a subcommission"@en ;
+    rdfs:label "has subcommission"@en ,
+               "tem subcomissão"@pt ;
+    rdfs:domain :Event ;
+    rdfs:range polis-core:Commission .
 
 #################################################################
 #    Annotation properties
