@@ -238,28 +238,28 @@ polis-core:OrganoShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "An organo must have an identifier and the identifier must be xsd:string"
+        sh:message "An organo must have an identifier and the identifier must be xsd:string"@en
     ] ;
 
     sh:property [
         sh:path dct:description ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "An organo must have at most one description and the description must be xsd:string"
+        sh:message "An organo must have at most one description and the description must be xsd:string"@en
     ] ;
 
     sh:property [
         sh:path foaf:name ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "An organo must have at most one name and the name must be xsd:string"
+        sh:message "An organo must have at most one name and the name must be xsd:string"@en
     ] ;
 
     sh:property [
         sh:path qudt:acronym ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "An organo must have at most one acronym and the acronym must be xsd:string"
+        sh:message "An organo must have at most one acronym and the acronym must be xsd:string"@en
     ] ;
 
     sh:property [
@@ -267,7 +267,7 @@ polis-core:OrganoShape a sh:NodeShape ;
         sh:class ocd:legislatura ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "An organo must belong to one and only one legislature"
+        sh:message "An organo must belong to one and only one legislature"@en
     ] .
 
 #################################################################
@@ -281,25 +281,25 @@ polis-core:CommissionShape a sh:NodeShape ;
         sh:path dbo:number ;
         sh:datatype xsd:nonNegativeInteger ;
         sh:maxCount 1 ;
-        sh:message "A commission must at most one number and the number must be xsd:nonNegativeInteger"
+        sh:message "A commission must at most one number and the number must be xsd:nonNegativeInteger"@en
     ] ;
 
     sh:property [
         sh:path polis-ini:isPublishedInDAR ;
         sh:class polis-ini:DARPublication ;
-        sh:message "A Commission publication in the DAR must be of the type DARPublication"
+        sh:message "A Commission publication in the DAR must be of the type DARPublication"@en
     ] ;
     
     sh:property [
         sh:path polis-core:isSubCommissionOf ;
         sh:class polis-core:Commission ;
-        sh:message "A Commission must be a subcommission of a Commission"
+        sh:message "A Commission must be a subcommission of a Commission"@en
     ] ;
     
     sh:property [
         sh:path polis-core:hasSubCommission ;
         sh:class polis-core:Commission ;
-        sh:message "A Commission must have a subcommission of type Commission"
+        sh:message "A Commission must have a subcommission of type Commission"@en
     ] .
 
 #################################################################
@@ -315,14 +315,14 @@ polis-core:SituationHoldingShape a sh:NodeShape ;
         sh:class ocd:proclamazione ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A Situation Holding must have one and only one proclamazione"
+        sh:message "A Situation Holding must have one and only one proclamazione"@en
     ] ;
     
     sh:property [
         sh:path dct:date ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Situation Holding must have at most one date and it must be of the type xsd:date"
+        sh:message "A Situation Holding must have at most one date and it must be of the type xsd:date"@en
     ] .
 
 #################################################################
@@ -340,7 +340,7 @@ polis-core:DutyShape a sh:NodeShape ;
         sh:path polis-core:identifier ; 
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "A Post must have at most one identifier and it must be of the type xsd:string"
+        sh:message "A Post must have at most one identifier and it must be of the type xsd:string"@en
     ] .
 
 #################################################################
@@ -355,19 +355,50 @@ polis-core:DutyHoldingShape a sh:NodeShape ;
         sh:path polis-core:duty ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "A Duty Holding must have at most one duty and the duty type must be xsd:string"
+        sh:message "A Duty Holding must have at most one duty and the duty type must be xsd:string"@en
     ] ;
     
     sh:property [
         sh:path dct:date ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Duty Holding must have at most one date and it must be of the type xsd:date"
+        sh:message "A Duty Holding must have at most one date and it must be of the type xsd:date"@en
     ] ;
 
     sh:property [
         sh:path polis-core:refersToDuty ;
         sh:class org:Post ;
         sh:maxCount 1 ;
-        sh:message "A Duty Holding must refer at most one duty and the duty type must be org:Post"
+        sh:message "A Duty Holding must refer at most one duty and the duty type must be org:Post"@en
+    ] .
+
+#################################################################
+# Membership
+#################################################################
+
+polis-core:MembershipShape a sh:NodeShape ;
+    sh:targetClass polis-core:Membership ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A Membership must have at most one date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:isMemberOf ;
+        sh:or (
+            [ sh:class polis-core:ParliamentaryGroup ]
+            [ sh:class ocd:organo ]
+        ) ;
+        sh:maxCount 1 ;
+        sh:message "A Membership must point at most once to either a polis-core:ParliamentaryGroup or an ocd:organo"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:hasRole ;
+        sh:class polis-bio:Role ;
+        sh:maxCount 1 ;
+         sh:message "A Membership must have at most one Role and it must be of the type polis-bio:Role"@en
     ] .
