@@ -1,0 +1,449 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ocd:  <http://dati.camera.it/ocd/> .
+@prefix piso: <http://purl.org/piso/initiatives#> .
+@prefix m4s: <http://purl.org/map4scrutiny-core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+# Initiative
+#################################################################
+
+piso:InitiativeShape
+    a sh:NodeShape ;
+    sh:targetClass piso:Initiative ;
+    sh:targetClass piso:ConstitutionalRevisionProject ;
+    sh:targetClass piso:DeliberationProject ;
+    sh:targetClass piso:LawProject ;
+    sh:targetClass piso:LawProposal ;
+    sh:targetClass piso:ParliamentaryAppreciation ;
+    sh:targetClass piso:ParliamentaryInquiry ;
+    sh:targetClass piso:PopularReferendumInitiative ;
+    sh:targetClass piso:Ratification ;
+    sh:targetClass piso:ResolutionProject ;
+    sh:targetClass piso:ResolutionProposal ;
+    sh:targetClass piso:RulesOfProcedureProject ;
+
+    sh:property [
+        sh:path piso:hasContent ;
+        sh:class piso:Content ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "An Initiative may have at most one content, and it must be a piso:Content."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasAuthor ;
+        sh:class m4s:Parliamentarian ;
+        sh:message "Author must be a m4s:Parliamentarian."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasProponent ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class ocd:governo ]
+            [ sh:class m4s:Parliamentarian ]
+            [ sh:class piso:CitizenGroup ]
+            [ sh:class piso:Commission ]
+            [ sh:class piso:ParliamentaryGroup ]
+            [ sh:class piso:RegionalLegislativeAssembly ]
+            [ sh:class piso:PAR ]
+        ) ;
+        sh:message "proponent must be one of the allowed classes."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasTopic ;
+        sh:class piso:Topic ;
+        sh:maxCount 1 ;
+        sh:message "topic must be a piso:Topic."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:originated ;
+        sh:or (
+            [ sh:class piso:Initiative ]
+            [ sh:class piso:ConstitutionalRevisionProject ]
+            [ sh:class piso:DeliberationProject ]
+            [ sh:class piso:LawProject ]
+            [ sh:class piso:LawProposal ]
+            [ sh:class piso:ParliamentaryAppreciation ]
+            [ sh:class piso:ParliamentaryInquiry ]
+            [ sh:class piso:PopularReferendumInitiative ]
+            [ sh:class piso:Ratification ]
+            [ sh:class piso:ResolutionProject ]
+            [ sh:class piso:ResolutionProposal ]
+            [ sh:class piso:RulesOfProcedureProject ]
+        );
+        
+        sh:message "originated must point to another piso:Initiative."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:originatedFrom ;
+        sh:or (
+            [ sh:class piso:EuropeanInitiative ]
+            [ sh:class piso:Initiative ]
+            [ sh:class piso:ConstitutionalRevisionProject ]
+            [ sh:class piso:DeliberationProject ]
+            [ sh:class piso:LawProject ]
+            [ sh:class piso:LawProposal ]
+            [ sh:class piso:ParliamentaryAppreciation ]
+            [ sh:class piso:ParliamentaryInquiry ]
+            [ sh:class piso:PopularReferendumInitiative ]
+            [ sh:class piso:Ratification ]
+            [ sh:class piso:ResolutionProject ]
+            [ sh:class piso:ResolutionProposal ]
+            [ sh:class piso:RulesOfProcedureProject ]
+        ) ;
+        sh:message "originatedFrom must be either piso:EuropeanInitiative or piso:Initiative."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "Initiative may have at most one legislature (ocd:legislatura)."@en
+    ] ;
+
+        sh:property [
+        sh:path piso:hasLegislativeSession ;
+        sh:class ocd:sessioneLegislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "Initiative may have at most one legislative session (ocd:sessioneLegislatura)."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasTitle ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "title must be xsd:string."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "identifier must be xsd:string"@en
+    ] ;
+
+    sh:property[
+        sh:path dbo:number ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:message "number must be xsd:nonNegativeInteger."@en
+    ] .
+
+#################################################################
+# Content
+#################################################################
+
+piso:ContentShape
+    a sh:NodeShape ;
+    sh:targetClass piso:Content ;
+
+    sh:property [
+        sh:path piso:hasText ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "text must be xsd:string."@en
+    ] ;
+
+        sh:property [
+        sh:path piso:hasLink ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "link must be xsd:string."@en
+    ] .
+
+#################################################################
+# Topic
+#################################################################
+
+piso:TopicShape
+    a sh:NodeShape ;
+    sh:targetClass piso:Topic ;
+
+    sh:property [
+        sh:path piso:hasTitle ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Topic title must be xsd:string."@en
+    ] .
+
+#################################################################
+# ParliamentaryGroupMembership
+#################################################################
+
+piso:ParliamentaryGroupMembershipShape
+    a sh:NodeShape ;
+    sh:targetClass piso:ParliamentaryGroupMembership ;
+
+    sh:property [
+        sh:path piso:hasParliamentaryGroup ;
+        sh:class piso:ParliamentaryGroup ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "parliamentaryGroup must be exactly one piso:ParliamentaryGroup."@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "dct:date must exist and be limited to one."@en
+    ] .
+
+#################################################################
+# ParliamentaryGroup
+#################################################################
+
+piso:ParliamentaryGroupShape
+    a sh:NodeShape ;
+    sh:targetClass piso:ParliamentaryGroup ;
+
+    sh:property [
+        sh:path piso:hasParty ;
+        sh:class piso:Party ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "party must be at most one piso:Party."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty
+        sh:message "ParliamentaryGroup may have at most one legislature."@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:maxCount 1 ;
+        sh:message "dct:date must be limited to one."@en
+    ] .
+
+#################################################################
+# Party
+#################################################################
+
+piso:PartyShape
+    a sh:NodeShape ;
+    sh:targetClass piso:Party ;
+
+    sh:property [
+        sh:path piso:hasName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "a party must have a name."@en
+    ] ;
+
+    sh:property [
+        sh:path qudt:acronym ;
+        sh:datatype xsd:string ;
+        sh:message "acronym must be xsd:string."@en
+    ] .
+
+#################################################################
+# Commission
+#################################################################
+
+piso:CommissionShape
+    a sh:NodeShape ;
+    sh:targetClass piso:Commission ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:message "number must be xsd:nonNegativeInteger."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "a commission must have a name."@en
+    ] ;
+
+    sh:property [
+        sh:path qudt:acronym ;
+        sh:datatype xsd:string ;
+        sh:message "acronym must be xsd:string."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "identifier must be xsd:string"@en
+    ] .
+
+#################################################################
+# governo (external class)
+#################################################################
+
+piso:GovernoShape
+    a sh:NodeShape ;
+    sh:targetClass ocd:governo ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:message "number must be xsd:nonNegativeInteger."@en
+    ] .
+
+#################################################################
+# legislatura (external class)
+#################################################################
+
+piso:LegislaturaShape
+    a sh:NodeShape ;
+    sh:targetClass ocd:legislatura ;
+
+    sh:property [
+        sh:path piso:hasIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:message "number must be xsd:nonNegativeInteger."@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "dct:date must exist and be limited to one."@en
+    ] .
+
+#################################################################
+# sessioneLegislatura (external class)
+#################################################################
+
+piso:SessioneLegislaturaShape
+    a sh:NodeShape ;
+    sh:targetClass ocd:sessioneLegislatura ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:message "number must be xsd:nonNegativeInteger."@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:maxCount 1 ;
+        sh:message "dct:date must be limited to one."@en
+    ] .
+
+#################################################################
+# RegionalLegislativeAssembly
+#################################################################
+
+piso:RegionalLegislativeAssemblyShape
+    a sh:NodeShape ;
+    sh:targetClass piso:RegionalLegislativeAssembly ;
+
+    sh:property [
+        sh:path piso:hasLocation ;
+        sh:datatype xsd:string ;
+        sh:message "location must be xsd:string."@en
+    ] .
+
+#################################################################
+# mandatoCamera (external class)
+#################################################################
+
+piso:MandatoCameraShape
+    a sh:NodeShape ;
+    sh:targetClass ocd:mandatoCamera ;
+
+    sh:property [
+        sh:path piso:hasIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasParliamentaryName ;
+        sh:datatype xsd:string ;
+        sh:message "parliamentaryName must be xsd:string."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasLegislature ;
+        sh:class ocd:legislatura ;
+        sh:maxCount 1 ;   # owl:FunctionalProperty on piso:legislature
+        sh:message "mandatoCamera may have at most one legislature."@en
+    ] ;
+
+    sh:property [
+        sh:path piso:hasParliamentaryGroupMembership ;
+        sh:class piso:ParliamentaryGroupMembership ;
+        sh:message "parliamentaryGroupMembership must point to piso:ParliamentaryGroupMembership."@en
+    ] ;
+
+    sh:property [
+        sh:path <http://dati.camera.it/ocd/rif_mandatoCamera> ;
+        sh:class ocd:mandatoCamera ;
+        sh:message "rif_mandatoCamera must point to ocd:mandatoCamera."@en
+    ] .
+
+
+#################################################################
+# Parliamentarian
+#################################################################
+
+piso:ParliamentarianShape
+    a sh:NodeShape ;
+    sh:targetClass m4s:Parliamentarian ;
+
+    sh:property [
+        sh:path piso:hasIdentifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path <http://dati.camera.it/ocd/rif_mandatoCamera> ;
+        sh:minCount 1 ;
+        sh:class ocd:mandatoCamera ;
+        sh:message "Parliamentarian must have at least one rif_mandatoCamera pointing to ocd:mandatoCamera."@en
+    ] .
+
+#################################################################
+# Person
+#################################################################
+
+piso:FoafPersonShape
+    a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+
+    sh:property [
+        sh:path piso:hasName ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A Person must have a piso:name."@en
+    ] .
