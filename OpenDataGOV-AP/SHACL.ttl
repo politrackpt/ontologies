@@ -222,3 +222,50 @@ polis-core:MandateShape a sh:NodeShape ;
         sh:class polis-core:DutyHolding ;
         sh:message "A mandate with a duty holding must be of the type DutyHolding"@en
     ] .
+
+#################################################################
+# Organo
+#################################################################
+
+polis-core:OrganoShape a sh:NodeShape ;
+    sh:targetClass ocd:organo ;
+    sh:targetClass polis-core:Commission ;
+    sh:targetClass polis-core:WorkingGroup ;
+    sh:targetClass polis-core:ARWorkingGroup ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An organo must have an identifier and the identifier must be xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path dct:description ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "An organo must have at most 1 description and the description must be xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "An organo must have at most 1 name and the name must be xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path qudt:acronym ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "An organo must have at most 1 acronym and the acronym must be xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An organo must belong to one and only one legislature"
+    ] .
