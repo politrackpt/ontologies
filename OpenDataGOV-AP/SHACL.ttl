@@ -7,6 +7,12 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
+@prefix prov: <https://www.w3.org/ns/prov-o> .
+@prefix time: <https://www.w3.org/2006/time> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
@@ -29,7 +35,7 @@ polis-core:PersonShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 names and the name must be a xsd:string"
+        sh:message "A Person must 0-1 names and the name must be a xsd:string"@en
     ] ;
 
     sh:property [
@@ -37,7 +43,7 @@ polis-core:PersonShape a sh:NodeShape ;
         sh:datatype xsd:date ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 birthdays and the birthday must be a xsd:date"
+        sh:message "A Person must 0-1 birthdays and the birthday must be a xsd:date"@en
     ] ;
 
     sh:property [
@@ -45,7 +51,7 @@ polis-core:PersonShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 genders and the gender must be a xsd:string"
+        sh:message "A Person must 0-1 genders and the gender must be a xsd:string"@en
     ] ;
 
     sh:property [
@@ -53,5 +59,70 @@ polis-core:PersonShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:message "A Person must 0-1 job titles and the job title must be a xsd:string"
+        sh:message "A Person must 0-1 job titles and the job title must be a xsd:string"@en
+    ] .
+
+#################################################################
+# MP
+#################################################################
+
+polis-core:ParliamentarianShape a sh:NodeShape;
+    sh:targetClass m4s:Parliamentarian ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A parliamentarian must have an identifier and the identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:minCount 1 ;
+        sh:class ocd:legislatura ;
+        sh:message "A parliamentarian must belong to at least one legislature"@en
+    ] ;
+
+    sh:property [
+        sh:path ocd:rif_mandatoCamera ;
+        sh:minCount 1 ;
+        sh:class ocd:mandatoCamera ;
+        sh:message "A parliamentarian must have served in at least one mandate"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-bio:hasHabilitation ;
+        sh:class polis-bio:Habilitation ;
+        sh:message "A parliamentarian habilitation must be of the class polis-bio:Habilitation"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:award ;
+        sh:class dbo:Award ;
+        sh:message "A parliamentarian award must be of the class dbo:Award"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-bio:hasTitle ;
+        sh:class polis-bio:Title ;
+        sh:message "A parliamentarian title must be of the class polis-bio:Title"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-bio:authorOf ;
+        sh:class bibo:Document ;
+        sh:message "A parliamentarian publications must be of the class bibo:Document"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-bio:hasRole ;
+        sh:class polis-bio:Role ;
+        sh:message "A parliamentarian role must be of the class polis-bio:Role"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:hasMembership ;
+        sh:class polis-core:Membership ;
+        sh:message "A parliamentarian membership must be of the class polis-core:Membership"@en
     ] .
