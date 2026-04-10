@@ -632,6 +632,14 @@
     rdfs:domain ocd:intervento ;
     rdfs:range foaf:Person .
 
+:publishes rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Relaciona uma publicação no Diário da República a algo que publicou"@pt , 
+                    "Relates a publication in the Diary of the Republic to something it published"@en ;
+    rdfs:label "publishes"@en ,
+               "pública"@pt ;
+    rdfs:domain :DARPublication .
+
 :attributedToCommission rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     dct:description "Relaciona um evento de comissão à comissão a qual este foi atribuído"@pt , 
