@@ -11,3 +11,47 @@
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix polis-mpact: <http://purl.org/polis/ar/mp-activity#> .
+
+# ------------------ CORE ------------------
+
+#################################################################
+# Person
+#################################################################
+
+polis-core:PersonShape a sh:NodeShape ;
+    sh:targetClass foaf:Person ;
+    sh:targetClass m4s:Parliamentarian ;
+    sh:targetClass ocd:membroGoverno ;
+    sh:targetClass polis-core:Guest ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "A Person must 0-1 names and the name must be a xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path foaf:birthday ;
+        sh:datatype xsd:date ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "A Person must 0-1 birthdays and the birthday must be a xsd:date"
+    ] ;
+
+    sh:property [
+        sh:path schema:gender ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "A Person must 0-1 genders and the gender must be a xsd:string"
+    ] ;
+
+    sh:property [
+        sh:path schema:jobTitle ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "A Person must 0-1 job titles and the job title must be a xsd:string"
+    ] .
