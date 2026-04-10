@@ -1,0 +1,52 @@
+---
+config:
+  layout: elk
+---
+flowchart TB
+    LS["LegislativeSession"] -- belongsToLegislature --> Leg["Legislature"]
+    PG -- isOfParty --> Party
+    PG -- belongsToLegislature --> Leg
+
+    MP -.-> Person
+    MP -- servedMandate --> Mandate
+    MP -- participatedLegislature --> Leg
+    MP -- hasHabilitation   --> H["Habilitation"]
+    MP -- hasAward --> Award
+    MP -- hasTitle --> Title
+    MP -- published --> Document
+    MP -- performedRole --> Role
+    MP -- hasMembership --> M["Membership"]
+
+    M -- isMemberOf --> PG
+    M -- isMemberOf --> OB["OrganisationalBody"]
+
+    OB -- belongsTo --> Leg
+
+    C[Comission] -.-> OB
+    WG["WorkingGroup"] -.-> OB
+    AR-WG["ARWorkingGroup"] -.-> OB
+
+    MG -.-> Person
+    MG -- holdsDuty --> DutyHolding
+    MG -- belongsToGovernmet --> G[Government]
+    
+  
+    Guest -.-> Person
+    Guest --holdsDuty --> DutyHolding
+
+    DutyHolding --holdsDuty --> Duty
+
+    PAR -.-> Duty
+    VicePAR -.-> Duty
+    Secretary -.-> Duty
+    ViceSecretary -.-> Duty
+   
+    Mandate -- belongsToLegislature --> Leg
+    Mandate -- hasMembership --> M
+    Mandate -- isInSituation --> SituationHolding
+    Mandate -- holdsDuty -->DutyHolding
+   
+   
+    C -- isPublishedIn --> DP[DARPublication]
+    C -- isSubComissionOf --> C
+    C -- hasSubComission --> C
