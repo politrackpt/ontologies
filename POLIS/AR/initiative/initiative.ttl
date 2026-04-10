@@ -204,6 +204,118 @@
             "Remessa"@pt ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
 
+:DARSeries1 a owl:Class ;
+    dct:description "Uma publicação oficial na Série 1 do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 1 of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 1 of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 1 Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARPublication .
+
+:DARSeries2 a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2 do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2 of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2 of the Diary of the Assembly of the Assembly of the Republic Publication"@en ,
+            "Série 2 Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARPublication .
+
+:DARSeparata a owl:Class ;
+    dct:description "Uma publicação oficial do tipo Separata no Diário da Assembleia da República"@pt , 
+        "An official Separata publication in the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Separata Publication in the Diary of the Assembly of the Republic"@en ,
+            "Separata no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARPublication .
+
+:DARSeries2A a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-A do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-A of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-A of the Diary of the Assembly of the Assembly of the Republic Publication"@en ,
+            "Série 2-A Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2  .
+
+:DARSeries2B a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-B do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-B of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-B of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-B Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2  .
+
+:DARSeries2C a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-C do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-C of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-C of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-C Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries2D a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-D do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-D of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-D of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-D Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2  .
+
+:DARSeries2E a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-E do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-E of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-E of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-E Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries1A a owl:Class ;
+    dct:description "Uma publicação oficial na Série 1-A do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 1-A of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 1-A of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 1-A Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries1 .
+
+:DARSeries2CRC a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-C-RC do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-C-RC of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-C-RC of the Diary of the Assembly of the Assembly of the Republic Publication"@en ,
+            "Série 2-C-RC Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries2CGOPOE a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-C GOP-OE do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-C GOP-OE of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-C GOP-OE of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-C GOP-OE Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries2SCOE a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-S C-OE do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-S C-OE of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-S C-OE of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-S C-OE Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries2CCEI a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-C CEI do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-C CEI of the Diary of the Assembly of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-C CEI of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-C CEI Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
+:DARSeries2SOE a owl:Class ;
+    dct:description "Uma publicação oficial na Série 2-S-OE do Diário da Assembleia da República"@pt , 
+        "An official publication in the Series 2-S-OE of the Diary of the Assembly of the Republic"@en ;
+    rdfs:label "Series 2-S-OE of the Diary of the Assembly of the Republic Publication"@en ,
+            "Série 2-S-OE Publicação no Diário da Assembleia da República"@pt ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    rdfs:subClassOf :DARSeries2 .
+
 #################################################################
 #    Data properties
 #################################################################
