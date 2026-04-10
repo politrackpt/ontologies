@@ -110,6 +110,12 @@
     dct:description "The status of habilitation of an MP"@en, "O estado da habilitação de um MP"@pt ;
     owl:oneOf ( :Complete :Incomplete ) .
 
+:PublishedWork rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "Published Work"@en, "Obra Publicada"@pt ;
+    dct:description "A published work that an MP is the author of"@en, "Uma obra publicada da qual um MP é autor"@pt ;
+    rdfs:subClassOf bibo:Document .
+
 #################################################################
 #    Data properties
 #################################################################
@@ -130,7 +136,7 @@
     rdfs:label "author of"@en, "autor de"@pt ;
     dct:description "Indicates that an MP is the author of a published word"@en, "Indica que um MP é autor de uma dada obra publicada"@pt ;
     rdfs:domain m4s:Parliamentarian ;
-    rdfs:range bibo:Document .
+    rdfs:range :PublishedWork .
 
 :hasRole rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
