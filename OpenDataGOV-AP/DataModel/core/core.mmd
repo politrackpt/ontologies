@@ -46,7 +46,18 @@ flowchart TB
     Mandate -- isInSituation --> SituationHolding
     Mandate -- holdsDuty -->DutyHolding
    
-   
+   SituationHolding -- isInSituation --> Situation
     C -- isPublishedIn --> DP[DARPublication]
     C -- isSubComissionOf --> C
     C -- hasSubComission --> C
+
+    Withdrawal -.-> Situation
+    Incumbent -.-> Situation
+    PermantentIncumbent -.-> Situation
+    TemporaryIncumbent -.-> Situation
+    Deceased -.-> Situation
+    Disqualified -.-> Situation
+    LossOfMandate -.-> Situation
+    Resigned -.-> Situation
+    Alternate -.-> Situation
+    Suspended -.-> Situation
