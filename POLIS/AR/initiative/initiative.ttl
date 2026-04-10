@@ -190,14 +190,6 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
     rdfs:subClassOf ocd:pubblicistica .
 
-:ReportPublication a owl:Class ;
-    dct:description "Uma publicação oficial de um relatório no Diário da Assembleia da República"@pt , 
-        "An official publication of a report in the Diary of the Assembly of the Republic"@en ;
-    rdfs:label "Diary of the Assembly of the Republic Publication"@en ,
-            "Publicação no Diário da Assembleia da República"@pt ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:subClassOf ocd:pubblicistica .
-
 :CommissionEvent a owl:Class ;
     dct:description "Uma Comissão de Evento representa a participação de uma comissão no contexto de um evento específico. Ao contrário de uma comissão enquanto órgão organizacional, um Evento de Comissão estrutura as atividades relacionadas com a comissão que são específicas de uma determinada iniciativa e fase processual"@pt , 
         "An Event Commission represents the participation of a Commission within the context of a specific Event. Unlike a Commission as a organisational body, an Event Commission models commission-related activity that is specific to a given Initiative and procedural phase"@en ;
@@ -399,10 +391,10 @@
     rdfs:domain ocd:pubblicistica ;
     rdfs:range xsd:string .
 
-:publicationSupplement rdf:type owl:DatatypeProperty ;
+:publicationSupplementFinalPage rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-    rdfs:label "publication supplement"@en, "suplemento da publicação"@pt ;
-    dct:description "Supplement to the publication"@en, "Suplemento da publicação"@pt ;
+    rdfs:label "publication supplement final page"@en, "página final do suplemento da publicação"@pt ;
+    dct:description "Final page of the supplement to the publication"@en, "Página final do suplemento da publicação"@pt ;
     rdfs:domain ocd:pubblicistica ;
     rdfs:range xsd:string .
 
@@ -665,7 +657,7 @@
     rdfs:label "has published report"@en ,
                "tem a publicação do relatório"@pt ;
     rdfs:domain :CommissionEvent ;
-    rdfs:range :ReportPublication .
+    rdfs:range :DARPublication .
 
 :hasDiscussion rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
