@@ -308,7 +308,7 @@ polis-core:CommissionShape a sh:NodeShape ;
 
 
 polis-core:SituationHoldingShape a sh:NodeShape ;
-    sh:targetClass polis-core:SituationHold ;
+    sh:targetClass polis-core:SituationHolding ;
 
     sh:property [
         sh:path ocd:tipoProclamazione ;
@@ -341,4 +341,33 @@ polis-core:DutyShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
         sh:message "A Post must have at most one identifier and it must be of the type xsd:string"
+    ] .
+
+#################################################################
+# Duty Holding
+#################################################################
+
+
+polis-core:DutyHoldingShape a sh:NodeShape ;
+    sh:targetClass polis-core:DutyHolding ;
+
+    sh:property [
+        sh:path polis-core:duty ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A Duty Holding must have at most one duty and the duty type must be xsd:string"
+    ] ;
+    
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A Duty Holding must have at most one date and it must be of the type xsd:date"
+    ] ;
+
+    sh:property [
+        sh:path polis-core:refersToDuty ;
+        sh:class org:Post ;
+        sh:maxCount 1 ;
+        sh:message "A Duty Holding must refer at most one duty and the duty type must be org:Post"
     ] .
