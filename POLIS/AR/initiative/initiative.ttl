@@ -358,12 +358,12 @@
     rdfs:domain :Transmission ;
     rdfs:range xsd:string .
 
-:proposedBy rdf:type owl:DatatypeProperty ;
+:proponent rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description "Define o proponente de uma proposta de alteração"@pt , 
 		"Defines the proponent of a change proposal"@en ;
-    rdfs:label "is proposed by"@en ,
-               "é proposta por"@pt ;
+    rdfs:label "proponent"@en ,
+               "proponente"@pt ;
     rdfs:comment "This term is used when the data does not specify exactly which group or individual proposed the amendment. When we know exactly who it is, we should use the term 'proposed by a parliamentary group' or 'proposed by a member of parliament'."@en ,
         "Este termo é utilizado quando os dados não especificam exatamente qual o grupo ou indivíduo que propôs a alteração. Quando sabemos exatamente de quem se trata, devemos utilizar o termo 'proposto por um grupo parlamentar' ou 'proposto por um deputado'."@pt ;
     rdfs:domain :ChangeProposal ;
