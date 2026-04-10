@@ -269,3 +269,35 @@ polis-core:OrganoShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "An organo must belong to one and only one legislature"
     ] .
+
+#################################################################
+# Commission
+#################################################################
+
+polis-core:CommissionShape a sh:NodeShape ;
+    sh:targetClass polis-core:Commission ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:maxCount 1 ;
+        sh:message "A commission must at most 1 number and the number must be xsd:nonNegativeInteger"
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:message "A Commission publication in the DAR must be of the type DARPublication"
+    ] ;
+    
+    sh:property [
+        sh:path polis-core:isSubCommissionOf ;
+        sh:class polis-core:Commission ;
+        sh:message "A Commission must be a subcommission of a Commission"
+    ] ;
+    
+    sh:property [
+        sh:path polis-core:hasSubCommission ;
+        sh:class polis-core:Commission ;
+        sh:message "A Commission must have a subcommission of type Commission"
+    ] .
