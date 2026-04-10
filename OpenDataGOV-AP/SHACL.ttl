@@ -219,7 +219,6 @@ polis-core:MandateShape a sh:NodeShape ;
 
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:maxCount 1 ;
         sh:class polis-core:DutyHolding ;
         sh:message "A mandate with a duty holding must be of the type DutyHolding"@en
     ] .
