@@ -264,6 +264,13 @@
     rdfs:label "holds duty"@en, "exercita cargo"@pt ;
     dct:description "Relates something to a duty it holds"@en, "Relaciona algo a um cargo que exerça"@pt .
 
+:refersToDuty rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain :DutyHolding ;
+    rdfs:range org:Post ;
+    rdfs:label "refers to duty"@en, "refere-se ao cargo"@pt ;
+    dct:description "Relates a duty holding to the duty it refers to"@en, "Relaciona o exercício de um cargo ao cargo em si"@pt .
+
 #################################################################
 #    Data properties
 #################################################################
