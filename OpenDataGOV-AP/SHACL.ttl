@@ -402,3 +402,34 @@ polis-core:MembershipShape a sh:NodeShape ;
         sh:maxCount 1 ;
          sh:message "A Membership must have at most one Role and it must be of the type polis-bio:Role"@en
     ] .
+
+#################################################################
+# Legislature
+#################################################################
+
+polis-core:LegislatureShape a sh:NodeShape ;
+    sh:targetClass ocd:legislatura ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Legislature must have one identifier and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Membership must have one date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A legislature must one number and the number must be xsd:nonNegativeInteger"@en
+    ] ;
