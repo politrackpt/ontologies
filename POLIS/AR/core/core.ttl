@@ -271,6 +271,23 @@
     rdfs:label "refers to duty"@en, "refere-se ao cargo"@pt ;
     dct:description "Relates a duty holding to the duty it refers to"@en, "Relaciona o exercício de um cargo ao cargo em si"@pt .
 
+:hasSubCommission rdf:type owl:ObjectProperty ;
+    owl:inverseOf :isSubCommissionOf ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain :Commission ;
+    rdfs:range :Commission ;
+    rdfs:label "has subcommission"@en, "tem subcomissão"@pt ;
+    dct:description "Relates a commission to a subcommission"@en, "Relaciona uma comissão a uma subcomissão"@pt .
+
+:isSubCommissionOf rdf:type owl:ObjectProperty ;
+    owl:inverseOf :hasSubCommission ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:domain :Commission ;
+    rdfs:range :Commission ;
+    rdfs:label "is subcommission of"@en, "é subcomissão de"@pt ;
+    dct:description "Relates a subcommission to a commission"@en, "Relaciona uma subcomissão a uma comissão"@pt .
+
+
 #################################################################
 #    Data properties
 #################################################################
