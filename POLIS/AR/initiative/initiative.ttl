@@ -711,23 +711,18 @@
     rdfs:domain :Event ;
     rdfs:range ocd:votazione .
 
-:proposedByParliamentaryGroup rdf:type owl:ObjectProperty ;
+:isProposedBy rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Relaciona uma proposta de alteração ao grupo parlamentar que a submeteu"@pt , 
-		"Relates a change proposal to the parliamentary group who submitted it"@en ;
+	dct:description "Relaciona uma proposta de alteração ao grupo parlamentar ou deputado que a submeteu"@pt , 
+		"Relates a change proposal to the parliamentary group or MP who submitted it"@en ;
     rdfs:label "proposed by parliamentary group"@en ,
                "proposta pelo grupo parlamentar"@pt ;
     rdfs:domain :ChangeProposal ;
-    rdfs:range polis-core:ParliamentaryGroup .
-
-:proposedByParliamentarian rdf:type owl:ObjectProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description "Relaciona uma proposta de alteração ao deputado que a submeteu"@pt , 
-		"Relates a change proposal to the parliamentarian who submitted it"@en ;
-    rdfs:label "proposed by parliamentarian"@en ,
-               "proposta pela/o deputada/o"@pt ;
-    rdfs:domain :ChangeProposal ;
-    rdfs:range m4s:Parliamentarian .
+    rdfs:range [ rdf:type owl:Class ;
+      owl:unionOf ( polis-core:ParliamentaryGroup 
+                    m4s:Parliamentarian
+                  )
+    ] .
 
 :isPublishedInDAR rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
