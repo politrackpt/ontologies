@@ -376,7 +376,7 @@
     rdfs:label "has event type id"@en ,
                "tem o id de tipo de evento"@pt ;
     rdfs:domain :Event ;
-    rdfs:range xsd:int .
+    rdfs:range xsd:string .
 
 :eventType rdf:type owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
