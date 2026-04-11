@@ -900,3 +900,17 @@ polis-ini:DocumentShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:message "A document must have at most one identifier and the identifier must be xsd:string"@en
     ] .
+
+#################################################################
+# Legislation
+#################################################################
+
+polis-ini:LegislationShape a sh:NodeShape ;
+    sh:targetClass bibo:Legislation ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A legislation must have at most one identifier and the identifier must be xsd:string"@en
+    ] .
