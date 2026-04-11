@@ -531,3 +531,144 @@ polis-core:GovernmentShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A governo must one and only one number and the number must be xsd:nonNegativeInteger"@en
     ] .
+
+#################################################################
+# Constituency
+#################################################################
+
+# TODO
+
+# ------------------ Initiative ------------------
+
+#################################################################
+# Initiative
+#################################################################
+
+polis-ini:InitiativeShape a sh:NodeShape ;
+    sh:targetClass polis-ini:Initiative ;
+    sh:targetClass piso:ConstitutionalRevisionProject ;
+    sh:targetClass piso:DeliberationProject ;
+    sh:targetClass piso:LawProject ;
+    sh:targetClass piso:LawProposal ;
+    sh:targetClass piso:ParliamentaryAppreciation ;
+    sh:targetClass piso:ParliamentaryInquiry ;
+    sh:targetClass piso:PopularReferendumInitiative ;
+    sh:targetClass piso:Ratification ;
+    sh:targetClass piso:ResolutionProject ;
+    sh:targetClass piso:ResolutionProposal ;
+    sh:targetClass piso:RulesOfProcedureProject ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An initiative must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An initiative must have one and exactly one title and the title must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An initiative must one and only one number and the number must be xsd:nonNegativeInteger"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:textSubstitutionDetails ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "An initiative must have at most one text substitution detail and it must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:legislatura ;
+        sh:message "An initiative must belong to one and only one legislature"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislativeSession ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:sessioneLegislatura ;
+        sh:message "An initiative must belong to one and only one legislaturive session"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasAuthor ;
+        sh:class m4s:Parliamentarian ;
+        sh:message "An initiative author must be of the class m4s:Parliamentarian"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasProponent ;
+        sh:or (
+            [ sh:class polis-core:ParliamentaryGroup ]
+            [ sh:class m4s:Parliamentarian ]
+            [ sh:class ocd:governo ]
+            [ sh:class polis-ini:Commission ]
+            [ sh:class polis-ini:RegionalLegislativeAssembly ]
+            [ sh:class polis-ini:CitizenGroup ]
+        ) ;
+        sh:minCount 1 ;
+        sh:message "An initiative must have at least one proponent"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasEvent ;
+        sh:class polis-ini:Event ;
+        sh:minCount 1 ;
+        sh:message "An initiative must have at least one event of the class polis-ini:Event"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasAnnex ;
+        sh:class bibo:Document ;
+        sh:message "An initiative annex must be of the class bibo:Document"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:grewOutOf ;
+        sh:or (
+            [sh:class polis-ini:Initiative]
+            [sh:class polis-ini:EuropeanInitiative]
+        ) ;
+        sh:message "An initiative must grow out of a polis-ini:Initiative or a polis-ini:EuropeanInitiative"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:ledTo ;
+        sh:class polis-ini:Initiative ;
+        sh:message "An initiative must lead to initiatives of the class polis-ini:Initiative"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:receivedChangeProposal ;
+        sh:class polis-ini:ChangeProposal ;
+        sh:message "An initiative received change proposal must be of the class polis-ini:ChangeProposal"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasRelatedPetition ;
+        sh:class polis-ini:Petition ;
+        sh:message "An initiative related petition must be of the class polis-ini:Petition"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasContent ;
+        sh:class bibo:Document ;
+        sh:maxCount 1 ;
+        sh:message "An initiative must have at most 1 content document and the class of the document must be bibo:Document"
+    ] .
+    
