@@ -70,7 +70,7 @@ polis-core:ParliamentarianShape a sh:NodeShape;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
-        sh:message "A parliamentarian must have an identifier and the identifier must be xsd:string"@en
+        sh:message "A parliamentarian must have one and only one identifier and the identifier must be xsd:string"@en
     ] ;
 
     sh:property [
@@ -1157,4 +1157,19 @@ polis-ini:VoteShape a sh:NodeShape ;
         sh:class polis-ini:DARPublication ;
         sh:maxCount 1 ;
         sh:message "A vote must have one and only one publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] .
+
+#################################################################
+# Activity
+#################################################################
+
+polis-ini:ActivityShape a sh:NodeShape ;
+    sh:targetClass prov:Activity ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An activity must have one and only one identifier and the identifier must be xsd:string"@en
     ] .
