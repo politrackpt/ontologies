@@ -669,7 +669,7 @@ polis-ini:InitiativeShape a sh:NodeShape ;
         sh:path polis-ini:hasContent ;
         sh:class bibo:Document ;
         sh:maxCount 1 ;
-        sh:message "An initiative must have at most one content document and the class of the document must be bibo:Document"
+        sh:message "An initiative must have at most one content document and the class of the document must be bibo:Document"@en
     ] .
     
 #################################################################
@@ -684,5 +684,20 @@ polis-ini:EuropeanInitiativeShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "An european initiative must have one and only one url and the type must be xsd:string"
+        sh:message "An european initiative must have one and only one url and the type must be xsd:string"@en
+    ] .
+
+#################################################################
+# Regional Legislative Assembly
+#################################################################
+
+polis-ini:RegionalLegislativeAssemblyShape a sh:NodeShape ;
+    sh:targetClass polis-ini:RegionalLegislativeAssembly ;
+
+    sh:property [
+        sh:path sem:hasPlace ;
+        sh:class sem:Place ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A regional legislative assembly must have a place of the class sem:Place"@en
     ] .
