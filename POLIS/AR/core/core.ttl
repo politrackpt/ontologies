@@ -69,12 +69,6 @@
                "Commission"@en ;
 	dct:description ""@pt , ""@en . # TODO: SUBCLASS DE ORGANISATIONALBODY
 
-:SituationHolding rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Exercício de Situação"@pt ,
-               "Situation Holding"@en ;
-	dct:description "Define o exercício de uma situação"@pt , "Defines the holding of a situation"@en .
-
 :DutyHolding rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Exercício de Cargo"@pt ,
@@ -252,13 +246,6 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
      rdfs:domain :Membership ;
      rdfs:range polis-bio:Role .
-
-:holdsSituation rdf:type owl:ObjectProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:domain ocd:mandatoCamera ;
-    rdfs:range :SituationHolding ;
-    rdfs:label "holds situation"@en, "exercita situação"@pt ;
-    dct:description "Relates the mandate of a MP to a situation they hold"@en, "Relaciona um deputado a uma situação que exerçam"@pt .
 
 :holdsDuty rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
