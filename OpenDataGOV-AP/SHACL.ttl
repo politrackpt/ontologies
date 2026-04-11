@@ -287,7 +287,7 @@ polis-core:CommissionShape a sh:NodeShape ;
     sh:property [
         sh:path polis-ini:isPublishedInDAR ;
         sh:class polis-ini:DARPublication ;
-        sh:message "A Commission publication in the DAR must be of the type DARPublication"@en
+        sh:message "A Commission publication in the DAR must be of the class polis-ini:DARPublication"@en
     ] ;
     
     sh:property [
@@ -299,7 +299,7 @@ polis-core:CommissionShape a sh:NodeShape ;
     sh:property [
         sh:path polis-core:hasSubCommission ;
         sh:class polis-core:Commission ;
-        sh:message "A Commission must have a subcommission of type Commission"@en
+        sh:message "A Commission must have a subcommission of class polis-core:Commission"@en
     ] .
 
 #################################################################
@@ -700,4 +700,47 @@ polis-ini:RegionalLegislativeAssemblyShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:message "A regional legislative assembly must have a place of the class sem:Place"@en
+    ] .
+
+#################################################################
+# Change Proposal
+#################################################################
+
+polis-ini:ChangeProposalShape a sh:NodeShape ;
+    sh:targetClass polis-ini:ChangeProposal ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A change proposal must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:changeProposalType ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A change proposal must have at most one change proposal type and it must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:proponent ;
+        sh:datatype xsd:string ;
+        sh:message "A change proposal proponent must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:message "A change proposal publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isProposedBy ;
+        sh:or (
+            [sh:class m4s:Parliamentarian]
+            [sh:class polis-core:ParliamentaryGroup]
+        ) ;
+        sh: "A change proposal can only be proposed by m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
     ] .
