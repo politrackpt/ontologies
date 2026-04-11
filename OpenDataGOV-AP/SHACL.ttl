@@ -956,3 +956,115 @@ polis-ini:PetitionShape a sh:NodeShape ;
         sh:class ocd:sessioneLegislatura ;
         sh:message "An initiative must belong to a legislaturive session of the type ocd:sessioneLegislatura"@en
     ] .
+
+#################################################################
+# Event
+#################################################################
+
+polis-ini:EventShape a sh:NodeShape ;
+    sh:targetClass polis-ini:Event ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An event must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:typeId ;
+        sh:datatype xsd:string ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:message "An event must have one and only one typeId and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:eventType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An event must have one and exactly one event type and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An event must have one and only one date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:code ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An event must have one and only one code and the code must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:observation ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "An event must have at most one observation and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:approvesDiploma;
+        sh:class bibo:Legislation ;
+        sh:message "An event approved diploma must be of the class bibo:Legislation"@en
+    ] ;
+
+    sh:path [
+        sh:path polis-ini:hasDiscussion ;
+        sh:class ocd:discussione ;
+        sh:maxCount 1 ;
+        sh:message "An event must have at most one discussion and it must be of the class ocd:discussione"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:happensJointlyWithInitiative ;
+        sh:class polis-ini:Initiative ;
+        sh:message "An event may happen jointly with initiatives and they must be of the type polis-ini:Initiative"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:discussedJointlyWith ;
+        sh:class polis-ini:Petition ;
+        sh:message "An event may be discussed jointly with petitions and they must be of the type polis-ini:Petition"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasAnnex ;
+        sh:class bibo:Document ;
+        sh:message "An event annex must be of the class bibo:Document"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasVote ;
+        sh:class ocd:votazione ;
+        sh:message "An event vote must be of the class ocd:votazione"@en
+    ] ;
+
+    sh:property [
+        sh:class polis-ini:receivedAppeal ;
+        sh:or (
+            [sh:class m4s:Parliamentarian]
+            [sh:class polis-core:ParliamentaryGroup]
+        ) ;
+        sh:message "An event may only receive appeals from m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:message "An event publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasActivity ;
+        sh:class prov:Activity ;
+        sh:message "An event activity must be of the class prov:Activity"@en
+    ] .
