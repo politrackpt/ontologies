@@ -914,3 +914,45 @@ polis-ini:LegislationShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:message "A legislation must have at most one identifier and the identifier must be xsd:string"@en
     ] .
+
+#################################################################
+# Petition
+#################################################################
+
+polis-ini:PetitionShape a sh:NodeShape ;
+    sh:targetClass polis-ini:Petition ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A petition must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:maxCount 1 ;
+        sh:message "A petition must at most one number and the number must be xsd:nonNegativeInteger"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An petition must have one and only one title and the title must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:message "An petition must belong a legislature of the type ocd:legislatura"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislativeSession ;
+        sh:class ocd:sessioneLegislatura ;
+        sh:message "An initiative must belong to a legislaturive session of the type ocd:sessioneLegislatura"@en
+    ] .
