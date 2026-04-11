@@ -1238,3 +1238,171 @@ polis-ini:InterventionShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "An intervention must have at most one speaker and the speaker must be of the class foaf:Person"
     ] .
+
+#################################################################
+# Commission Event
+#################################################################
+
+polis-ini:CommissionEventShape a sh:NodeShape ;
+    sh:targetClass polis-ini:CommissionEvent ;
+
+    sh:property [
+        sh:path polis-ini:observation ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one observation and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:competent ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one competent boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:entryDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one entry date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:distributionDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one distribution date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:extended ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one extended boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:scheduledDiscussionDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one scheduled discussion date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:requestSchedulePlenaryDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one request schedule plenary date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:awaitsPlenarySchedule ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one awaits plenary schedule boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:publicAppreciationDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one public appreciation date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:opinionRequested ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one opinion requested boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:opinionReceived ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one opinion received boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:subCommissionDistributionDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one sub commission distribution date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:negativeOpinionReason ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one negative opinion reason and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:negativeOpinionReasonDate ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one negative opinion reason date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:attributedToCommission ;
+        sh:class polis-core:Commission ;
+        sh:minCount 1 ;
+        sh:message "A commission event must have at least one attributed commission and it must be of the class polis-core:Commission"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasAudition ;
+        sh:class polis-mpact:Audition ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one audition and it must be of the class polis-mpact:Audition"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasHearing ;
+        sh:class polis-mpact:Hearing ;
+        sh:maxCount 1 ;
+        sh:message "A commission event must have at most one hearing and it must be of the class polis-mpact:Hearing"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:message "A commission event publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasVote ;
+        sh:class ocd:votazione ;
+        sh:message "A commission event vote must be of the class ocd:votazione"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasTransmission ;
+        sh:class polis-ini:Transmission ;
+        sh:message "A commission event transmission must be of the class polis-ini:Transmission"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasRapporteur ;
+        sh:class m4s:Parliamentarian ;
+        sh:message "A commission event rapporteur must be of the class m4s:Parliamentarian"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasPublishedReport ;
+        sh:class polis-ini:DARPublication ;
+        sh:message "A commission event published report must be of the class polis-ini:DARPublication"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:createsDocument ;
+        sh:class bibo:Document ;
+        sh:message "A commission event created documents must be of the class bibo:Documents"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasSubComission ;
+        sh:class polis-core:Commission ;
+        sh:message "A commission event's subcommissions must be of the class polis-core:Commission"@en
+    ] .
