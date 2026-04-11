@@ -1406,3 +1406,32 @@ polis-ini:CommissionEventShape a sh:NodeShape ;
         sh:class polis-core:Commission ;
         sh:message "A commission event's subcommissions must be of the class polis-core:Commission"@en
     ] .
+
+#################################################################
+# Transmission
+#################################################################
+
+polis-ini:TransmissionShape a sh:NodeShape ;
+    sh:targetClass polis-ini:Transmission ;
+
+    sh:property [
+        sh:path polis-ini:transmissionType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A transmission must have one and only one transmission type of the type xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A transmission must at most one date and it must be of the type xsd:date"@en
+    ] ;
+    
+    sh:property [
+        sh:path dct:created ;
+        sh:datatype xsd:date ;
+        sh:maxCount 1 ;
+        sh:message "A transmission must have at most one creation date and it must be of the type xsd:date"@en
+    ] .
