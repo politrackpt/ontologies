@@ -1068,3 +1068,93 @@ polis-ini:EventShape a sh:NodeShape ;
         sh:class prov:Activity ;
         sh:message "An event activity must be of the class prov:Activity"@en
     ] .
+
+#################################################################
+# Vote
+#################################################################
+
+polis-ini:VoteShape a sh:NodeShape ;
+    sh:targetClass ocd:votazione ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A vote must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:result ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have at most one result and the reslt must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:unanimous ;
+        sh:datatype xsd:boolean ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have at most one unanimous boolean"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:description ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have at most one description and it must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasReunionNumber ;
+        sh:datatype xsd:int ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have at most one reunion number and it must be xsd:int"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasReunionType ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have at most one reunion type and it must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasVoteAgainstFrom ;
+        sh:or (
+            [sh:class m4s:Parliamentarian]
+            [sh:class polis-core:ParliamentaryGroup]
+        ) ;
+        sh:message "A vote can only have votes against from m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasVoteInFavourFrom ;
+        sh:or (
+            [sh:class m4s:Parliamentarian]
+            [sh:class polis-core:ParliamentaryGroup]
+        ) ;
+        sh:message "A vote can only have votes in favour from m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:hasAbstentionFrom ;
+        sh:or (
+            [sh:class m4s:Parliamentarian]
+            [sh:class polis-core:ParliamentaryGroup]
+        ) ;
+        sh:message "A vote can only have abstentions from m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasAbsentee ;
+        sh:class m4s:Parliamentarian ;
+        sh:message "A vote may only have absentees from the class m4s:Parliamentarian"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:maxCount 1 ;
+        sh:message "A vote must have one and only one publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] .
