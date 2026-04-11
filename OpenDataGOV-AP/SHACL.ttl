@@ -211,10 +211,11 @@ polis-core:MandateShape a sh:NodeShape ;
     ] ;
 
     sh:property [
-        sh:path polis-core:holdsSituation ;
+        sh:path ocd:tipoProclamazione ;
+        sh:class ocd:proclamazione ;
         sh:minCount 1 ;
-        sh:class polis-core:SituationHold ;
-        sh:message "A mandate must be in at least one situation"@en
+        sh:maxCount 1 ;
+        sh:message "A mandate must have one and only one proclamazione"@en
     ] ;
 
     sh:property [
@@ -303,26 +304,28 @@ polis-core:CommissionShape a sh:NodeShape ;
     ] .
 
 #################################################################
-# Situation Holding
+# Situation
 #################################################################
 
 
-polis-core:SituationHoldingShape a sh:NodeShape ;
-    sh:targetClass polis-core:SituationHolding ;
-
-    sh:property [
-        sh:path ocd:tipoProclamazione ;
-        sh:class ocd:proclamazione ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "A Situation Holding must have one and only one proclamazione"@en
-    ] ;
-    
+polis-core:SituationShape a sh:NodeShape ;
+    sh:targetClass ocd:proclamazione ;
+    sh:targetClass polis-core:Withdrawal ;
+    sh:targetClass polis-core:Incumbent ;
+    sh:targetClass polis-core:PermantentIncumbent ;
+    sh:targetClass polis-core:TemporaryIncumbent ;
+    sh:targetClass polis-core:Deceased ;
+    sh:targetClass polis-core:Disqualified ;
+    sh:targetClass polis-core:LossOfMandate ;
+    sh:targetClass polis-core:Resigned ;
+    sh:targetClass polis-core:Alternate ;
+    sh:targetClass polis-core:Suspended ;
+   
     sh:property [
         sh:path dct:date ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Situation Holding must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A proclamazione must have at most one date and it must be of the type xsd:date"@en
     ] .
 
 #################################################################
