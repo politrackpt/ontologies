@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix : <http://purl.org/polis/ar/core#> .
@@ -41,7 +42,8 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Parliamentary Group"@en, "Grupo Parlamentar"@pt ;
     dct:description "A parliamentary group that exists in a parliament during a legislature, containing elected MPs"@en,
-        "Um grupo parlamentar que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt .
+        "Um grupo parlamentar que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt ;
+    skos:broadMatch ocd:gruppoParlamentare .
 
 :Party rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
