@@ -369,6 +369,12 @@
                 ] ;
 	rdfs:range xsd:string .
 
+:civilYear rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographic#> ;
+    rdfs:label "has civil year"@en, "tem ano civil"@pt ;
+    dct:description "Indicates the civil year of something"@en, "Indica o ano civil de algo"@pt ;
+    rdfs:range xsd:gYear .
+
 ##################################################################
 #    Object Properties
 ##################################################################
