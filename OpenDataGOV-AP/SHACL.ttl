@@ -1173,3 +1173,31 @@ polis-ini:ActivityShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:message "An activity must have one and only one identifier and the identifier must be xsd:string"@en
     ] .
+
+#################################################################
+# Discussion
+#################################################################
+
+polis-ini:DiscussionShape a sh:NodeShape ;
+    sh:targetClass ocd:discussione ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A discussion must have one and only one date and it must be of the type xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:abstract ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A discussion must have at most one abstract and it must be of the type xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path ocd:rif_intervento ;
+        sh:class ocd:intervento ;
+        sh:message "A discussion's intervention must be of the class ocd:intervento"@en
+    ] .
