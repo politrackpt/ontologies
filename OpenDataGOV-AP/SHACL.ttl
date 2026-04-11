@@ -1156,7 +1156,7 @@ polis-ini:VoteShape a sh:NodeShape ;
         sh:path polis-ini:isPublishedInDAR ;
         sh:class polis-ini:DARPublication ;
         sh:maxCount 1 ;
-        sh:message "A vote must have one and only one publication in the DAR must be of the class polis-ini:DARPublication"@en
+        sh:message "A vote must have at most one publication in the DAR must be of the class polis-ini:DARPublication"@en
     ] .
 
 #################################################################
@@ -1186,18 +1186,55 @@ polis-ini:DiscussionShape a sh:NodeShape ;
         sh:datatype xsd:date ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A discussion must have one and only one date and it must be of the type xsd:date"@en
+        sh:message "A discussione must have one and only one date and it must be of the type xsd:date"@en
     ] ;
 
     sh:property [
         sh:path dct:abstract ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "A discussion must have at most one abstract and it must be of the type xsd:string"@en
+        sh:message "A discussione must have at most one abstract and it must be of the type xsd:string"@en
     ] ;
     
     sh:property [
         sh:path ocd:rif_intervento ;
         sh:class ocd:intervento ;
-        sh:message "A discussion's intervention must be of the class ocd:intervento"@en
+        sh:message "A discussione's intervention must be of the class ocd:intervento"@en
+    ] .
+
+#################################################################
+# Intervention
+#################################################################
+
+polis-ini:InterventionShape a sh:NodeShape ;
+    sh:targetClass ocd:intervento ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "An intervento must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path schema:url ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An intervento must have one and only one url and the type must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:isPublishedInDAR ;
+        sh:class polis-ini:DARPublication ;
+        sh:maxCount 1 ;
+        sh:message "An intervento must have at most one publication in the DAR must be of the class polis-ini:DARPublication"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:hasSpeaker ;
+        sh:class foaf:Person ;
+        sh:maxCount 1 ;
+        sh:message "An intervention must have at most one speaker and the speaker must be of the class foaf:Person"
     ] .
