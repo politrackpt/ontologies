@@ -744,3 +744,109 @@ polis-ini:ChangeProposalShape a sh:NodeShape ;
         ) ;
         sh: "A change proposal can only be proposed by m4s:Parliamentarian or polis-core:ParliamentaryGroup"@en
     ] .
+
+#################################################################
+# DAR Publication
+#################################################################
+
+polis-ini:DARPublicationShape a sh:NodeShape ;
+    sh:targetClass polis-ini:DARPublication ;
+    sh:targetClass polis-ini:DARSeries1 ;
+    sh:targetClass polis-ini:DARSeries2 ;
+    sh:targetClass polis-ini:DARSeparata ;
+    sh:targetClass polis-ini:DARSeries2A ;
+    sh:targetClass polis-ini:DARSeries2B ;
+    sh:targetClass polis-ini:DARSeries2C ;
+    sh:targetClass polis-ini:DARSeries2D ;
+    sh:targetClass polis-ini:DARSeries2E ;
+    sh:targetClass polis-ini:DARSeries1A ;
+    sh:targetClass polis-ini:DARSeries2CRC ;
+    sh:targetClass polis-ini:DARSeries2CGOPOE ;
+    sh:targetClass polis-ini:DARSeries2SCOE ;
+    sh:targetClass polis-ini:DARSeries2CCEI ;
+    sh:targetClass polis-ini:DARSeries2SOE ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must one and only one number and the number must be xsd:nonNegativeInteger"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:code ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have one and only one code and the code must be xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have one and only one date and it must be of the type xsd:date"@en
+    ] ;
+    
+    sh:property [
+        sh:path schema:pagination ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message  "A DAR publication must have one and only one pagination and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-ini:pagesIdentifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have one and only one pages' identifier and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path schema:url ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have one and only one url and it must be of the type xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:publicationSupplement ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have at most one supplement and it must be of the type xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:publicationSupplementFinalPage ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have at most one supplement final page and it must be of the type xsd:string"@en
+    ] ;
+    
+    sh:property [
+        sh:path polis-ini:observation ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:message "A DAR publication must have at most one observation and it must be of the type xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:legislatura ;
+        sh:message "A DAR publication must belong to one and only one legislature"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislativeSession ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ocd:sessioneLegislatura ;
+        sh:message "A DAR publication must belong to one and only one legislaturive session"@en
+    ] .
