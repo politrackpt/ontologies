@@ -669,6 +669,20 @@ polis-ini:InitiativeShape a sh:NodeShape ;
         sh:path polis-ini:hasContent ;
         sh:class bibo:Document ;
         sh:maxCount 1 ;
-        sh:message "An initiative must have at most 1 content document and the class of the document must be bibo:Document"
+        sh:message "An initiative must have at most one content document and the class of the document must be bibo:Document"
     ] .
     
+#################################################################
+# European Initiative
+#################################################################
+
+polis-ini:EuropeanInitiativeShape a sh:NodeShape ;
+    sh:targetClass polis-ini:EuropeanInitiative ;
+
+    sh:property [
+        sh:path schema:url ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "An european initiative must have one and only one url and the type must be xsd:string"
+    ] .
