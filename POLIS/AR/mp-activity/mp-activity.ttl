@@ -384,8 +384,7 @@
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "was rapporteur in"@en, "foi relator em"@pt ;
 	rdfs:comment "Indicates that an MP was a rapporteur in a given activity."@en, "Indica que um MP foi relator em uma dada atividade."@pt ;
-	rdfs:domain m4s:Parliamentarian ;
-	rdfs:range :PublicAccount .
+	rdfs:domain m4s:Parliamentarian .
 
 :didYouthParliamentActivity a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
