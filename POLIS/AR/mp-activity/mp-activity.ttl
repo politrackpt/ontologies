@@ -379,6 +379,41 @@
 #    Object Properties
 ##################################################################
 
+:wasRapporteurIn a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "was rapporteur in"@en, "foi relator em"@pt ;
+	rdfs:comment "Indicates that an MP was a rapporteur in a given activity."@en, "Indica que um MP foi relator em uma dada atividade."@pt ;
+	rdfs:domain m4s:Parliamentarian ;
+	rdfs:range :PublicAccount .
+
+:didYouthParliamentActivity a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "did Youth Parliament Activity"@en, "realizou Atividade do Parlamento dos Jovens"@pt ;
+	rdfs:comment "Indicates that an MP did a given Youth Parliament activity."@en, "Indica que um MP realizou uma dada atividade do Parlamento dos Jovens."@pt ;
+	rdfs:domain m4s:Parliamentarian ;
+	rdfs:range :YouthParliamentActivity .
+
+:didRequisition a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "did requisition"@en, "realizou requerimento"@pt ;
+	rdfs:comment "Indicates that an MP did a given requisition (request or inquiry)."@en, "Indica que um MP realizou um dado requerimento (requerimento ou pergunta)."@pt ;
+	rdfs:domain m4s:Parliamentarian ;
+	rdfs:range ocd:richiestaParere .
+
+:didCommissionActivity a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "did commission activity"@en, "realizou atividade de comissão"@pt ;
+	rdfs:comment "Indicates that an MP did a given commission activity."@en, "Indica que um MP realizou uma dada atividade de comissão."@pt ;
+	rdfs:domain m4s:Parliamentarian ;
+	rdfs:range :CommissionActivity .
+
+:didParliamentaryActivity a owl:ObjectProperty ;
+	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
+	rdfs:label "did parliamentary activity"@en, "realizou atividade parlamentar"@pt ;
+	rdfs:comment "Indicates that an MP did a given parliamentary activity."@en, "Indica que um MP realizou uma dada atividade parlamentar."@pt ;
+	rdfs:domain m4s:Parliamentarian ;
+	rdfs:range :ParliamentaryActivity .
+
 :toPublicEntityType a owl:ObjectProperty ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "to Public Entity Type"@en, "para Tipo de Entidade Pública"@pt ;
