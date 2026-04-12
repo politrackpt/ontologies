@@ -118,7 +118,7 @@ polis-bio:HabilitationShape a sh:NodeShape ;
         ) ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A Habilitation must have exactly one level and the level must be a polis-bio:HabilitationLevel"@en
+        sh:message "A Habilitation must have exactly one level and the level must be a subclass of polis-bio:HabilitationLevel"@en
     ] ;
 
     sh:property [
@@ -620,7 +620,7 @@ polis-mpact:SchoolShape a sh:NodeShape ;
         ) ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A School must have exactly one school type and the type must be a polis-mpact:SchoolType"@en
+        sh:message "A School must have exactly one school type and the type must be a subclass of polis-mpact:SchoolType"@en
     ] .
 
 #################################################################

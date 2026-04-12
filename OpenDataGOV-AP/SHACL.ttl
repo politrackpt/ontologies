@@ -121,6 +121,34 @@ polis-core:ParliamentarianShape a sh:NodeShape;
         sh:path polis-core:hasMembership ;
         sh:class polis-core:Membership ;
         sh:message "A parliamentarian membership must be of the class polis-core:Membership"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:didYouthParliamentActivity ;
+        sh:class polis-mpact:YouthParliamentActivity ;
+        sh:message "A parliamentarian youth parliament activity must be of the class polis-mpact:YouthParliamentActivity"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:didRequisition ;
+        sh:or (
+            [ sh:class ocd:richiestaParere ]
+            [ sh:class polis-mpact:Request ]
+            [ sh:class polis-mpact:Inquiry ]
+        ) ;
+        sh:message "A parliamentarian requisition must be of the class ocd:richiestaParere or polis-mpact:Request or polis-mpact:Inquiry"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:didCommissionActivity ;
+        sh:class polis-mpact:CommissionActivity ;
+        sh:message "A parliamentarian commission activity must be of the class polis-mpact:CommissionActivity"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:didParliamentaryActivity ;
+        sh:class polis-mpact:ParliamentaryActivity ;
+        sh:message "A parliamentarian parliamentary activity must be of the class polis-mpact:ParliamentaryActivity"@en
     ] .
 
 #################################################################
@@ -359,12 +387,10 @@ polis-core:MembershipShape a sh:NodeShape ;
 
     sh:property [
         sh:path polis-core:isMemberOf ;
-        sh:or (
-            [ sh:class polis-core:ParliamentaryGroup ]
-            [ sh:class ocd:organo ]
-        ) ;
         sh:maxCount 1 ;
-        sh:message "A Membership must point at most once to either a polis-core:ParliamentaryGroup or an ocd:organo"@en
+        # ehhh, não sei se esta será a melhor mensagem, mas fica a ideia.
+        # sh:or foi removido porque Membership já não especifica range, para ser mais flexivel.
+        sh:message "A Membership must have at most one isMemberOf property"@en
     ] ;
 
     sh:property [
