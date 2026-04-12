@@ -11,7 +11,6 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix sem: <http://semanticweb.cs.vu.nl/2009/11/sem/> .
 @prefix prov: <https://www.w3.org/ns/prov-o> .
-@prefix time: <https://www.w3.org/2006/time> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
@@ -200,4 +199,65 @@ polis-bio:TitleShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:message "A Title must have exactly one number and the number must be a xsd:nonNegativeInteger"@en
+    ] .
+
+# ------------------ MPACT ------------------
+
+polis-mpact:RequisitionShape a sh:NodeShape ;
+    sh:targetClass ocd:richiestaParere ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one identifier and the identifier must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one number and the number must be a xsd:nonNegativeInteger"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:subject ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one subject and the subject must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one date and the date must be a xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislativeSession ;
+        sh:class ocd:sessioneLegislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have exactly one belongsToLegislativeSession and the legislative session must be a ocd:sessioneLegislatura"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:toPublicEntityType ;
+        sh:class mpact:PublicEntityType ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:message "A Requisition must have at most one toPublicEntityType and the public entity type must be a mpact:PublicEntityType"@en
     ] .
