@@ -312,26 +312,17 @@ polis-core:CommissionShape a sh:NodeShape ;
     ] .
 
 #################################################################
-# Situation Holding
+# Situation
 #################################################################
 
-
-polis-core:SituationHoldingShape a sh:NodeShape ;
-    sh:targetClass polis-core:SituationHolding ;
-
-    sh:property [
-        sh:path ocd:tipoProclamazione ;
-        sh:class ocd:proclamazione ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "A Situation Holding must have one and only one proclamazione"@en
-    ] ;
+polis-core:SituationShape a sh:NodeShape ;
+    sh:targetClass ocd:proclamazione ;
     
     sh:property [
         sh:path dct:date ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Situation Holding must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A Situation must have at most one date and it must be of the type xsd:date"@en
     ] .
 
 #################################################################
@@ -350,35 +341,6 @@ polis-core:DutyShape a sh:NodeShape ;
         sh:datatype xsd:date ;
         sh:maxCount 1 ;
         sh:message "A Duty must have at most one date and it must be of the type xsd:date"@en
-    ] .
-
-#################################################################
-# Duty Holding
-#################################################################
-
-
-polis-core:DutyHoldingShape a sh:NodeShape ;
-    sh:targetClass polis-core:DutyHolding ;
-
-    sh:property [
-        sh:path polis-core:duty ;
-        sh:datatype xsd:string ;
-        sh:maxCount 1 ;
-        sh:message "A Duty Holding must have at most one duty and the duty type must be xsd:string"@en
-    ] ;
-    
-    sh:property [
-        sh:path dct:date ;
-        sh:datatype xsd:date ;
-        sh:maxCount 1 ;
-        sh:message "A Duty Holding must have at most one date and it must be of the type xsd:date"@en
-    ] ;
-
-    sh:property [
-        sh:path polis-core:refersToDuty ;
-        sh:class org:Post ;
-        sh:maxCount 1 ;
-        sh:message "A Duty Holding must refer at most one duty and the duty type must be org:Post"@en
     ] .
 
 #################################################################
