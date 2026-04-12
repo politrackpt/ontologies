@@ -614,3 +614,93 @@ polis-mpact:SchoolShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A School must have exactly one school type and the type must be a polis-mpact:SchoolType"@en
     ] .
+
+polis-mpact:CommissionActivityShape a sh:NodeShape ;
+    sh:targetClass polis-mpact:CommissionActivity ;
+    sh:targetClass polis-mpact:Audition ;
+    sh:targetClass polis-mpact:Event ;
+    sh:targetClass polis-mpact:Debate ;
+    sh:targetClass polis-mpact:Cerimony ;
+    sh:targetClass polis-mpact:Conference ;
+    sh:targetClass polis-mpact:Others ;
+    sh:targetClass polis-mpact:Visit ;
+    sh:targetClass polis-mpact:Hearing ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one identifier and the identifier must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:subject ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one subject and the subject must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one date and the date must be a xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path schema:location ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one location and the location must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:relatedCommission ;
+        sh:class polis-core:Commission ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission Activity must have exactly one related commission and the related commission must be a polis-core:Commission"@en
+    ] .
+
+polis-mpact:AuditionHearingShape a sh:NodeShape ;
+    sh:targetClass polis-mpact:Audition ;
+    sh:targetClass polis-mpact:Hearing ;
+
+    sh:property [
+        sh:path polis-mpact:commissionIdentifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission must have exactly one name and the name must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path prov:wasAssociatedWith ;
+        sh:class polis-mpact:ThirdPartyEntity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Commission must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
+    ] .
+
+polis-mpact:ThirdPartyEntityShape a sh:NodeShape ;
+    sh:targetClass polis-mpact:ThirdPartyEntity ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Third Party Entity must have exactly one name and the name must be a xsd:string"@en
+    ] .
