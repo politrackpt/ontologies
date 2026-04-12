@@ -8,6 +8,7 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix : <http://purl.org/polis/ar/biographic#> .
@@ -26,10 +27,10 @@
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/biographic#" ;
 	owl:versionInfo					"1.0";
     dct:description                    """The objective of the POLIS ontology is to (...)""" ;
-    dcterms:bibliographicCitation ""@en ;
-    dcterms:created ""^^xsd:date ;
-    dcterms:modified ""^^xsd:date ;
-    dcterms:language "en", "pt" ;
+    dct:bibliographicCitation ""@en ;
+    dct:created ""^^xsd:date ;
+    dct:modified ""^^xsd:date ;
+    dct:language "en", "pt" ;
 .
 
 #################################################################
