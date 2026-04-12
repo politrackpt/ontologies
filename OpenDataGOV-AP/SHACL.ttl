@@ -130,12 +130,16 @@ polis-core:ParliamentarianShape a sh:NodeShape;
 polis-core:MGShape a sh:NodeShape;
     sh:targetClass ocd:membroGoverno ;
 
+    sh:propery [
+        sh:path polis-core:duty ;
+        sh:datatype xsd:string ;
+        sh:message "A member of government duty must be of the type xsd:string"@en
+    ] ;
+
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:class polis-core:DutyHolding ;
-        sh:message "A member of government must have one and only one duty holding"@en
+        sh:class org:Post ;
+        sh:message "A member of government held duty must be of the class org:Post"@en
     ] ;
 
     sh:property [
@@ -167,11 +171,16 @@ polis-core:GuestShape a sh:NodeShape;
         sh:message "A guest must at most one country of origin"@en
     ] ;
 
+    sh:propery [
+        sh:path polis-core:duty ;
+        sh:datatype xsd:string ;
+        sh:message "A guest duty must be of the type xsd:string"@en
+    ] ;
+
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:maxCount 1 ;
-        sh:class polis-core:DutyHolding ;
-        sh:message "A guest must have at most one duty holding"@en
+        sh:class org:Post ;
+        sh:message "A guest held duty must be of the class org:Post"@en
     ] .
 
 #################################################################
@@ -211,16 +220,16 @@ polis-core:MandateShape a sh:NodeShape ;
     ] ;
 
     sh:property [
-        sh:path polis-core:holdsSituation ;
+        sh:path ocd:tipoProclamazione ;
         sh:minCount 1 ;
-        sh:class polis-core:SituationHold ;
+        sh:class ocd:proclamazione ;
         sh:message "A mandate must be in at least one situation"@en
     ] ;
 
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:class polis-core:DutyHolding ;
-        sh:message "A mandate with a duty holding must be of the type DutyHolding"@en
+        sh:class org:Post ;
+        sh:message "A mandate with a duty must be of the type org:Post"@en
     ] .
 
 #################################################################
@@ -330,13 +339,17 @@ polis-core:SituationHoldingShape a sh:NodeShape ;
 #################################################################~
 
 polis-core:DutyShape a sh:NodeShape ;
-    sh:targetClass org:Post ; 
+    sh:targetClass org:Post ;
+    sh:targetClass polis-core:PAR ;
+    sh:targetClass polis-core:VicePAR ;
+    sh:targetClass polis-core:Secreatary ;
+    sh:targetClass polis-core:ViceSecretary ;
     
     sh:property [
-        sh:path polis-core:identifier ; 
-        sh:datatype xsd:string ;
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Post must have at most one identifier and it must be of the type xsd:string"@en
+        sh:message "A Duty must have at most one date and it must be of the type xsd:date"@en
     ] .
 
 #################################################################
