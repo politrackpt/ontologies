@@ -50,3 +50,73 @@ polis-bio:AwardShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "An Award must have exactly one number and the number must be a xsd:nonNegativeInteger"@en
     ] .
+
+#################################################################
+# Published Work
+#################################################################
+
+polis-bio:PublishedWorkShape a sh:NodeShape ;
+    sh:targetClass polis-bio:PublishedWork ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Published Work must have exactly one identifier and the identifier must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Published Work must have exactly one title and the title must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Published Work must have exactly one number and the number must be a xsd:nonNegativeInteger"@en
+    ] .
+
+#################################################################
+# Habilitation
+#################################################################
+
+polis-bio:HabilitationShape a sh:NodeShape ;
+    sh:targetClass polis-bio:Habilitation ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Habilitation must have exactly one identifier and the identifier must be a xsd:string"@en
+    ] ;
+
+        sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Habilitation must have exactly one name and the name must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-bio:isHabilitationLevel ;
+        sh:class polis-bio:HabilitationLevel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Habilitation must have exactly one level and the level must be a polis-bio:HabilitationLevel"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-bio:isHabilitationStatus ;
+        sh:class polis-bio:HabilitationStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Habilitation must have exactly one status and the status must be a polis-bio:HabilitationStatus"@en
+    ] .
