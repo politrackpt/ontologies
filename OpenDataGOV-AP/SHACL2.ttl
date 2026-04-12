@@ -557,3 +557,60 @@ polis-mpact:PermanentDelegationMeetingShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A Permanent Delegation Meeting must have exactly one place and the place must be a sem:Place"@en
     ] .
+
+polis-mpact:YouthParliamentActivityShape a sh:NodeShape ;
+    sh:targetClass polis-mpact:YouthParliamentActivity ;
+
+    sh:property [
+        sh:path dct:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Youth Parliament Activity must have exactly one date and the date must be a xsd:date"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:meetingType ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Youth Parliament Activity must have exactly one meetingType and the type must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-mpact:heldAt ;
+        sh:class dbo:School ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Youth Parliament Activity must have exactly one location and the location must be a dbo:School"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:inConstituency ;
+        sh:class polis-core:Constituency ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Youth Parliament Activity must have exactly one constituency and the constituency must be a polis-core:Constituency"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Youth Parliament Activity must have exactly one legislature and the legislature must be a ocd:legislatura"@en
+    ] .
+
+polis-mpact:SchoolShape a sh:NodeShape ;
+    sh:targetClass dbo:School ;
+
+    sh:property [
+        sh:path polis-mpact:isSchoolType ;
+        sh:or (
+            [ sh:class polis-mpact:Basic]
+            [ sh:class polis-mpact:Secondary ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A School must have exactly one school type and the type must be a polis-mpact:SchoolType"@en
+    ] .
