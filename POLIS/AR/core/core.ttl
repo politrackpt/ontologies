@@ -9,6 +9,7 @@
 @prefix m4s: <https://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix pe: <https://ukparliament.github.io/ontologies/election/election-ontology.ttl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
@@ -193,6 +194,11 @@
     rdfs:label "is subcommission of"@en, "é subcomissão de"@pt ;
     dct:description "Relates a subcommission to a commission"@en, "Relaciona uma subcomissão a uma comissão"@pt .
 
+:inConstituency rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdfs:range pe:ConstituencyArea ;
+    rdfs:label "in constituency"@en, "em circunscrição"@pt ;
+    dct:description "Relates something to a Constituency"@en, "Relaciona algo a um círculo eleitoral"@pt .
 
 #################################################################
 #    Data properties
