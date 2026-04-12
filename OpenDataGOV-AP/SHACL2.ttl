@@ -120,3 +120,14 @@ polis-bio:HabilitationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A Habilitation must have exactly one status and the status must be a polis-bio:HabilitationStatus"@en
     ] .
+
+polis-bio:HabilitationLevelShape a sh:NodeShape ;
+    sh:targetClass polis-bio:HabilitationLevel ;
+
+    sh:property [
+        sh:path dbo:number ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Habilitation Level must have exactly one number and the number must be a xsd:nonNegativeInteger"@en
+    ] .
