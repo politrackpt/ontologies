@@ -231,12 +231,7 @@
 
 :isMemberOf rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-     rdfs:domain :Membership ;
-     rdfs:range [ rdf:type owl:Class ;
-                    owl:unionOf ( ocd:organo
-                                :ParliamentaryGroup
-                                )
-                ] .
+     rdfs:domain :Membership .
 
 :hasRole rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
