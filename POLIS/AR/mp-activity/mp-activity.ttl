@@ -57,7 +57,8 @@
 :PublicEntityType a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
 	rdfs:label "Public Entity Type"@en, "Tipo de Entidade Pública"@pt ;
-	rdfs:comment "A type of public entity."@en, "Um tipo de entidade pública."@pt .
+	rdfs:comment "A type of public entity."@en, "Um tipo de entidade pública."@pt ;
+	owl:oneOf (:AC :AL :AR :EI :RA) .
 
 :FriendshipParliamentaryGroup a owl:Class ;
 	rdfs:isDefinedBy <http://purl.org/polis/ar/mp-activity#> ;
