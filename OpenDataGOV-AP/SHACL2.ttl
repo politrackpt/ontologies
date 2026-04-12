@@ -453,6 +453,10 @@ polis-mpact:PublicAccountsShape a sh:NodeShape ;
         sh:message "A Public Accounts must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
     ] .
 
+#################################################################
+# Delegation
+#################################################################
+
 polis-mpact:Delegation a sh:NodeShape ;
     sh:targetClass polis-mpact:Delegation ;
     sh:targetClass polis-mpact:PermanentDelegation ;
@@ -558,6 +562,10 @@ polis-mpact:PermanentDelegationMeetingShape a sh:NodeShape ;
         sh:message "A Permanent Delegation Meeting must have exactly one place and the place must be a sem:Place"@en
     ] .
 
+#################################################################
+# Youth Parliament Activity
+#################################################################
+
 polis-mpact:YouthParliamentActivityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:YouthParliamentActivity ;
 
@@ -614,6 +622,10 @@ polis-mpact:SchoolShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A School must have exactly one school type and the type must be a polis-mpact:SchoolType"@en
     ] .
+
+#################################################################
+# Commission Activity
+#################################################################
 
 polis-mpact:CommissionActivityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:CommissionActivity ;
