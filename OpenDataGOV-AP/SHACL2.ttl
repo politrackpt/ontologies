@@ -328,3 +328,34 @@ polis-mpact:ParliamentaryActivityShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "A Parliamentary Activity must have exactly one subject and the subject must be a xsd:string"@en
     ] .
+
+#################################################################
+# Friendship Parliamentary Group
+#################################################################
+
+polis-mpact:FriendshipParliamentaryGroupShape a sh:NodeShape ;
+    sh:targetClass polis-mpact:FriendshipParliamentaryGroup ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Friendship Parliamentary Group must have exactly one identifier and the identifier must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Friendship Parliamentary Group must have exactly one name and the name must be a xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path polis-core:belongsToLegislature ;
+        sh:class ocd:legislatura ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A Friendship Parliamentary Group must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
+    ] .
