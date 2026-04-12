@@ -3,48 +3,94 @@ config:
   layout: elk
 ---
 flowchart LR
-    MP("MP")
-    Req("Requisition")
-    ReqReq("Request")
-    Inq("Inquiry")
-    Interv("Intervention")
-    PAct("Parliamentary Activity")
-    PE("Public Accounts")
-    Event("Event")
-    Visit("Visit")
-    Audition("Audition")
-    Group("Group")
-    Hearing("Hearing")
-    YPA("Youth Parliament Activity")
-    TeaEs("Teaching Establishment")
-    EsType("Establishment Type")
-    Mem("Membership")
-    Del("Delegation")
-    DelE("Temporary Delegation")
-    DelP("Permanent Delegation")
-    FPG("Friendship Parliamentary Group")
-    DelPM("Permanent Delegation Meeting")
-    ComA("Comission Activity")
+    Req(Requisition) -- belongsToLegislature --> Leg(Legislature)
+    Req -- belongsToLegislativeSession --> LegSession(LegislatureSession)
+    Req -- toPublicEntityType --> PET(PublicEntityType)
+  
+    Request["Request"] -.-> Req
+    Inquiry["Inquiry"] -.-> Req
+    AC["AC"] -.-> PET
+    AL["AL"] -.-> PET
+    AR["AR"] -.-> PET
+    EI["EI"] -.-> PET
+    RA["RA"] -.-> PET
 
-    MP -- didCommissionActivity --> ComA
-    ComA -.-> Hearing
-    ComA -.-> Audition
-    ComA -.-> Event
-    ComA -.-> Visit
-    MP -- didRequest --> Req
-    Req -.-> ReqReq
-    Req -.-> Inq
-    MP -- didIntervention --> Interv
-    MP -- didParliamentaryActivity --> PAct
-    MP -- wasRapporteurIn --> PE
-    PE -- isActivityType --> ActType
-    MP -- didYouthParliamentActivity --> YPA
-    YPA -- tookPlaceIn --> TeaEs
-    TeaEs -- isType --> EsType
-    MP -- hasMembership --> Mem
-    DelP -- didDelegationMeeting --> DelPM
-    Mem -- inGroup --> Group 
-    Group -.-> FPG
-    Group -.-> Del
-    Del -.-> DelE
-    Del -.-> DelP
+    PAct(ParliamentaryActivity) -- belongsToLegislature --> Leg
+    PAct -.-> Activity
+    AGP["AGP"] -.-> PAct
+    CER["CER"] -.-> PAct
+    DEB["DEB"] -.-> PAct
+    DES["DES"] -.-> PAct
+    DPO["DPO"] -.-> PAct
+    DPR["DPR"] -.-> PAct
+    EGP["EGP"] -.-> PAct
+    EVN["EVN"] -.-> PAct
+    GOD["GOD"] -.-> PAct
+    IMU["IMU"] -.-> PAct
+    INI["INI"] -.-> PAct
+    ITG["ITG"] -.-> PAct
+    MOC["MOC"] -.-> PAct
+    OEX["OEX"] -.-> PAct
+    PEC["PEC"] -.-> PAct
+    PEG["PEG"] -.-> PAct
+    PET["PET"] -.-> PAct
+    PII["PII"] -.-> PAct
+    POR["POR"] -.-> PAct
+    PRC["PRC"] -.-> PAct
+    PRG["PRG"] -.-> PAct
+    PUE["PUE"] -.-> PAct
+    REP["REP"] -.-> PAct
+    RSI["RSI"] -.-> PAct
+    SES["SES"] -.-> PAct
+    VOT["VOT"] -.-> PAct
+
+    FPG(FriendshipParliamentaryGroup) -- belongsToLegislature --> Leg
+    
+
+    PA(PublicAccount) -- belongsToLegislature --> Leg
+
+    Delegation(Delegation) -.-> F
+    Delegation -- belongsToLegislature --> Leg
+    Delegation -- belongsToLegislativeSession --> LegSession
+
+    PD(PermanentDelegation) -.-> Delegation
+    PD -- hasPermanentDelegationMeeting --> PDM(PermanentDelegationMeeting)
+
+    TD(TemporaryDelegation) -.-> Delegation
+    TD -- sem:hasPlace --> Place(sem:Place)
+    TD -- hasDelegationScope --> DegS(DelegationScope)
+
+   
+    PDM -- hasPlace --> Place
+
+    National["National"] -.-> DegS
+    International["International"] -.-> DegS
+
+    YPA(YouthParliamentActivity) -- heldAt --> School
+    YPA -- inConstituency --> Constituency
+    YPA --belongsToLegislature -->	Leg
+    YPA -.-> Activity
+
+    School -- isSchoolType --> SchoolT(SchoolType)
+    Basic["Basic"] -.-> SchoolT
+    Secondary["Secondary"] -.-> SchoolT
+
+    ComissionAct(CommissionActivity) -.-> PAct
+    ComissionAct -- belongsToLegislature --> Leg
+    ComissionAct -- relatedCommission --> Commission
+
+    Audition(Audition) -.-> ComissionAct
+    Audition -- wasAssociatedWith --> ThirdP(ThirdPartyEntity)
+
+   
+
+    Hearing("Hearing") -.-> ComissionAct
+    Hearing -- wasAssociatedWith --> ThirdP
+
+    Event(Event) -.-> ComissionAct
+
+    Debate["Debate"] -.-> Event
+    Cerimony["Cerimony"] -.-> Event
+    Conference["Conference"] -.-> Event
+    Others["Others"] -.-> Event
+    Visit["Visit"] -.-> Event
