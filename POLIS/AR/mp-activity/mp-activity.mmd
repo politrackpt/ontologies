@@ -24,20 +24,20 @@ flowchart LR
     Group("foaf:Group")
     PublicEntityType("mpact:PublicEntityType")
 
-    MP -- core:didCommissionActivity --> ComA
+    MP -- mpact:didCommissionActivity --> ComA
     ComA -.-> Hearing
     ComA -.-> Audition
     ComA -.-> Event
     ComA -.-> Visit
-    MP -- core:didRequest --> Req
-    MP -- core:didParliamentaryActivity --> PAct
-    MP -- core:wasRapporteurIn --> PE
-    MP -- core:didYouthParliamentActivity --> YPA
+    MP -- mpact:didRequest --> Req
+    MP -- mpact:didParliamentaryActivity --> PAct
+    MP -- mpact:wasRapporteurIn --> PE
+    MP -- mpact:didYouthParliamentActivity --> YPA
     YPA -- mpact:heldAt --> TeaEs
     TeaEs -- mpact:isType --> EsType
     MP -- core:hasMembership --> Mem
     DelP -- mpact:didDelegationMeeting --> DelPM
-    Mem -- core:inGroup --> Group 
+    Mem -- core:isMemberOf --> Group 
     Group -.-> FPG
     Group -.->Delegation
     Delegation -.-> DelE
