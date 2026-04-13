@@ -10,11 +10,6 @@ flowchart TB
     MP["MemberOfParliament"] -.-> Person
     MP -- servedMandate --> Mandate
     MP -- participatedLegislature --> Leg
-    MP -- hasHabilitation   --> H["Habilitation"]
-    MP -- hasAward --> Award
-    MP -- hasTitle --> Title
-    MP -- published --> Work
-    MP -- performedRole --> Role
     MP -- didRequisition --> Requisition
     MP -- didYouthParliamentActivity --> YouthParliamentActivity
     MP -- hasMembership --> M["Membership"]
@@ -35,23 +30,23 @@ flowchart TB
     AR-WG["ARWorkingGroup"] -.-> OB
 
     MG["MemberOfGovernment"] -.-> Person
-    MG -- holdsDuty --> Duty
+    MG -- holdsDuty --> Post
     MG -- belongsToGovernmet --> G[Government]
     
   
     Guest -.-> Person
-    Guest --holdsDuty --> Duty
+    Guest --holdsDuty --> Post
 
 
-    PAR -.-> Duty
-    VicePAR -.-> Duty
-    Secretary -.-> Duty
-    ViceSecretary -.-> Duty
+    PAR -.-> Post
+    VicePAR -.-> Post
+    Secretary -.-> Post
+    ViceSecretary -.-> Post
    
     Mandate -- belongsToLegislature --> Leg
     Mandate -- hasMembership --> M
     Mandate -- isInSituation --> Situation
-    Mandate -- holdsDuty -->Duty
+    Mandate -- holdsDuty --> Post
    
     C -- isPublishedIn --> DP[DARPublication]
     C -- isSubCommissionOf --> C
