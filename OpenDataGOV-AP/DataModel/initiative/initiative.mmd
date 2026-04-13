@@ -8,7 +8,7 @@ flowchart LR
     Ini -- belongsToLegislativeSession --> LS(LegislativeSession)
     Ini -- hasAuthor --> MP
     Ini -- hasProponent --> MP & CG(CitizenGroup) & Com(Commission) & Gov(Government) & RLA(RegionalLegislativeAssembly) & PG(PG)
-    Ini -- hasAnnex --> Document
+    Ini -- hasAnnex --> Document(Document)
     Ini -- hasEvent -->Event
     Ini -- grewOutOf --> EU(EuropeanInitiative) & Ini
     Ini -- ledTo --> Ini
@@ -30,7 +30,7 @@ flowchart LR
 
     CP(ChangeProposal) -- isProposedBy --> MP(MemberOfParliament)
     CP -- isPublishedIn --> DAR(DARPublication)
-    CP -- isProposedBy --> MP
+    CP -- isProposedBy --> PG
 
     %%DAR -.-> PUB("Publication")
     %%RP("ReportPublication") -.-> PUB
@@ -55,16 +55,13 @@ flowchart LR
     P(Petition) -- belongsToLegislature --> Leg
     P -- belongsToLegislativeSession --> LS
 
-    EI(EuropeanInitiative)
-
     RLA(RegionalLegislativeAssembly)
 
-    Document(Document)
-    Legislative-Document(Document) -.-> Document
+    LDocument(LegislativeDocument) -.-> Document
 
     CitizenGroup(CitizenGroup)
 
-    E(Event) -- approvesDiploma --> LegislativeDocument
+    E(Event) -- approvesDiploma --> LDocument
     E -- hasDiscussion --> Discussion
     E -- happensJointlyWithInitiative --> Ini
     E -- discussedJointlyWith --> P
@@ -72,6 +69,7 @@ flowchart LR
     E -- hasVote --> Vote(Vote)
     E -- receivedAppeal --> MP & PG
     E -- hasActivity --> Acttivity(Activity)
+    E -- isPublishedIn --> DAR
 
     Vote -- hasVoteAgainstFrom --> MP & PG
     Vote -- hasVoteInFavourFrom --> MP & PG
@@ -84,7 +82,7 @@ flowchart LR
     Intervention -- isPublishedInDAR --> DAR
     Intervention -- hasSpeaher --> Person(Person)
 
-    CE(ComissionEvent) -- attributedToComission --> Comission(Comission)
+    CE(CommissionEvent) -- attributedToCommission --> Commission(Commission)
     CE -- hasAudition --> Audition(Audition)
     CE -- hasHearing --> Hearing(Hearing)
     CE -- isPubilshedInDAR --> DAR
@@ -93,4 +91,4 @@ flowchart LR
     CE -- hasRapporteur --> MP
     CE -- hasPublishedReport --> DAR
     CE -- createsDocument --> Document
-    CE -- hasSubComission --> Comission
+    CE -- hasSubCommission --> Commission
