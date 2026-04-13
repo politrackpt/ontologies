@@ -692,10 +692,8 @@ polis-ini:RegionalLegislativeAssemblyShape a sh:NodeShape ;
 
     sh:property [
         sh:path sem:hasPlace ;
-        sh:class sem:Place ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A regional legislative assembly must have a place of the class sem:Place"@en
+        sh:message "A regional legislative assembly must have at most one place of the class sem:Place"@en
     ] .
 
 #################################################################
