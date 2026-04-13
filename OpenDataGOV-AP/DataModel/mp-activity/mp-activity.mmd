@@ -5,79 +5,78 @@ config:
 flowchart LR
     Req(Requisition) -- belongsToLegislature --> Leg(Legislature)
     Req -- belongsToLegislativeSession --> LegSession(LegislatureSession)
-    Req -- toPublicEntityType --> PET(PublicEntityType)
+    Req -- toPublicEntityType --> PublicEntityType("PublicEntityType")
   
-    Request["Request"] -.-> Req
-    Inquiry["Inquiry"] -.-> Req
-    AC["AC"] -.-> PET
-    AL["AL"] -.-> PET
-    AR["AR"] -.-> PET
-    EI["EI"] -.-> PET
-    RA["RA"] -.-> PET
+  Request(Request) -.-> Req
+  Inquiry(Inquiry) -.-> Req
+  AC(AC) -.-> PublicEntityType
+  AL(AL) -.-> PublicEntityType
+  AR(AR) -.-> PublicEntityType
+  EI(EI) -.-> PublicEntityType
+  RA(RA) -.-> PublicEntityType
 
     PAct(ParliamentaryActivity) -- belongsToLegislature --> Leg
-    PAct -.-> Activity
-    AGP["AGP"] -.-> PAct
-    CER["CER"] -.-> PAct
-    DEB["DEB"] -.-> PAct
-    DES["DES"] -.-> PAct
-    DPO["DPO"] -.-> PAct
-    DPR["DPR"] -.-> PAct
-    EGP["EGP"] -.-> PAct
-    EVN["EVN"] -.-> PAct
-    GOD["GOD"] -.-> PAct
-    IMU["IMU"] -.-> PAct
-    INI["INI"] -.-> PAct
-    ITG["ITG"] -.-> PAct
-    MOC["MOC"] -.-> PAct
-    OEX["OEX"] -.-> PAct
-    PEC["PEC"] -.-> PAct
-    PEG["PEG"] -.-> PAct
-    PET["PET"] -.-> PAct
-    PII["PII"] -.-> PAct
-    POR["POR"] -.-> PAct
-    PRC["PRC"] -.-> PAct
-    PRG["PRG"] -.-> PAct
-    PUE["PUE"] -.-> PAct
-    REP["REP"] -.-> PAct
-    RSI["RSI"] -.-> PAct
-    SES["SES"] -.-> PAct
-    VOT["VOT"] -.-> PAct
+    PAct -.-> Activity(Activity)
+    AGP(AGP) -.-> PAct
+    CER(CER) -.-> PAct
+    DEB(DEB) -.-> PAct
+    DES(DES) -.-> PAct
+    DPO(DPO) -.-> PAct
+    DPR(DPR) -.-> PAct
+    EGP(EGP) -.-> PAct
+    EVN(EVN) -.-> PAct
+    GOD(GOD) -.-> PAct
+    IMU(IMU) -.-> PAct
+    INI(INI) -.-> PAct
+    ITG(ITG) -.-> PAct
+    MOC(MOC) -.-> PAct
+    OEX(OEX) -.-> PAct
+    PEC(PEC) -.-> PAct
+    PEG(PEG) -.-> PAct
+    PET(PET) -.-> PAct
+    PII(PII) -.-> PAct
+    POR(POR) -.-> PAct
+    PRC(PRC) -.-> PAct
+    PRG(PRG) -.-> PAct
+    PUE(PUE) -.-> PAct
+    REP(REP) -.-> PAct
+    RSI(RSI) -.-> PAct
+    SES(SES) -.-> PAct
+    VOT(VOT) -.-> PAct
 
     FPG(FriendshipParliamentaryGroup) -- belongsToLegislature --> Leg
     
 
     PA(PublicAccount) -- belongsToLegislature --> Leg
 
-    Delegation(Delegation) -.-> F
-    Delegation -- belongsToLegislature --> Leg
-    Delegation -- belongsToLegislativeSession --> LegSession
+    Delegation(Delegation) -- belongsToLegislature --> Leg
+    Delegation(Delegation) -- belongsToLegislativeSession --> LegSession
 
     PD(PermanentDelegation) -.-> Delegation
     PD -- hasPermanentDelegationMeeting --> PDM(PermanentDelegationMeeting)
 
     TD(TemporaryDelegation) -.-> Delegation
-    TD -- sem:hasPlace --> Place(Place)
+    TD -- hasPlace --> Place(Place)
     TD -- hasDelegationScope --> DegS(DelegationScope)
 
    
-    PDM -- hasPlace --> Place
+    PDM -- hasPlace --> Place(Place)
 
-    National["National"] -.-> DegS
-    International["International"] -.-> DegS
+    National(National) -.-> DegS
+    International(International) -.-> DegS
 
-    YPA(YouthParliamentActivity) -- heldAt --> School
-    YPA -- inConstituency --> Constituency
+    YPA(YouthParliamentActivity) -- heldAt --> School(School)
+    YPA -- inConstituency --> Constituency(Constituency)
     YPA --belongsToLegislature -->	Leg
-    YPA -.-> Activity
+    YPA -.-> Activity(Activity)
 
-    School -- isSchoolType --> SchoolT(SchoolType)
-    Basic["Basic"] -.-> SchoolT
-    Secondary["Secondary"] -.-> SchoolT
+    School(School) -- isSchoolType --> SchoolT(SchoolType)
+    Basic(Basic) -.-> SchoolT
+    Secondary(Secondary) -.-> SchoolT
 
     ComissionAct(CommissionActivity) -.-> PAct
     ComissionAct -- belongsToLegislature --> Leg
-    ComissionAct -- relatedCommission --> Commission
+    ComissionAct -- relatedCommission --> Commission(Commission)
 
     Audition(Audition) -.-> ComissionAct
     Audition -- wasAssociatedWith --> ThirdP(ThirdPartyEntity)
@@ -89,8 +88,8 @@ flowchart LR
 
     Event(Event) -.-> ComissionAct
 
-    Debate["Debate"] -.-> Event
-    Cerimony["Cerimony"] -.-> Event
-    Conference["Conference"] -.-> Event
-    Others["Others"] -.-> Event
-    Visit["Visit"] -.-> Event
+    Debate(Debate) -.-> Event
+    Cerimony(Cerimony) -.-> Event
+    Conference(Conference) -.-> Event
+    Others(Others) -.-> Event
+    Visit(Visit) -.-> Event
