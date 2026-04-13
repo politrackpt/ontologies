@@ -623,12 +623,11 @@ polis-ini:InitiativeShape a sh:NodeShape ;
             [ sh:class polis-core:ParliamentaryGroup ]
             [ sh:class m4s:Parliamentarian ]
             [ sh:class ocd:governo ]
-            [ sh:class polis-ini:Commission ]
+            [ sh:class polis-core:Commission ]
             [ sh:class polis-ini:RegionalLegislativeAssembly ]
             [ sh:class polis-ini:CitizenGroup ]
         ) ;
-        sh:minCount 1 ;
-        sh:message "An initiative must have at least one proponent"@en
+        sh:message "An initiative proponent must be a polis-core:ParliamentaryGroup, m4s:Parliamentarian, ocd:governo, polis-core:Commission, polis-ini:RegionalLegislativeAssembly or polis-ini:CitizenGroup "@en
     ] ;
     
     sh:property [
