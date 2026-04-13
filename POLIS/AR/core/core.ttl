@@ -25,15 +25,15 @@
 	dct:description             	"";
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço", "Mariana Curado Malta";
 	dct:contributor                 "João Bispo";
-    dct:issued                 		""^^schema:Date;
+    #dct:issued                 		""^^schema:Date;
 	dct:license                 	<http://creativecommons.org/publicdomain/zero/1.0/> ;
 	vann:preferredNamespacePrefix   "polis-core:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/core#" ;
 	owl:versionInfo					"1.0";
     dct:description                    """The objective of the POLIS ontology is to (...)""" ;
     dct:bibliographicCitation ""@en ;
-    dct:created ""^^xsd:date ;
-    dct:modified ""^^xsd:date ;
+    dct:created "2026-04-15"^^xsd:date ;
+    #dct:modified ""^^xsd:date ;
     dct:language "en", "pt" ;
 .
 
