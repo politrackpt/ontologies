@@ -552,17 +552,17 @@ polis-core:GovernmentShape a sh:NodeShape ;
 
 polis-ini:InitiativeShape a sh:NodeShape ;
     sh:targetClass polis-ini:Initiative ;
-    sh:targetClass piso:ConstitutionalRevisionProject ;
-    sh:targetClass piso:DeliberationProject ;
-    sh:targetClass piso:LawProject ;
-    sh:targetClass piso:LawProposal ;
-    sh:targetClass piso:ParliamentaryAppreciation ;
-    sh:targetClass piso:ParliamentaryInquiry ;
-    sh:targetClass piso:PopularReferendumInitiative ;
-    sh:targetClass piso:Ratification ;
-    sh:targetClass piso:ResolutionProject ;
-    sh:targetClass piso:ResolutionProposal ;
-    sh:targetClass piso:RulesOfProcedureProject ;
+    sh:targetClass polis-ini:ConstitutionalRevisionProject ;
+    sh:targetClass polis-ini:DeliberationProject ;
+    sh:targetClass polis-ini:LawProject ;
+    sh:targetClass polis-ini:LawProposal ;
+    sh:targetClass polis-ini:ParliamentaryAppreciation ;
+    sh:targetClass polis-ini:ParliamentaryInquiry ;
+    sh:targetClass polis-ini:PopularReferendumInitiative ;
+    sh:targetClass polis-ini:Ratification ;
+    sh:targetClass polis-ini:ResolutionProject ;
+    sh:targetClass polis-ini:ResolutionProposal ;
+    sh:targetClass polis-ini:RulesOfProcedureProject ;
 
     sh:property [
         sh:path polis-core:identifier ;
@@ -1783,7 +1783,7 @@ polis-mpact:ParliamentaryActivityShape a sh:NodeShape ;
     ] ;
 
     sh:property [
-        sh:path mpact:debateDate ;
+        sh:path polis-mpact:debateDate ;
         sh:datatype xsd:date ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
@@ -1921,7 +1921,7 @@ polis-mpact:PermanentDelegationShape a sh:NodeShape ;
     sh:targetClass polis-mpact:PermanentDelegation ;
 
     sh:property [
-        sh:path mpact:hasPermanentDelegationMeeting ;
+        sh:path polis-mpact:hasPermanentDelegationMeeting ;
         sh:class polis-mpact:PermanentDelegationMeeting ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
