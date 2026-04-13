@@ -166,7 +166,13 @@ polis-core:MGShape a sh:NodeShape;
 
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:class org:Post ;
+        sh:or (
+            [ sh:class org:Post ]
+            [ sh:class polis-core:PAR ]
+            [ sh:class polis-core:VicePAR ]
+            [ sh:class polis-core:Secretary ]
+            [ sh:class polis-core:ViceSecretary ]
+        ) ;
         sh:message "A member of government held duty must be of the class org:Post"@en
     ] ;
 
@@ -207,7 +213,13 @@ polis-core:GuestShape a sh:NodeShape;
 
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:class org:Post ;
+        sh:or (
+            [ sh:class org:Post ]
+            [ sh:class polis-core:PAR ]
+            [ sh:class polis-core:VicePAR ]
+            [ sh:class polis-core:Secretary ]
+            [ sh:class polis-core:ViceSecretary ]
+        ) ;
         sh:message "A guest held duty must be of the class org:Post"@en
     ] .
 
@@ -256,7 +268,13 @@ polis-core:MandateShape a sh:NodeShape ;
 
     sh:property [
         sh:path polis-core:holdsDuty ;
-        sh:class org:Post ;
+        sh:or (
+            [ sh:class org:Post ]
+            [ sh:class polis-core:PAR ]
+            [ sh:class polis-core:VicePAR ]
+            [ sh:class polis-core:Secretary ]
+            [ sh:class polis-core:ViceSecretary ]
+        ) ;
         sh:message "A mandate with a duty must be of the type org:Post"@en
     ] .
 
