@@ -26,7 +26,8 @@
 	vann:preferredNamespacePrefix   "polis-bio:" ;
 	vann:preferredNamespaceUri      "http://purl.org/polis/ar/biographic#" ;
 	owl:versionInfo					"1.0";
-    dct:description                    """The objective of the POLIS ontology is to (...)""" ;
+    dct:description                  "This ontology enables the modelling of data relating to the biography of members of the Portuguese Parliament within the context of the Portuguese Parliament."@en,
+                                    "Esta ontologia permite a modelação de dados relativos à biografia dos deputados da Assembleia da República Portuguesa no contexto da Assembleia da República Portuguesa."@pt;
     dct:bibliographicCitation ""@en ;
     dct:created "2026-04-15"^^xsd:date ;
     #dct:modified ""^^xsd:date ;
