@@ -358,9 +358,8 @@ polis-core:SituationShape a sh:NodeShape ;
     
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Situation must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A Situation must have at most one date"@en
     ] .
 
 #################################################################
@@ -376,9 +375,8 @@ polis-core:DutyShape a sh:NodeShape ;
     
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Duty must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A Duty must have at most one date"@en
     ] .
 
 #################################################################
@@ -390,9 +388,8 @@ polis-core:MembershipShape a sh:NodeShape ;
 
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A Membership must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A Membership must have at most one date"@en
     ] ;
 
     sh:property [
@@ -427,10 +424,9 @@ polis-core:LegislatureShape a sh:NodeShape ;
 
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A legislatura must have one date and it must be of the type xsd:date"@en
+        sh:message "A legislatura must have one date"@en
     ] ;
 
     sh:property [
@@ -457,10 +453,9 @@ polis-core:LegislativeSessionShape a sh:NodeShape ;
     
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A sessioneLegislatura must have one and only one date and it must be of the type xsd:date"@en
+        sh:message "A sessioneLegislatura must have one and only one date"@en
     ] ;
 
     sh:property [
@@ -503,9 +498,8 @@ polis-core:ParliamentaryGroupShape a sh:NodeShape ;
 
     sh:property [
         sh:path dct:date ;
-        sh:datatype xsd:date ;
         sh:maxCount 1 ;
-        sh:message "A parliamentary group must have at most one date and it must be of the type xsd:date"@en
+        sh:message "A parliamentary group must have at most one date"@en
     ] ;
 
     sh:property [
