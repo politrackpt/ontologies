@@ -12,6 +12,7 @@
 @prefix pe: <https://ukparliament.github.io/ontologies/election/election-ontology.ttl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix m4i: <http://w3id.org/nfdi4ing/metadata4ing#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix : <http://purl.org/polis/ar/core#> .
@@ -181,7 +182,7 @@
 #################################################################
 
 :identifier rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf <http://w3id.org/nfdi4ing/metadata4ing#identifier> ;
+    rdfs:subPropertyOf m4i:identifier ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "identifier"@en, "identificador"@pt ;
     dct:description "An unique identifier to identify something"@en, "Um identificar único para identificar algo"@pt ;
