@@ -55,7 +55,7 @@ flowchart LR
     P(Petition) -- belongsToLegislature --> Leg
     P -- belongsToLegislativeSession --> LS
 
-    RLA(RegionalLegislativeAssembly)
+    RLA -- location --> Place(Place)
 
     LDocument(LegislativeDocument) -.-> Document
 
@@ -80,9 +80,9 @@ flowchart LR
     Discussion -- hasIntervention --> Intervention(Intervention)
 
     Intervention -- isPublishedInDAR --> DAR
-    Intervention -- hasSpeaher --> Person(Person)
+    Intervention -- hasSpeaker --> Person(Person)
 
-    CE(CommissionEvent) -- attributedToCommission --> Commission(Commission)
+    CE(CommissionEvent) -- attributedToCommission --> Com
     CE -- hasAudition --> Audition(Audition)
     CE -- hasHearing --> Hearing(Hearing)
     CE -- isPubilshedInDAR --> DAR
@@ -91,4 +91,4 @@ flowchart LR
     CE -- hasRapporteur --> MP
     CE -- hasPublishedReport --> DAR
     CE -- createsDocument --> Document
-    CE -- hasSubCommission --> Commission
+    CE -- hasSubCommission --> Com
