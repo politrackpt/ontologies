@@ -9,7 +9,7 @@ flowchart LR
     Ini -- hasAuthor --> MP
     Ini -- hasProponent --> MP & CG(CitizenGroup) & Com(Commission) & Gov(Government) & RLA(RegionalLegislativeAssembly) & PG(PG)
     Ini -- hasAnnex --> Document(Document)
-    Ini -- hasEvent -->Event
+    Ini -- hasEvent -->E(Event)
     Ini -- grewOutOf --> EU(EuropeanInitiative) & Ini
     Ini -- ledTo --> Ini
     Ini -- receivedChangeProposal --> CP(ChangeProposal)
@@ -59,9 +59,7 @@ flowchart LR
 
     LDocument(LegislativeDocument) -.-> Document
 
-    CitizenGroup(CitizenGroup)
-
-    E(Event) -- approvesDiploma --> LDocument
+    E -- approvesDiploma --> LDocument
     E -- hasDiscussion --> Discussion
     E -- happensJointlyWithInitiative --> Ini
     E -- discussedJointlyWith --> P
