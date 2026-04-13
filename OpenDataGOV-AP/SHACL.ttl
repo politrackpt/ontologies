@@ -1021,7 +1021,7 @@ polis-ini:EventShape a sh:NodeShape ;
         sh:message "An event approved diploma must be of the class bibo:Legislation"@en
     ] ;
 
-    sh:path [
+    sh:property [
         sh:path polis-ini:hasDiscussion ;
         sh:class ocd:discussione ;
         sh:maxCount 1 ;
