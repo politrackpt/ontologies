@@ -345,6 +345,16 @@ polis-core:CommissionShape a sh:NodeShape ;
 
 polis-core:SituationShape a sh:NodeShape ;
     sh:targetClass ocd:proclamazione ;
+    sh:targetClass polis-core:Withdrawal ;
+    sh:targetClass polis-core:Incumbent ;
+    sh:targetClass polis-core:PermantentIncumbent ;
+    sh:targetClass polis-core:TemporaryIncumbent ;
+    sh:targetClass polis-core:Deceased ;
+    sh:targetClass polis-core:Disqualified ;
+    sh:targetClass polis-core:LossOfMandate ;
+    sh:targetClass polis-core:Resigned ;
+    sh:targetClass polis-core:Alternate ;
+    sh:targetClass polis-core:Suspended ;
     
     sh:property [
         sh:path dct:date ;
