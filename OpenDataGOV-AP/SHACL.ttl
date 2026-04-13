@@ -524,9 +524,8 @@ polis-core:GovernmentShape a sh:NodeShape ;
     sh:property [
         sh:path dbo:number ;
         sh:datatype xsd:nonNegativeInteger ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A governo must one and only one number and the number must be xsd:nonNegativeInteger"@en
+        sh:message "A governo must have at most one number and the number must be xsd:nonNegativeInteger"@en
     ] .
 
 #################################################################
