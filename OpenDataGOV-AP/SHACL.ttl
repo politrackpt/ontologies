@@ -262,7 +262,19 @@ polis-core:MandateShape a sh:NodeShape ;
     sh:property [
         sh:path ocd:tipoProclamazione ;
         sh:minCount 1 ;
-        sh:class ocd:proclamazione ;
+        sh:or (
+            [ sh:class ocd:proclamazione ]
+            [ sh:class polis-core:Withdrawal ]
+            [ sh:class polis-core:Incumbent ]
+            [ sh:class polis-core:PermantentIncumbent ]
+            [ sh:class polis-core:TemporaryIncumbent ]
+            [ sh:class polis-core:Deceased ]
+            [ sh:class polis-core:Disqualified ]
+            [ sh:class polis-core:LossOfMandate ]
+            [ sh:class polis-core:Resigned ]
+            [ sh:class polis-core:Alternate ]
+            [ sh:class polis-core:Suspended ]
+        ) ;
         sh:message "A mandate must be in at least one situation"@en
     ] ;
 
