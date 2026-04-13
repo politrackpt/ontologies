@@ -871,7 +871,6 @@ polis-ini:DocumentShape a sh:NodeShape ;
 
     sh:property [
         sh:path dct:title ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
         sh:message "A document must have at most one title and the title must be xsd:string"@en
