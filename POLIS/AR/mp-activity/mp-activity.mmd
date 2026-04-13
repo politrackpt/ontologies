@@ -3,11 +3,11 @@ config:
   layout: elk
 ---
 flowchart LR
-    Req(ocd:richiestaParere) -- core:belongsToLegislature --> Leg(ocd:legislatura)
-    Req -- core:belongsToLegislativeSession --> LegSession(ocd:sessioneLegislatura)
-    Req -- mpact:toPublicEntityType --> PET(mpact:PublicEntityType)
+    %%Req -- core:belongsToLegislature --> Leg
+    %%Req -- core:belongsToLegislativeSession --> LegSession
+    Req(ocd:richiestaParere) -- mpact:toPublicEntityType --> PET(mpact:PublicEntityType)
 
-    PET -.-> prov:Agent
+    PET -.-> Agent(prov:Agent)
     
     mpact:Request["mpact:Request"] -.-> Req
     mpact:Inquiry["mpact:Inquiry"] -.-> Req
@@ -48,12 +48,11 @@ flowchart LR
 
     FPG(mpact:FriendshipParliamentaryGroup) -- core:belongsToLegislature --> Leg
     FPG -.-> F(foaf:Group)
-
-    PA(mpact:PublicAccount) -- core:belongsToLegislature --> Leg
+    PA(mpact:PublicAccount) -- core:belongsToLegislature --> Leg(ocd:legislatura)
 
     Delegation(mpact:Delegation) -.-> F
     Delegation -- core:belongsToLegislature --> Leg
-    Delegation -- core:belongsToLegislativeSession --> LegSession
+    Delegation -- core:belongsToLegislativeSession --> LegSession(ocd:sessioneLegislatura)
 
     PD(mpact:PermanentDelegation) -.-> Delegation
     PD -- mpact:hasPermanentDelegationMeeting --> PDM(mpact:PermanentDelegationMeeting)
@@ -62,15 +61,15 @@ flowchart LR
     TD -- sem:hasPlace --> Place(sem:Place)
     TD -- mpact:hasDelegationScope --> DegS(mpact:DelegationScope)
 
-    PDM -.-> dbo:Meeting
+    PDM -.-> Meeting(dbo:Meeting)
     PDM -- sem:hasPlace --> Place
 
     mpact:National["mpact:National"] -.-> DegS
     mpact:International["mpact:International"] -.-> DegS
 
     YPA(mpact:YouthParliamentActivity) -- mpact:heldAt --> School(dbo:School)
-    YPA -- core:inConstituency --> core:Constituency
-    YPA --core:belongsToLegislature -->	Leg
+    YPA -- mpact:inConstituency --> Constituency(core:Constituency)
+    YPA -- core:belongsToLegislature --> Leg
     YPA -.-> Activity
 
     School -- mpact:isSchoolType --> SchoolT(mpact:SchoolType)
@@ -79,14 +78,14 @@ flowchart LR
 
     ComissionAct(mpact:CommissionActivity) -.-> PAct
     ComissionAct -- core:belongsToLegislature --> Leg
-    ComissionAct -- mpact:relatedCommission --> core:Commission
+    ComissionAct -- mpact:relatedCommission --> Commission(core:Commission)
 
     Audition(mpact:Audition) -.-> ComissionAct
     Audition -- prov:wasAssociatedWith --> ThirdP(mpact:ThirdPartyEntity)
 
-    ThirdP -.-> prov:Agent
+    ThirdP -.-> Agent(foaf:Agent)
 
-    Hearing("mpact:Hearing") -.-> ComissionAct
+    Hearing(mpact:Hearing) -.-> ComissionAct
     Hearing -- prov:wasAssociatedWith --> ThirdP
 
     Event(mpact:Event) -.-> ComissionAct
@@ -97,4 +96,7 @@ flowchart LR
     mpact:Others["mpact:Others"] -.-> Event
     mpact:Visit["mpact:Visit"] -.-> Event
 
-    %%style LegSession, Leg, F fill:#FF9999,stroke:#333,color:#000
+    classDef outside fill:#FF9999,stroke:#333,color:#000
+    classDef coreNamespace fill:#1E90FF,stroke:#333,color:#FFF
+    class Req,Leg,LegSession,School,Place,Activity,Agent,Meeting,F outside
+    class Constituency,Commission coreNamespace
