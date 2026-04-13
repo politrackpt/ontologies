@@ -209,8 +209,7 @@
 #    Object properties
 #################################################################
 
-:belongsToLegislature rdf:type owl:ObjectProperty ,
-            owl:FunctionalProperty ;
+:belongsToLegislature rdf:type owl:ObjectProperty ;
             rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
             rdfs:range ocd:legislatura .
 
