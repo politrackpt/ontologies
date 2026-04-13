@@ -20,7 +20,7 @@ flowchart TB
     MP -- hasMembership --> M["Membership"]
     MP -- didCommissionActivity --> CommissionActivity
     MP -- didParliamentaryActivity --> ParliamentaryActivity
-    MP -- wasRapporteurIn --> PublicAccount & Initiative & EuropeanInitiative
+    MP -- wasRapporteurIn --> PublicAccount & EuropeanInitiative
 
 
     M -- isMemberOf --> PG
@@ -30,7 +30,7 @@ flowchart TB
 
     OB -- belongsTo --> Leg
 
-    C[Comission] -.-> OB
+    C[Commission] -.-> OB
     WG["WorkingGroup"] -.-> OB
     AR-WG["ARWorkingGroup"] -.-> OB
 
@@ -54,8 +54,8 @@ flowchart TB
     Mandate -- holdsDuty -->Duty
    
     C -- isPublishedIn --> DP[DARPublication]
-    C -- isSubComissionOf --> C
-    C -- hasSubComission --> C
+    C -- isSubCommissionOf --> C
+    C -- hasSubCommission --> C
 
     Withdrawal -.-> Situation
     Incumbent -.-> Situation
