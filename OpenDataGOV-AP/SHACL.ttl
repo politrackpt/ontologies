@@ -13,6 +13,7 @@
 @prefix prov: <https://www.w3.org/ns/prov-o> .
 @prefix time: <https://www.w3.org/2006/time> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix pe: <http://parliament.uk/ontologies/election/> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
 @prefix polis-bio: <http://purl.org/polis/ar/biographic#> .
 @prefix polis-ini: <http://purl.org/polis/ar/initiatives#> .
@@ -566,7 +567,24 @@ polis-core:GovernmentShape a sh:NodeShape ;
 # Constituency
 #################################################################
 
-# TODO
+polis-core:ConstituencyShape a sh:NodeShape ;
+    sh:targetClass pe:ConstituencyArea ;
+
+    sh:property [
+        sh:path polis-core:identifier ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:message "A constituency must have one and only one identifier and the identifier must be xsd:string"@en
+    ] ;
+
+    sh:property [
+        sh:path foaf:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A constituency must have exactly one name and the name must be a xsd:string"@en
+    ] .
 
 # ------------------ Initiative ------------------
 
@@ -2064,10 +2082,10 @@ polis-mpact:YouthParliamentActivityShape a sh:NodeShape ;
 
     sh:property [
         sh:path polis-core:inConstituency ;
-        sh:class polis-core:Constituency ;
+        sh:class pe:ConstituencyArea ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A Youth Parliament Activity must have exactly one constituency and the constituency must be a polis-core:Constituency"@en
+        sh:message "A Youth Parliament Activity must have exactly one constituency and the constituency must be a pe:ConstituencyArea"@en
     ] ;
 
     sh:property [
