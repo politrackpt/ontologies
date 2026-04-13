@@ -14,7 +14,7 @@ flowchart LR
     Ini -- ledTo --> Ini
     Ini -- receivedChangeProposal --> CP(ChangeProposal)
     Ini -- hasRelatedPetition --> P(Petition)
-    Ini -- hasContent --> Content
+    Ini -- hasContent --> Document
 
     ConstitutionalRevisionProject("ConstitutionalRevisionProject") -.->Ini
     DeliberationProject("DeliberationProject") -.->Ini
@@ -28,12 +28,13 @@ flowchart LR
     ResolutionProject("ResolutionProject") -.->Ini
     RulesOfProcedureProject("RulesOfProcedureProject") -.->Ini
 
-    CP -- hasAuthor --> MP
-    CP -- isPublishedIn --> DAR
+    CP(ChangeProposal) -- isProposedBy --> MP(MemberOfParliament)
+    CP -- isPublishedIn --> DAR(DARPublication)
+    CP -- isProposedBy --> MP
 
     %%DAR -.-> PUB("Publication")
     %%RP("ReportPublication") -.-> PUB
-    DAR("DARPublication") -- belongsToLegislature --> Leg
+    DAR -- belongsToLegislature --> Leg
     DAR -- belongsToLegislativeSession --> LS
     
     DARSeries1("DARSeries1") -.-> DAR
@@ -51,17 +52,26 @@ flowchart LR
     DARSeries2CCEI("DARSeries2CCEI") -.-> DAR
     DARSeries2SOE("DARSeries2SOE") -.-> DAR
     
-    P -- belongsToLegislature --> Leg
+    P(Petition) -- belongsToLegislature --> Leg
     P -- belongsToLegislativeSession --> LS
 
-    E(Event) -- approvesDiploma --> LegalDocument
+    EI(EuropeanInitiative)
+
+    RLA(RegionalLegislativeAssembly)
+
+    Document(Document)
+    Legislative-Document(Document) -.-> Document
+
+    CitizenGroup(CitizenGroup)
+
+    E(Event) -- approvesDiploma --> LegislativeDocument
     E -- hasDiscussion --> Discussion
     E -- happensJointlyWithInitiative --> Ini
     E -- discussedJointlyWith --> P
     E -- hasAnnex --> Document
-    E -- hasVote --> Vote
+    E -- hasVote --> Vote(Vote)
     E -- receivedAppeal --> MP & PG
-    E -- hasActivity --> Acttivity
+    E -- hasActivity --> Acttivity(Activity)
 
     Vote -- hasVoteAgainstFrom --> MP & PG
     Vote -- hasVoteInFavourFrom --> MP & PG
@@ -69,17 +79,17 @@ flowchart LR
     Vote -- isAbsentee --> MP
     Vote -- isPublishedinDAR --> DAR
 
-    Discussion -- hasIntervention --> Intervention
+    Discussion -- hasIntervention --> Intervention(Intervention)
 
     Intervention -- isPublishedInDAR --> DAR
-    Intervention -- hasSpeaher --> Person
+    Intervention -- hasSpeaher --> Person(Person)
 
-    CE(ComissionEvent) -- attributedToComission --> Com
-    CE -- hasAudition --> Audition
-    CE -- hasHearing --> Hearing
+    CE(ComissionEvent) -- attributedToComission --> Comission(Comission)
+    CE -- hasAudition --> Audition(Audition)
+    CE -- hasHearing --> Hearing(Hearing)
     CE -- isPubilshedInDAR --> DAR
     CE -- hasVote --> Vote
-    CE -- hasTrasmission --> Transmission
+    CE -- hasTransmission --> Transmission("Transmission")
     CE -- hasRapporteur --> MP
     CE -- hasPublishedReport --> DAR
     CE -- createsDocument --> Document
