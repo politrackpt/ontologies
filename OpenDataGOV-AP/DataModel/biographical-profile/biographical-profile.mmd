@@ -3,21 +3,22 @@ config:
   layout: elk
 ---
 flowchart TB
-    MP -- hasHabilitation --> Edu(Habilitation)
+    MP["MemberOfParliament"] -- hasHabilitation --> Edu[Habilitation]
     MP -- hasTitle --> Title
-    MP -- authorOf --> Document
+    MP -- authorOf --> PublishedWork
     MP -- hasRole --> Role
-    Edu -- hasHabilitationLevel --> Level(HabilitationLevel)
-    Edu -- hasHabilitationStatus --> Status(HabilitationStatus)
+    MP -- hasAward --> Award
+    Edu -- hasHabilitationLevel --> Level[HabilitationLevel]
+    Edu -- hasHabilitationStatus --> Status[HabilitationStatus]
     Status -.-> C
     Status -.-> F
 
-    Level -.-> PrimarySchool("PrimarySchool")
-    Level -.-> MiddleSchool("MiddleSchool")
-    Level -.-> EarlyHighSchool("EarlyHighSchool")
-    Level -.-> HighSchool("HighSchool")
-    Level -.-> HigherEducation("HigherEducation")
-    Level -.-> Bachelor("Bachelor")
-    Level -.-> Master("Master")
-    Level -.-> Postgrad("Postgrad")
+    Level -.-> PrimarySchool["PrimarySchool"]
+    Level -.-> MiddleSchool["MiddleSchool"]
+    Level -.-> EarlyHighSchool["EarlyHighSchool"]
+    Level -.-> HighSchool["HighSchool"]
+    Level -.-> HigherEducation["HigherEducation"]
+    Level -.-> Bachelor["Bachelor"]
+    Level -.-> Master["Master"]
+    Level -.-> Postgrad["Postgrad"]
   
