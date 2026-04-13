@@ -1174,14 +1174,14 @@ polis-ini:VoteShape a sh:NodeShape ;
     ] ;
     
     sh:property [
-        sh:path polis-ini:hasReunionNumber ;
+        sh:path polis-ini:reunionNumber ;
         sh:datatype xsd:int ;
         sh:maxCount 1 ;
         sh:message "A vote must have at most one reunion number and it must be xsd:int"@en
     ] ;
     
     sh:property [
-        sh:path polis-ini:hasReunionType ;
+        sh:path polis-ini:reunionType ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
         sh:message "A vote must have at most one reunion type and it must be xsd:string"@en
