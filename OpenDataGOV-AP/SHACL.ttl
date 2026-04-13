@@ -438,7 +438,7 @@ polis-core:LegislatureShape a sh:NodeShape ;
         sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:message "A legislatura must one and only one number and the number must be xsd:nonNegativeInteger"@en
+        sh:message "A legislatura must have one and only one number and the number must be xsd:nonNegativeInteger"@en
     ] .
 
 #################################################################
@@ -633,8 +633,7 @@ polis-ini:InitiativeShape a sh:NodeShape ;
     sh:property [
         sh:path polis-ini:hasEvent ;
         sh:class polis-ini:Event ;
-        sh:minCount 1 ;
-        sh:message "An initiative must have at least one event of the class polis-ini:Event"@en
+        sh:message "An initiative event must be of the class polis-ini:Event"@en
     ] ;
     
     sh:property [
@@ -648,13 +647,37 @@ polis-ini:InitiativeShape a sh:NodeShape ;
         sh:or (
             [sh:class polis-ini:Initiative]
             [sh:class polis-ini:EuropeanInitiative]
+            [ sh:class polis-ini:ConstitutionalRevisionProject ]
+            [ sh:class polis-ini:DeliberationProject ]
+            [ sh:class polis-ini:LawProject ]
+            [ sh:class polis-ini:LawProposal ]
+            [ sh:class polis-ini:ParliamentaryAppreciation ]
+            [ sh:class polis-ini:ParliamentaryInquiry ]
+            [ sh:class polis-ini:PopularReferendumInitiative ]
+            [ sh:class polis-ini:Ratification ]
+            [ sh:class polis-ini:ResolutionProject ]
+            [ sh:class polis-ini:ResolutionProposal ]
+            [ sh:class polis-ini:RulesOfProcedureProject ]
         ) ;
         sh:message "An initiative must grow out of a polis-ini:Initiative or a polis-ini:EuropeanInitiative"@en
     ] ;
 
     sh:property [
         sh:path polis-ini:ledTo ;
-        sh:class polis-ini:Initiative ;
+        sh:or (
+            [ sh:class polis-ini:Initiative ]
+            [ sh:class polis-ini:ConstitutionalRevisionProject ]
+            [ sh:class polis-ini:DeliberationProject ]
+            [ sh:class polis-ini:LawProject ]
+            [ sh:class polis-ini:LawProposal ]
+            [ sh:class polis-ini:ParliamentaryAppreciation ]
+            [ sh:class polis-ini:ParliamentaryInquiry ]
+            [ sh:class polis-ini:PopularReferendumInitiative ]
+            [ sh:class polis-ini:Ratification ]
+            [ sh:class polis-ini:ResolutionProject ]
+            [ sh:class polis-ini:ResolutionProposal ]
+            [ sh:class polis-ini:RulesOfProcedureProject ]
+        ) ;
         sh:message "An initiative must lead to initiatives of the class polis-ini:Initiative"@en
     ] ;
     
