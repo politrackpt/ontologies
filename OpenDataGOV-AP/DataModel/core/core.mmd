@@ -45,8 +45,9 @@ flowchart TB
    
     Mandate -- belongsToLegislature --> Leg
     Mandate -- hasMembership --> M
-    Mandate -- isInSituation --> Situation
-    Mandate -- holdsDuty --> Post
+    Mandate -- isInSituation --> SituationHolding
+    Mandate -- holdsDuty -->DutyHolding
+    Mandate -- inConstituency --> Constituency
    
     C -- isPublishedIn --> DP[DARPublication]
     C -- isSubCommissionOf --> C
