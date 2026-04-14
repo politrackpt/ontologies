@@ -406,34 +406,34 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 
 #### Habilitation Level
 
-| **Domain** | **bio:HabilitationLevel** | ****                                    | ****        | ****        | **** | ****        | ****     |
+| **Domain** | **bio:HabilitationLevel** |                                     |         |         |  |         |      |
 |------------|---------------------------|-----------------------------------------|-------------|-------------|------|-------------|----------|
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:PrimarySchool         | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:PrimarySchool**         | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:MiddleSchool          | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:MiddleSchool**          | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:EarlyHighSchool       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:EarlyHighSchoo**l       | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:HighSchool            | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:HighSchool**            |**a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:HigherEducation       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:HigherEducation**       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:Bachelor              | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:Bachelor**              |** a rdfs:subClassOf bio:HabilitationLevel **|             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
 |            |                           |                                         |             |             |      |             |          |
-| Domain     | bio:Master                | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+| **Domain**     | **bio:Master**                | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
 |            | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
 
@@ -447,3 +447,21 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 
 
 
+#### Role
+| **Domain** | **bio:Role**  |               |                    |         |                                         |      |
+|------------|---------------|-------------------|------------------------|-------------|---------------------------------------------|----------|
+|            | label         | Term              | Range                  | Cardinanity | Description                                 | Comments |
+| DP         | identifier    | core:identifier   | xsd:string             | 1           | The code that uniquely identifies the Role. |          |
+| DP         | name          | foaf:name         | xsd:string             | 1           |                                             |          |
+| DP         | position      | dbo:number        | xsd:nonNegativeInteger | 1           |                                             |          |
+| DP         | hasDoneBefore | bio:hasDoneBefore | xsd:boolean            | 0-1         |                                             |          |
+
+#### Title
+| **bio:Title** | ****            | ****                   | ****        | ****                                         | ****     |
+|---------------|-----------------|------------------------|-------------|----------------------------------------------|----------|
+| label         | Term            | Range                  | Cardinanity | Description                                  | Comments |
+| identifier    | core:identifier | xsd:string             | 1           | The code that uniquely identifies the Title. |          |
+| name          | foaf:name       | xsd:string             | 1           |                                              |          |
+| position      | dbo:number      | xsd:nonNegativeInteger | 1           |                                              |          |
+
+### MP-Activity
