@@ -30,7 +30,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 
 
 ## The Terms
-### Domain: Person
+### Person
 
 | Domain | foaf:Person                   | A person in the context of the Parliament |                                    |             |             |                                                                                        |
 |--------|-------------------------------|-------------------------------------------|------------------------------------|-------------|-------------|----------------------------------------------------------------------------------------|
@@ -71,7 +71,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP     | country                       | dbo:country                               | dbo:Country                        | 0-1         |             |                                                                                        |
 | DP     | duty                          | core:duty                                 | xsd:string                         | 0-*         |             | It is preferred to use core:holdsDuty and org:Post when a controlled vocabulary exists |
 | OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |                                                                                        |
-### Domain: Mandate
+### Mandate
 
 | **Domain** | **ocd:mandatoCamera**  | **A mandate of a member of the parliament** |               |         |                                            |      |
 |------------|------------------------|---------------------------------------------|-------------------|-------------|------------------------------------------------|----------|
@@ -83,7 +83,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | Has membership         | core:hasMembership                          | core:Membership   | 1-*         |                                                |          |
 | OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione | 1-*         |                                                |          |
 
-### Domain: Organisational Body
+### Organisational Body
 | **Domain** | **ocd:organo**        | **An Organisational Body at the Parliament** |                                  |         |                                                      |      |
 |------------|-----------------------|----------------------------------------------|--------------------------------------|-------------|----------------------------------------------------------|----------|
 |            | label                 | Term                                         | Range                                | Cardinality | Description                                              | Comments |
@@ -94,7 +94,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | inLegislature         | core:belongsToLegislature                    | ocd:Legislatura                      | 1           |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
-| **Domain     | core:Commission       | rdfs:subClassOf ocd:organo                   | A Comission of a Legislature         |             |                                                          |          |
+| **Domain**     | **core:Commission**       | **rdfs:subClassOf ocd:organo**                   | **A Comission of a Legislature.**         |             |                                                          |          |
 |            | label                 | Term                                         | Range                                | Cardinality | Description                                              | Comments |
 | DP         | number                | dbo:number                                   | xsd:nonNegativeInteger               | 0-1         | The number of the commission                             |          |
 | OP         | publishes in the DAR  | ini:isPublishedInDAR                         | ini:DARPublication                   | 0-*         |                                                          |          |
@@ -102,7 +102,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | has sub-comission     | core:hasSubComission                         | core:Comission                       | 0-*         |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
-| Domain     | core:WorkingGroup     | rdfs:subClassOf ocd:organo                   | A Working Group of a Legislature     |             |                                                          |          |
+| **Domain**     | **core:WorkingGroup**     | **rdfs:subClassOf ocd:organo**                   | **A Working Group of a Legislature.**     |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 | Domain     | core:ARWorkingGroup   | rdfs:subClassOf ocd:organo                   | An AR Working Group of a Legislature |             |                                                          |          |
