@@ -330,6 +330,120 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP     | summary          | dct:abstract       | xsd:string     | 0-1         | The summary and overall theme of the discussion.                               | Older datasets do not have this information.         |
 | OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
 
-####Intervention
+#### Intervention
+
+| **Domain** | **ocd:intervento**  | ****                 | ****               | ****        | ****                                                      | ****                                                                                                                                                                                   |
+|------------|---------------------|----------------------|--------------------|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            | label               | Term                 | Range              | Cardinality | Description                                               | Comments                                                                                                                                                                               |
+| DP         | identifier          | core:identifier      | xsd:string         | 1           |                                                           |                                                                                                                                                                                        |
+| DP         | video               | schema:url           | xsd:string         | 0-1         | The video containing the intervention                     |                                                                                                                                                                                        |
+| OP         | is published in DAR | ini:isPublishedInDAR | ini:DARPublication | 0-1         | The publication of the intervention transcript in the DAR |                                                                                                                                                                                        |
+| OP         | hasSpeaker          | ini:hasSpeaker       | foaf:Person        | 0-1         | The MP, MG or Guest who made the intervention             | To increase reusability without being overly restrictive, the range is defined as foaf:Person, allowing different parliaments to reuse this and accommodate a wider range of speakers. |
+
+#### Comission Event
+| **Domain** | **ini:CommissionEvent**                       |                               |                 |         |                                                                         |      |
+|------------|-----------------------------------------------|-----------------------------------|---------------------|-------------|-----------------------------------------------------------------------------|----------|
+|            | label                                         | Term                              | Range               | Cardinality | Description                                                                 | Comments |
+| DP         | observation                                   | ini:observation                   | xsd:string          | 0-1         | An observation regarding the commission event.                              |          |
+| DP         | competent                                     | ini:competent                     | xsd:boolean         | 0-1         | Indicates whether the Commission is competent in the matter.                |          |
+| DP         | Entry date                                    | ini:entryDate                     | xsd:date            | 0-1         | the date in which the initiative was given entry to the commission.         |          |
+| DP         | distribution date                             | ini:distributionDate              | xsd:date            | 0-1         | Date of the distribution between the commissions.                           |          |
+| DP         | Extended                                      | ini:extended                      | xsd:boolean         | 0-1         | indicates whether the deadline has been extended.                           |          |
+| DP         | Date of the scheduled discussion              | ini:scheduledDiscussionDate       | xsd:date            | 0-1         | The date of the scheduled discussion.                                       |          |
+| DP         | Date of request to schedule a plenary         | ini:requestSchedulePlenaryDate    | xsd:date            | 0-1         | The date of the request made to schedule a plenary.                         |          |
+| DP         | Awaits Plenary Schedule                       | ini:awaitsPlenarySchedule         | xsd:boolean         | 0-1         | Indicates if it is waiting a plenary schedule                               |          |
+| DP         | public appreciation date range                | ini:publicAppreciationDate        | xsd:date            | 0-1         | Defines the start and end dates for the public review of a commission event |          |
+| DP         | opinion requested                             | ini:opinionRequested              | xsd:boolean         | 0-1         | Indicates if there are opinion requests                                     |          |
+| DP         | opinion received                              | ini:opinionReceived               | xsd:boolean         | 0-1         | Indicates if there are opinions received                                    |          |
+| DP         | date subcommission distribution               | ini:subCommissionDistributionDate | xsd:date            | 0-1         | Date of the distribution to subcommissions.                                 |          |
+| DP         | indicates the reason for the negative opinion | ini:negativeOpinionReason         | xsd:string          | 0-1         | The reason as to why a negative opinion was given by the commission.        |          |
+| DP         | date of the reason for the negative opinion   | ini:negativeOpinionReasonDate     | xsd:date            | 0-1         | The date when the reason for a negative opinion was given.                  |          |
+| OP         | attributed to commission                      | ini:attributedToCommission        | core:Commission     | 1-*         | The commission who was attributed the commission event.                     |          |
+| OP         | has audition                                  | ini:hasAudition                   | mpact:Audition      | 0-*         |                                                                             |          |
+| OP         | has hearing                                   | ini:hasHearing                    | mpact:Hearing       | 0-*         |                                                                             |          |
+| OP         | is published in DAR                           | ini:isPublishedInDAR              | ini:DARPublication  | 0-*         | Publications in the DAR related to this commission event.                   |          |
+| OP         | has vote                                      | ini:hasVote                       | ocd:votazione       | 0-1         | A vote particular to this commission.                                       |          |
+| OP         | has transmission                              | ini:hasTransmission               | ini:Transmission    | 0-*         |                                                                             |          |
+| OP         | has rapporteur                                | ini:hasRapporteur                 | m4s:Parliamentarian | 0-*         | The rapporteur of a presented document in the commission event              |          |
+| OP         | published report                              | ini:hasPublishedReport            | ini:DARPublication  | 0-*         | The report published in the DAR by the commission                           |          |
+| OP         | creates document                              | ini:createsDocument               | bibo:Document       | 0-*         | Associated documents                                                        |          |
+| OP         | has subCommission                             | ini:hasSubCommission              | core:Commission     | 0-*         |                                                                             |          |
+
+#### Transmission
+| **Domain** | **ini:Transmission** |                  |        |         |         |      |
+|------------|----------------------|----------------------|------------|-------------|-------------|----------|
+|            | label                | Term                 | Range      | Cardinality | Description | Comments |
+| DP         | type                 | ini:transmissionType | xsd:string | 1           |             |          |
+| DP         | date                 | dct:date             | xsd:date   | 0-1         |             |          |
+| DP         | document date        | dct:created          | xsd:date   | 0-1         |             |          |
+
+### Biographic Profile
+#### Award
+| **Domain** | **dbo:award** | ****            | ****       | ****        | ****                                                              | ****     |
+|------------|---------------|-----------------|------------|-------------|-------------------------------------------------------------------|----------|
+|            | label         | Term            | Range      | Cardinality | Description                                                       | Comments |
+| DP         | Identifier    | core:identifier | xsd:string | 1           | The code that uniquely identifies the award.                      |          |
+| DP         | name          | foaf:name       | xsd:string | 1           | The name of the award.                                            |          |
+| DP         | Position      | dbo:number      | xsd:int    | 1           | the position of the award in the list of awards during the years. |          |
+
+#### Published Work
+| **Domain** | **bio:PublishedWork** | **a rdfs:subClassOf bibo:Document** |                    |         |                                             |      |
+|------------|-----------------------|-------------------------------------|------------------------|-------------|-------------------------------------------------|----------|
+|            | label                 | Term                                | Range                  | Cardinality | Description                                     | Comments |
+| DP         | identifier            | core:identifier                     | xsd:string             | 1           | The code that uniquely identifies the Document. |          |
+| DP         | name                  | foaf:name                           | xsd:string             | 1           |                                                 |          |
+| DP         | position              | dbo:number                          | xsd:nonNegativeInteger | 1           |                                                 |          |
+
+#### Habilitation
+
+| **Domain** | **bio:Habilitation** |                     |                    |         |                                                 |      |
+|------------|----------------------|-------------------------|------------------------|-------------|-----------------------------------------------------|----------|
+|            | label                | Term                    | Range                  | Cardinality | Description                                         | Comments |
+| DP         | identifier           | core:identifier         | xsd:string             | 1           | The code that uniquely identifies the Habilitation. |          |
+| DP         | name                 | foaf:name               | xsd:string             | 1           |                                                     |          |
+| OP         | type                 | bio:isHabilitationLevel | bio:HabilitationLevel  | 0-1         |                                                     |          |
+| OP         | status               | bio:habilitationStatus  | bio:HabilitationStatus | 0-1         |                                                     |          |
+
+#### Habilitation Level
+
+| **Domain** | **bio:HabilitationLevel** | ****                                    | ****        | ****        | **** | ****        | ****     |
+|------------|---------------------------|-----------------------------------------|-------------|-------------|------|-------------|----------|
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:PrimarySchool         | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:MiddleSchool          | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:EarlyHighSchool       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:HighSchool            | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:HigherEducation       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:Bachelor              | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
+|            |                           |                                         |             |             |      |             |          |
+| Domain     | bio:Master                | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
+|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
+
+#### Habilitation Status
+| **Domain** | **bio:HabilitationStatus** |                                           |
+|------------|----------------------------|-----------------------------------------------|
+|            |                            |                                               |
+| **Domain**     | **bio:C**                    | **a owl:NamedIndividual, bio:HabilitationStatus** |
+|            |                            |                                               |
+| **Domain**     | **bio:F**                      | **a owl:NamedIndividual, bio:HabilitationStatus** |
+
 
 
