@@ -155,6 +155,11 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | is of party                 | core:isOfParty                             | ini:Party       | 1                                   |                                            |          |
 | OP         | belongs to legislature      | core:belongsToLegislature                  | ocd:legislatura | 1                                   |                                            |          |
 
+### Government
+| **Domain** | **ocd:governo** | **A Government of the Country** |                        |         |                                                  |      |
+|------------|-----------------|---------------------------------|----------------------------|-------------|------------------------------------------------------|----------|
+|            | label           | Term                            | Range                      | Cardinality | Description                                          | Comments |
+| DP         | number          | dbo:number                      | xsd:nonNegativeInteger<br> | 0-1         | translation from the roman numeral to arabic numeral |          |
 
 
 
