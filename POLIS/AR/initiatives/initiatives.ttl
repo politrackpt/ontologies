@@ -710,7 +710,11 @@
 		"Relates an event of an initiative to a vote that occurred during it"@en ;
     rdfs:label "has vote"@en ,
                "tem a votação"@pt ;
-    rdfs:domain :Event ;
+    rdfs:domain [ rdf:type owl:Class ;
+                  owl:unionOf ( :Event
+                                :EventCommission
+                              )
+                ] ;
     rdfs:range ocd:votazione .
 
 :isProposedBy rdf:type owl:ObjectProperty ;
