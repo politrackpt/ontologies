@@ -105,4 +105,24 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | **Domain**     | **core:WorkingGroup**     | **rdfs:subClassOf ocd:organo**                   | **A Working Group of a Legislature.**     |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
-| Domain     | core:ARWorkingGroup   | rdfs:subClassOf ocd:organo                   | An AR Working Group of a Legislature |             |                                                          |          |
+| **Domain**     | **core:ARWorkingGroup**   | **rdfs:subClassOf ocd:organo**                   | **An AR Working Group of a Legislature.** |             |                                                          |          |
+### Situation
+
+| **Domain** | **ocd:proclamazione**    | **A Situation of a document**     |         |         |                                       |      |
+|------------|--------------------------|-----------------------------------|-------------|-------------|-------------------------------------------|----------|
+|            | label                    | Term                              | Range       | Cardinality | Description                               | Comments |
+| DP         | date-range               | dct:date                          | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
+|            |                          |                                   |             |             |                                           |          |
+| **Domain**     | **core:Withdrawal**          | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+|            |                          |                                   |             |             |                                           |          |
+| **Domain**     | **core:Incumbent**           | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+|            |                          |                                   |             |             |                                           |          |
+| **Domain**     | **core:PermantentIncumbent** | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+|            |                          |                                   |             |             |                                           |          |
+| **Domain**     | **core:TemporaryIncumbent**  | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+|            |                          |                                   |             |             |                                           |          |
+| **Domain**     | **core:Deceased**            | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+
+
+
+
