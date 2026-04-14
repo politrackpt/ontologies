@@ -253,30 +253,70 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | **Domain** | **ini:DARSeries1**   | **rdfs:subClassOf ini:DARPublication** |
 |------------|----------------------|----------------------------------------|
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2       | rdfs:subClassOf ini:DARPublication     |
+| **Domain**     | **ini:DARSeries2**       | **rdfs:subClassOf ini:DARPublication**     |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeparata      | rdfs:subClassOf ini:DARPublication     |
+| **Domain**     | **ini:DARSeparata**      | **rdfs:subClassOf ini:DARPublication**     |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2A      | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2A**      | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2B      | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2B**      | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2C      | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2C**      | **rdfs:subClassOf ini:DARSeries2**       |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2D      | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2D**      | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2E      | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2E**      | **rdfs:subClassOf ini:DARSeries2**     |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries1A      | rdfs:subClassOf ini:DARSeries1         |
+| **Domain**     | **ini:DARSeries1A**      | **rdfs:subClassOf ini:DARSeries1**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2CRC    | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2CRC**    | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2CGOPOE | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2CGOPOE** | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2SCOE   | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2SCOE**   | **rdfs:subClassOf ini:DARSeries2**        |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2CCEI   | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2CCEI**   | **rdfs:subClassOf ini:DARSeries2**         |
 |            |                      |                                        |
-| **Domain**     | ini:DARSeries2SOE    | rdfs:subClassOf ini:DARSeries2         |
+| **Domain**     | **ini:DARSeries2SOE**    | **rdfs:subClassOf ini:DARSeries2**         |
 
+#### Regional Legislative Assembly
+| Domain | ini:RegionalLegislativeAssembly | A regional assembly, like the regionl assembly of Catalunya |           |             |                                                                                        |          |
+|--------|---------------------------------|-------------------------------------------------------------|-----------|-------------|----------------------------------------------------------------------------------------|----------|
+|        | label                           | Term                                                        | Range     | Cardinality | Description                                                                            | Comments |
+| OP     | location                        | sem:hasPlace                                                | sem:Place | 0-1         | The location of the Regional Assembly. This term should be linked to a Wikidata entry. |          |
 
+#### Document
+| Domain | bibo:Document       |                  |            |             |                                          |          |
+|--------|---------------------|------------------|------------|-------------|------------------------------------------|----------|
+|        | label               | Term             | Range      | Cardinality | Description                              | Comments |
+| DP     | type                | ini:documentType | xsd:string | 0-1         | The type of document.                    |          |
+| DP     | title               | dct:title        | xsd:string | 0-1         | The title of the document                |          |
+| DP     | date                | dct:date         | xsd:date   | 0-1         | The date of the document                 |          |
+| DP     | url to the resource | schema:url       | xsd:string | 0-1         | The URL link to the file of the document |          |
+| DP     | Text                | bibo:content     | xsd:string | 0-1         | The text content of the document         |          |
+| DP     | identifier          | core:identifier  | xsd:string | 0-1         | The identifier of the document           |          |
+
+| Domain | bibo:Legislation |                 |            |             |                                   |          |
+|--------|------------------|-----------------|------------|-------------|-----------------------------------|----------|
+|        | label            | Term            | Range      | Cardinality | Description                       | Comments |
+| DP     | identifier       | core:identifier | xsd:string | 0-1         | The identifier of the legislation |          |
+
+#### Event
+| Domain | ini:Event        |                                  |                                              |             |                                                                                            |
+|--------|------------------|----------------------------------|----------------------------------------------|-------------|--------------------------------------------------------------------------------------------|
+|        | label            | Term                             | Range                                        | Cardinality | Description                                                                                |
+| DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | The code that uniquely identifies the Event.                                               |
+| DP     | type id          | ini:typeId                       | xsd:string                                   | 1           | The identifier of the type of event.                                                       |
+| DP     | type             | ini:eventType                    | xml:string                                   | 1           | The type of event.                                                                         |
+| DP     | date             | dct:date                         | xsd:date                                     | 1           | The date in which the event occurred.                                                      |
+| DP     | code             | dbo:code                         | xsd:string                                   | 1           | The code of the event.                                                                     |
+| DP     | observation      | ini:observation                  | xsd:string                                   | 0-1         | Observation regarding the event.                                                           |
+| OP     | approves diploma | ini:approvesDiploma              | bibo:Legislation                             | 0-*         | The diplomas approved during this event                                                    |
+| OP     | has discussion   | ini:hasDiscussion                | ocd:discussione                              | 0-1         | The discussions that happened during this event.                                           |
+| OP     | joint initiative | ini:happensJointlyWithInitiative | ini:Initiative                               | 0-*         | Initiatives that had the same event happening jointly with the initiative from this event. |
+| OP     | joint petition   | ini:discussedJointlyWith         | ini:Petition                                 | 0-*         | Petitions that were discussed during the event.                                            |
+| OP     | has annex        | ini:hasAnnex                     | bibo:Document                                | 0-*         | Documents annexed to the event.                                                            |
+| OP     | has vote         | ini:hasVote                      | ocd:votazione                                | 0-*         | A vote on the initiative.                                                                  |
+| OP     | received appeal  | ini:receivedAppeal               | m4s:Parliamentarian, core:ParliamentaryGroup | 0-*         | Defines who appealed the initiative during this event.                                     |
+| OP     | is published in  | ini:isPublishedInDAR             | ini:DARPublication                           | 0-*         | Publications in the DAR related to this event.                                             |
+| OP     | has activity     | ini:hasActivity                  | prov:Activity                                | 0-*         | The activities that happened during the event.                                             |
