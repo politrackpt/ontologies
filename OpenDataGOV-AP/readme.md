@@ -30,7 +30,9 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 
 
 ## The Terms
-### Person
+
+### Core
+#### Person
 
 | Domain | foaf:Person                   | A person in the context of the Parliament |                                    |             |             |                                                                                        |
 |--------|-------------------------------|-------------------------------------------|------------------------------------|-------------|-------------|----------------------------------------------------------------------------------------|
@@ -71,7 +73,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP     | country                       | dbo:country                               | dbo:Country                        | 0-1         |             |                                                                                        |
 | DP     | duty                          | core:duty                                 | xsd:string                         | 0-*         |             | It is preferred to use core:holdsDuty and org:Post when a controlled vocabulary exists |
 | OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |                                                                                        |
-### Mandate
+#### Mandate
 
 | **Domain** | **ocd:mandatoCamera**  | **A mandate of a member of the parliament** |               |         |                                            |      |
 |------------|------------------------|---------------------------------------------|-------------------|-------------|------------------------------------------------|----------|
@@ -83,7 +85,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | Has membership         | core:hasMembership                          | core:Membership   | 1-*         |                                                |          |
 | OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione | 1-*         |                                                |          |
 
-### Organisational Body
+#### Organisational Body
 | **Domain** | **ocd:organo**        | **An Organisational Body at the Parliament** |                                  |         |                                                      |      |
 |------------|-----------------------|----------------------------------------------|--------------------------------------|-------------|----------------------------------------------------------|----------|
 |            | label                 | Term                                         | Range                                | Cardinality | Description                                              | Comments |
@@ -106,7 +108,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 |            |                       |                                              |                                      |             |                                                          |          |
 |            |                       |                                              |                                      |             |                                                          |          |
 | **Domain**     | **core:ARWorkingGroup**   | **rdfs:subClassOf ocd:organo**                   | **An AR Working Group of a Legislature.** |             |                                                          |          |
-### Situation
+#### Situation
 
 | **Domain** | **ocd:proclamazione**    | **A Situation of a document**     |         |         |                                       |      |
 |------------|--------------------------|-----------------------------------|-------------|-------------|-------------------------------------------|----------|
@@ -123,7 +125,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 |            |                          |                                   |             |             |                                           |          |
 | **Domain**     | **core:Deceased**            | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 
-### Post
+#### Post
 
 | **Domain** | **org:Post**       |                      |         |         |                                       |      |
 |------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|
@@ -138,7 +140,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 |            |                    |                          |             |             |                                           |          |
 | Domain     | core:ViceSecretary | rdfs:subClassOf org:Post |             |             |                                           |          |
 
-### Party
+#### Party
 
 | **Domain** | **core:Party** | **a rdfs:subClassOf org:Organization** | **A political party** |         |      |         | 
 |------------|----------------|----------------------------------------|-----------------------|-------------|----------|-------------|
@@ -146,7 +148,7 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP         | name           | foaf:name                              | xsd:string            | 1           |          |             |
 | DP         | acronym        | qudt:acronym                           | xsd:string            | 1           |          |             |
 
-### Parliamentary Group
+#### Parliamentary Group
 
 | **Domain** | **core:parliamentaryGroup** | **skos:broadMatch ocd:gruppoParlamentare**             | **A parlamentary group of a party** |  |                                   |      |
 |------------|-----------------------------|--------------------------------------------|-----------------|-------------------------------------|--------------------------------------------|----------|
@@ -155,19 +157,60 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP         | is of party                 | core:isOfParty                             | ini:Party       | 1                                   |                                            |          |
 | OP         | belongs to legislature      | core:belongsToLegislature                  | ocd:legislatura | 1                                   |                                            |          |
 
-### Government
+#### Government
 | **Domain** | **ocd:governo** | **A Government of the Country** |                        |         |                                                  |      |
 |------------|-----------------|---------------------------------|----------------------------|-------------|------------------------------------------------------|----------|
 |            | label           | Term                            | Range                      | Cardinality | Description                                          | Comments |
 | DP         | number          | dbo:number                      | xsd:nonNegativeInteger<br> | 0-1         | translation from the roman numeral to arabic numeral |          |
 
-### Constutency
+#### Constutency
 | **Domain** | **pe:ConstituencyArea** | **An electoral region** |        |         |      |         |
 |------------|-------------------------|-------------------------|------------|-------------|----------|-------------|
 |            | label                   | Term                    | Range      | Cardinality | Comments | Description |
 | DP         | identifier              | core:identifier         | xsd:string | 1           |          |             |
 | DP         | name                    | foaf:name               | xsd:string | 1           |          |             |
 
+#### Initiative
 
+| **Domain** | **ini:Initiative**                | **subclassOf: ocd:Atto**         | **An Initiative in the context of the Parliament**                                                                          | ****        | **** | **** | ****                                                                                           |
+|------------|-----------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|------|------|------------------------------------------------------------------------------------------------|
+|            | label                             | Term                             | Range                                                                                                                       | Cardinality | VES  | SES  | Description                                                                                    |
+| DP         | identifier                        | core:identifier                  | xsd:string                                                                                                                  | 1           |      |      | The code that uniquely identifies the Initiative.                                              |
+| DP         | title                             | dct:title                        | xsd:string                                                                                                                  | 1           |      |      | The title of the initiative.                                                                   |
+| DP         | number                            | dbo:number                       | xsd:nonNegativeInteger                                                                                                      | 1           |      |      | The number of the initiative. Uniquely identifies the initiative according to its type.        |
+| DP         | text substitution details         | ini:textSubstitutionDetails      | xsd:string                                                                                                                  | 0-1         |      |      | Gives details regarding a substitution of the text                                             |
+| OP         | belongs to legislature            | core:belongsToLegislature        | ocd:legislatura                                                                                                             | 1           |      |      | The legislature in which the initiative was introduced.                                        |
+| OP         | belongs to legislative session    | core:belongsToLegislativeSession | ocd:sessioneLegislatura                                                                                                     | 1           |      |      | The legislative session in which the initiative was introduced.                                |
+| OP         | was authored by mp                | ini:hasAuthor                    | m4s:Parliamentarian                                                                                                         | 0-*         |      |      | MPs responsible for authoring this initiative.                                                 |
+| OP         | was proposed by proponent         | ini:hasProponent                 | m4s:Parliamentarian, ini:ParliamentaryGroup, ocd:governo, ini:Commission, ini:RegionalLegislativeAssembly, ini:CitizenGroup | 0-*         |      |      | whom proposed the initiative. The allowed proponents may vary by type of initiative.           |
+| OP         | has event                         | ini:hasEvent                     | ini:Event                                                                                                                   | 0-*         |      |      | The events that have happened during the initiative lifecycle.                                 |
+| OP         | has annex                         | ini:hasAnnex                     | bibo:Document                                                                                                               | 0-*         |      |      | The documents in annex to the initiative.                                                      |
+| OP         | grew out of initiative            | ini:grewOutOf                    | ini:Initiative, ini:EuropeanInitiative                                                                                      | 0-*         |      |      | Other initiatives that lead to the creation of the initiative.                                 |
+| OP         | led to initiative                 | ini:ledTo                        | ini:Initiative                                                                                                              | 0-*         |      |      | Other initiatives that were created because of the initiative.                                 |
+| OP         | received a change proposal        | ini:receivedChangeProposal       | ini:ChangeProposal                                                                                                          | 0-*         |      |      | Change proposals made to the initiative.                                                       |
+| OP         | has related petition              | ini:hasRelatedPetition           | ini:Petition                                                                                                                | 0-*         |      |      | Petitions associated with the initiative.                                                      |
+| OP         | has content                       | ini:hasContent                   | bibo:Document                                                                                                               | 0-1         |      |      | The initiative content, as a document, containing the full text and the url link to access it. |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:ConstitutionalRevisionProject | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:DeliberationProject           | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:LawProject                    | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:LawProposal                   | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:ParliamentaryAppreciation     | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:ParliamentaryInquiry          | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:PopularReferendumInitiative   | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:Ratification                  | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:ResolutionProposal            | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:ResolutionProject             | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
+|            |                                   |                                  |                                                                                                                             |             |      |      |                                                                                                |
+| Domain     | ini:RulesOfProcedureProject       | a rdf:subClassOf: ini:Initiative |                                                                                                                             |             |      |      |                                                                                                |
 
 
