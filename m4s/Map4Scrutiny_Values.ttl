@@ -4,7 +4,7 @@
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema:	<https://schema.org/>.
 @prefix proctypes: <http://purl.org/procurement/public-contracts-procedure-types#> .
-@prefix :       <https://purl.org/map4scrutiny-values#>.
+@prefix :       <http://purl.org/map4scrutiny-values#>.
 
 
 #   These terms are all described and designated in Portuguese. 
@@ -25,7 +25,7 @@
 	dct:contributor  "Ana Alice Batista", "Óscar João Atanázio Afonso";
   dct:created "2021-07-05"^^schema:Date;
   dct:source  <https://www.parlamento.pt/>;
-  skos:editoralNote "Usado como um valor para a propriedade: <https://purl.org/map4scrutiny-core#parliamentaryComissions> no âmbito legal português.";
+  skos:editoralNote "Usado como um valor para a propriedade: <http://purl.org/map4scrutiny-core#parliamentaryComissions> no âmbito legal português.";
   skos:hasTopConcept  :Comissao, :SubComissao, :Grupo;
 .
 
@@ -328,7 +328,7 @@
   skos:prefLabel      "Tipos de Contratos Públicos"@pt;
   skos:definition     "Tipos de Contractos definidos nos artigos do Código da Contratação Pública e usados no portal <base.gov.pt>"@pt;
   skos:editoralNote   "Narrowers são usados para descrever valores da propriedade:  <http://purl.org/procurement/public-contracts#kind> no âmbito legal português.>"@pt;
-  skos:inScheme       <https://purl.org/map4scrutiny-values#ContratosPublicos>;
+  skos:inScheme       <http://purl.org/map4scrutiny-values#ContratosPublicos>;
   rdf:seeAlso         <https://raw.githubusercontent.com/opendatacz/public-contracts-ontology/master/schemes/contract-kinds.ttl>;
   skos:narrower       :BensMoveis, :Servicos, :ConcessaoObrasPublicas, :ConcessaoServicosPublicos, 
                       :Sociedade, :EmpreitadasObrasPublicas, :LocacaoBensMoveis .
@@ -336,7 +336,7 @@
 :TipoProcedimento a      skos:Concept;
   skos:prefLabel      "Tipos de Contratos Públicos"@pt;
   skos:editoralNote   "Narrowers são usados para descrever valores da propriedade: <http://purl.org/procurement/public-contracts#procedureType> no âmbito legal português.>"@pt;
-  skos:inScheme       <https://purl.org/map4scrutiny-values#ContratosPublicos>; 
+  skos:inScheme       <http://purl.org/map4scrutiny-values#ContratosPublicos>; 
   rdf:seeAlso         <https://raw.githubusercontent.com/opendatacz/public-contracts-ontology/master/schemes/procedure-types.ttl>; 
   skos:narrower       :AjusteDiretoRG, :ConsultaPrevia, :ConcursoPublico, :ConcursoLimitado, :ProcedimentoNegociacao, :DialogoConcorrencial,
                       :AcordoQuadro258, :AcordoQuadro259, :ParceriaInovacao, :DispBensMoveis, :Serviços, :ConcursoConcecao, :ConcursoIdeias .
@@ -456,7 +456,7 @@
   dct:creator          "Inês Lopes";
 	dct:contributor      "Ana Alice Batista", "Óscar João Atanázio Afonso";
   dct:created          "2021-07-05"^^schema:Date;
-  skos:editoralNote    "Usado como um valor para a propriedade: <https://purl.org/map4scrutiny-core#propertyRegimen> no âmbito legal português. "@pt, "Used as a value for the property: <https://purl.org/map4scrutiny-core#propertyRegimen> under the scope of the Portuguese law. "@en;
+  skos:editoralNote    "Usado como um valor para a propriedade: <http://purl.org/map4scrutiny-core#propertyRegimen> no âmbito legal português. "@pt, "Used as a value for the property: <http://purl.org/map4scrutiny-core#propertyRegimen> under the scope of the Portuguese law. "@en;
   skos:source          <https://www.eurofinesco.com/>;
   skos:hasTopConcept   :ComAdquiridos, :ComGeralBens, :SepBens, :Outros
   .
