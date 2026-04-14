@@ -161,6 +161,12 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 |            | label           | Term                            | Range                      | Cardinality | Description                                          | Comments |
 | DP         | number          | dbo:number                      | xsd:nonNegativeInteger<br> | 0-1         | translation from the roman numeral to arabic numeral |          |
 
+### Constutency
+| **Domain** | **pe:ConstituencyArea** | **An electoral region** |        |         |      |         |
+|------------|-------------------------|-------------------------|------------|-------------|----------|-------------|
+|            | label                   | Term                    | Range      | Cardinality | Comments | Description |
+| DP         | identifier              | core:identifier         | xsd:string | 1           |          |             |
+| DP         | name                    | foaf:name               | xsd:string | 1           |          |             |
 
 
 
