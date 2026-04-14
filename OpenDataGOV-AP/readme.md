@@ -233,7 +233,50 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP         | Proponent                             | ini:proponent              | xsd:string              | 0-*         | A field indicating which type of group proposed the amendment to the proposal.       | This term is used when the data does not specify which group or individual proposed the amendment. When the proposer is known, we should refer to them as “proposed by a parliamentary group” or “proposed by a member of parliament.” |
 | OP         | Published in the DAR                  | ini:isPublishedInDAR       | ini:DARPublication      | 0-*         | The DAR publication where the amendment of the proposal was published.               |                                                                                                                                                                                                                                        |
 | OP         | Proposed by parliamentary Group       | ini:isProposedBy           | core:ParliamentaryGroup | 0-*         | A field indicating which parliamentary group proposed the amendment to the proposal. |                                                                                                                                                                                                                                        |
-| OP         | Proposed by a member of the parliment | ini:isProposedBy           | m4s:Parliamentarian     | 0-*         | A field indicating which MP proposed the amendment to the proposal.                  |                                                                                                                                                                                                                                        |
+| OP         | Proposed by a member of the parliament | ini:isProposedBy           | m4s:Parliamentarian     | 0-*         | A field indicating which MP proposed the amendment to the proposal.                  |                                                                                                                                                                                                                                        |
+#### DAR Publication
+| **Domain** | **ini:DARPublication**                             | **a rdfs:subClassOf ocd:pubblicistica** | **A publication in the Oficial journal of the country for laws.** | ****        | ****                          | ****                                                                                 | ****         |
+|------------|----------------------------------------------------|-----------------------------------------|-------------------------------------------------------------------|-------------|-------------------------------|--------------------------------------------------------------------------------------|--------------|
+|            | label                                              | Term                                    | Range                                                             | Cardinality | VES                           | Description                                                                          | Comments     |
+| DP         | number                                             | dbo:number                              | xsd:nonNegativeInteger                                            | 1           |                               | The number of the publication.                                                       |              |
+| DP         | code                                               | dbo:code                                | xsd:string                                                        | 1           | A,B,C,D,H,I,K,L,M,O,Q,R,S,T,V | The code of the type of publication.                                                 |              |
+| DP         | publish date                                       | dct:date                                | xsd:date                                                          | 1           |                               | The date of the publication.                                                         |              |
+| DP         | pages in the DAR corresponding to this publication | schema:pagination                       | xsd:string                                                        | 1           |                               | The range of the pages where the publication is.                                     | number range |
+| DP         | pages' identifier                                  | ini:pagesIdentifier                     | xsd:string                                                        | 1           |                               | The code that uniquely identifies the pages for a particular publication in the DAR. |              |
+| DP         | url to the DAR publication                         | schema:url                              | xsd:string                                                        | 1           |                               | The link to the web resource containing the publication.                             |              |
+| DP         | supplement to the publication                      | ini:publicationSupplement               | xsd:string                                                        | 0-1         |                               | Supplement to the publication.                                                       |              |
+| DP         | final page of the supplement                       | ini:publicationSupplementFinalPage      | xsd:string                                                        | 0-1         |                               | Indicates the final page of the supplement                                           |              |
+| DP         | observation                                        | ini:observation                         | xsd:string                                                        | 0-1         |                               | An observation regarding the publication.                                            |              |
+| OP         | published during legislature                       | core:belongsToLegislature               | ocd:legislatura                                                   | 1           |                               | The legislature in which the publication was published.                              |              |
+| OP         | published during legislative session               | core:belongsToLegislativeSession        | ocd:sessioneLegislatura                                           | 1           |                               | The legislative session in which the publication was published.                      |              |
 
+| **Domain** | **ini:DARSeries1**   | **rdfs:subClassOf ini:DARPublication** |
+|------------|----------------------|----------------------------------------|
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2       | rdfs:subClassOf ini:DARPublication     |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeparata      | rdfs:subClassOf ini:DARPublication     |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2A      | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2B      | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2C      | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2D      | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2E      | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries1A      | rdfs:subClassOf ini:DARSeries1         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2CRC    | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2CGOPOE | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2SCOE   | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2CCEI   | rdfs:subClassOf ini:DARSeries2         |
+|            |                      |                                        |
+| **Domain**     | ini:DARSeries2SOE    | rdfs:subClassOf ini:DARSeries2         |
 
 
