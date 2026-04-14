@@ -319,4 +319,17 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | OP     | has vote         | ini:hasVote                      | ocd:votazione                                | 0-*         | A vote on the initiative.                                                                  |
 | OP     | received appeal  | ini:receivedAppeal               | m4s:Parliamentarian, core:ParliamentaryGroup | 0-*         | Defines who appealed the initiative during this event.                                     |
 | OP     | is published in  | ini:isPublishedInDAR             | ini:DARPublication                           | 0-*         | Publications in the DAR related to this event.                                             |
-| OP     | has activity     | ini:hasActivity                  | prov:Activity                                | 0-*         | The activities that happened during the event.                                             |
+| OP     | has activity     | ini:hasActivity                  | prov:Activity                                | 0-*         | The activities that happened during the event.       |
+
+#### Discussion
+
+| Domain | ocd:discussione  |                    |                |             |                                                                                |                                                      |
+|--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
+|        |                  | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
+| DP     | date-range       | dct:date           | xsd:date       | 1           | The date in which the plenary reunion occurred, where the discussion happened  | This date range should also encompass the hour range |
+| DP     | summary          | dct:abstract       | xsd:string     | 0-1         | The summary and overall theme of the discussion.                               | Older datasets do not have this information.         |
+| OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
+
+####Intervention
+
+
