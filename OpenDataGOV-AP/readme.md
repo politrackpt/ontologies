@@ -123,6 +123,40 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 |            |                          |                                   |             |             |                                           |          |
 | **Domain**     | **core:Deceased**            | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 
+### Post
+
+| **Domain** | **org:Post**       |                      |         |         |                                       |      |
+|------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|
+|            | label              | Term                     | Range       | Cardinality | Description                               | Comments |
+| DP         | A date-range       | dct:date                 | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
+|            |                    |                          |             |             |                                           |          |
+| Domain     | core:PAR           | rdfs:subClassOf org:Post |             |             |                                           |          |
+|            |                    |                          |             |             |                                           |          |
+| Domain     | core:VicePAR       | rdfs:subClassOf org:Post |             |             |                                           |          |
+|            |                    |                          |             |             |                                           |          |
+| Domain     | core:Secretary     | rdfs:subClassOf org:Post |             |             |                                           |          |
+|            |                    |                          |             |             |                                           |          |
+| Domain     | core:ViceSecretary | rdfs:subClassOf org:Post |             |             |                                           |          |
+
+### Party
+
+| **Domain** | **core:Party** | **a rdfs:subClassOf org:Organization** | **A political party** |         |      |         | 
+|------------|----------------|----------------------------------------|-----------------------|-------------|----------|-------------|
+|            | label          | Term                                   | Range                 | Cardinality | Comments | Description |
+| DP         | name           | foaf:name                              | xsd:string            | 1           |          |             |
+| DP         | acronym        | qudt:acronym                           | xsd:string            | 1           |          |             |
+
+### Parliamentary Group
+
+| **Domain** | **core:parliamentaryGroup** | **skos:broadMatch ocd:gruppoParlamentare**             | **A parlamentary group of a party** |  |                                   |      |
+|------------|-----------------------------|--------------------------------------------|-----------------|-------------------------------------|--------------------------------------------|----------|
+|            | label                       | Term                                       | Range           | Cardinality                         | Description                                | Comments |
+| DP         | date-range                  | dct:date                                   | xsd:literal     | 0-1                                 | A range or a single date if it is ongoing. |          |
+| OP         | is of party                 | core:isOfParty                             | ini:Party       | 1                                   |                                            |          |
+| OP         | belongs to legislature      | core:belongsToLegislature                  | ocd:legislatura | 1                                   |                                            |          |
+
+
+
 
 
 
