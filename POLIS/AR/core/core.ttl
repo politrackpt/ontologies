@@ -116,7 +116,7 @@
                "Incumbent"@en ;
 	dct:description "Situação de deputado efetivo na Assembleia da Républica"@pt , "Incumbent situation of an MP in the Assembly of the Republic"@en .
 
-:PermantentIncumbent rdf:type owl:Class ;
+:PermanentIncumbent rdf:type owl:Class ;
     rdfs:subClassOf ocd:proclamazione ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Efetivo Definitivo"@pt ,
