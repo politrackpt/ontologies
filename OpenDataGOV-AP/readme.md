@@ -465,3 +465,37 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | position      | dbo:number      | xsd:nonNegativeInteger | 1           |                                              |          |
 
 ### MP-Activity
+#### Requisition
+| **Domain** | **ocd:richiestaParere** | ****                             | ****                    | ****        | ****                                                                                  | ****     |
+|------------|-------------------------|----------------------------------|-------------------------|-------------|---------------------------------------------------------------------------------------|----------|
+|            | label                   | Term                             | Range                   | Cardinanity | Description                                                                           | Comments |
+| DP         | identifer               | core:identifier                  | xsd:string              | 1           | The code that uniquely identifies the Requisition.                                    |          |
+| DP         | number                  | dbo:number                       | xsd:nonNegativeInteger  | 1           |                                                                                       |          |
+| DP         | subject                 | dct:subject                      | xsd:string              | 1           | The subject of the requisition                                                        |          |
+| DP         | date                    | dct:date                         | xsd:date                | 1           |                                                                                       |          |
+| OP         | legislature             | core:belongsToLegislature        | ocd:legislatura         | 1           |                                                                                       |          |
+| OP         | legislativeSession      | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1           |                                                                                       |          |
+| OP         | public entity type      | mpact:toPublicEntityType         | mpact:PublicEntityType  | 0-1         | Indicates the public entity type where an MP made a requisition (request or inquiry). |          |
+
+| **Domain** | **mpact:Request** | **a rdfs:subClassOf ocd:richiestaParere** |
+|------------|-------------------|-------------------------------------------|
+
+| **Domain** | **mpact:Inquiry** | **a rdfs:subClassOf ocd:richiestaParere** |
+|------------|-------------------|-------------------------------------------|
+
+### Public Entity Type
+| **Domain** | **mpact:PublicEntityType** | **a rdfs:subClassOf prov:Agent** |
+|------------|----------------------------|----------------------------------|
+
+| **Domain** | **mpact:AC** | **a NamedInvidual, mpact:PublicEntityType** | **** | **Administração Central** | **** | **** | **** |
+|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+|            |              |                                             |      |                           |      |      |      |
+| **Domain**     | **mpact:AL**     | **a NamedInvidual, mpact:PublicEntityType**     |      | Administração Local       |      |      |      |
+|            |              |                                             |      |                           |      |      |      |
+| **Domain**     | **mpact:AR**     | **a NamedInvidual, mpact:PublicEntityType**     |      | Assembleia da República   |      |      |      |
+|            |              |                                             |      |                           |      |      |      |
+| **Domain**     | **mpact:EI**     | **a NamedInvidual, mpact:PublicEntityType**     |      | Entidades Independentes   |      |      |      |
+|            |              |                                             |      |                           |      |      |      |
+| **Domain**     | **mpact:RA**     | **a NamedInvidual, mpact:PublicEntityType**     |      | Regiões Autónomas         |      |      |      |
+
+
