@@ -483,23 +483,42 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | **Domain** | **mpact:Inquiry** | **a rdfs:subClassOf ocd:richiestaParere** |
 |------------|-------------------|-------------------------------------------|
 
-### Public Entity Type
+#### Public Entity Type
 | **Domain** | **mpact:PublicEntityType** | **a rdfs:subClassOf prov:Agent** |
 |------------|----------------------------|----------------------------------|
 
-| **Domain** | **mpact:AC** | **a NamedInvidual, mpact:PublicEntityType** | **** | **Administração Central** | **** | **** | **** |
-|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+| **Domain** | **mpact:AC** | **a NamedIndividual, mpact:PublicEntityType** |  **Administração Central** |
+|------------|--------------|---------------------------------------------|---------------------------------|
 
-| **Domain**     | **mpact:AL**     | a NamedInvidual, mpact:PublicEntityType     |      | Administração Local       |      |      |      |
-|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+| **Domain**     | **mpact:AL**     | a NamedIndividual, mpact:PublicEntityType     |     Administração Local       |
+|------------|--------------|---------------------------------------------|---------------------------------|
 
-| **Domain**     | **mpact:AR**     | a NamedInvidual, mpact:PublicEntityType     |      | Assembleia da República   |      |      |      |
-|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+| **Domain**     | **mpact:AR**     | a NamedIndividual, mpact:PublicEntityType     |    Assembleia da República   |  
+|------------|--------------|---------------------------------------------|---------------------------------|
 
-| **Domain**     | **mpact:EI**     | a NamedInvidual, mpact:PublicEntityType     |      | Entidades Independentes   |      |      |      |
-|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+| **Domain**     | **mpact:EI**     | a NamedIndividual, mpact:PublicEntityType       | Entidades Independentes   |    
+|------------|--------------|---------------------------------------------|--------------------------------|
 
-| **Domain**     | **mpact:RA**     | a NamedInvidual, mpact:PublicEntityType     |      | Regiões Autónomas         |      |      |      |
-|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
+| **Domain**     | **mpact:RA**     | **a NamedIndividual, mpact:PublicEntityType**    |   **Regiões Autónomas**         |
+|------------|--------------|---------------------------------------------|---------------------------------|
+
+#### Parliamentary Activity
+| **Domain** | **mpact:ParliamentaryActivity** | **a rdfs:subClassOf prov:Activity** | **Parliamentary activity** |           |  |                                                                                        |      |
+|------------|---------------------------------|-------------------------------------|----------------------------|-------------|------|------|--------------------------------------------------------------------------------------------|----------|
+|            | label                           | Term                                | Range                      | Cardinality | VES  |  Description                                                                                | Comments |
+| DP         | id                              | core:identifier                     | xsd:string                 | 1           |      |                                                                                             |          |
+| DP         | number                          | dbo:number                          | xsd:nonNegativeInteger     | 1           |      |  Number of the parliamentary activity in the respective legislature and legislative session |          |
+| DP         | legislature                     | core:belongsToLegislature           | ocd:legislatura            | 1           |      |                                                                                             |          |
+| DP         | legislative session             | core:belongsToLegislativeSession    | ocd:sessioneLegislatura    | 1           |      |                                                                                                  |          |
+| DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                                                                                  |          |
+| DP         | debate date                     | mpact:debateDate                    | xsd:date                   | 0-1         |      |                                                                                                  |          |
+| DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                                                                                  |          |
+#### 
+| **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
+| **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
+| **Domain**     | **mpact:DEB**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Debates Diversos** |
+| **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |   
+| **Domain**     | **mpact:DPO**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Declarações Políticas**  |  
+| **Domain**     | **mpact:DPR**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Deslocações do Presidente da República**  |
 
 
