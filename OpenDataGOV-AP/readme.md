@@ -487,15 +487,15 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | **Domain** | **mpact:PublicEntityType** | **a rdfs:subClassOf prov:Agent** |
 |------------|----------------------------|----------------------------------|
 
-| **Domain** | **mpact:AC** | **a NamedInvidual, mpact:PublicEntityType** | **Administração Central** |  |  |  |
-|------------|--------------|---------------------------------------------|----------------------------|----|------|
+| **Domain** | **mpact:AC** | **a NamedInvidual, mpact:PublicEntityType** | **** | **Administração Central** | **** | **** | **** |
+|------------|--------------|---------------------------------------------|------|---------------------------|------|------|------|
 |            |              |                                             |      |                           |      |      |      |
-| **Domain**     | **mpact:AL**     | **a NamedInvidual, mpact:PublicEntityType**     |   Administração Local       |      |      |      |
+| Domain     | mpact:AL     | a NamedInvidual, mpact:PublicEntityType     |      | Administração Local       |      |      |      |
 |            |              |                                             |      |                           |      |      |      |
-| **Domain**     | **mpact:AR**     | **a NamedInvidual, mpact:PublicEntityType**     |   Assembleia da República   |      |      |      |
+| Domain     | mpact:AR     | a NamedInvidual, mpact:PublicEntityType     |      | Assembleia da República   |      |      |      |
 |            |              |                                             |      |                           |      |      |      |
-| **Domain**     | **mpact:EI**     | **a NamedInvidual, mpact:PublicEntityType**     |  Entidades Independentes   |      |      |      |
+| Domain     | mpact:EI     | a NamedInvidual, mpact:PublicEntityType     |      | Entidades Independentes   |      |      |      |
 |            |              |                                             |      |                           |      |      |      |
-| **Domain**     | **mpact:RA**     | **a NamedInvidual, mpact:PublicEntityType**     |   Regiões Autónomas         |      |      |      |
+| Domain     | mpact:RA     | a NamedInvidual, mpact:PublicEntityType     |      | Regiões Autónomas         |      |      |      |
 
 
