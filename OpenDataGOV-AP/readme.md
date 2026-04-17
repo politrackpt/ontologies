@@ -515,10 +515,16 @@ This file presents the OpenDataGOV -AP, a Linked Data Application Profile [1] - 
 | DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                                                                                  |          |
 #### 
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
+|------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
+|------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:DEB**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Debates Diversos** |
-| **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |   
-| **Domain**     | **mpact:DPO**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Declarações Políticas**  |  
+|------------|--------------|---------------------------------------------|---------------------------------|
+| **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |
+|------------|--------------|---------------------------------------------|---------------------------------|
+| **Domain**     | **mpact:DPO**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Declarações Políticas**  |
+|------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:DPR**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Deslocações do Presidente da República**  |
+|------------|--------------|---------------------------------------------|---------------------------------|
 
 
