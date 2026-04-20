@@ -543,7 +543,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP | legislature | core:belongsToLegislature | ocd:legislatura | 1           |     |             |          |
 
 #### Public Accounts
-**Domain**: mpact:PublicAccount                         A public account. 
+**Domain**: mpact:PublicAccount                        ( A public account.)
 
 | | Label | Term | Range | Cardinality | VES | Description | Comments |
 |--------|-------|------|-------|-------------|-----|-------------|----------|
@@ -553,7 +553,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP | subject matter | dct:subject | xsd:string | 1 | | | |
 | OP | legislature | core:belongsToLegislature | ocd:legislatura | 0-1 | | | |
 
-####
+#### Delegation
 **Domain**: mpact:Delegation a rdfs:subClassOf foaf:Group
 |    | label              | Term                             | Range                   | Cardinality | VES | Description | Comments |
 |----|--------------------|----------------------------------|-------------------------|-------------|-----|-------------|----------|
