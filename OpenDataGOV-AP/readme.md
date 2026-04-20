@@ -72,9 +72,10 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 **Domain**:core:Guest  a rdfs:subClassOf foaf:Person  (A guest that visits the Parliament.)   
 
-|    | label     |    Term  |   Range   | Cardinality     | Description     |     Comments |                |----|-----------|----------|-----------|-----------------|-----------------|--------------|  
-| DP     | honour                        | core:honour        | xsd:boolean                        | 0-1         |             | A guest of Honour if true.                                                             |
-| DP     | country                       | dbo:country                               | dbo:Country                        | 0-1         |             |                                                                                        |
+|    | label     |    Term  |   Range   | Cardinality     | Description     |     Comments |  
+|----|-----------|----------|-----------|-----------------|-----------------|--------------|  
+| DP     | honour                        | core:honour        | xsd:boolean                        | 0-1         |             | A guest of Honour if true.  |
+| DP     | country                       | dbo:country                               | dbo:Country                        | 0-1         |             |   |
 | DP     | duty                          | core:duty                                 | xsd:string                         | 0-*         |             | It is preferred to use core:holdsDuty and org:Post when a controlled vocabulary exists |
 | OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |   |
 
@@ -567,6 +568,27 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP | legislature        | core:belongsToLegislature        | ocd:legislatura         | 1           |     |             |          |
 | OP | legislativeSession | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1           |     |             |          |
 
+#### Permanent Delegation
 
+**Domain**: mpact:PermanentDelegation a rdfs:subClassOf mpact:Delegation
 
+| label | Term     | Range                               | Cardinality                      | VES | Description | Comments |
+|-------|----------|-------------------------------------|----------------------------------|-----|-------------|----------|
+| OP    | meetings | mpact:hasPermanentDelegationMeeting | mpact:PermanentDelegationMeeting | 1   |             |          |
 
+#### TemporaryDelegation
+
+**Domain**: mpact:TemporaryDelegation a rdfs:subClassOf mpact:Delegation
+
+| label | Term  | Range                    | Cardinality           | VES |  Description | Comments |
+|-------|-------|--------------------------|-----------------------|-----|--------------|----------|
+| DP    | date  | dct:date                 | xsd:date              | 0-1 |              |          |
+| OP    | place | sem:hasPlace             | sem:Place             | 0-1 |              |          |
+| OP    | scope | mpact:hasDelegationScope | mpact:DelegationScope | 0-1 |              |          |
+
+#### Delegation Scope
+Domain: mpact:DelegationScope
+
+**Domain**	mpact:National	a rdfs:subClassOf mpact:DelegationScope																							
+																									
+**Domain**	mpact:International	a rdfs:subClassOf mpact:DelegationScope																							
