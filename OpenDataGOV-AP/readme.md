@@ -504,10 +504,10 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Parliamentary Activity
 | **Domain** | **mpact:ParliamentaryActivity** | **a rdfs:subClassOf prov:Activity** | **Parliamentary activity** |           |  |                                                                                        |      |
-|------------|---------------------------------|-------------------------------------|----------------------------|-------------|------|------|--------------------------------------------------------------------------------------------|----------|
 |            | label                           | Term                                | Range                      | Cardinality | VES  |  Description                                                                                | Comments |
-| DP         | id                              | core:identifier                     | xsd:string                 | 1           |      |                                                                                             |          |
-| DP         | number                          | dbo:number                          | xsd:nonNegativeInteger     | 1           |      |  Number of the parliamentary activity in the respective legislature and legislative session |          |
+|--------|-------|------|-------|-------------|-----|-------------|----------|
+| DP | id | core:identifier | xsd:string | 1 | | | |
+| DP | number | dbo:number | xsd:nonNegativeInteger | 1 | | Number of the parliamentary activity | |
 | DP         | legislature                     | core:belongsToLegislature           | ocd:legislatura            | 1           |      |                                                                                             |          |
 | DP         | legislative session             | core:belongsToLegislativeSession    | ocd:sessioneLegislatura    | 1           |      |                                                                                                  |          |
 | DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                                                                                  |          |
