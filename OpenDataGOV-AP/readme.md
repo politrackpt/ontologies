@@ -179,8 +179,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 ### Initiatives
 #### Initiative
 
-
-| **Domain** | **ini:Initiative**                | **subclassOf: ocd:Atto**         | **An Initiative in the context of the Parliament**                                                                          | ****        | **** | **** | ****                                                                                           |
+| **Domain** | **ini:Initiative**                | **subclassOf: ocd:Atto**         | **An Initiative in the context of the Parliament**     |         |  |  |  |
 |------------|-----------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|------|------|------------------------------------------------------------------------------------------------|
 |            | label                             | Term                             | Range                                                                                                                       | Cardinality | VES  | SES  | Description                                                                                    |
 | DP         | identifier                        | core:identifier                  | xsd:string                                                                                                                  | 1           |      |      | The code that uniquely identifies the Initiative.                                              |
@@ -472,9 +471,10 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 ### MP-Activity
 #### Requisition
-| **Domain** | **ocd:richiestaParere** |                                  |                         |             |                                                                                       |          
-|------------|-------------------------|----------------------------------|-------------------------|-------------|---------------------------------------------------------------------------------------|----------|
-|            | label                   | Term                             | Range                   | Cardinality | Description                                                                           | Comments |
+**Domain**: ocd:richiestaParere          
+
+|            | label                   | Term                             | Range                   | Cardinality | Description   | Comments |
+|------------|-------------------------|----------------------------------|-------------------------|-------------|----------|----------|
 | DP         | identifer               | core:identifier                  | xsd:string              | 1           | The code that uniquely identifies the Requisition.                                    |          |
 | DP         | number                  | dbo:number                       | xsd:nonNegativeInteger  | 1           |                                                                                       |          |
 | DP         | subject                 | dct:subject                      | xsd:string              | 1           | The subject of the requisition                                                        |          |
@@ -482,6 +482,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | legislature             | core:belongsToLegislature        | ocd:legislatura         | 1           |                                                                                       |          |
 | OP         | legislativeSession      | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1           |                                                                                       |          |
 | OP         | public entity type      | mpact:toPublicEntityType         | mpact:PublicEntityType  | 0-1         | Indicates the public entity type where an MP made a requisition (request or inquiry). |          |
+
 
 | **Domain** | **mpact:Request** | **a rdfs:subClassOf ocd:richiestaParere** |
 |------------|-------------------|-------------------------------------------|
