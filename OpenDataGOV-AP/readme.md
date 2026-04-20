@@ -513,7 +513,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                                                                                  |          |
 | DP         | debate date                     | mpact:debateDate                    | xsd:date                   | 0-1         |      |                                                                                                  |          |
 | DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                                                                                  |          |
-#### 
+
+ 
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
 |------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
