@@ -36,16 +36,16 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
  **Domain**: foaf:Person                   (A person in the context of the Parliament.)
 
-|        | **label** | **Term** | **Range**  | **Cardinality** | **Description** | **Comments**|
+|    | **label** | **Term** | **Range**  | **Cardinality** | **Description** | **Comments**|
 |----|-----------|----------|-----------|-----------------|-----------------|--------------|
 | DP     | Name      | foaf:name | xsd:string | 0-1 |   | |
-| DP     | Birthday   | foaf:birthday                             | xsd:date     | 0-1         |             |   |
+| DP     | Birthday   | foaf:birthday  | xsd:date     | 0-1         |             |   |
 | DP     | Gender   | schema:gender                             | xsd:string   | 0-1         |             |   |
 | DP     | Profession                    | schema:jobTitle                           | xsd:string   | 0-1         |             |   |
 
 **Domain**:m4s:Parliamentarian           (A member of the Parliament.) 
 
-|        | **label**                         | **Term**                                      | **Range**                              | **Cardinality** | **Description** | **Comments**                                                                               |
+|        | **label**                         | **Term**    | **Range**   | **Cardinality** | **Description** | **Comments**    |
 |----|-----------|----------|-----------|-----------------|-----------------|--------------|
 | DP     | Identifier                    | core:identifier                           | xsd:uri                            | 1           |             |                                                                                        |
 | OP     | Participated in legislature   | core:belongsToLegislature                 | ocd:legislatura                    | 1-*         |             |                                                                                        |
@@ -81,39 +81,40 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Mandate
 
-| **Domain** | **ocd:mandatoCamera**  | **A mandate of a member of the parliament** |               |         |                                            |      |
-|------------|------------------------|---------------------------------------------|-------------------|-------------|------------------------------------------------|----------|
-|            | label                  | Term                                        | Range             | Cardinality | Description                                    | Comments |
-| DP         | Identifier             | core:identifier                             | xsd:string        | 0-1         | The code that uniquely identifies the Mandate. |          |
-| DP         | Parliamentary name     | core:parliamentaryName                      | xsd:string        | 1-*         |                                                |          |
-| OP         | Holds a duty           | core:holdsDuty                              | org:Post          | 0-*         |                                                |          |
-| OP         | Belongs to legislature | core:belongsToLegislature                   | ocd:legislatura   | 1           |                                                |          |
-| OP         | Has membership         | core:hasMembership                          | core:Membership   | 1-*         |                                                |          |
-| OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione | 1-*         |                                                |          |
+**Domain**: ocd:mandatoCameran (A mandate of a member of the parliament.)
+|            | label                  | Term                                        | Range             | Cardinality | Description    | Comments |
+|------------|------------------------|---------------------------------------------|-------------------|-------------|---------------------------|--------|
+| DP         | Identifier             | core:identifier                             | xsd:string        | 0-1         | The code that uniquely identifies the Mandate. |    |
+| DP         | Parliamentary name     | core:parliamentaryName                      | xsd:string        | 1-*         |                                                |    |
+| OP         | Holds a duty           | core:holdsDuty                              | org:Post          | 0-*         |                                                |    |
+| OP         | Belongs to legislature | core:belongsToLegislature                   | ocd:legislatura   | 1           |                                                |    |
+| OP         | Has membership         | core:hasMembership                          | core:Membership   | 1-*         |                                                |    |
+| OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione | 1-*         |                                                |    |
 
 #### Organisational Body
-| **Domain** | **ocd:organo**        | **An Organisational Body at the Parliament** |                                  |         |                                                      |      |
-|------------|-----------------------|----------------------------------------------|--------------------------------------|-------------|----------------------------------------------------------|----------|
-|            | label                 | Term                                         | Range                                | Cardinality | Description                                              | Comments |
-| DP         | identifier            | core:identifier                              | xsd:string                           | 1           | The code that uniquely identifies the Organisation Body. |          |
-| DP         | description           | dct:description                              | xsd:string                           | 0-1         |                                                          |          |
-| DP         | has a name            | foaf:name                                    | xsd:string                           | 0-1         |                                                          |          |
-| DP         | has an Acronym        | qudt:acronym                                 | xsd:string                           | 0-1         |                                                          |          |
-| OP         | inLegislature         | core:belongsToLegislature                    | ocd:Legislatura                      | 1           |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-| **Domain**     | **core:Commission**       | **rdfs:subClassOf ocd:organo**                   | **A Comission of a Legislature.**         |             |                                                          |          |
-|            | label                 | Term                                         | Range                                | Cardinality | Description                                              | Comments |
-| DP         | number                | dbo:number                                   | xsd:nonNegativeInteger               | 0-1         | The number of the commission                             |          |
-| OP         | publishes in the DAR  | ini:isPublishedInDAR                         | ini:DARPublication                   | 0-*         |                                                          |          |
-| OP         | is a sub-comission of | core:isSubComissionOf                        | core:Comission                       | 0-*         |                                                          |          |
-| OP         | has sub-comission     | core:hasSubComission                         | core:Comission                       | 0-*         |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-| **Domain**     | **core:WorkingGroup**     | **rdfs:subClassOf ocd:organo**                   | **A Working Group of a Legislature.**     |             |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-|            |                       |                                              |                                      |             |                                                          |          |
-| **Domain**     | **core:ARWorkingGroup**   | **rdfs:subClassOf ocd:organo**                   | **An AR Working Group of a Legislature.** |             |                                                          |          |
+**Domain**: ocd:organo (An Organisational Body at the Parliament.)
+|            | label                 | Term                 | Range          | Cardinality | Description    | Comments |
+|------------|-----------------------|----------------------|----------------|-------------|----------------|----------|
+| DP         | identifier            | core:identifier      | xsd:string     | 1           | The code that uniquely identifies the Organisation Body. |          |
+| DP         | description           | dct:description      | xsd:string     | 0-1         |                |          |
+| DP         | has a name            | foaf:name            | xsd:string     | 0-1         |                |          |
+| DP         | has an Acronym        | qudt:acronym         | xsd:string     | 0-1         |                |          |
+| OP         | inLegislature         | core:belongsToLegislature | ocd:Legislatura   | 1   |                |          |
+
+
+**Domain**: core:Commission rdfs:subClassOf ocd:organo (A Comission of a Legislature.)
+|            | label                 | Term                                         | Range    | Cardinality | Description   | Comments |
+|------------|-----------------------|----------------------|----------------|-------------|----------------|----------|
+| DP         | number                | dbo:number                                   | xsd:nonNegativeInteger               | 0-1         | The number of the commission  |          |
+| OP         | publishes in the DAR  | ini:isPublishedInDAR                         | ini:DARPublication                   | 0-*         |         |          |
+| OP         | is a sub-comission of | core:isSubComissionOf                        | core:Comission                       | 0-*         |         |          |
+| OP         | has sub-comission     | core:hasSubComission                         | core:Comission                       | 0-*         |          |          |
+
+**Domain**: core:WorkingGroup rdfs:subClassOf ocd:organo                   (A Working Group of a Legislature.)
+
+**Domain**: core:ARWorkingGroup rdfs:subClassOf ocd:organo    (An AR Working Group of a Legislature.)
+
+
 #### Situation
 
 | **Domain** | **ocd:proclamazione**    | **A Situation of a document**     |         |         |                                       |      |
