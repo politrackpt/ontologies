@@ -503,7 +503,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|--------------|---------------------------------------------|---------------------------------|
 
 #### Parliamentary Activity
-**Domain** `ocd:richiestaParere`
+**Domain**: `ocd:richiestaParere`
 
 |  | Label | Term | Range | Cardinality | Description | Comments |
 |--------|-------|------|-------|-------------|-------------|----------|
@@ -517,9 +517,9 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
  
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
-
+|------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
-
+|------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:DEB**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Debates Diversos** |
 |------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |
