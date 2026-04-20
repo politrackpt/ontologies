@@ -587,8 +587,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP    | scope | mpact:hasDelegationScope | mpact:DelegationScope | 0-1 |              |          |
 
 #### Delegation Scope
-Domain: mpact:DelegationScope
+**Domain**: mpact:DelegationScope
 
-**Domain**	mpact:National	a rdfs:subClassOf mpact:DelegationScope																							
-																									
+**Domain**	mpact:National	a rdfs:subClassOf mpact:DelegationScope																												
+
 **Domain**	mpact:International	a rdfs:subClassOf mpact:DelegationScope																							
