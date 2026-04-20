@@ -503,7 +503,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|--------------|---------------------------------------------|---------------------------------|
 
 #### Parliamentary Activity
-**Domain**: `ocd:richiestaParere`
+**Domain**: mpact:ParliamentaryActivity a rdfs:subClassOf prov:Activity
 
 |  | Label | Term | Range | Cardinality | Description | Comments |
 |--------|-------|------|-------|-------------|-------------|----------|
@@ -518,15 +518,50 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
  
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:DEB**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Debates Diversos** |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:DPO**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Declarações Políticas**  |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:DPR**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Deslocações do Presidente da República**  |
 |------------|--------------|---------------------------------------------|---------------------------------|
+
+#### FriendshipParliamentary Activity
+**Domain**:	mpact:FriendshipParliamentaryGroup	a rdfs:subClassOf foaf:Group
+|    | label       | Term                      | Range           | Cardinality | VES | Description | Comments |
+|----|-------------|---------------------------|-----------------|-------------|-----|-------------|----------|
+| DP | id          | core:identifier           | xsd:string      | 1           |     |             |          |
+| DP | name        | foaf:name                 | xsd:string      | 1           |     |             |          |
+| OP | legislature | core:belongsToLegislature | ocd:legislatura | 1           |     |             |          |
+
+#### Public Accounts
+**Domain**: mpact:PublicAccount                         A public account. 
+
+| | Label | Term | Range | Cardinality | VES | Description | Comments |
+|--------|-------|------|-------|-------------|-----|-------------|----------|
+| DP | id | core:identifier | xsd:string | 1 | | | |
+| DP | civil year | mpact:civilYear | xsd:gYear | 0-1 | | | |
+| DP | appointment date | dct:date | xsd:date | 0-1 | | | |
+| DP | subject matter | dct:subject | xsd:string | 1 | | | |
+| OP | legislature | core:belongsToLegislature | ocd:legislatura | 0-1 | | | |
+
+####
+**Domain**: mpact:Delegation a rdfs:subClassOf foaf:Group
+|    | label              | Term                             | Range                   | Cardinality | VES | Description | Comments |
+|----|--------------------|----------------------------------|-------------------------|-------------|-----|-------------|----------|
+| DP | id                 | core:identifier                  | xsd:string              | 1           |     |             |          |
+| DP | name               | foaf:name                        | xsd:string              | 1           |     |             |          |
+| OP | legislature        | core:belongsToLegislature        | ocd:legislatura         | 1           |     |             |          |
+| OP | legislativeSession | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1           |     |             |          |
+
+
 
 
