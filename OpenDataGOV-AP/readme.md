@@ -652,8 +652,17 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Hearing
 **Domain**: mpact:Hearing    a rdfs:subClassOf mpact:CommissionActivity 
 
+
 |        | label            | Term                                       | Range                  | Cardinality | VES | Description | Comments |
 |--------|------------------|--------------------------------------------|------------------------|-------------|-----|-------------|----------|
 | DP     | number           | mpact:commissionIdentifier                 | xsd:string             | 1           |     |             |          |
 | OP     | third party name | prov:wasAssociatedWith                     | mpact:ThirdPartyEntity | 1           |     |             |          |
+
+#### ThirdPartyEntity
+**Domain**: mpact:ThirdPartyEntity a rdfs:subClassOf prov:Agent
+
+|        | label                  | Term                         | Range      | Cardinality | VES | Description | Comments |
+|--------|------------------------|------------------------------|------------|-------------|-----|-------------|----------|
+| DP     | name                   | foaf:name                    | xsd:string | 1           |     |             |          |
+
 
