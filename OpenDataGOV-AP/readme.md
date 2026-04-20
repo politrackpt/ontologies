@@ -503,16 +503,17 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|--------------|---------------------------------------------|---------------------------------|
 
 #### Parliamentary Activity
-| **Domain** | **mpact:ParliamentaryActivity** | **a rdfs:subClassOf prov:Activity** | **Parliamentary activity** |             |      |                                      |                  |
-|------------|---------------------------------|-------------------------------------|----------------------------|-------------|------|------------------- ------------------|------------------|
-|            | label                           | Term                                | Range                      | Cardinality | VES  |  Description                         | Comments         |
-| DP         | id                              | core:identifier                     | xsd:string                 | 1           |      |                                      |                  |
-| DP         | number                          | dbo:number                          | xsd:nonNegativeInteger     | 1           |      | Number of the parliamentary activity |                  |
-| DP         | legislature                     | core:belongsToLegislature           | ocd:legislatura            | 1           |      |                                      |          |
-| DP         | legislative session             | core:belongsToLegislativeSession    | ocd:sessioneLegislatura    | 1           |      |                                      |          |
-| DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                      |          |
-| DP         | debate date                     | mpact:debateDate                    | xsd:date                   | 0-1         |      |                                      |          |
-| DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                      |          |
+**Domain** `ocd:richiestaParere`
+
+|  | Label | Term | Range | Cardinality | Description | Comments |
+|--------|-------|------|-------|-------------|-------------|----------|
+| DP | identifier | core:identifier | xsd:string | 1 | The code that uniquely identifies the Requisition. | |
+| DP | number | dbo:number | xsd:nonNegativeInteger | 1 | | |
+| DP | subject | dct:subject | xsd:string | 1 | The subject of the requisition | |
+| DP | date | dct:date | xsd:date | 1 | | |
+| OP | legislature | core:belongsToLegislature | ocd:legislatura | 1 | | |
+| OP | legislativeSession | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1 | | |
+| OP | public entity type | mpact:toPublicEntityType | mpact:PublicEntityType | 0-1 | Indicates the public entity type where an MP made a requisition. | |
 
  
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
