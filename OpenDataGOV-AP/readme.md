@@ -602,3 +602,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | date                             | dct:date                      | xsd:date   | 1           |     |             |          |
 | OP     | place                            | sem:hasPlace                  | sem:Place  | 1           |     |             |          |
 
+#### Youth Parliament Activity
+Domain:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
+
+
