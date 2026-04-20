@@ -589,6 +589,16 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Delegation Scope
 **Domain**: mpact:DelegationScope
 
-**Domain**	mpact:National	a rdfs:subClassOf mpact:DelegationScope																												
+**Domain**:	mpact:National	a rdfs:subClassOf mpact:DelegationScope																												
 
-**Domain**	mpact:International	a rdfs:subClassOf mpact:DelegationScope																							
+**Domain**:	mpact:International	a rdfs:subClassOf mpact:DelegationScope			
+
+#### Permanent Delegation Meeting
+**Domain**: mpact:PermanentDelegationMeeting  a rdfs:subClassOf dbo:Meeting 
+
+|        | label                            | Term                          | Range      | Cardinality | VES | Description | Comments |
+|--------|----------------------------------|-------------------------------|------------|-------------|-----|-------------|----------|
+| DP     | title                            | foaf:name                     | xsd:string | 1           |     |             |          |
+| DP     | date                             | dct:date                      | xsd:date   | 1           |     |             |          |
+| OP     | place                            | sem:hasPlace                  | sem:Place  | 1           |     |             |          |
+
