@@ -34,17 +34,19 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 ### Core
 #### Person
 
-| Domain | foaf:Person                   | A person in the context of the Parliament |                                    |             |             |                                                                                        |
-|--------|-------------------------------|-------------------------------------------|------------------------------------|-------------|-------------|----------------------------------------------------------------------------------------|
-|        | label                         | Term                                      | Range                              | Cardinality | Description | Comments                                                                               |
-| DP     | Name                          | foaf:name                                 | xsd:string                         | 0-1         |             |                                                                                        |
-| DP     | Birthday                      | foaf:birthday                             | xsd:date                           | 0-1         |             |                                                                                        |
-| DP     | Gender                        | schema:gender                             | xsd:string                         | 0-1         |             |                                                                                        |
-| DP     | Profession                    | schema:jobTitle                           | xsd:string                         | 0-1         |             |                                                                                        |
-|        |                               |                                           |                                    |             |             |                                                                                        |
-|        |                               |                                           |                                    |             |             |                                                                                        |
-| **Domain** | **m4s:Parliamentarian**           | **A member of the Parliament**             |                                    |             |             |                                                                                        |
-|        | label                         | Term                                      | Range                              | Cardinality | Description | Comments                                                                               |
+ **Domain**: foaf:Person                   (A person in the context of the Parliament.)
+
+|        | **label** | **Term** | **Range**  | **Cardinality** | **Description** | **Comments**|
+|----|-----------|----------|-----------|-----------------|-----------------|--------------|
+| DP     | Name      | foaf:name | xsd:string | 0-1 |   | |
+| DP     | Birthday   | foaf:birthday                             | xsd:date     | 0-1         |             |   |
+| DP     | Gender   | schema:gender                             | xsd:string   | 0-1         |             |   |
+| DP     | Profession                    | schema:jobTitle                           | xsd:string   | 0-1         |             |   |
+
+**Domain**:m4s:Parliamentarian           (A member of the Parliament.) 
+
+|        | **label**                         | **Term**                                      | **Range**                              | **Cardinality** | **Description** | **Comments**                                                                               |
+|----|-----------|----------|-----------|-----------------|-----------------|--------------|
 | DP     | Identifier                    | core:identifier                           | xsd:uri                            | 1           |             |                                                                                        |
 | OP     | Participated in legislature   | core:belongsToLegislature                 | ocd:legislatura                    | 1-*         |             |                                                                                        |
 | OP     | Served a mandate              | ocd:rif_mandatoCamera                     | ocd:mandatoCamera                  | 1-*         |             |                                                                                        |
@@ -58,21 +60,24 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | did youth parliament activity | mpact:didYouthParliamentActivity          | mpact:YouthParliamentActivity      | 0-*         |             |                                                                                        |
 | OP     | did requisition               | mpact:didRequisition                      | ocd:richiestaParere                | 0-*         |             |                                                                                        |
 | OP     | did commission activity       | mpact:didCommissionActivity               | mpact:CommissionActivity           | 0-*         |             |                                                                                        |
-| OP     | did parliamentary activity    | mpact:didParliamentaryActivity            | mpact:ParliamentaryActivity        | 0-*         |             |                                                                                        |
-|        |                               |                                           |                                    |             |             |                                                                                        |
-|        |                               |                                           |                                    |             |             |                                                                                        |
-| **Domain** | **ocd:membroGoverno**             | **A member of the Government**                |                                    |             |             |                                                                                        |
-|        | label                         | Term                                      | Range                              | Cardinality | Description | Comments                                                                               |
+| OP     | did parliamentary activity    | mpact:didParliamentaryActivity            | mpact:ParliamentaryActivity        | 0-*         |             |                      |
+
+**Domain**: ocd:membroGoverno (A member of the Government.)
+
+|        | label                         | Term                                      | Range                              | Cardinality | Description | Comments   |
+|----|-----------|----------|-----------|-----------------|-----------------|--------------|
 | DP     | duty                          | core:duty                                 | xsd:string                         | 0-*         |             | It is preferred to use core:holdsDuty and org:Post when a controlled vocabulary exists |
 | OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |                                                                                        |
 | OP     | Belongs to a Government       | ocd:rif_governo                           | ocd:governo                        | 1           |             |                                                                                        |
-|        |                               |                                           |                                    |             |             |                                                                                        |
-| **Domain** | **core:Guest**                    | **a rdfs:subClassOf foaf:Person**             | **A guest that visits the Parliament** |             |             |                                                                                        |
-|        | label                         | Term                                      | Range                              | Cardinality | Description | Comments                                                                               |
-| DP     | honour                        | core:honour                               | xsd:boolean                        | 0-1         |             | A guest of Honour if true.                                                             |
+
+**Domain**:core:Guest  a rdfs:subClassOf foaf:Person  (A guest that visits the Parliament.)   
+
+|    | label     |    Term  |   Range   | Cardinality     | Description     |     Comments |                |----|-----------|----------|-----------|-----------------|-----------------|--------------|  
+| DP     | honour                        | core:honour        | xsd:boolean                        | 0-1         |             | A guest of Honour if true.                                                             |
 | DP     | country                       | dbo:country                               | dbo:Country                        | 0-1         |             |                                                                                        |
 | DP     | duty                          | core:duty                                 | xsd:string                         | 0-*         |             | It is preferred to use core:holdsDuty and org:Post when a controlled vocabulary exists |
-| OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |                                                                                        |
+| OP     | Holds a duty                  | core:holdsDuty                            | org:Post                           | 0-*         |             |   |
+
 #### Mandate
 
 | **Domain** | **ocd:mandatoCamera**  | **A mandate of a member of the parliament** |               |         |                                            |      |
