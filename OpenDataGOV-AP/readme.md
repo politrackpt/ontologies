@@ -605,6 +605,55 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | place                            | sem:hasPlace                  | sem:Place  | 1           |     |             |          |
 
 #### Youth Parliament Activity
-Domain:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
+**Domain**:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
 
+#### School Type
+
+**Domain**:	mpact:SchoolType
+
+**Domain**:	mpact:Basic	a rdfs:subClassOf mpact:SchoolType
+
+**Domain**:	mpact:Secondary	a rdfs:subClassOf mpact:SchoolType
+
+#### Commission Activity
+
+**Domain**:	mpact:CommissionActivity	a rdfs:subClassOf mpact:ParliamentaryActivity	
+|        | label                    | Term                                          | Range           | Cardinality | VES | Description | Comments |
+|--------|--------------------------|-----------------------------------------------|-----------------|-------------|-----|-------------|----------|
+| DP     | identifier               | core:identifier                               | xsd:string      | 1           |     |             |          |
+| DP     | subject                  | dct:subject                                   | xsd:string      | 1           |     |             |          |
+| DP     | date                     | dct:date                                      | xsd:date        | 1           |     |             |          |
+| DP     | location                 | schema:location                               | xsd:string      | 1           |     |             |          |
+| OP     | legislature              | core:belongsToLegislature                     | ocd:legislatura | 1           |     |             |          |
+| OP     | comission                | mpact:relatedCommission                       | core:Commission | 1           |     |             |          |
+
+#### Audition
+
+**Domain**: mpact:Audition  a rdfs:subClassOf mpact:CommissionActivity 
+
+|        | label            | Term                                       | Range                  | Cardinality | VES | Description | Comments |
+|--------|------------------|--------------------------------------------|------------------------|-------------|-----|-------------|----------|
+| DP     | number           | mpact:commissionIdentifier                 | xsd:string             | 1           |     |             |          |
+| OP     | third party name | prov:wasAssociatedWith                     | mpact:ThirdPartyEntity | 1           |     |             |          |
+
+#### Event
+**Domain**:	mpact:Event	a rdfs:subClassOf mpact:CommissionActivity
+		
+**Domain**:	mpact:Debate	a rdfs:subClassOf mpact:Event
+		
+**Domain**:	mpact:Cerimony	a rdfs:subClassOf mpact:Event
+		
+**Domain**:	mpact:Conference	a rdfs:subClassOf mpact:Event
+		
+**Domain**:	mpact:Others	a rdfs:subClassOf mpact:Event
+		
+**Domain**:	mpact:Visit	a rdfs:subClassOf mpact:CommissionActivity
+
+#### Hearing
+**Domain**: mpact:Hearing    a rdfs:subClassOf mpact:CommissionActivity 
+
+|        | label            | Term                                       | Range                  | Cardinality | VES | Description | Comments |
+|--------|------------------|--------------------------------------------|------------------------|-------------|-----|-------------|----------|
+| DP     | number           | mpact:commissionIdentifier                 | xsd:string             | 1           |     |             |          |
+| OP     | third party name | prov:wasAssociatedWith                     | mpact:ThirdPartyEntity | 1           |     |             |          |
 
