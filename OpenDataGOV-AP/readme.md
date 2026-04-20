@@ -450,7 +450,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Role
 | **Domain** | **bio:Role**  |               |                    |         |                                         |      |
 |------------|---------------|-------------------|------------------------|-------------|---------------------------------------------|----------|
-|            | label         | Term              | Range                  | Cardinanity | Description                                 | Comments |
+|            | label         | Term              | Range                  | Cardinality | Description                                 | Comments |
 | DP         | identifier    | core:identifier   | xsd:string             | 1           | The code that uniquely identifies the Role. |          |
 | DP         | name          | foaf:name         | xsd:string             | 1           |                                             |          |
 | DP         | position      | dbo:number        | xsd:nonNegativeInteger | 1           |                                             |          |
@@ -459,16 +459,16 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Title
 | **Domain**  | **bio:Title**            |                    |         |                                          |      |
 |---------------|-----------------|------------------------|-------------|----------------------------------------------|----------|
-| label         | Term            | Range                  | Cardinanity | Description                                  | Comments |
+| label         | Term            | Range                  | Cardinality | Description                                  | Comments |
 | identifier    | core:identifier | xsd:string             | 1           | The code that uniquely identifies the Title. |          |
 | name          | foaf:name       | xsd:string             | 1           |                                              |          |
 | position      | dbo:number      | xsd:nonNegativeInteger | 1           |                                              |          |
 
 ### MP-Activity
 #### Requisition
-| **Domain** | **ocd:richiestaParere** |                              |                     |         |                                                                                   |      |
+| **Domain** | **ocd:richiestaParere** |                                  |                         |             |                                                                                       |          
 |------------|-------------------------|----------------------------------|-------------------------|-------------|---------------------------------------------------------------------------------------|----------|
-|            | label                   | Term                             | Range                   | Cardinanity | Description                                                                           | Comments |
+|            | label                   | Term                             | Range                   | Cardinality | Description                                                                           | Comments |
 | DP         | identifer               | core:identifier                  | xsd:string              | 1           | The code that uniquely identifies the Requisition.                                    |          |
 | DP         | number                  | dbo:number                       | xsd:nonNegativeInteger  | 1           |                                                                                       |          |
 | DP         | subject                 | dct:subject                      | xsd:string              | 1           | The subject of the requisition                                                        |          |
