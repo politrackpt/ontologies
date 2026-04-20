@@ -457,7 +457,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | hasDoneBefore | bio:hasDoneBefore | xsd:boolean            | 0-1         |                                             |          |
 
 #### Title
-| **bio:Title** | ****            | ****                   | ****        | ****                                         | ****     |
+| **Domain**  | **bio:Title**            |                    |         |                                          |      |
 |---------------|-----------------|------------------------|-------------|----------------------------------------------|----------|
 | label         | Term            | Range                  | Cardinanity | Description                                  | Comments |
 | identifier    | core:identifier | xsd:string             | 1           | The code that uniquely identifies the Title. |          |
@@ -466,7 +466,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 ### MP-Activity
 #### Requisition
-| **Domain** | **ocd:richiestaParere** | ****                             | ****                    | ****        | ****                                                                                  | ****     |
+| **Domain** | **ocd:richiestaParere** |                              |                     |         |                                                                                   |      |
 |------------|-------------------------|----------------------------------|-------------------------|-------------|---------------------------------------------------------------------------------------|----------|
 |            | label                   | Term                             | Range                   | Cardinanity | Description                                                                           | Comments |
 | DP         | identifer               | core:identifier                  | xsd:string              | 1           | The code that uniquely identifies the Requisition.                                    |          |
@@ -503,22 +503,22 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|--------------|---------------------------------------------|---------------------------------|
 
 #### Parliamentary Activity
-| **Domain** | **mpact:ParliamentaryActivity** | **a rdfs:subClassOf prov:Activity** | **Parliamentary activity** |           |  |                                                                                        |      |
-|            | label                           | Term                                | Range                      | Cardinality | VES  |  Description                                                                                | Comments |
-|--------|-------|------|-------|-------------|-----|-------------|----------|
-| DP | id | core:identifier | xsd:string | 1 | | | |
-| DP | number | dbo:number | xsd:nonNegativeInteger | 1 | | Number of the parliamentary activity | |
-| DP         | legislature                     | core:belongsToLegislature           | ocd:legislatura            | 1           |      |                                                                                             |          |
-| DP         | legislative session             | core:belongsToLegislativeSession    | ocd:sessioneLegislatura    | 1           |      |                                                                                                  |          |
-| DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                                                                                  |          |
-| DP         | debate date                     | mpact:debateDate                    | xsd:date                   | 0-1         |      |                                                                                                  |          |
-| DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                                                                                  |          |
+| **Domain** | **mpact:ParliamentaryActivity** | **a rdfs:subClassOf prov:Activity** | **Parliamentary activity** |             |      |                                      |                  |
+|------------|---------------------------------|-------------------------------------|----------------------------|-------------|------|------------------- ------------------|------------------|
+|            | label                           | Term                                | Range                      | Cardinality | VES  |  Description                         | Comments         |
+| DP         | id                              | core:identifier                     | xsd:string                 | 1           |      |                                      |                  |
+| DP         | number                          | dbo:number                          | xsd:nonNegativeInteger     | 1           |      | Number of the parliamentary activity |                  |
+| DP         | legislature                     | core:belongsToLegislature           | ocd:legislatura            | 1           |      |                                      |          |
+| DP         | legislative session             | core:belongsToLegislativeSession    | ocd:sessioneLegislatura    | 1           |      |                                      |          |
+| DP         | entry date                      | dct:date                            | xsd:date                   | 1           |      |                                      |          |
+| DP         | debate date                     | mpact:debateDate                    | xsd:date                   | 0-1         |      |                                      |          |
+| DP         | subject                         | dct:subject                         | xsd:string                 | 1           |      |                                      |          |
 
  
 | **Domain** | **mpact:AGP** | **a rdfs:subClassOf mpact:ParliamentaryActivity** |  **Atividade do Grupo Parlamentar de Amizade** |
-|------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:CER**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Cerimónias**         |
-|------------|--------------|---------------------------------------------|---------------------------------|
+
 | **Domain**     | **mpact:DEB**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |      **Debates Diversos** |
 |------------|--------------|---------------------------------------------|---------------------------------|
 | **Domain**     | **mpact:DES**     | a rdfs:subClassOf mpact:ParliamentaryActivity     |     **Deslocação**  |
