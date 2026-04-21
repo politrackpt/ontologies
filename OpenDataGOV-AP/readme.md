@@ -126,7 +126,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            |                          |                                   |             |             |                                           |          |
 | **Domain**     | **core:Incumbent**           | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 |            |                          |                                   |             |             |                                           |          |
-| **Domain**     | **core:PermantentIncumbent** | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
+| **Domain**     | **core:PermanentIncumbent** | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 |            |                          |                                   |             |             |                                           |          |
 | **Domain**     | **core:TemporaryIncumbent**  | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 |            |                          |                                   |             |             |                                           |          |
