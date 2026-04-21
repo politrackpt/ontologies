@@ -25,7 +25,7 @@
 # Person
 #################################################################
 
-polis-core:PersonShape a sh:NodeShape ;
+_:PersonShape a sh:NodeShape ;
     sh:targetClass foaf:Person ;
     sh:targetClass m4s:Parliamentarian ;
     sh:targetClass ocd:membroGoverno ;
@@ -63,7 +63,7 @@ polis-core:PersonShape a sh:NodeShape ;
 # MP
 #################################################################
 
-polis-core:ParliamentarianShape a sh:NodeShape;
+_:ParliamentarianShape a sh:NodeShape;
     sh:targetClass m4s:Parliamentarian ;
 
     sh:property [
@@ -156,7 +156,7 @@ polis-core:ParliamentarianShape a sh:NodeShape;
 # MG
 #################################################################
 
-polis-core:MGShape a sh:NodeShape;
+_:MGShape a sh:NodeShape;
     sh:targetClass ocd:membroGoverno ;
 
     sh:propery [
@@ -189,7 +189,7 @@ polis-core:MGShape a sh:NodeShape;
 # Guest
 #################################################################
 
-polis-core:GuestShape a sh:NodeShape;
+_:GuestShape a sh:NodeShape;
     sh:targetClass polis-core:Guest ;
 
     sh:property [
@@ -228,7 +228,7 @@ polis-core:GuestShape a sh:NodeShape;
 # Mandate
 #################################################################
 
-polis-core:MandateShape a sh:NodeShape ;
+_:MandateShape a sh:NodeShape ;
     sh:targetClass ocd:mandatoCamera ;
 
     sh:property [
@@ -281,10 +281,9 @@ polis-core:MandateShape a sh:NodeShape ;
 
     sh:property [
         sh:path polis-core:inConstituency ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:class polis-core:Constituency ;
-        sh:message "A mandate must have exactly one constituency"@en
+        sh:message "A mandate must have at most one constituency"@en
     ] ;
 
     sh:property [
@@ -303,7 +302,7 @@ polis-core:MandateShape a sh:NodeShape ;
 # Organo
 #################################################################
 
-polis-core:OrganoShape a sh:NodeShape ;
+_:OrganoShape a sh:NodeShape ;
     sh:targetClass ocd:organo ;
     sh:targetClass polis-core:Commission ;
     sh:targetClass polis-core:WorkingGroup ;
@@ -350,7 +349,7 @@ polis-core:OrganoShape a sh:NodeShape ;
 # Commission
 #################################################################
 
-polis-core:CommissionShape a sh:NodeShape ;
+_:CommissionShape a sh:NodeShape ;
     sh:targetClass polis-core:Commission ;
 
     sh:property [
@@ -382,7 +381,7 @@ polis-core:CommissionShape a sh:NodeShape ;
 # Situation
 #################################################################
 
-polis-core:SituationShape a sh:NodeShape ;
+_:SituationShape a sh:NodeShape ;
     sh:targetClass ocd:proclamazione ;
     sh:targetClass polis-core:Withdrawal ;
     sh:targetClass polis-core:Incumbent ;
@@ -405,7 +404,7 @@ polis-core:SituationShape a sh:NodeShape ;
 # Duty / Post
 #################################################################~
 
-polis-core:DutyShape a sh:NodeShape ;
+_:DutyShape a sh:NodeShape ;
     sh:targetClass org:Post ;
     sh:targetClass polis-core:PAR ;
     sh:targetClass polis-core:VicePAR ;
@@ -422,7 +421,7 @@ polis-core:DutyShape a sh:NodeShape ;
 # Membership
 #################################################################
 
-polis-core:MembershipShape a sh:NodeShape ;
+_:MembershipShape a sh:NodeShape ;
     sh:targetClass polis-core:Membership ;
 
     sh:property [
@@ -450,7 +449,7 @@ polis-core:MembershipShape a sh:NodeShape ;
 # Legislature
 #################################################################
 
-polis-core:LegislatureShape a sh:NodeShape ;
+_:LegislatureShape a sh:NodeShape ;
     sh:targetClass ocd:legislatura ;
 
     sh:property [
@@ -480,7 +479,7 @@ polis-core:LegislatureShape a sh:NodeShape ;
 # Legislative Session
 #################################################################
 
-polis-core:LegislativeSessionShape a sh:NodeShape ;
+_:LegislativeSessionShape a sh:NodeShape ;
     sh:targetClass ocd:sessioneLegislatura ;
 
     sh:property [
@@ -509,7 +508,7 @@ polis-core:LegislativeSessionShape a sh:NodeShape ;
 # Party
 #################################################################
 
-polis-core:PartyShape a sh:NodeShape ;
+_:PartyShape a sh:NodeShape ;
     sh:targetClass polis-core:Party ;
 
     sh:property [
@@ -532,7 +531,7 @@ polis-core:PartyShape a sh:NodeShape ;
 # Parliamentary Group
 #################################################################
 
-polis-core:ParliamentaryGroupShape a sh:NodeShape ;
+_:ParliamentaryGroupShape a sh:NodeShape ;
     sh:targetClass polis-core:ParliamentaryGroup ;
 
     sh:property [
@@ -561,7 +560,7 @@ polis-core:ParliamentaryGroupShape a sh:NodeShape ;
 # Government
 #################################################################
 
-polis-core:GovernmentShape a sh:NodeShape ;
+_:GovernmentShape a sh:NodeShape ;
     sh:targetClass ocd:governo ;
 
     sh:property [
@@ -575,7 +574,7 @@ polis-core:GovernmentShape a sh:NodeShape ;
 # Constituency
 #################################################################
 
-polis-core:ConstituencyShape a sh:NodeShape ;
+_:ConstituencyShape a sh:NodeShape ;
     sh:targetClass pe:ConstituencyArea ;
 
     sh:property [
@@ -600,7 +599,7 @@ polis-core:ConstituencyShape a sh:NodeShape ;
 # Initiative
 #################################################################
 
-polis-ini:InitiativeShape a sh:NodeShape ;
+_:InitiativeShape a sh:NodeShape ;
     sh:targetClass polis-ini:Initiative ;
     sh:targetClass polis-ini:ConstitutionalRevisionProject ;
     sh:targetClass polis-ini:DeliberationProject ;
@@ -754,7 +753,7 @@ polis-ini:InitiativeShape a sh:NodeShape ;
 # European Initiative
 #################################################################
 
-polis-ini:EuropeanInitiativeShape a sh:NodeShape ;
+_:EuropeanInitiativeShape a sh:NodeShape ;
     sh:targetClass polis-ini:EuropeanInitiative ;
 
     sh:property [
@@ -769,7 +768,7 @@ polis-ini:EuropeanInitiativeShape a sh:NodeShape ;
 # Regional Legislative Assembly
 #################################################################
 
-polis-ini:RegionalLegislativeAssemblyShape a sh:NodeShape ;
+_:RegionalLegislativeAssemblyShape a sh:NodeShape ;
     sh:targetClass polis-ini:RegionalLegislativeAssembly ;
 
     sh:property [
@@ -783,7 +782,7 @@ polis-ini:RegionalLegislativeAssemblyShape a sh:NodeShape ;
 # Change Proposal
 #################################################################
 
-polis-ini:ChangeProposalShape a sh:NodeShape ;
+_:ChangeProposalShape a sh:NodeShape ;
     sh:targetClass polis-ini:ChangeProposal ;
 
     sh:property [
@@ -826,7 +825,7 @@ polis-ini:ChangeProposalShape a sh:NodeShape ;
 # DAR Publication
 #################################################################
 
-polis-ini:DARPublicationShape a sh:NodeShape ;
+_:DARPublicationShape a sh:NodeShape ;
     sh:targetClass polis-ini:DARPublication ;
     sh:targetClass polis-ini:DARSeries1 ;
     sh:targetClass polis-ini:DARSeries2 ;
@@ -932,7 +931,7 @@ polis-ini:DARPublicationShape a sh:NodeShape ;
 # Document
 #################################################################
 
-polis-ini:DocumentShape a sh:NodeShape ;
+_:DocumentShape a sh:NodeShape ;
     sh:targetClass bibo:Document ;
 
     sh:property [
@@ -981,7 +980,7 @@ polis-ini:DocumentShape a sh:NodeShape ;
 # Legislation
 #################################################################
 
-polis-ini:LegislationShape a sh:NodeShape ;
+_:LegislationShape a sh:NodeShape ;
     sh:targetClass bibo:Legislation ;
 
     sh:property [
@@ -995,7 +994,7 @@ polis-ini:LegislationShape a sh:NodeShape ;
 # Petition
 #################################################################
 
-polis-ini:PetitionShape a sh:NodeShape ;
+_:PetitionShape a sh:NodeShape ;
     sh:targetClass polis-ini:Petition ;
 
     sh:property [
@@ -1037,7 +1036,7 @@ polis-ini:PetitionShape a sh:NodeShape ;
 # Event
 #################################################################
 
-polis-ini:EventShape a sh:NodeShape ;
+_:EventShape a sh:NodeShape ;
     sh:targetClass polis-ini:Event ;
 
     sh:property [
@@ -1149,7 +1148,7 @@ polis-ini:EventShape a sh:NodeShape ;
 # Vote
 #################################################################
 
-polis-ini:VoteShape a sh:NodeShape ;
+_:VoteShape a sh:NodeShape ;
     sh:targetClass ocd:votazione ;
 
     sh:property [
@@ -1239,7 +1238,7 @@ polis-ini:VoteShape a sh:NodeShape ;
 # Activity
 #################################################################
 
-polis-ini:ActivityShape a sh:NodeShape ;
+_:ActivityShape a sh:NodeShape ;
     sh:targetClass prov:Activity ;
 
     sh:property [
@@ -1254,7 +1253,7 @@ polis-ini:ActivityShape a sh:NodeShape ;
 # Discussion
 #################################################################
 
-polis-ini:DiscussionShape a sh:NodeShape ;
+_:DiscussionShape a sh:NodeShape ;
     sh:targetClass ocd:discussione ;
 
     sh:property [
@@ -1282,7 +1281,7 @@ polis-ini:DiscussionShape a sh:NodeShape ;
 # Intervention
 #################################################################
 
-polis-ini:InterventionShape a sh:NodeShape ;
+_:InterventionShape a sh:NodeShape ;
     sh:targetClass ocd:intervento ;
 
     sh:property [
@@ -1319,7 +1318,7 @@ polis-ini:InterventionShape a sh:NodeShape ;
 # Commission Event
 #################################################################
 
-polis-ini:CommissionEventShape a sh:NodeShape ;
+_:CommissionEventShape a sh:NodeShape ;
     sh:targetClass polis-ini:CommissionEvent ;
 
     sh:property [
@@ -1487,7 +1486,7 @@ polis-ini:CommissionEventShape a sh:NodeShape ;
 # Transmission
 #################################################################
 
-polis-ini:TransmissionShape a sh:NodeShape ;
+_:TransmissionShape a sh:NodeShape ;
     sh:targetClass polis-ini:Transmission ;
 
     sh:property [
@@ -1518,7 +1517,7 @@ polis-ini:TransmissionShape a sh:NodeShape ;
 # Award
 #################################################################
 
-polis-bio:AwardShape a sh:NodeShape ;
+_:AwardShape a sh:NodeShape ;
     sh:targetClass dbo:Award ;
 
     sh:property [
@@ -1549,7 +1548,7 @@ polis-bio:AwardShape a sh:NodeShape ;
 # Published Work
 #################################################################
 
-polis-bio:PublishedWorkShape a sh:NodeShape ;
+_:PublishedWorkShape a sh:NodeShape ;
     sh:targetClass polis-bio:PublishedWork ;
 
     sh:property [
@@ -1580,7 +1579,7 @@ polis-bio:PublishedWorkShape a sh:NodeShape ;
 # Habilitation
 #################################################################
 
-polis-bio:HabilitationShape a sh:NodeShape ;
+_:HabilitationShape a sh:NodeShape ;
     sh:targetClass polis-bio:Habilitation ;
 
     sh:property [
@@ -1627,7 +1626,7 @@ polis-bio:HabilitationShape a sh:NodeShape ;
         sh:message "A Habilitation must have exactly one status and the status must be a polis-bio:HabilitationStatus"@en
     ] .
 
-polis-bio:HabilitationLevelShape a sh:NodeShape ;
+_:HabilitationLevelShape a sh:NodeShape ;
     sh:targetClass polis-bio:HabilitationLevel ;
 
     sh:property [
@@ -1642,7 +1641,7 @@ polis-bio:HabilitationLevelShape a sh:NodeShape ;
 # Role
 #################################################################
 
-polis-bio:RoleShape a sh:NodeShape ;
+_:RoleShape a sh:NodeShape ;
     sh:targetClass polis-bio:Role ;
 
     sh:property [
@@ -1681,7 +1680,7 @@ polis-bio:RoleShape a sh:NodeShape ;
 # Title
 #################################################################
 
-polis-bio:TitleShape a sh:NodeShape ;
+_:TitleShape a sh:NodeShape ;
     sh:targetClass polis-bio:Title ;
 
     sh:property [
@@ -1714,7 +1713,7 @@ polis-bio:TitleShape a sh:NodeShape ;
 # Requisition
 #################################################################
 
-polis-mpact:RequisitionShape a sh:NodeShape ;
+_:RequisitionShape a sh:NodeShape ;
     sh:targetClass ocd:richiestaParere ;
     sh:targetClass polis-mpact:Request ;
     sh:targetClass polis-mpact:Inquiry ;
@@ -1785,7 +1784,7 @@ polis-mpact:RequisitionShape a sh:NodeShape ;
 # Parliamentary Activity
 #################################################################
 
-polis-mpact:ParliamentaryActivityShape a sh:NodeShape ;
+_:ParliamentaryActivityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:ParliamentaryActivity ;
     sh:targetClass polis-mpact:AGP ;
     sh:targetClass polis-mpact:CER ;
@@ -1874,7 +1873,7 @@ polis-mpact:ParliamentaryActivityShape a sh:NodeShape ;
 # Friendship Parliamentary Group
 #################################################################
 
-polis-mpact:FriendshipParliamentaryGroupShape a sh:NodeShape ;
+_:FriendshipParliamentaryGroupShape a sh:NodeShape ;
     sh:targetClass polis-mpact:FriendshipParliamentaryGroup ;
 
     sh:property [
@@ -1905,7 +1904,7 @@ polis-mpact:FriendshipParliamentaryGroupShape a sh:NodeShape ;
 # Public Accounts
 #################################################################
 
-polis-mpact:PublicAccountsShape a sh:NodeShape ;
+_:PublicAccountsShape a sh:NodeShape ;
     sh:targetClass polis-mpact:PublicAccounts ;
 
     sh:property [
@@ -1952,7 +1951,7 @@ polis-mpact:PublicAccountsShape a sh:NodeShape ;
 # Delegation
 #################################################################
 
-polis-mpact:Delegation a sh:NodeShape ;
+_:DelegationShape a sh:NodeShape ;
     sh:targetClass polis-mpact:Delegation ;
     sh:targetClass polis-mpact:PermanentDelegation ;
     sh:targetClass polis-mpact:TemporaryDelegation ;
@@ -1989,7 +1988,7 @@ polis-mpact:Delegation a sh:NodeShape ;
         sh:message "A Delegation must have exactly one belongsToLegislativeSession and the legislative session must be a ocd:sessioneLegislatura"@en
     ] .
 
-polis-mpact:PermanentDelegationShape a sh:NodeShape ;
+_:PermanentDelegationShape a sh:NodeShape ;
     sh:targetClass polis-mpact:PermanentDelegation ;
 
     sh:property [
@@ -2000,7 +1999,7 @@ polis-mpact:PermanentDelegationShape a sh:NodeShape ;
         sh:message "A Permanent Delegation must have exactly one permanent delegation meeting and the meeting must be a polis-mpact:PermanentDelegationMeeting"@en
     ] .
 
-polis-mpact:TemporaryDelegationShape a sh:NodeShape ;
+_:TemporaryDelegationShape a sh:NodeShape ;
     sh:targetClass polis-mpact:TemporaryDelegation ;
 
     sh:property [
@@ -2030,7 +2029,7 @@ polis-mpact:TemporaryDelegationShape a sh:NodeShape ;
         sh:message "A Temporary Delegation must have exactly one delegation scope and the delegation scope must be a polis-mpact:DelegationScope"@en
     ] .
 
-polis-mpact:PermanentDelegationMeetingShape a sh:NodeShape ;
+_:PermanentDelegationMeetingShape a sh:NodeShape ;
     sh:targetClass polis-mpact:PermanentDelegationMeeting ;
 
     sh:property [
@@ -2061,7 +2060,7 @@ polis-mpact:PermanentDelegationMeetingShape a sh:NodeShape ;
 # Youth Parliament Activity
 #################################################################
 
-polis-mpact:YouthParliamentActivityShape a sh:NodeShape ;
+_:YouthParliamentActivityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:YouthParliamentActivity ;
 
     sh:property [
@@ -2104,7 +2103,7 @@ polis-mpact:YouthParliamentActivityShape a sh:NodeShape ;
         sh:message "A Youth Parliament Activity must have exactly one legislature and the legislature must be a ocd:legislatura"@en
     ] .
 
-polis-mpact:SchoolShape a sh:NodeShape ;
+_:SchoolShape a sh:NodeShape ;
     sh:targetClass dbo:School ;
 
     sh:property [
@@ -2122,7 +2121,7 @@ polis-mpact:SchoolShape a sh:NodeShape ;
 # Commission Activity
 #################################################################
 
-polis-mpact:CommissionActivityShape a sh:NodeShape ;
+_:CommissionActivityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:CommissionActivity ;
     sh:targetClass polis-mpact:Audition ;
     sh:targetClass polis-mpact:Event ;
@@ -2181,7 +2180,7 @@ polis-mpact:CommissionActivityShape a sh:NodeShape ;
         sh:message "A Commission Activity must have exactly one related commission and the related commission must be a polis-core:Commission"@en
     ] .
 
-polis-mpact:AuditionHearingShape a sh:NodeShape ;
+_:AuditionHearingShape a sh:NodeShape ;
     sh:targetClass polis-mpact:Audition ;
     sh:targetClass polis-mpact:Hearing ;
 
@@ -2201,7 +2200,7 @@ polis-mpact:AuditionHearingShape a sh:NodeShape ;
         sh:message "A Commission must have exactly one belongsToLegislature and the legislature must be a ocd:legislatura"@en
     ] .
 
-polis-mpact:ThirdPartyEntityShape a sh:NodeShape ;
+_:ThirdPartyEntityShape a sh:NodeShape ;
     sh:targetClass polis-mpact:ThirdPartyEntity ;
 
     sh:property [
