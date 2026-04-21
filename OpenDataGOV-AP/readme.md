@@ -286,10 +286,11 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain**     | **ini:DARSeries2SOE**    | **rdfs:subClassOf ini:DARSeries2**         |
 
 #### Regional Legislative Assembly
-| Domain | ini:RegionalLegislativeAssembly | A regional assembly, like the regionl assembly of Catalunya |           |             |                                                                                        |          |
-|--------|---------------------------------|-------------------------------------------------------------|-----------|-------------|----------------------------------------------------------------------------------------|----------|
-|        | label                           | Term                                                        | Range     | Cardinality | Description                                                                            | Comments |
-| OP     | location                        | sem:hasPlace                                                | sem:Place | 0-1         | The location of the Regional Assembly. This term should be linked to a Wikidata entry. |          |
+**Domain**: ini:RegionalLegislativeAssembly  (A regional assembly, like the regional assembly of Catalunya.) 
+
+|        | label                           | Term                                                        | Range     | Cardinality | Description     | Comments |
+|--------|---------------------------------|-------------------------------------------------------------|-----------|-------------|-----------------|----------|
+| OP     | location     | sem:hasPlace     | sem:Place | 0-1 | The location of the Regional Assembly. This term should be linked to a Wikidata entry. |         |
 
 #### Document
 | Domain | bibo:Document       |                  |            |             |                                          |          |
