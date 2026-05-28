@@ -293,7 +293,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | location     | sem:hasPlace     | sem:Place | 0-1 | The location of the Regional Assembly. This term should be linked to a Wikidata entry. |         |
 
 #### Document
-| Domain | bibo:Document       |                  |            |             |                                          |          |
+| **Domain** | **bibo:Document**       |                  |            |             |                                          |          |
 |--------|---------------------|------------------|------------|-------------|------------------------------------------|----------|
 |        | label               | Term             | Range      | Cardinality | Description                              | Comments |
 | DP     | type                | ini:documentType | xsd:string | 0-1         | The type of document.                    |          |
@@ -303,15 +303,15 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | Text                | bibo:content     | xsd:string | 0-1         | The text content of the document         |          |
 | DP     | identifier          | core:identifier  | xsd:string | 0-1         | The identifier of the document           |          |
 
-| Domain | bibo:Legislation |                 |            |             |                                   |          |
+| **Domain** | **bibo:Legislation** |         |      |      |         |          |
 |--------|------------------|-----------------|------------|-------------|-----------------------------------|----------|
 |        | label            | Term            | Range      | Cardinality | Description                       | Comments |
 | DP     | identifier       | core:identifier | xsd:string | 0-1         | The identifier of the legislation |          |
 
 #### Event
-**Domain**: ini:Event                                                                                         |
-
-|        | label            | Term                             | Range                                        | Cardinality | Description                                        |--------|------------------|----------------------------------|----------------------------------------------|-------------|--------------------------------------------------------------------------------------------|                                        |
+| **Domain** | **ini:Event**       |         |         |         |        |  
+|--------|-------|--------|---------------------|------------------|------------|
+|        | label            | Term                             | Range                                        | Cardinality | Description |
 | DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | The code that uniquely identifies the Event.                                               |
 | DP     | type id          | ini:typeId                       | xsd:string                                   | 1           | The identifier of the type of event.                                                       |
 | DP     | type             | ini:eventType                    | xml:string                                   | 1           | The type of event.                                                                         |
@@ -329,8 +329,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | has activity     | ini:hasActivity                  | prov:Activity                                | 0-*         | The activities that happened during the event.       |
 
 #### Discussion
-
-| Domain | ocd:discussione  |                    |                |             |                                                                                |                                                      |
+| **Domain** | **ocd:discussione**  |                    |                |             |                                                                                |   |
 |--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
 |        |                  | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
 | DP     | date-range       | dct:date           | xsd:date       | 1           | The date in which the plenary reunion occurred, where the discussion happened  | This date range should also encompass the hour range |
@@ -338,8 +337,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
 
 #### Intervention
-
-| **Domain** | **ocd:intervento**  | ****                 | ****               | ****        | ****                                                      | ****                                                                                                                                                                                   |
+| **Domain** | **ocd:intervento**  |                  |                |         |                                                       |   |
 |------------|---------------------|----------------------|--------------------|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |            | label               | Term                 | Range              | Cardinality | Description                                               | Comments                                                                                                                                                                               |
 | DP         | identifier          | core:identifier      | xsd:string         | 1           |                                                           |                                                                                                                                                                                        |
@@ -386,7 +384,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 ### Biographic Profile
 #### Award
-| **Domain** | **dbo:award** | ****            | ****       | ****        | ****                                                              | ****     |
+| **Domain** | **dbo:award** |             |        |         |                                                               |      |
 |------------|---------------|-----------------|------------|-------------|-------------------------------------------------------------------|----------|
 |            | label         | Term            | Range      | Cardinality | Description                                                       | Comments |
 | DP         | Identifier    | core:identifier | xsd:string | 1           | The code that uniquely identifies the award.                      |          |
