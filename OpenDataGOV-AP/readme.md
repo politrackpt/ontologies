@@ -82,14 +82,15 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Mandate
 
 **Domain**: ocd:mandatoCamera (A mandate of a member of the parliament.)
-|            | label                  | Term                                        | Range             | Cardinality | Description    | Comments |
-|------------|------------------------|---------------------------------------------|-------------------|-------------|---------------------------|--------|
-| DP         | Identifier             | core:identifier                             | xsd:string        | 0-1         | The code that uniquely identifies the Mandate. |    |
-| DP         | Parliamentary name     | core:parliamentaryName                      | xsd:string        | 1-*         |                                                |    |
-| OP         | Holds a duty           | core:holdsDuty                              | org:Post          | 0-*         |                                                |    |
-| OP         | Belongs to legislature | core:belongsToLegislature                   | ocd:legislatura   | 1           |                                                |    |
-| OP         | Has membership         | core:hasMembership                          | core:Membership   | 1-*         |                                                |    |
-| OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione | 1-*         |                                                |    |
+|            | label                  | Term                                        | Range               | Cardinality | Description    | Comments |
+|------------|------------------------|---------------------------------------------|---------------------|-------------|---------------------------|--------|
+| DP         | Identifier             | core:identifier                             | xsd:string          | 0-1         | The code that uniquely identifies the Mandate. |    |
+| DP         | Parliamentary name     | core:parliamentaryName                      | xsd:string          | 1-*         |                                                |    |
+| OP         | Holds a duty           | core:holdsDuty                              | org:Post            | 0-*         |                                                |    |
+| OP         | Belongs to legislature | core:belongsToLegislature                   | ocd:legislatura     | 1           |                                                |    |
+| OP         | Has membership         | core:hasMembership                          | core:Membership     | 1-*         |                                                |    |
+| OP         | is in situation        | ocd:tipoProclamazione                       | ocd:proclamazione   | 1-*         |                                                |    |
+| OP         | is in constituency     | core:inConstituency                         | pe:ConstituencyArea | 0-1         |                                                |    |
 
 #### Organisational Body
 **Domain**: ocd:organo (An Organisational Body at the Parliament.)
