@@ -606,6 +606,21 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Youth Parliament Activity
 **Domain**:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
+|        | label          | Term                       | Range               | Cardinality | VES                                                 | Description | Comments |
+|--------|----------------|----------------------------|---------------------|-------------|-----------------------------------------------------|-------------|----------|
+| DP     | date           | dct:date                   | xsd:date            | 1           |                                                     |             |          |
+| DP     | meeting type   | mpact:meetingType          | xsd:string          | 1           | "Debate na Escola", "Sessão Distrital Regional"     |             |          |
+| OP     | establishment  | mpact:heldAt               | dbo:School          | 1           |                                                     |             |          |
+| OP     | constituency   | core:inConstituency        | pe:ConstituencyArea | 1           |                                                     |             |          |
+| OP     | legislature    | core:belongsToLegislature  | ocd:legislatura     | 1           |                                                     |             |          |   
+
+#### School
+
+**Domain**: dbo:School
+
+|        | label                            | Term                          | Range            | Cardinality | VES | Description | Comments |
+|--------|----------------------------------|-------------------------------|------------------|-------------|-----|-------------|----------|
+| OP     | school type                      | mpact:isSchoolType            | mpact:SchoolType | 1           |     |             |          |
 
 #### School Type
 
