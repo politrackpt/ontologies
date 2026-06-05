@@ -81,7 +81,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Mandate
 
-**Domain**: ocd:mandatoCameran (A mandate of a member of the parliament.)
+**Domain**: ocd:mandatoCamera (A mandate of a member of the parliament.)
 |            | label                  | Term                                        | Range             | Cardinality | Description    | Comments |
 |------------|------------------------|---------------------------------------------|-------------------|-------------|---------------------------|--------|
 | DP         | Identifier             | core:identifier                             | xsd:string        | 0-1         | The code that uniquely identifies the Mandate. |    |
