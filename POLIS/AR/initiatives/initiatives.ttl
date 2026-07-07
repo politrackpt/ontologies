@@ -620,8 +620,8 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
 	dct:description ""@pt , 
 		""@en ;
-    rdfs:label "received appeal"@en ,
-               ""@pt ;
+    rdfs:label "received appeal by"@en ,
+               "recebeu o recurso de"@pt ;
     rdfs:domain :Event ;
     rdfs:range [ rdf:type owl:Class ;
                   owl:unionOf ( polis-core:ParliamentaryGroup
