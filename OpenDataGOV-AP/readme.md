@@ -19,7 +19,6 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | Bibliographic Ontology                         | bibo   | http://purl.org/ontology/bibo/                 |
 | Simple Event Model Ontology                    | sem    | http://semanticweb.cs.vu.nl/2009/11/sem/       |
 | PROV Ontology                                  | prov   | https://www.w3.org/ns/prov-o                   |
-| Time Ontology                                  | time   | https://www.w3.org/2006/time                   |
 | Simple Knowledge Organization System           | skos   | http://www.w3.org/2004/02/skos/core#           |
 | Organization Ontology                          | org    | http://www.w3.org/ns/org#                      |
 | Parliamentary Core                             | core   | http://purl.org/polis/ar/core#                 |
