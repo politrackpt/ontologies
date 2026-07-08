@@ -39,8 +39,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |----|-----------|----------|-----------|-----------------|-----------------|--------------|
 | DP     | Name      | foaf:name | xsd:string | 0-1 |   | |
 | DP     | Birthday   | foaf:birthday  | xsd:date     | 0-1         |             |   |
-| DP     | Gender   | schema:gender                             | xsd:string   | 0-1         |             |   |
-| DP     | Profession                    | schema:jobTitle                           | xsd:string   | 0-1         |             |   |
+| AP     | Gender   | schema:gender                             | xsd:string   | 0-1         |             |   |
+| AP     | Profession                    | schema:jobTitle                           | xsd:string   | 0-1         |             |   |
 
 **Domain**:m4s:Parliamentarian           (A member of the Parliament.) 
 
@@ -227,7 +227,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain** | **ini:EuropeanInitiative** | **subclassOf: ocd:Atto** | ****       | **An European Initiative** | ****        | ****     |
 |------------|----------------------------|--------------------------|------------|----------------------------|-------------|----------|
 |            | label                      | Term                     | Range      | Cardinality                | Description | Comments |
-| DP         | url                        | schema:url               | xsd:string | 1                          |             |          |
+| AP         | url                        | schema:url               | xsd:string | 1                          |             |          |
 
 #### Change Proposal
 
@@ -247,9 +247,9 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | number                                             | dbo:number                              | xsd:nonNegativeInteger                                            | 1           |                               | The number of the publication.                                                       |              |
 | DP         | code                                               | dbo:code                                | xsd:string                                                        | 1           | A,B,C,D,H,I,K,L,M,O,Q,R,S,T,V | The code of the type of publication.                                                 |              |
 | AP         | publish date                                       | dct:date                                | xsd:date                                                          | 1           |                               | The date of the publication.                                                         |              |
-| DP         | pages in the DAR corresponding to this publication | schema:pagination                       | xsd:string                                                        | 1           |                               | The range of the pages where the publication is.                                     | number range |
+| AP         | pages in the DAR corresponding to this publication | schema:pagination                       | xsd:string                                                        | 1           |                               | The range of the pages where the publication is.                                     | number range |
 | DP         | pages' identifier                                  | ini:pagesIdentifier                     | xsd:string                                                        | 1           |                               | The code that uniquely identifies the pages for a particular publication in the DAR. |              |
-| DP         | url to the DAR publication                         | schema:url                              | xsd:string                                                        | 1           |                               | The link to the web resource containing the publication.                             |              |
+| AP         | url to the DAR publication                         | schema:url                              | xsd:string                                                        | 1           |                               | The link to the web resource containing the publication.                             |              |
 | DP         | supplement to the publication                      | ini:publicationSupplement               | xsd:string                                                        | 0-1         |                               | Supplement to the publication.                                                       |              |
 | DP         | final page of the supplement                       | ini:publicationSupplementFinalPage      | xsd:string                                                        | 0-1         |                               | Indicates the final page of the supplement                                           |              |
 | DP         | observation                                        | ini:observation                         | xsd:string                                                        | 0-1         |                               | An observation regarding the publication.                                            |              |
@@ -299,7 +299,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | type                | ini:documentType | xsd:string | 0-1         | The type of document.                    |          |
 | AP     | title               | dct:title        | xsd:string | 0-1         | The title of the document                |          |
 | AP     | date                | dct:date         | xsd:date   | 0-1         | The date of the document                 |          |
-| DP     | url to the resource | schema:url       | xsd:string | 0-1         | The URL link to the file of the document |          |
+| AP     | url to the resource | schema:url       | xsd:string | 0-1         | The URL link to the file of the document |          |
 | DP     | Text                | bibo:content     | xsd:string | 0-1         | The text content of the document         |          |
 | DP     | identifier          | core:identifier  | xsd:string | 0-1         | The identifier of the document           |          |
 
@@ -365,7 +365,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|---------------------|----------------------|--------------------|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |            | label               | Term                 | Range              | Cardinality | Description                                               | Comments                                                                                                                                                                               |
 | DP         | identifier          | core:identifier      | xsd:string         | 1           |                                                           |                                                                                                                                                                                        |
-| DP         | video               | schema:url           | xsd:string         | 0-1         | The video containing the intervention                     |                                                                                                                                                                                        |
+| AP         | video               | schema:url           | xsd:string         | 0-1         | The video containing the intervention                     |                                                                                                                                                                                        |
 | OP         | is published in DAR | ini:isPublishedInDAR | ini:DARPublication | 0-1         | The publication of the intervention transcript in the DAR |                                                                                                                                                                                        |
 | OP         | hasSpeaker          | ini:hasSpeaker       | foaf:Person        | 0-1         | The MP, MG or Guest who made the intervention             | To increase reusability without being overly restrictive, the range is defined as foaf:Person, allowing different parliaments to reuse this and accommodate a wider range of speakers. |
 
@@ -661,7 +661,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | identifier               | core:identifier                               | xsd:string      | 1           |     |             |          |
 | AP     | subject                  | dct:subject                                   | xsd:string      | 1           |     |             |          |
 | AP     | date                     | dct:date                                      | xsd:date        | 1           |     |             |          |
-| DP     | location                 | schema:location                               | xsd:string      | 1           |     |             |          |
+| AP     | location                 | schema:location                               | xsd:string      | 1           |     |             |          |
 | OP     | legislature              | core:belongsToLegislature                     | ocd:legislatura | 1           |     |             |          |
 | OP     | comission                | mpact:relatedCommission                       | core:Commission | 1           |     |             |          |
 
