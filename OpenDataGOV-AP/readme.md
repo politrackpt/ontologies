@@ -413,7 +413,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            | label         | Term            | Range      | Cardinality | Description                                                       | Comments |
 | DP         | Identifier    | core:identifier | xsd:string | 1           | The code that uniquely identifies the award.                      |          |
 | DP         | name          | foaf:name       | xsd:string | 1           | The name of the award.                                            |          |
-| DP         | Position      | dbo:number      | xsd:int    | 1           | the position of the award in the list of awards during the years. |          |
+| DP         | Position      | dbo:number      | xsd:nonNegativeInteger    | 1           | the position of the award in the list of awards during the years. |          |
 
 #### Published Work
 | **Domain** | **bio:PublishedWork** | **a rdfs:subClassOf bibo:Document** |                    |         |                                             |      |
@@ -440,31 +440,31 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:PrimarySchool**         | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 9    |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:MiddleSchool**          | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP        | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
+| DP        | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 10   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:EarlyHighSchoo**l       | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 11   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HighSchool**            |**a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 12   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HigherEducation**       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 13   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Bachelor**              |** a rdfs:subClassOf bio:HabilitationLevel **|             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 14   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Master**                | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
-| DP         | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
+| DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 15   |             |          |
 
 #### Habilitation Status
 | **Domain** | **bio:HabilitationStatus** |                                           |
