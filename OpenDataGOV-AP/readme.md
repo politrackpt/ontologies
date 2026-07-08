@@ -329,6 +329,25 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | is published in  | ini:isPublishedInDAR             | ini:DARPublication                           | 0-*         | Publications in the DAR related to this event.                                             |
 | OP     | has activity     | ini:hasActivity                  | prov:Activity                                | 0-*         | The activities that happened during the event.       |
 
+#### Vote
+
+| **Domain** | **ocd:votazione** |    |    |   |   |  | |
+|--------|-------|--------|---------------------|------------------|------------|-|-|
+|        | label            | Term                             | Range                                        | Cardinality | VES | SES | Description |
+| DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | | | The code that uniquely identifies the Vote.  |
+| DP | result | ini:result | xsd:string | 0-1 | Aproved, Rejected | | The result of the vote. |
+| DP | is unanimous | ini:unanimous | xsd:boolean | 0-1 | | | If the vote had an unanimous result or not. |
+| AP | description | dcterms:description | xsd:string | 0-1 | | | Extra details about the vote, such as if it was voted point by point. |
+| DP | reunion number | ini:reunionNumber | xsd:int | 0-1 | | | The number of the reunion where the vote occurred. |
+| DP | reunion type | ini:reunionType | xsd:string | 0-1 | | | The type of reunion the vote occurred in. | 
+| OP | has vote against from | ini:hasVoteAgainstFrom | m4s:Parliamentarian, ini:ParliamentaryGroup | 0-* | | | The MPs and Parliamentary Groups who voted against.|
+| OP | has vote in favour from | ini:hasVoteInFavourFrom | m4s:Parliamentarian, ini:ParliamentaryGroup | 0-* | | | The MPs and Parliamentary Groups who voted in favour.|
+| OP | has abstention from | ini:hasAbstentionFrom | m4s:Parliamentarian, ini:ParliamentaryGroup | 0-* | | | The MPs and Parliamentary Groups who abstained from voting.|
+| OP | has absentee | ini:hasAbsentee | m4s:Parliamentarian | 0-* | | | The MPs who were absent during the vote. |
+| OP | is published in DAR | ini:isPublishedInDAR | ini:DARPublication | 0-1 | | | Publication in the DAR related to this vote. |
+
+
+
 #### Discussion
 | **Domain** | **ocd:discussione**  |                    |                |             |                                                                                |   |
 |--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
