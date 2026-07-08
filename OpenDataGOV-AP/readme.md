@@ -440,31 +440,31 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|---------------------------|-----------------------------------------|-------------|-------------|------|-------------|----------|
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:PrimarySchool**         | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:MiddleSchool**          | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP        | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:EarlyHighSchoo**l       | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HighSchool**            |**a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HigherEducation**       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Bachelor**              |** a rdfs:subClassOf bio:HabilitationLevel **|             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Master**                | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
-|            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
+|            | label                     | Term                                    | Range       | Cardinality | VES  | Description | Comments |
 | DP         | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
 
 #### Habilitation Status
