@@ -333,7 +333,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 | **Domain** | **ocd:votazione** |    |    |   |   |  | |
 |--------|-------|--------|---------------------|------------------|------------|-|-|
-|        | label            | Term                             | Range                                        | Cardinality | VES | SES | Description |
+|        | Label            | Term                             | Range                                        | Cardinality | VES | SES | Description |
 | DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | | | The code that uniquely identifies the Vote.  |
 | DP | result | ini:result | xsd:string | 0-1 | Aproved, Rejected | | The result of the vote. |
 | DP | is unanimous | ini:unanimous | xsd:boolean | 0-1 | | | If the vote had an unanimous result or not. |
@@ -346,12 +346,17 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP | has absentee | ini:hasAbsentee | m4s:Parliamentarian | 0-* | | | The MPs who were absent during the vote. |
 | OP | is published in DAR | ini:isPublishedInDAR | ini:DARPublication | 0-1 | | | Publication in the DAR related to this vote. |
 
+#### Activity
 
+| **Domain** | **prov:Activity** |    |    |   |   |  | |
+|--------|-------|--------|---------------------|------------------|------------|-|-|
+|        | Label            | Term                             | Range                                        | Cardinality | VES | SES | Description |
+| DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | | | |
 
 #### Discussion
 | **Domain** | **ocd:discussione**  |                    |                |             |                                                                                |   |
 |--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
-|        |                  | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
+|        | Label            | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
 | DP     | date-range       | dct:date           | xsd:date       | 1           | The date in which the plenary reunion occurred, where the discussion happened  | This date range should also encompass the hour range |
 | DP     | summary          | dct:abstract       | xsd:string     | 0-1         | The summary and overall theme of the discussion.                               | Older datasets do not have this information.         |
 | OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
@@ -436,31 +441,31 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:PrimarySchool**         | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 9    |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:MiddleSchool**          | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
+| DP        | level                     | dbo:number                              | xsd:integer | 1           | 10   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:EarlyHighSchoo**l       | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 11   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HighSchool**            |**a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 12   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:HigherEducation**       | a rdfs:subClassOf bio:HabilitationLevel |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 13   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Bachelor**              |** a rdfs:subClassOf bio:HabilitationLevel **|             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 14   |             |          |
 |            |                           |                                         |             |             |      |             |          |
 | **Domain**     | **bio:Master**                | **a rdfs:subClassOf bio:HabilitationLevel** |             |             |      |             |          |
 |            | label                     | Term                                    | Range       | Cardinanity | VES  | Description | Comments |
-|            | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
+| DP         | level                     | dbo:number                              | xsd:integer | 1           | 15   |             |          |
 
 #### Habilitation Status
 | **Domain** | **bio:HabilitationStatus** |                                           |
