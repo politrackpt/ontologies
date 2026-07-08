@@ -98,7 +98,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | identifier            | core:identifier      | xsd:string     | 1           | The code that uniquely identifies the Organisation Body. |          |
 | AP         | description           | dct:description      | xsd:string     | 0-1         |                |          |
 | DP         | has a name            | foaf:name            | xsd:string     | 0-1         |                |          |
-| DP         | has an Acronym        | qudt:acronym         | xsd:string     | 0-1         |                |          |
+| AP         | has an Acronym        | qudt:acronym         | xsd:string     | 0-1         |                |          |
 | OP         | inLegislature         | core:belongsToLegislature | ocd:Legislatura   | 1   |                |          |
 
 
@@ -153,7 +153,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|----------------|----------------------------------------|-----------------------|-------------|----------|-------------|
 |            | label          | Term                                   | Range                 | Cardinality | Comments | Description |
 | DP         | name           | foaf:name                              | xsd:string            | 1           |          |             |
-| DP         | acronym        | qudt:acronym                           | xsd:string            | 1           |          |             |
+| AP         | acronym        | qudt:acronym                           | xsd:string            | 1           |          |             |
 
 #### Parliamentary Group
 
