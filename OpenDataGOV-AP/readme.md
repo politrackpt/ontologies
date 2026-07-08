@@ -97,7 +97,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            | label                 | Term                 | Range          | Cardinality | Description    | Comments |
 |------------|-----------------------|----------------------|----------------|-------------|----------------|----------|
 | DP         | identifier            | core:identifier      | xsd:string     | 1           | The code that uniquely identifies the Organisation Body. |          |
-| DP         | description           | dct:description      | xsd:string     | 0-1         |                |          |
+| AP         | description           | dct:description      | xsd:string     | 0-1         |                |          |
 | DP         | has a name            | foaf:name            | xsd:string     | 0-1         |                |          |
 | DP         | has an Acronym        | qudt:acronym         | xsd:string     | 0-1         |                |          |
 | OP         | inLegislature         | core:belongsToLegislature | ocd:Legislatura   | 1   |                |          |
@@ -121,7 +121,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain** | **ocd:proclamazione**    | **A Situation of a document**     |         |         |                                       |      |
 |------------|--------------------------|-----------------------------------|-------------|-------------|-------------------------------------------|----------|
 |            | label                    | Term                              | Range       | Cardinality | Description                               | Comments |
-| DP         | date-range               | dct:date                          | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
+| AP         | date-range               | dct:date                          | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
 |            |                          |                                   |             |             |                                           |          |
 | **Domain**     | **core:Withdrawal**          | **rdfs:subClassOf ocd:proclamazione** |             |             |                                           |          |
 |            |                          |                                   |             |             |                                           |          |
@@ -138,7 +138,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain** | **org:Post**       |                      |         |         |                                       |      |
 |------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|
 |            | label              | Term                     | Range       | Cardinality | Description                               | Comments |
-| DP         | A date-range       | dct:date                 | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
+| AP         | A date-range       | dct:date                 | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
 |            |                    |                          |             |             |                                           |          |
 | Domain     | core:PAR           | rdfs:subClassOf org:Post |             |             |                                           |          |
 |            |                    |                          |             |             |                                           |          |
@@ -161,7 +161,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain** | **core:parliamentaryGroup** | **skos:broadMatch ocd:gruppoParlamentare**             | **A parlamentary group of a party** |  |                                   |      |
 |------------|-----------------------------|--------------------------------------------|-----------------|-------------------------------------|--------------------------------------------|----------|
 |            | label                       | Term                                       | Range           | Cardinality                         | Description                                | Comments |
-| DP         | date-range                  | dct:date                                   | xsd:literal     | 0-1                                 | A range or a single date if it is ongoing. |          |
+| AP         | date-range                  | dct:date                                   | xsd:literal     | 0-1                                 | A range or a single date if it is ongoing. |          |
 | OP         | is of party                 | core:isOfParty                             | ini:Party       | 1                                   |                                            |          |
 | OP         | belongs to legislature      | core:belongsToLegislature                  | ocd:legislatura | 1                                   |                                            |          |
 
@@ -185,7 +185,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|-----------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|------|------|------------------------------------------------------------------------------------------------|
 |            | label                             | Term                             | Range                                                                                                                       | Cardinality | VES  | SES  | Description                                                                                    |
 | DP         | identifier                        | core:identifier                  | xsd:string                                                                                                                  | 1           |      |      | The code that uniquely identifies the Initiative.                                              |
-| DP         | title                             | dct:title                        | xsd:string                                                                                                                  | 1           |      |      | The title of the initiative.                                                                   |
+| AP         | title                             | dct:title                        | xsd:string                                                                                                                  | 1           |      |      | The title of the initiative.                                                                   |
 | DP         | number                            | dbo:number                       | xsd:nonNegativeInteger                                                                                                      | 1           |      |      | The number of the initiative. Uniquely identifies the initiative according to its type.        |
 | DP         | text substitution details         | ini:textSubstitutionDetails      | xsd:string                                                                                                                  | 0-1         |      |      | Gives details regarding a substitution of the text                                             |
 | OP         | belongs to legislature            | core:belongsToLegislature        | ocd:legislatura                                                                                                             | 1           |      |      | The legislature in which the initiative was introduced.                                        |
@@ -247,7 +247,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            | label                                              | Term                                    | Range                                                             | Cardinality | VES                           | Description                                                                          | Comments     |
 | DP         | number                                             | dbo:number                              | xsd:nonNegativeInteger                                            | 1           |                               | The number of the publication.                                                       |              |
 | DP         | code                                               | dbo:code                                | xsd:string                                                        | 1           | A,B,C,D,H,I,K,L,M,O,Q,R,S,T,V | The code of the type of publication.                                                 |              |
-| DP         | publish date                                       | dct:date                                | xsd:date                                                          | 1           |                               | The date of the publication.                                                         |              |
+| AP         | publish date                                       | dct:date                                | xsd:date                                                          | 1           |                               | The date of the publication.                                                         |              |
 | DP         | pages in the DAR corresponding to this publication | schema:pagination                       | xsd:string                                                        | 1           |                               | The range of the pages where the publication is.                                     | number range |
 | DP         | pages' identifier                                  | ini:pagesIdentifier                     | xsd:string                                                        | 1           |                               | The code that uniquely identifies the pages for a particular publication in the DAR. |              |
 | DP         | url to the DAR publication                         | schema:url                              | xsd:string                                                        | 1           |                               | The link to the web resource containing the publication.                             |              |
@@ -298,8 +298,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |--------|---------------------|------------------|------------|-------------|------------------------------------------|----------|
 |        | label               | Term             | Range      | Cardinality | Description                              | Comments |
 | DP     | type                | ini:documentType | xsd:string | 0-1         | The type of document.                    |          |
-| DP     | title               | dct:title        | xsd:string | 0-1         | The title of the document                |          |
-| DP     | date                | dct:date         | xsd:date   | 0-1         | The date of the document                 |          |
+| AP     | title               | dct:title        | xsd:string | 0-1         | The title of the document                |          |
+| AP     | date                | dct:date         | xsd:date   | 0-1         | The date of the document                 |          |
 | DP     | url to the resource | schema:url       | xsd:string | 0-1         | The URL link to the file of the document |          |
 | DP     | Text                | bibo:content     | xsd:string | 0-1         | The text content of the document         |          |
 | DP     | identifier          | core:identifier  | xsd:string | 0-1         | The identifier of the document           |          |
@@ -316,7 +316,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | The code that uniquely identifies the Event.                                               |
 | DP     | type id          | ini:typeId                       | xsd:string                                   | 1           | The identifier of the type of event.                                                       |
 | DP     | type             | ini:eventType                    | xml:string                                   | 1           | The type of event.                                                                         |
-| DP     | date             | dct:date                         | xsd:date                                     | 1           | The date in which the event occurred.                                                      |
+| AP     | date             | dct:date                         | xsd:date                                     | 1           | The date in which the event occurred.                                                      |
 | DP     | code             | dbo:code                         | xsd:string                                   | 1           | The code of the event.                                                                     |
 | DP     | observation      | ini:observation                  | xsd:string                                   | 0-1         | Observation regarding the event.                                                           |
 | OP     | approves diploma | ini:approvesDiploma              | bibo:Legislation                             | 0-*         | The diplomas approved during this event                                                    |
@@ -357,8 +357,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | **Domain** | **ocd:discussione**  |                    |                |             |                                                                                |   |
 |--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
 |        | Label            | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
-| DP     | date-range       | dct:date           | xsd:date       | 1           | The date in which the plenary reunion occurred, where the discussion happened  | This date range should also encompass the hour range |
-| DP     | summary          | dct:abstract       | xsd:string     | 0-1         | The summary and overall theme of the discussion.                               | Older datasets do not have this information.         |
+| AP     | date-range       | dct:date           | xsd:date       | 1           | The date in which the plenary reunion occurred, where the discussion happened  | This date range should also encompass the hour range |
+| AP     | summary          | dct:abstract       | xsd:string     | 0-1         | The summary and overall theme of the discussion.                               | Older datasets do not have this information.         |
 | OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
 
 #### Intervention
@@ -404,8 +404,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|----------------------|----------------------|------------|-------------|-------------|----------|
 |            | label                | Term                 | Range      | Cardinality | Description | Comments |
 | DP         | type                 | ini:transmissionType | xsd:string | 1           |             |          |
-| DP         | date                 | dct:date             | xsd:date   | 0-1         |             |          |
-| DP         | document date        | dct:created          | xsd:date   | 0-1         |             |          |
+| AP         | date                 | dct:date             | xsd:date   | 0-1         |             |          |
+| AP         | document date        | dct:created          | xsd:date   | 0-1         |             |          |
 
 ### Biographic Profile
 #### Award
@@ -502,8 +502,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|-------------------------|----------------------------------|-------------------------|-------------|----------|----------|
 | DP         | identifer               | core:identifier                  | xsd:string              | 1           | The code that uniquely identifies the Requisition.                                    |          |
 | DP         | number                  | dbo:number                       | xsd:nonNegativeInteger  | 1           |                                                                                       |          |
-| DP         | subject                 | dct:subject                      | xsd:string              | 1           | The subject of the requisition                                                        |          |
-| DP         | date                    | dct:date                         | xsd:date                | 1           |                                                                                       |          |
+| AP         | subject                 | dct:subject                      | xsd:string              | 1           | The subject of the requisition                                                        |          |
+| AP         | date                    | dct:date                         | xsd:date                | 1           |                                                                                       |          |
 | OP         | legislature             | core:belongsToLegislature        | ocd:legislatura         | 1           |                                                                                       |          |
 | OP         | legislativeSession      | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1           |                                                                                       |          |
 | OP         | public entity type      | mpact:toPublicEntityType         | mpact:PublicEntityType  | 0-1         | Indicates the public entity type where an MP made a requisition (request or inquiry). |          |
@@ -541,8 +541,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |--------|-------|------|-------|-------------|-------------|----------|
 | DP | identifier | core:identifier | xsd:string | 1 | The code that uniquely identifies the Requisition. | |
 | DP | number | dbo:number | xsd:nonNegativeInteger | 1 | | |
-| DP | subject | dct:subject | xsd:string | 1 | The subject of the requisition | |
-| DP | date | dct:date | xsd:date | 1 | | |
+| AP | subject | dct:subject | xsd:string | 1 | The subject of the requisition | |
+| AP | date | dct:date | xsd:date | 1 | | |
 | OP | legislature | core:belongsToLegislature | ocd:legislatura | 1 | | |
 | OP | legislativeSession | core:belongsToLegislativeSession | ocd:sessioneLegislatura | 1 | | |
 | OP | public entity type | mpact:toPublicEntityType | mpact:PublicEntityType | 0-1 | Indicates the public entity type where an MP made a requisition. | |
@@ -581,8 +581,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |--------|-------|------|-------|-------------|-----|-------------|----------|
 | DP | id | core:identifier | xsd:string | 1 | | | |
 | DP | civil year | mpact:civilYear | xsd:gYear | 0-1 | | | |
-| DP | appointment date | dct:date | xsd:date | 0-1 | | | |
-| DP | subject matter | dct:subject | xsd:string | 1 | | | |
+| AP | appointment date | dct:date | xsd:date | 0-1 | | | |
+| AP | subject matter | dct:subject | xsd:string | 1 | | | |
 | OP | legislature | core:belongsToLegislature | ocd:legislatura | 0-1 | | | |
 
 #### Delegation
@@ -608,7 +608,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 | label | Term  | Range                    | Cardinality           | VES |  Description | Comments |
 |-------|-------|--------------------------|-----------------------|-----|--------------|----------|
-| DP    | date  | dct:date                 | xsd:date              | 0-1 |              |          |
+| AP    | date  | dct:date                 | xsd:date              | 0-1 |              |          |
 | OP    | place | sem:hasPlace             | sem:Place             | 0-1 |              |          |
 | OP    | scope | mpact:hasDelegationScope | mpact:DelegationScope | 0-1 |              |          |
 
@@ -625,14 +625,14 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |        | label                            | Term                          | Range      | Cardinality | VES | Description | Comments |
 |--------|----------------------------------|-------------------------------|------------|-------------|-----|-------------|----------|
 | DP     | title                            | foaf:name                     | xsd:string | 1           |     |             |          |
-| DP     | date                             | dct:date                      | xsd:date   | 1           |     |             |          |
+| AP     | date                             | dct:date                      | xsd:date   | 1           |     |             |          |
 | OP     | place                            | sem:hasPlace                  | sem:Place  | 1           |     |             |          |
 
 #### Youth Parliament Activity
 **Domain**:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
 |        | label          | Term                       | Range               | Cardinality | VES                                                 | Description | Comments |
 |--------|----------------|----------------------------|---------------------|-------------|-----------------------------------------------------|-------------|----------|
-| DP     | date           | dct:date                   | xsd:date            | 1           |                                                     |             |          |
+| AP     | date           | dct:date                   | xsd:date            | 1           |                                                     |             |          |
 | DP     | meeting type   | mpact:meetingType          | xsd:string          | 1           | "Debate na Escola", "Sessão Distrital Regional"     |             |          |
 | OP     | establishment  | mpact:heldAt               | dbo:School          | 1           |                                                     |             |          |
 | OP     | constituency   | core:inConstituency        | pe:ConstituencyArea | 1           |                                                     |             |          |
@@ -660,8 +660,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |        | label                    | Term                                          | Range           | Cardinality | VES | Description | Comments |
 |--------|--------------------------|-----------------------------------------------|-----------------|-------------|-----|-------------|----------|
 | DP     | identifier               | core:identifier                               | xsd:string      | 1           |     |             |          |
-| DP     | subject                  | dct:subject                                   | xsd:string      | 1           |     |             |          |
-| DP     | date                     | dct:date                                      | xsd:date        | 1           |     |             |          |
+| AP     | subject                  | dct:subject                                   | xsd:string      | 1           |     |             |          |
+| AP     | date                     | dct:date                                      | xsd:date        | 1           |     |             |          |
 | DP     | location                 | schema:location                               | xsd:string      | 1           |     |             |          |
 | OP     | legislature              | core:belongsToLegislature                     | ocd:legislatura | 1           |     |             |          |
 | OP     | comission                | mpact:relatedCommission                       | core:Commission | 1           |     |             |          |
