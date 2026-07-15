@@ -152,6 +152,37 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |            |                    |                          |             |             |                                           |          |
 | Domain     | core:ViceSecretary | rdfs:subClassOf org:Post |             |             |                                           |          |
 
+
+#### Membership
+
+| **Domain** | **core:Membership**       |                      |         |         |                                       |      |
+|------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|
+|            | label              | Term                     | Range       | Cardinality | Description                               | Comments |
+| AP         | A date-range       | dct:date                 | xsd:literal | 0-1         | A range or a single date if it is ongoing |          |
+| OP | is member of | core:isMemberOf | | 0-1 | | Range not specified for more felixibility |
+| OP | has role | core:hasRole | bio:Role | 0-1 | The role performed during the membership | |
+
+
+#### Legislature
+
+| **Domain** | **ocd:legislatura**       | A legislature                     |         |         |                                       |      |
+|------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|
+|            | label              | Term                     | Range       | Cardinality | Description                               | Comments |
+| DP | identifier | core:identifier | xsd:string | 1 | The code that uniquely identifies the legislature | |
+| AP         | A date-range       | dct:date                 | xsd:literal | 1         | A range or a single date if it is ongoing |          |
+| DP | number | dbo:number | xsd:nonNegativeInteger | 1 | | Translation from the roman numeral to arabic numeral |
+
+
+#### Legislative Session
+
+| **Domain** | **ocd:sessioneLegislatura**       | A legislative session |    |   |   |  | |
+|------------|--------------------|--------------------------|-------------|-------------|-------------------------------------------|----------|---|
+|            | label              | Term                     | Range  | Cardinality | VES |Description                               | Comments |
+| AP         | A date-range       | dct:date                 | xsd:literal | 1  | | A range or a single date if it is ongoing |          |
+| DP | number | dbo:number | xsd:nonNegativeInteger | 1 | 1,2,3,4 | |
+| OP | belongs to legislature | core:belongsToLegislature | ocd:legislatura | 1 | | |
+
+
 #### Party
 
 | **Domain** | **core:Party** | **a rdfs:subClassOf org:Organization** | **A political party** |         |      |         | 
