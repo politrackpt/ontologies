@@ -528,31 +528,23 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | public entity type      | mpact:toPublicEntityType         | mpact:PublicEntityType  | 0-1         | Indicates the public entity type where an MP made a requisition (request or inquiry). |          |
 
 
-| **Domain** | **mpact:Request** | **a rdfs:subClassOf ocd:richiestaParere** |
-|------------|-------------------|-------------------------------------------|
+**Domain**: mpact:Request a rdfs:subClassOf ocd:richiestaParere
 
-| **Domain** | **mpact:Inquiry** | **a rdfs:subClassOf ocd:richiestaParere** |
-|------------|-------------------|-------------------------------------------|
+**Domain**: mpact:Inquiry a rdfs:subClassOf ocd:richiestaParere
 
 #### Public Entity Type
 
-| **Domain** | **mpact:PublicEntityType** | **a rdfs:subClassOf prov:Agent** |
-|------------|----------------------------|----------------------------------|
+**Domain**: mpact:PublicEntityType a rdfs:subClassOf prov:Agent
 
-| **Domain** | **mpact:AC** | **a NamedIndividual, mpact:PublicEntityType** |  **Administração Central** |
-|------------|--------------|---------------------------------------------|---------------------------------|
+**Domain**: mpact:AC a NamedIndividual, mpact:PublicEntityType  -- Administração Central
 
-| **Domain**     | **mpact:AL**     | a NamedIndividual, mpact:PublicEntityType     |     Administração Local       |
-|------------|--------------|---------------------------------------------|---------------------------------|
+**Domain**: mpact:AL a NamedIndividual, mpact:PublicEntityType -- Administração Local 
 
-| **Domain**     | **mpact:AR**     | a NamedIndividual, mpact:PublicEntityType     |    Assembleia da República   |  
-|------------|--------------|---------------------------------------------|---------------------------------|
+**Domain**: mpact:AR a NamedIndividual, mpact:PublicEntityType -- Assembleia da República
 
-| **Domain**     | **mpact:EI**     | a NamedIndividual, mpact:PublicEntityType       | Entidades Independentes   |    
-|------------|--------------|---------------------------------------------|--------------------------------|
+**Domain**: mpact:EI a NamedIndividual, mpact:PublicEntityType -- Entidades Independentes    
 
-| **Domain**     | **mpact:RA**     | **a NamedIndividual, mpact:PublicEntityType**    |   **Regiões Autónomas**         |
-|------------|--------------|---------------------------------------------|---------------------------------|
+**Domain**: mpact:RA a NamedIndividual, mpact:PublicEntityType -- Regiões Autónomas
 
 #### Parliamentary Activity
 **Domain**: mpact:ParliamentaryActivity a rdfs:subClassOf prov:Activity
