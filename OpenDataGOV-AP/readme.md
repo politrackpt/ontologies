@@ -6,6 +6,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 [1] T. Cruz, J. Lourenço, M. Curado-Malta, and J. Bispo, "OpenDataGOV-AP: A Linked Data Application Profile for Parliamentary Activities," in Proc. 24th Int. Conf. on Dublin Core and Metadata Applications (DCMI 2026), Seoul, South Korea, 2026. (Accepted)
 
 ## Prefixes
+
 | Name                                           | Prefix | URI                                            |
 |------------------------------------------------|--------|------------------------------------------------|
 | Friend Of A Friend                             | foaf   | http://xmlns.com/foaf/0.1/                     |
