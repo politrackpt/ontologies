@@ -82,6 +82,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Mandate
 
 **Domain**: ocd:mandatoCamera (A mandate of a member of the parliament.)
+
 |            | label                  | Term                                        | Range               | Cardinality | Description    | Comments |
 |------------|------------------------|---------------------------------------------|---------------------|-------------|---------------------------|--------|
 | DP         | Identifier             | core:identifier                             | xsd:string          | 0-1         | The code that uniquely identifies the Mandate. |    |
@@ -93,7 +94,9 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | is in constituency     | core:inConstituency                         | pe:ConstituencyArea | 0-1         |                                                |    |
 
 #### Organisational Body
+
 **Domain**: ocd:organo (An Organisational Body at the Parliament.)
+
 |            | label                 | Term                 | Range          | Cardinality | Description    | Comments |
 |------------|-----------------------|----------------------|----------------|-------------|----------------|----------|
 | DP         | identifier            | core:identifier      | xsd:string     | 1           | The code that uniquely identifies the Organisation Body. |          |
@@ -104,6 +107,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 
 **Domain**: core:Commission rdfs:subClassOf ocd:organo (A Comission of a Legislature.)
+
 |            | label                 | Term                                         | Range    | Cardinality | Description   | Comments |
 |------------|-----------------------|----------------------|----------------|-------------|----------------|----------|
 | DP         | number                | dbo:number                                   | xsd:nonNegativeInteger               | 0-1         | The number of the commission  |          |
@@ -111,7 +115,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | is a sub-comission of | core:isSubComissionOf                        | core:Comission                       | 0-*         |         |          |
 | OP         | has sub-comission     | core:hasSubComission                         | core:Comission                       | 0-*         |          |          |
 
-**Domain**: core:WorkingGroup rdfs:subClassOf ocd:organo                   (A Working Group of a Legislature.)
+**Domain**: core:WorkingGroup rdfs:subClassOf ocd:organo      (A Working Group of a Legislature.)
 
 **Domain**: core:ARWorkingGroup rdfs:subClassOf ocd:organo    (An AR Working Group of a Legislature.)
 
@@ -166,12 +170,14 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | belongs to legislature      | core:belongsToLegislature                  | ocd:legislatura | 1                                   |                                            |          |
 
 #### Government
+
 | **Domain** | **ocd:governo** | **A Government of the Country** |                        |         |                                                  |      |
 |------------|-----------------|---------------------------------|----------------------------|-------------|------------------------------------------------------|----------|
 |            | label           | Term                            | Range                      | Cardinality | Description                                          | Comments |
 | DP         | number          | dbo:number                      | xsd:nonNegativeInteger<br> | 0-1         | translation from the roman numeral to arabic numeral |          |
 
 #### Constituency
+
 | **Domain** | **pe:ConstituencyArea** | **An electoral region** |        |         |      |         |
 |------------|-------------------------|-------------------------|------------|-------------|----------|-------------|
 |            | label                   | Term                    | Range      | Cardinality | Comments | Description |
@@ -242,6 +248,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | Proposed by parliamentary Group       | ini:isProposedBy           | core:ParliamentaryGroup | 0-*         | A field indicating which parliamentary group proposed the amendment to the proposal. |                                                                                                                                                                                                                                        |
 | OP         | Proposed by a member of the parliament | ini:isProposedBy           | m4s:Parliamentarian     | 0-*         | A field indicating which MP proposed the amendment to the proposal.                  |                                                                                                                                                                                                                                        |
 #### DAR Publication
+
 | **Domain** | **ini:DARPublication**                             | **a rdfs:subClassOf ocd:pubblicistica** | **A publication in the Oficial journal of the country for laws.** | ****        | ****                          | ****                                                                                 | ****         |
 |------------|----------------------------------------------------|-----------------------------------------|-------------------------------------------------------------------|-------------|-------------------------------|--------------------------------------------------------------------------------------|--------------|
 |            | label                                              | Term                                    | Range                                                             | Cardinality | VES                           | Description                                                                          | Comments     |
@@ -294,6 +301,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | location     | sem:hasPlace     | sem:Place | 0-1 | The location of the Regional Assembly. This term should be linked to a Wikidata entry. |         |
 
 #### Document
+
 | **Domain** | **bibo:Document**       |                  |            |             |                                          |          |
 |--------|---------------------|------------------|------------|-------------|------------------------------------------|----------|
 |        | label               | Term             | Range      | Cardinality | Description                              | Comments |
@@ -310,6 +318,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | identifier       | core:identifier | xsd:string | 0-1         | The identifier of the legislation |          |
 
 #### Event
+
 | **Domain** | **ini:Event**       |         |         |         |        |  
 |--------|-------|--------|---------------------|------------------|------------|
 |        | label            | Term                             | Range                                        | Cardinality | Description |
@@ -354,6 +363,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP     | identifier       | core:identifier                  | xsd:string                                   | 1           | | | |
 
 #### Discussion
+
 | **Domain** | **ocd:discussione**  |                    |                |             |                                                                                |   |
 |--------|------------------|--------------------|----------------|-------------|--------------------------------------------------------------------------------|------------------------------------------------------|
 |        | Label            | Term               | Range          | Cardinality | Description                                                                    | Comments                                             |
@@ -362,6 +372,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP     | has intervention | ocd:rif_intervento | ocd:intervento | 0-*         | The interventions that happened during the discussion.                         | Older datasets do not have this information.         |
 
 #### Intervention
+
 | **Domain** | **ocd:intervento**  |                  |                |         |                                                       |   |
 |------------|---------------------|----------------------|--------------------|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |            | label               | Term                 | Range              | Cardinality | Description                                               | Comments                                                                                                                                                                               |
@@ -370,7 +381,8 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | is published in DAR | ini:isPublishedInDAR | ini:DARPublication | 0-1         | The publication of the intervention transcript in the DAR |                                                                                                                                                                                        |
 | OP         | hasSpeaker          | ini:hasSpeaker       | foaf:Person        | 0-1         | The MP, MG or Guest who made the intervention             | To increase reusability without being overly restrictive, the range is defined as foaf:Person, allowing different parliaments to reuse this and accommodate a wider range of speakers. |
 
-#### Comission Event
+#### Commission Event
+
 | **Domain** | **ini:CommissionEvent**                       |                               |                 |         |                                                                         |      |
 |------------|-----------------------------------------------|-----------------------------------|---------------------|-------------|-----------------------------------------------------------------------------|----------|
 |            | label                                         | Term                              | Range               | Cardinality | Description                                                                 | Comments |
@@ -400,6 +412,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | OP         | has subCommission                             | ini:hasSubCommission              | core:Commission     | 0-*         |                                                                             |          |
 
 #### Transmission
+
 | **Domain** | **ini:Transmission** |                  |        |         |         |      |
 |------------|----------------------|----------------------|------------|-------------|-------------|----------|
 |            | label                | Term                 | Range      | Cardinality | Description | Comments |
@@ -409,6 +422,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 ### Biographic Profile
 #### Award
+
 | **Domain** | **dbo:award** |             |        |         |                                                               |      |
 |------------|---------------|-----------------|------------|-------------|-------------------------------------------------------------------|----------|
 |            | label         | Term            | Range      | Cardinality | Description                                                       | Comments |
@@ -417,6 +431,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | Position      | dbo:number      | xsd:nonNegativeInteger    | 1           | the position of the award in the list of awards during the years. |          |
 
 #### Published Work
+
 | **Domain** | **bio:PublishedWork** | **a rdfs:subClassOf bibo:Document** |                    |         |                                             |      |
 |------------|-----------------------|-------------------------------------|------------------------|-------------|-------------------------------------------------|----------|
 |            | label                 | Term                                | Range                  | Cardinality | Description                                     | Comments |
@@ -468,6 +483,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | level                     | dbo:number                              | xsd:nonNegativeInteger | 1           | 15   |             |          |
 
 #### Habilitation Status
+
 | **Domain** | **bio:HabilitationStatus** |                                           |
 |------------|----------------------------|-----------------------------------------------|
 |            |                            |                                               |
@@ -478,6 +494,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 
 #### Role
+
 | **Domain** | **bio:Role**  |               |                    |         |                                         |      |
 |------------|---------------|-------------------|------------------------|-------------|---------------------------------------------|----------|
 |            | label         | Term              | Range                  | Cardinality | Description                                 | Comments |
@@ -487,6 +504,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 | DP         | hasDoneBefore | bio:hasDoneBefore | xsd:boolean            | 0-1         |                                             |          |
 
 #### Title
+
 | **Domain**  | **bio:Title**            |                    |         |                                          |      |
 |---------------|-----------------|------------------------|-------------|----------------------------------------------|----------|
 | label         | Term            | Range                  | Cardinality | Description                                  | Comments |
@@ -496,6 +514,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 ### MP-Activity
 #### Requisition
+
 **Domain**: ocd:richiestaParere          
 
 |            | label                   | Term                             | Range                   | Cardinality | Description   | Comments |
@@ -516,6 +535,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|-------------------|-------------------------------------------|
 
 #### Public Entity Type
+
 | **Domain** | **mpact:PublicEntityType** | **a rdfs:subClassOf prov:Agent** |
 |------------|----------------------------|----------------------------------|
 
@@ -567,7 +587,9 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 |------------|--------------|---------------------------------------------|---------------------------------|
 
 #### FriendshipParliamentary Activity
+
 **Domain**:	mpact:FriendshipParliamentaryGroup	a rdfs:subClassOf foaf:Group
+
 |    | label       | Term                      | Range           | Cardinality | VES | Description | Comments |
 |----|-------------|---------------------------|-----------------|-------------|-----|-------------|----------|
 | DP | id          | core:identifier           | xsd:string      | 1           |     |             |          |
@@ -587,6 +609,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Delegation
 **Domain**: mpact:Delegation a rdfs:subClassOf foaf:Group
+
 |    | label              | Term                             | Range                   | Cardinality | VES | Description | Comments |
 |----|--------------------|----------------------------------|-------------------------|-------------|-----|-------------|----------|
 | DP | id                 | core:identifier                  | xsd:string              | 1           |     |             |          |
@@ -630,6 +653,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 #### Youth Parliament Activity
 **Domain**:	mpact:YouthParliamentActivity	a rdfs:subClassOf prov:Activity
+
 |        | label          | Term                       | Range               | Cardinality | VES                                                 | Description | Comments |
 |--------|----------------|----------------------------|---------------------|-------------|-----------------------------------------------------|-------------|----------|
 | AP     | date           | dct:date                   | xsd:date            | 1           |                                                     |             |          |
@@ -657,6 +681,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 #### Commission Activity
 
 **Domain**:	mpact:CommissionActivity	a rdfs:subClassOf mpact:ParliamentaryActivity	
+
 |        | label                    | Term                                          | Range           | Cardinality | VES | Description | Comments |
 |--------|--------------------------|-----------------------------------------------|-----------------|-------------|-----|-------------|----------|
 | DP     | identifier               | core:identifier                               | xsd:string      | 1           |     |             |          |
