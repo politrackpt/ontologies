@@ -47,7 +47,7 @@ This file presents the OpenDataGOV - AP, a Linked Data Application Profile [1] -
 
 |        | **label**                         | **Term**    | **Range**   | **Cardinality** | **Description** | **Comments**    |
 |----|-----------|----------|-----------|-----------------|-----------------|--------------|
-| DP     | Identifier                    | core:identifier                           | xsd:uri                            | 1           |             |                                                                                        |
+| DP     | Identifier                    | core:identifier                           | xsd:string     | 1           |             |                                                                                        |
 | OP     | Participated in legislature   | core:belongsToLegislature                 | ocd:legislatura                    | 1-*         |             |                                                                                        |
 | OP     | Served a mandate              | ocd:rif_mandatoCamera                     | ocd:mandatoCamera                  | 1-*         |             |                                                                                        |
 | OP     | Has an habilitation           | bio:hasHabilitation                       | bio:Habilitation                   | 0-*         |             |                                                                                        |
