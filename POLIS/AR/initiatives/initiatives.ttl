@@ -712,7 +712,7 @@
                "tem a votação"@pt ;
     rdfs:domain [ rdf:type owl:Class ;
                   owl:unionOf ( :Event
-                                :EventCommission
+                                :CommissionEvent
                               )
                 ] ;
     rdfs:range ocd:votazione .
