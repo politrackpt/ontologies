@@ -439,10 +439,10 @@ _:MembershipShape a sh:NodeShape ;
     ] ;
 
     sh:property [
-        sh:path polis-core:hasRole ;
-        sh:class polis-bio:Role ;
+        sh:path polis-core:role ;
+        sh:datatype xsd:string ;
         sh:maxCount 1 ;
-         sh:message "A Membership must have at most one Role and it must be of the type polis-bio:Role"@en
+        sh:message "A Membership must have at most one role and it must be of the type xsd:string"@en
     ] .
 
 #################################################################

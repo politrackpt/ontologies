@@ -9,7 +9,7 @@
 @prefix m4s: <http://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix prov: <http://www.w3.org/ns/prov-o> .
+@prefix prov: <http://www.w3.org/ns/prov-o#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix polis-mpact: <http://purl.org/polis/ar/mp-activity#> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
@@ -20,7 +20,8 @@
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
 	dct:title                   	"Portuguese Political Structures Ontology";
-	dct:description             	"";
+	dct:description             	"This is the Inititives module from the Portuguese Political Structures (POLIS) Ontology."@en,
+                                    "Este é o módulo Initiatives (Iniciativas) da ontologia Portuguese Political Structures (POLIS)."@pt;
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço", "Mariana Curado Malta";
 	dct:contributor                 "João Bispo";
     #dct:issued                 		""^^schema:Date;
@@ -36,6 +37,7 @@
     dct:language "en", "pt" ;
 .
 
+
 #################################################################
 #    Classes
 #################################################################
@@ -44,12 +46,6 @@
 	rdfs:label "Assembleia Legislativa Regional"@pt ,"Regional Legislative Assembly"@en ;
 	dct:description ""@pt , ""@en ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
-
-:CitizenGroup rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description ""@pt , ""@en ;
-    rdfs:label "Citizen Group"@en ,
-               "Grupo de Cidadãos"@pt .
 
 :Initiative rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
@@ -149,21 +145,6 @@
     rdfs:label "Rules Of Procedure Project"@en ,
                "Projeto de Regimento"@pt ;
     rdfs:subClassOf :Initiative .
-
-#:Content rdf:type owl:Class ;
-#	dct:description "Define todo o conteúdo de uma iniciativa"@pt , 
-#		"Defines the content of an initiative"@en ;
-#    rdfs:label "Content"@en ,
-#               "Conteúdo"@pt ;
-#    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> .
-
-# :Annex a owl:Class ;
-#     dct:description "Um anexo é um documento que complementa uma iniciativa ou um evento, fornecendo conteúdo adicional não estruturado."@pt , 
-#         "An Annex is a documental entity that supplements an Initiative or Event by providing additional unstructured content."@en ;
-#     rdfs:label "Annex"@en ,
-#             "Anexo"@pt ;
-#     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-#     rdfs:subClassOf ocd:documenti .
 
 :ChangeProposal a owl:Class ;
     dct:description "Uma proposta de alteração é um documento formal de alteração associado a uma iniciativa, representando uma proposta estruturada para modificar o seu conteúdo durante o processo legislativo."@pt , 
@@ -618,8 +599,8 @@
 
 :receivedAppeal rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description ""@pt , 
-		""@en ;
+	dct:description "Relaciona uma iniciativa a um recurso"@pt , 
+		"Relates an initiative to an appeal"@en ;
     rdfs:label "received appeal by"@en ,
                "recebeu o recurso de"@pt ;
     rdfs:domain :Event ;
@@ -631,8 +612,8 @@
 
 :receivedChangeProposal rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-	dct:description ""@pt , 
-		""@en ;
+	dct:description "Relaciona uma iniciativa a uma proposta de alteração"@pt , 
+		"Relates an initiative to a change proposal"@en ;
     rdfs:label "received change proposal"@en ,
                "recebeu proposta de alteração"@pt ;
     rdfs:domain :Initiative ;
@@ -911,12 +892,21 @@
     rdfs:domain :CommissionEvent ;
     rdfs:range xsd:date .
 
-#:documentDate rdf:type owl:AnnotationProperty ;
-#    rdfs:subPropertyOf dct:date ;
-#    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
-#    dct:description "Define a data de um documento associado a uma remessa"@pt , 
-#                    "Defines the date of a document associated to a transmission"@en ;
-#    rdfs:label "document date"@en ,
-#               "data do documento"@pt ;
-#    rdfs:domain :Transmission ;
-#    rdfs:range xsd:date .
+:proponentType rdf:type owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+    dct:description "Define o tipo de proponente de uma proposta de alteração"@pt , 
+                    "Defines the type of the change proposal proponent"@en ;
+    rdfs:label "proponent type"@en ,
+               "tipo de proponente"@pt ;
+    rdfs:domain :Initiative ;
+    rdfs:range xsd:string .
+
+#################################################################
+#    Individuals
+#################################################################
+
+:CitizenGroup a foaf:Group, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/initiatives#> ;
+	dct:description "Define um grupo de cidadãos, que pode se juntar para submeter uma iniciativa no parlamento"@pt , "Defines a group of citizens who may come together to propose an initiative in parliament"@en ;
+    rdfs:label "Citizen Group"@en ,
+               "Grupo de Cidadãos"@pt .

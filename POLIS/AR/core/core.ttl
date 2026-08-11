@@ -22,7 +22,8 @@
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
 	dct:title                   	"Portuguese Political Structures Ontology";
-	dct:description             	"";
+	dct:description             	"This is the Core module from the Portuguese Political Structures (POLIS) Ontology."@en,
+                                    "Este é o módulo Core da ontologia Portuguese Political Structures (POLIS)."@pt;
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço", "Mariana Curado Malta";
 	dct:contributor                 "João Bispo";
     #dct:issued                 		""^^schema:Date;
@@ -44,7 +45,7 @@
 
 :ParliamentaryGroup rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-    rdfs:label "Parliamentary Group "@en, "Grupo Parlamentar"@pt ;
+    rdfs:label "Parliamentary Group"@en, "Grupo Parlamentar"@pt ;
     dct:description "A parliamentary group that exists in a parliament during a legislature, containing elected MPs"@en,
         "Um grupo parlamentar que existe num parlamento durante uma legislatura, que contém MPs eleitos"@pt ;
     skos:broadMatch ocd:gruppoParlamentare .
@@ -72,7 +73,7 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
     rdfs:label "Comissão"@pt ,
                "Commission"@en ;
-	dct:description ""@pt , ""@en .
+	dct:description "Representa uma comissão no parlamento"@pt , "Represents a commission in parliament"@en .
 
 :PAR rdf:type owl:Class ;
     rdfs:subClassOf org:Post ;
@@ -206,12 +207,20 @@
     rdfs:domain ocd:mandatoCamera ;
     rdfs:range xsd:string .
 
+:role rdf:type owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    dct:description "Define o papel de algo numa relação de Membership"@pt ,
+        "Defines the role of something in a Membership relationship"@en ;
+    rdfs:label "role"@en, "cargo"@pt ;
+    rdfs:domain :Membership ;
+    rdfs:range xsd:string .
 
 #################################################################
 #    Object properties
 #################################################################
 
-:belongsToLegislature rdf:type owl:ObjectProperty ;
+:belongsToLegislature rdf:type owl:ObjectProperty ,
+            owl:FunctionalProperty ;
             rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
             rdfs:range ocd:legislatura .
 
@@ -232,12 +241,7 @@
 
 :isMemberOf rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-     rdfs:domain :Membership .
-
-:hasRole rdf:type owl:ObjectProperty ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
-     rdfs:domain :Membership ;
-     rdfs:range polis-bio:Role .
+    rdfs:domain :Membership .
 
 :holdsDuty rdf:type owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
@@ -281,3 +285,15 @@
         "É preferível utilizar core:holdsDuty e org:Post quando um vocabulário controlado existe"@pt ;
     rdfs:range xsd:string .
 
+#################################################################
+#    Individuals
+#################################################################
+
+:PresidentOfTheAssemblyOfTheRepublic a m4s:Parliamentarian, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/core#> ;
+    rdf:type :PAR ;
+    rdfs:label "President of the Assembly of the Republic"@en, "Presidente da Assembleia da República"@pt ;
+    dct:description "The President of the Assembly of the Republic is the presiding officer of the Assembly of the Republic, responsible for chairing its sessions and representing it in external relations"@en,
+                    "O Presidente da Assembleia da República é o presidente da Assembleia da República, responsável por presidir às suas sessões e representá-la nas relações externas"@pt ;
+    rdfs:comment "It is preferred to use core:PAR class and core:holdsDuty when the MP who is acting as a the President of the Assembly of the Republic is known. Otherwise, this owl:NamedIndividual serves as an optional use to represent a President of the Assembly of the Republic."@en,
+        "É preferível utilizar a classe core:PAR e core:holdsDuty quando é conhecido o Deputado que exerce o cargo de Presidente da Assembleia da República. Caso contrário, este owl:NamedIndividual pode ser utilizado opcionalmente para representar um Presidente da Assembleia da República."@pt .

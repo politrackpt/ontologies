@@ -8,9 +8,9 @@
 @prefix ocd: <http://dati.camera.it/ocd/> .
 @prefix m4s: <http://purl.org/map4scrutiny-core#> .
 @prefix schema:	<https://schema.org/> .
-@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix polis-core: <http://purl.org/polis/ar/core#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix : <http://purl.org/polis/ar/biographical-profile#> .
 
 @base <http://purl.org/polis/ar/biographical-profile#> .
@@ -18,7 +18,8 @@
 :	
 	a                           	<http://purl.org/vocommons/voaf#Vocabulary> , owl:Ontology ;
 	dct:title                   	"Portuguese Political Structures Ontology";
-	dct:description             	"";
+	dct:description             	"This is the Biographical-Profile module from the Portuguese Political Structures (POLIS) Ontology."@en,
+                                    "Este é o módulo Biographical-Profile (Perfil Biográfico) da ontologia Portuguese Political Structures (POLIS)."@pt;
 	dct:creator                 	"Tiago Ribeiro de Sá Cruz", "João Miguel da Silva Lourenço", "Mariana Curado Malta";
 	dct:contributor                 "João Bispo";
     #dct:issued                 		""^^schema:Date;
@@ -47,86 +48,6 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
     rdfs:label "Habilitation Level"@en, "Nível de Habilitação"@pt ;
     dct:description "The level of habilitation of an MP"@en, "O nível de habilitação de um MP"@pt .
-
-:PrimarySchool rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Primary School"@en, "Ensino Primário"@pt ;
-    dct:description "The primary school level of habilitation"@en, "O nível de habilitação do ensino primário"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 9
-    ] .
-
-:MiddleSchool rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Middle School"@en, "2º Ciclo"@pt ;
-    dct:description "The middle school level of habilitation"@en, "O nível de habilitação do 2º ciclo"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 10
-    ] .
-
-:EarlyHighSchool rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Early High School"@en, "3º Ciclo"@pt ;
-    dct:description "The early high school level of habilitation"@en, "O nível de habilitação do 3º ciclo"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 11
-    ] .
-
-:HighSchool rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "High School"@en, "Ensino Secundário"@pt ;
-    dct:description "The high school level of habilitation"@en  , "O nível de habilitação do ensino secundário"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 12
-    ] .
-
-:HigherEducation rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Higher Education"@en, "Ensino Superior"@pt ;
-    dct:description "The higher education level of habilitation"@en, "O nível de habilitação do ensino superior"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 13
-    ] .
-
-:Bachelor rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Bachelor"@en, "Licenciatura"@pt ;
-    dct:description "The bachelor level of habilitation"@en, "O nível de habilitação da licenciatura"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 14
-    ] .
-
-:Master rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Master"@en, "Mestrado"@pt ;
-    dct:description "The master level of habilitation"@en, "O nível de habilitação do mestrado"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 15
-    ] .
-
-:Postgrad rdf:type owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
-    rdfs:label "Postgraduate"@en, "Pós-Graduação"@pt ;
-    dct:description "The postgraduate level of habilitation"@en, "O nível de habilitação da pós-graduação"@pt ;
-    rdfs:subClassOf :HabilitationLevel ;
-    rdfs:subClassOf [ rdf:type owl:Restriction ;
-        owl:onProperty dbo:number ;
-        owl:hasValue 16
-    ] .
 
 :Role rdf:type owl:Class ;
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
@@ -220,3 +141,57 @@
     rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
     rdfs:label "Incomplete"@en, "Incompleto"@pt ;
     dct:description "Indicates that an MP has not completed a given habilitation"@en, "Indica que um MP não completou uma dada habilitação"@pt .
+
+:HighestLevelNotInformed a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Highest Level Not Informed"@en, "Nível mais alto não informado"@pt ;
+    dbo:number "0"^^xsd:nonNegativeInteger;
+    dct:description "Indicates that the highest level of habilitation of an MP is not informed"@en, "Indica que o nível mais alto de habilitação de um MP não é informado"@pt .
+
+:PrimarySchool a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Primary School"@en, "Ensino Primário"@pt ;
+    dbo:number "9"^^xsd:nonNegativeInteger;
+    dct:description "The primary school level of habilitation"@en, "O nível de habilitação do ensino primário"@pt .
+
+:MiddleSchool a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Middle School"@en, "2º Ciclo"@pt ;
+    dbo:number "10"^^xsd:nonNegativeInteger;
+    dct:description "The middle school level of habilitation"@en, "O nível de habilitação do 2º ciclo"@pt .
+
+:EarlyHighSchool a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Early High School"@en, "3º Ciclo"@pt ;
+    dbo:number "11"^^xsd:nonNegativeInteger;
+    dct:description "The early high school level of habilitation"@en, "O nível de habilitação do 3º ciclo"@pt .
+
+:HighSchool a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "High School"@en, "Ensino Secundário"@pt ;
+    dbo:number "12"^^xsd:nonNegativeInteger;
+    dct:description "The high school level of habilitation"@en  , "O nível de habilitação do ensino secundário"@pt .
+
+:HigherEducation a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Higher Education"@en, "Ensino Superior"@pt ;
+    dbo:number "13"^^xsd:nonNegativeInteger;
+    dct:description "The higher education level of habilitation"@en, "O nível de habilitação do ensino superior"@pt .
+
+:Bachelor a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Bachelor"@en, "Licenciatura"@pt ;
+    dbo:number "14"^^xsd:nonNegativeInteger;
+    dct:description "The bachelor level of habilitation"@en, "O nível de habilitação da licenciatura"@pt .
+
+:Master a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Master"@en, "Mestrado"@pt ;
+    dbo:number "15"^^xsd:nonNegativeInteger;
+    dct:description "The master level of habilitation"@en, "O nível de habilitação do mestrado"@pt .
+
+:Postgrad a :HabilitationLevel, owl:NamedIndividual ;
+    rdfs:isDefinedBy <http://purl.org/polis/ar/biographical-profile#> ;
+    rdfs:label "Postgraduate"@en, "Pós-Graduação"@pt ;
+    dbo:number "16"^^xsd:nonNegativeInteger ;
+    dct:description "The postgraduate level of habilitation"@en, "O nível de habilitação da pós-graduação"@pt .
