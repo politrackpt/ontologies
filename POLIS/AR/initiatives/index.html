@@ -341,7 +341,12 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": ""
+        "@language": "en",
+        "@value": "This is the Inititives module from the Portuguese Political Structures (POLIS) Ontology."
+      },
+      {
+        "@language": "pt",
+        "@value": "Este é o módulo Initiatives (Iniciativas) da ontologia Portuguese Political Structures (POLIS)."
       },
       {
         "@language": "en",
@@ -444,7 +449,8 @@
             </dt>
             <dd>
               <ul class="pylodelitlist">
-                <li></li>
+                <li><p>This is the Inititives module from the Portuguese Political Structures (POLIS) Ontology.</p></li>
+                <li><p>Este é o módulo Initiatives (Iniciativas) da ontologia Portuguese Political Structures (POLIS).</p></li>
                 <li><p>This ontology enables the modelling of data relating to initiatives presented in the Portuguese Parliament.</p></li>
                 <li><p>Esta ontologia permite a modelação de dados relativos às iniciativas apresentadas no Parlamento português.</p></li>
               </ul>
@@ -462,9 +468,6 @@
             </li>
             <li>
               <a href="#ChangeProposal">Change Proposal</a>
-            </li>
-            <li>
-              <a href="#CitizenGroup">Citizen Group</a>
             </li>
             <li>
               <a href="#CommissionEvent">Commission Event</a>
@@ -605,38 +608,6 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="CitizenGroup">
-          <h3>Citizen GroupGrupo de Cidadãos
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://purl.org/polis/ar/initiatives#CitizenGroup</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://purl.org/polis/ar/initiatives#">Portuguese Political Structures Ontology</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul class="pylodelitlist">
-                  <li></li>
-                  <li></li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="Initiative">
           <h3>InitiativeIniciativa
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -733,6 +704,12 @@
                     <span>
                       <a href="#hasEvent">has event</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#proponentType">proponent type</a>
+                      <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
                     </span>
                   </li>
                 </ul>
@@ -3220,8 +3197,8 @@
               </th>
               <td>
                 <ul class="pylodelitlist">
-                  <li></li>
-                  <li></li>
+                  <li><p>Relaciona uma iniciativa a um recurso</p></li>
+                  <li><p>Relates an initiative to an appeal</p></li>
                 </ul>
               </td>
             </tr>
@@ -3279,8 +3256,8 @@
               </th>
               <td>
                 <ul class="pylodelitlist">
-                  <li></li>
-                  <li></li>
+                  <li><p>Relaciona uma iniciativa a uma proposta de alteração</p></li>
+                  <li><p>Relates an initiative to a change proposal</p></li>
                 </ul>
               </td>
             </tr>
@@ -4196,7 +4173,7 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
-                <a href="http://www.w3.org/ns/prov-oActivity">prov:Activity</a>
+                <a href="http://www.w3.org/ns/prov-o#Activity">prov:Activity</a>
               </td>
             </tr>
           </table>
@@ -5851,6 +5828,57 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="proponentType">
+          <h3>proponent typetipo de proponente
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/polis/ar/initiatives#proponentType</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://purl.org/polis/ar/initiatives#">Portuguese Political Structures Ontology</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul class="pylodelitlist">
+                  <li><p>Define o tipo de proponente de uma proposta de alteração</p></li>
+                  <li><p>Defines the type of the change proposal proponent</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Initiative">Initiative</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
       <div class="section" id="functionalproperties">
         <h2>Functional Properties</h2>
@@ -5936,7 +5964,7 @@
           </dd>
           <dt id="prov">prov</dt>
           <dd>
-            <code>http://www.w3.org/ns/prov-o</code>
+            <code>http://www.w3.org/ns/prov-o#</code>
           </dd>
           <dt id="rdf">rdf</dt>
           <dd>
@@ -6026,9 +6054,6 @@
           <ul class="second">
             <li style="margin-left:10px;">
               <a href="#ChangeProposal">Change ProposalProposta de Alteração</a>
-            </li>
-            <li style="margin-left:10px;">
-              <a href="#CitizenGroup">Citizen GroupGrupo de Cidadãos</a>
             </li>
             <li style="margin-left:10px;">
               <a href="#CommissionEvent">Commission EventEvento de Comissão</a>
@@ -6320,6 +6345,9 @@
             </li>
             <li>
               <a href="#negativeOpinionReasonDate">negative opinion reason datedata do motivo de parecer negativo</a>
+            </li>
+            <li>
+              <a href="#proponentType">proponent typetipo de proponente</a>
             </li>
             <li>
               <a href="#publicAppreciationDate">public appreciation datedata de apreciação pública</a>

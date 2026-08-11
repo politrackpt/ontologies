@@ -341,7 +341,12 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": ""
+        "@language": "en",
+        "@value": "This is the Core module from the Portuguese Political Structures (POLIS) Ontology."
+      },
+      {
+        "@language": "pt",
+        "@value": "Este é o módulo Core da ontologia Portuguese Political Structures (POLIS)."
       },
       {
         "@language": "en",
@@ -444,7 +449,8 @@
             </dt>
             <dd>
               <ul class="pylodelitlist">
-                <li></li>
+                <li><p>This is the Core module from the Portuguese Political Structures (POLIS) Ontology.</p></li>
+                <li><p>Este é o módulo Core da ontologia Portuguese Political Structures (POLIS).</p></li>
                 <li><p>This ontology enables the modelling of the core institutional structure of the Portuguese Parliament.</p></li>
                 <li><p>Esta ontologia permite modelar a estrutura institucional central do Parlamento português.</p></li>
               </ul>
@@ -485,7 +491,7 @@
               <a href="#Membership">Membership</a>
             </li>
             <li>
-              <a href="#ParliamentaryGroup">Parliamentary Group </a>
+              <a href="#ParliamentaryGroup">Parliamentary Group</a>
             </li>
             <li>
               <a href="#Party">Party</a>
@@ -518,7 +524,7 @@
         </div>
         <h3 id="class-definitions">Class Definitions</h3>
         <div class="property entity" id="ParliamentaryGroup">
-          <h3>Parliamentary Group Grupo Parlamentar
+          <h3>Parliamentary GroupGrupo Parlamentar
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
@@ -649,13 +655,13 @@
                 <ul class="pylodelitlist">
                   <li>
                     <span>
-                      <a href="#isMemberOf">isMemberOf</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                      <a href="#role">role</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
                     </span>
                   </li>
                   <li>
                     <span>
-                      <a href="#hasRole">hasRole</a>
+                      <a href="#isMemberOf">isMemberOf</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -751,8 +757,8 @@
               </th>
               <td>
                 <ul class="pylodelitlist">
-                  <li></li>
-                  <li></li>
+                  <li><p>Representa uma comissão no parlamento</p></li>
+                  <li><p>Represents a commission in parliament</p></li>
                 </ul>
               </td>
             </tr>
@@ -1384,9 +1390,6 @@
               <a href="#hasMembership">Has Membership</a>
             </li>
             <li>
-              <a href="#hasRole">Has Role</a>
-            </li>
-            <li>
               <a href="#hasSubCommission">has subcommission</a>
             </li>
             <li>
@@ -1461,7 +1464,7 @@
               </th>
               <td>
                 <span>
-                  <a href="#ParliamentaryGroup">Parliamentary Group </a>
+                  <a href="#ParliamentaryGroup">Parliamentary Group</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -1568,46 +1571,6 @@
                   <a href="#Membership">Membership</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="hasRole">
-          <h3>Has Role
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://purl.org/polis/ar/core#hasRole</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://purl.org/polis/ar/core#">Portuguese Political Structures Ontology</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#Membership">Membership</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="http://purl.org/polis/ar/biographic#Role">polis-bio:Role</a>
               </td>
             </tr>
           </table>
@@ -1950,8 +1913,59 @@
             </tr>
           </table>
         </div>
-        <div class="property entity" id="duty">
-          <h3>dutycargo
+        <div class="property entity" id="role">
+          <h3>rolecargo
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/polis/ar/core#role</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://purl.org/polis/ar/core#">Portuguese Political Structures Ontology</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td>
+                <ul class="pylodelitlist">
+                  <li><p>Define o papel de algo numa relação de Membership</p></li>
+                  <li><p>Defines the role of something in a Membership relationship</p></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#Membership">Membership</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="cargo">
+          <h3>cargoduty
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
           <table>
@@ -2035,6 +2049,35 @@
             </tr>
           </table>
         </div>
+        <div class="property entity" id="belongsToLegislature">
+          <h3>Belongs To Legislature
+            <sup class="sup-fp" title="OWL Functional Property">fp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/polis/ar/core#belongsToLegislature</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://purl.org/polis/ar/core#">Portuguese Political Structures Ontology</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://dati.camera.it/ocd/legislatura">ocd:legislatura</a>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="isOfParty">
           <h3>Is Of Party
             <sup class="sup-fp" title="OWL Functional Property">fp</sup>
@@ -2060,7 +2103,7 @@
               </th>
               <td>
                 <span>
-                  <a href="#ParliamentaryGroup">Parliamentary Group </a>
+                  <a href="#ParliamentaryGroup">Parliamentary Group</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2098,6 +2141,10 @@
           <dd>
             <code>http://w3id.org/nfdi4ing/metadata4ing#</code>
           </dd>
+          <dt id="m4s">m4s</dt>
+          <dd>
+            <code>http://purl.org/map4scrutiny-core#</code>
+          </dd>
           <dt id="ocd">ocd</dt>
           <dd>
             <code>http://dati.camera.it/ocd/</code>
@@ -2113,10 +2160,6 @@
           <dt id="pe">pe</dt>
           <dd>
             <code>http://parliament.uk/ontologies/election/</code>
-          </dd>
-          <dt id="polis-bio">polis-bio</dt>
-          <dd>
-            <code>http://purl.org/polis/ar/biographic#</code>
           </dd>
           <dt id="rdf">rdf</dt>
           <dd>
@@ -2230,7 +2273,7 @@
               <a href="#PAR">Presidente da Assembleia da RepúblicaPresident of the Assembly of the Republic</a>
             </li>
             <li style="margin-left:10px;">
-              <a href="#ParliamentaryGroup">Parliamentary Group Grupo Parlamentar</a>
+              <a href="#ParliamentaryGroup">Parliamentary GroupGrupo Parlamentar</a>
             </li>
             <li style="margin-left:10px;">
               <a href="#Party">PartyPartido</a>
@@ -2282,9 +2325,6 @@
               <a href="#hasMembership">Has Membership</a>
             </li>
             <li style="margin-left:10px;">
-              <a href="#hasRole">Has Role</a>
-            </li>
-            <li style="margin-left:10px;">
               <a href="#hasSubCommission">has subcommissiontem subcomissão</a>
             </li>
             <li style="margin-left:10px;">
@@ -2310,7 +2350,7 @@
           </h4>
           <ul class="second">
             <li>
-              <a href="#duty">dutycargo</a>
+              <a href="#cargo">cargoduty</a>
             </li>
             <li>
               <a href="#hasparliamentaryname">has parliamentary nametem nome parlamentar</a>
@@ -2321,6 +2361,9 @@
             <li>
               <a href="#identifier">identifieridentificador</a>
             </li>
+            <li>
+              <a href="#role">rolecargo</a>
+            </li>
           </ul>
         </li>
         <li>
@@ -2328,6 +2371,9 @@
             <a href="#functionalproperties">Functional Properties</a>
           </h4>
           <ul class="second">
+            <li>
+              <a href="#belongsToLegislature">Belongs To Legislature</a>
+            </li>
             <li>
               <a href="#identifier">identifieridentificador</a>
             </li>
@@ -2354,6 +2400,9 @@
               <a href="#m4i">m4i</a>
             </li>
             <li>
+              <a href="#m4s">m4s</a>
+            </li>
+            <li>
               <a href="#ocd">ocd</a>
             </li>
             <li>
@@ -2364,9 +2413,6 @@
             </li>
             <li>
               <a href="#pe">pe</a>
-            </li>
-            <li>
-              <a href="#polis-bio">polis-bio</a>
             </li>
             <li>
               <a href="#rdf">rdf</a>
